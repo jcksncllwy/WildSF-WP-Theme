@@ -1,0 +1,488 @@
+/*
+Theme Name: WildSF
+Author: Jackson Callaway
+Description: A custom theme for WildSF Walking Tours
+Version: 0.0.1
+Tags: tours
+*/
+
+@import 'vars';
+@import 'single-tour';
+
+body{
+	padding-top: $nav-height;
+}
+
+.nav-target{
+	margin-top: -2*$nav-height; /* Size of fixed header */
+  	padding-top: 2*$nav-height; 
+}
+
+a{
+	//color: $font-white !important;
+	&:hover{
+		//color: $font-white !important;
+	}
+}
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar{
+	height: $nav-height;
+	background-color: $primary-blue;
+	font-family: $primary-font-family;
+
+	.dropdown-menu{
+		.dropdown-item{
+			display: flex;
+			flex-direction: column;
+
+			.title{
+				font-size: 1.2em;
+			}
+			.subtitle{
+				font-family: $secondary-font-family;
+			}
+		}
+	}
+
+	/*Bootstrap SMALL breakpoint*/
+	@media (max-width: 767px){
+		.nav-item{
+			font-size: 1.5em;
+			text-align: center;
+		}
+		.dropdown-menu{
+			.dropdown-item{
+				.title{
+					font-size: 1.5em;
+				}
+				.subtitle{
+					font-size: 1.2em;
+				}
+			}
+		}		
+	}
+}
+
+.page-container{
+	display: flex;
+	justify-content: center;
+	font-family: $secondary-font-family;
+	padding-top: 75px;
+	h1,h2,h3,strong{
+		font-family: $primary-font-family;
+	}
+	.page-inner{
+		width: 800px;
+		/*Bootstrap SMALL breakpoint*/
+		@media (max-width: 767px){
+			width: 100%;
+			padding: 20px;
+		}
+		img{
+			max-width: 100%;
+		}
+	}
+}
+
+.faq-page{
+	.faq{
+		background-attachment: fixed;
+	}
+}
+
+.splash{
+	width: 100vw;
+	height: 50vh;
+	/* See dynamic-css.php for background-image url */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+
+	.splash-logo{
+		/* sized so large for the gradient that highlights the logo */
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); 
+
+		display: flex;
+		align-items: center;
+		justify-content:center;
+	}
+}
+
+.section-break{
+	height: 75px;
+	display: flex;
+	justify-content: center;
+
+	&.after-tour{
+		height: 50px;
+	}
+
+	$cta-transform: 25px;
+	.cta-container{
+		display: flex;
+		flex-direction: column;
+    	align-items: center;
+    	justify-content: flex-start;
+    	position: relative;
+		top: -$cta-transform;
+	}
+
+	.contact-info{
+		font-family: $primary-font-family;
+	}
+}
+
+.cta{
+	width: 180px;
+	
+
+    .cta-link{
+    	display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	color: $font-white;
+    	&:hover{
+    		text-decoration: none;
+    		color: $font-white;
+    	}
+    }
+
+    .cta-text{
+    	position:absolute;
+    	font-family: $primary-font-family;
+    	color: $font-white;
+    }
+
+    img{
+    	max-height: 100%;
+    }
+}
+
+.tour{
+	height: 400px;
+	width: 100vw;
+	color: $font-white;
+	font-family: $primary-font-family;
+	padding: 50px 0;
+	@media (max-width: 767px){
+		height: 50vh;
+		padding: 0;
+	}
+
+	.tour-info{
+		height: 100%;
+		text-shadow: 1px 1px 2px black, -1px -1px 2px black;
+		width: 400px;
+		@media (max-width: 767px){
+			width: 100%;
+			padding: 50px 20px;
+		}	
+
+		&.left{
+			/* Info will be placed with it's right-most boundary against the centerline of the screen */
+			margin-left: calc((100vw/2) - 400px );
+			/*Bootstrap SMALL breakpoint*/
+			@media (max-width: 767px){
+				margin-left: 0;
+			}	
+		}
+		&.right{
+			/* Info will be placed with it's left-most boundary against the centerline of the screen */
+			margin-left: calc((100vw/2) );
+			/*Bootstrap SMALL breakpoint*/
+			@media (max-width: 767px){
+				margin-left: 0;
+			}
+		}
+		
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.tour-title{
+			font-size: 2em;
+			font-weight: bold;
+		}
+		.tour-summary{
+			font-family: $secondary-font-family;
+			@media (max-width: 767px){
+				display: none;
+			}	
+		}
+		.tour-sight{
+			font-weight: bold;
+		}
+
+	}
+	
+}
+
+.faq{
+
+	.faq-inner{
+		/* Info will be placed with it's right-most boundary against the centerline of the screen */
+		width: 800px;
+		margin-left: calc((100vw/2) - 400px );
+		padding: 100px 0;
+		@media (max-width: 767px){
+			width: 100vw;
+			margin-left: 0;
+			padding: 100px 20px;
+		}
+	}
+
+	.header{
+		mix-blend-mode: darken;
+		margin-bottom: 50px;
+	}
+
+	.faq-item{
+		margin-bottom: 20px;
+
+		.faq-item-question{
+			font-family: $primary-font-family;
+			font-size: 24px;
+			font-weight: bold;
+			a{
+				color: $font-black;
+				:hover{
+					color: $font-black;
+					text-decoration: none;
+				}
+			}
+
+		}
+		.faq-item-answer{
+			font-family: $secondary-font-family;
+			font-size: 16px;
+		}
+	}
+
+	.faq-read-more{
+		text-align: center;
+	}
+}
+
+.reviews{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	.reviews-inner{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 800px;
+		margin-bottom: 50px;
+		/*Bootstrap SMALL breakpoint*/
+		@media (max-width: 767px){
+			width: 100vw;
+			flex-direction: column;
+		}
+	}
+	.yelp-container{
+		width: 375px;
+		@media (max-width: 767px){
+			width: 100vw;
+			padding-bottom: 50px;
+		}
+	}
+	.ta-container{
+		width: 375px;
+		margin-left: 50px;
+		margin-top: -24px; //fix weird spacing in widget
+
+		@media (max-width: 767px){
+			width: 100vw;
+			margin-left: 0;
+			margin-bottom: -50px;
+		}
+		#CDSWIDSSP{
+			width: 350px !important; //override inline widget style
+			@media (max-width: 767px){
+				width: 100vw !important;
+			}
+		}
+	}
+}
+
+.calendar{
+	display: flex;
+	justify-content: center;
+
+	.calendar-inner{
+		width: 800px;
+		@media (max-width: 767px){
+			width: 100%;
+			padding: 20px;
+		}
+
+		.calendar-header{
+			font-family: $primary-font-family;
+			font-size: 24px;
+			margin-bottom: -40px;
+			@media (max-width: 767px){
+				width: 100%;
+				margin-bottom: 0;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.press{
+	display: flex;
+	justify-content: center;
+	padding: 50px 0;
+
+	.press-inner{
+		width: 800px;
+	}
+
+	.press-header{
+		font-family: $primary-font-family;
+		color: $font-blue-grey;
+		font-size: 24px;
+		margin: 50px 0;
+		text-align: center;
+	}
+
+	.press-item{
+		float: left;
+
+		width: 350px;
+		margin-bottom: 50px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&:nth-child(even){
+			float: right;
+		}
+
+		@media (max-width: 767px){
+			float: none;
+			margin: auto;
+			padding-bottom: 20px;
+			&:nth-child(even){
+				float: none;
+			}
+		}
+
+		.logo {
+			flex-shrink: 0;
+			height: 100px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			filter: saturate(0%) contrast(500%);
+		}
+
+		hr{
+			border-top: 2px solid rgba(0,0,0,0.15);
+			width: 25%;
+		}
+
+		.quote{
+			font-size: 18px;
+			color: $font-blue-grey;
+			font-family: $primary-font-family;
+			text-align: center;
+		}
+		
+	}
+}
+
+.social{
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	padding: 50px 0;
+	position: relative;
+	.social-inner{
+		width: 800px;
+		display: flex;
+    	flex-direction: column;
+    	align-items: center;
+    	@media (max-width: 767px){
+			width: 100vw !important;
+		}
+	}
+	.social-header{
+		text-align: center;
+		font-family: $primary-font-family;
+		text-transform: uppercase;
+		color: $font-white;
+		font-size: 36px;
+		margin-bottom: 30px;
+	}
+	.social-icons{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		.social-icon{
+			width: 100px;
+			height: 100px;
+			margin-right: 50px;
+			@media (max-width: 767px){
+				margin-right: 10px;
+			}
+			&:last-child{
+				margin-right: 0;
+			}
+
+			img{
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+	}	
+}
+
+.footer{
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	background-color: $primary-blue;
+	padding: 20px;
+
+	font-family: $secondary-font-family;
+
+	@media (max-width: 767px){
+		justify-content: space-evenly;
+	}
+
+	.footer-item{
+		margin-right: 20px;
+		a{
+			color: $font-white;
+			&:hover{
+				color: $font-white;
+			}
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
