@@ -15,7 +15,7 @@ $splash_logo_image_url = wp_get_attachment_image_url($image_id, 'full');
 	</button>
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav">
+		<ul class="navbar-nav mr-auto">
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Tours
@@ -27,7 +27,7 @@ $splash_logo_image_url = wp_get_attachment_image_url($image_id, 'full');
 					while ( $loop->have_posts() ) : $loop->the_post(); 
 					?>
 					<div data-toggle="collapse" data-target=".navbar-collapse.show" >
-						<a class="dropdown-item" href="#tour-<?= the_ID() ?>-header">
+						<a class="dropdown-item" href="#tour-<?= the_ID() ?>">
 							<span class="title"><?= the_title() ?></span>
 							<span class="subtitle"><?= get_field('subtitle') ?></span>
 						</a>
@@ -49,5 +49,8 @@ $splash_logo_image_url = wp_get_attachment_image_url($image_id, 'full');
 				<a href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" class="nav-link" data-purchase-type="gift-card" data-button-text="Purchase Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Cards</a>
 			</li>
 		</ul>
+		<span class="navbar-text contact-info">
+	      info@wildsftours.com 415-580-1849
+	    </span>
 	</div>
 </nav>

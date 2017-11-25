@@ -6,7 +6,7 @@
 
   $frontpage = get_page_by_title('frontpage');
   $image_id = get_field('splash_background_image', $frontpage);
-  $splash_background_image_url = wp_get_attachment_image_url($image_id, 'fullscreen');
+  $splash_background_image_url = wp_get_attachment_image_url($image_id, 'full');
 
   $cta_background_image_url = wp_get_attachment_image_url(
   	get_field('cta_background_image', $frontpage), 

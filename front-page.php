@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Roboto+Slab:100,300,400,700|Bitter|Crete+Round" rel="stylesheet">
 	<?php get_template_part('dynamic-css') ?>
 	<link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
 
@@ -38,13 +38,26 @@
 	<?php 
 	get_template_part('nav', 'frontpage');
 	get_template_part('splash');
+	get_template_part('section','cta');
+
+	$frontpage = get_page_by_title('frontpage');
+	while( have_rows('press_quotes', $frontpage)): the_row();
+		$logo = wp_get_attachment_image_url(
+			get_sub_field('logo'), 
+			'full'
+		);
+		$quote = get_sub_field('quote');
+		$press_quotes[] = ['logo'=>$logo, 'quote'=>$quote];
+	endwhile;
 
 	$args = array( 'post_type' => 'tour' );
 	$loop = new WP_Query( $args );
-	$tourCount = 0;
+	$i = 0;
 	while ( $loop->have_posts() ) : $loop->the_post(); 
 		include(locate_template('tour-frontpage.php'));
-		$tourCount = $tourCount+1;
+		$press_quote = $press_quotes[$i];
+		include(locate_template('section-quote.php'));
+		$i = $i+1;
 	endwhile;
 
 	get_template_part('calendar', 'frontpage');
@@ -54,8 +67,6 @@
 	include(locate_template('faq-partial.php'));
 
 	get_template_part('reviews', 'frontpage');
-
-	get_template_part('press', 'frontpage');
 
 	get_template_part('social', 'frontpage');
 

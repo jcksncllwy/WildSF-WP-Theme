@@ -8,11 +8,3 @@
 		<img src=" <?= $splash_logo_image_url ?> ">
 	</div>
 </div>
-<div class="section-break default-background-image under-splash">
-	<div class="cta-container">
-		<?php get_template_part('cta','book') ?>
-		<div class="contact-info">
-			info@wildsftours.com // 415-580-1849
-		</div>
-	</div>
-</div>

@@ -14,8 +14,8 @@ body{
 }
 
 .nav-target{
-	margin-top: -2*$nav-height; /* Size of fixed header */
-  	padding-top: 2*$nav-height; 
+	margin-top: -2*$nav-height !important; /* Size of fixed header */
+  	padding-top: 2*$nav-height !important; 
 }
 
 a{
@@ -48,6 +48,10 @@ a{
 				font-family: $secondary-font-family;
 			}
 		}
+	}
+
+	.navbar-text.contact-info{
+		color: $primary-white
 	}
 
 	/*Bootstrap SMALL breakpoint*/
@@ -98,18 +102,18 @@ a{
 
 .splash{
 	width: 100vw;
-	height: 50vh;
+	height: 70vh;
 	/* See dynamic-css.php for background-image url */
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: top;
 
 
 	.splash-logo{
 		/* sized so large for the gradient that highlights the logo */
 		width: 100%;
 		height: 100%;
-		background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); 
+		//background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); 
 
 		display: flex;
 		align-items: center;
@@ -117,110 +121,129 @@ a{
 	}
 }
 
-.section-break{
-	height: 75px;
-	display: flex;
-	justify-content: center;
+@mixin button($color, $secondary_color: $primary_white){
+	padding: 10px 20px;
+	border: 5px solid $color;
+	border-radius: 5px;
+	font-family: $secondary-font-family;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: 700;
+	cursor: pointer;
 
-	&.after-tour{
-		height: 50px;
-	}
+	color: $color;
 
-	$cta-transform: 25px;
-	.cta-container{
-		display: flex;
-		flex-direction: column;
-    	align-items: center;
-    	justify-content: flex-start;
-    	position: relative;
-		top: -$cta-transform;
-	}
-
-	.contact-info{
-		font-family: $primary-font-family;
+	&:hover{
+		background-color: $color;
+		color: $secondary_color;
+		text-decoration: none;
 	}
 }
 
-.cta{
-	width: 180px;
+.section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 75px;
+
+	background-color: $primary-white;
+	font-family: $primary-font-family;
 	
+	h1{
+		font-size: 2em;
+		font-weight: 700;
+	}
+	h2{
+		font-size: 2em;
+		font-weight: 300;
+	}
 
-    .cta-link{
-    	display: flex;
-    	align-items: center;
-    	justify-content: center;
-    	color: $font-white;
-    	&:hover{
-    		text-decoration: none;
-    		color: $font-white;
-    	}
-    }
+	&.cta{
+		color: $font-red;
+		.explore-button{
+			margin-top: 50px;
+			@include button($font-red);
+		}
+	}
 
-    .cta-text{
-    	position:absolute;
-    	font-family: $primary-font-family;
-    	color: $font-white;
-    }
+	&.quote{
+		color: $primary-blue;
+		padding-bottom: 120px;
+		.logo{
+			padding: 20px 50px;
+			border-bottom: 2px solid transparentize($primary-blue, 0.5);
+		}
+		.quote-container{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
 
-    img{
-    	max-height: 100%;
-    }
+			.quote{
+				font-family: $secondary-font-family;
+				font-style: italic;
+				font-weight: 500;
+				font-size: 2em;
+				text-align: center;
+				width: 800px;
+			}
+			img{
+				mix-blend-mode: color-burn;
+				filter: opacity(25%);				
+				height: 5em;
+			}
+		}
+	}
 }
 
 .tour{
-	height: 400px;
+	height: 80vh;
+	min-height: 600px;
 	width: 100vw;
-	color: $font-white;
+	color: $primary-white;
 	font-family: $primary-font-family;
-	padding: 50px 0;
-	@media (max-width: 767px){
-		height: 50vh;
-		padding: 0;
+	padding: 0;
+	&.row{
+		margin: 0;
 	}
 
 	.tour-info{
 		height: 100%;
-		text-shadow: 1px 1px 2px black, -1px -1px 2px black;
-		width: 400px;
-		@media (max-width: 767px){
-			width: 100%;
-			padding: 50px 20px;
-		}	
-
-		&.left{
-			/* Info will be placed with it's right-most boundary against the centerline of the screen */
-			margin-left: calc((100vw/2) - 400px );
-			/*Bootstrap SMALL breakpoint*/
-			@media (max-width: 767px){
-				margin-left: 0;
-			}	
-		}
-		&.right{
-			/* Info will be placed with it's left-most boundary against the centerline of the screen */
-			margin-left: calc((100vw/2) );
-			/*Bootstrap SMALL breakpoint*/
-			@media (max-width: 767px){
-				margin-left: 0;
-			}
-		}
-		
-
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
+		align-items: center;
+
+		.tour-info-inner{
+			width: 500px;
+			max-width: 100%;
+			max-height: 100%;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+		}
 
 		.tour-title{
 			font-size: 2em;
 			font-weight: bold;
+			line-height: 0.8em;
+		}
+		.tour-subtitle{
+			font-weight: 300;
+			font-size: 2em;
 		}
 		.tour-summary{
+			margin-top: 20px;
 			font-family: $secondary-font-family;
 			@media (max-width: 767px){
 				display: none;
 			}	
 		}
-		.tour-sight{
-			font-weight: bold;
+		.learn-more-button{
+			margin-top: 50px;
+			@include button($primary-white, $font-black)
 		}
 
 	}
@@ -318,6 +341,7 @@ a{
 .calendar{
 	display: flex;
 	justify-content: center;
+	padding: 100px;
 
 	.calendar-inner{
 		width: 800px;
