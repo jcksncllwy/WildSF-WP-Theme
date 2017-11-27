@@ -50,7 +50,7 @@ $splash_logo_image_url = wp_get_attachment_image_url($image_id, 'full');
 			</li>
 		</ul>
 		<span class="navbar-text contact-info">
-	      info@wildsftours.com 415-580-1849
+	      <a href="mailto:info@wildsftours.com" class="email-address">info@wildsftours.com</a> <a href="tel:+14155801849" class="phone-number">415-580-1849</a>
 	    </span>
 	</div>
 </nav>

@@ -1,4 +1,4 @@
-<div class="calendar default-background-image">
+<div class="calendar">
 	<div class="calendar-inner">
 
 		<div class="calendar-header nav-target" id="calendar-nav-target">Upcoming Tours</div>

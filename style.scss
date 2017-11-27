@@ -10,12 +10,12 @@ Tags: tours
 @import 'single-tour';
 
 body{
-	padding-top: $nav-height;
+	
+	background-color: $primary-white !important;
 }
 
 .nav-target{
-	margin-top: -2*$nav-height !important; /* Size of fixed header */
-  	padding-top: 2*$nav-height !important; 
+	
 }
 
 a{
@@ -33,8 +33,23 @@ a{
 
 .navbar{
 	height: $nav-height;
-	background-color: $primary-blue;
+	background-color: transparentize($primary-blue,0.2);
 	font-family: $primary-font-family;
+
+	transition: opacity 0.3s ease;
+	opacity: 1;
+	&.fade-away{
+		opacity: 0;
+		
+	}
+
+	.nav-item{
+		font-size: 1.2em;
+		margin-right: 10px;
+		a:hover{
+			color: $primary-white !important;
+		}
+	}
 
 	.dropdown-menu{
 		.dropdown-item{
@@ -51,7 +66,16 @@ a{
 	}
 
 	.navbar-text.contact-info{
-		color: $primary-white
+		a{
+			color: $primary-white;
+			&:hover{
+				color: $primary-white;
+			}
+
+			&.email-address{
+				margin-right: 10px;
+			}
+		}
 	}
 
 	/*Bootstrap SMALL breakpoint*/
@@ -345,9 +369,8 @@ a{
 	padding: 100px;
 
 	.calendar-inner{
-		width: 800px;
+		width: 100%;
 		@media (max-width: 767px){
-			width: 100%;
 			padding: 20px;
 		}
 
@@ -362,6 +385,11 @@ a{
 			}
 		}
 	}
+}
+
+//special fix for peek's embedded widget
+#ember1190{
+	padding-top: $nav-height; 
 }
 
 .press{

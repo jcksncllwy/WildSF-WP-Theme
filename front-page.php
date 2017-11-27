@@ -31,6 +31,10 @@
 	</script>
 	<!-- /PEEK PRO -->
 
+	<!-- Custom UI Scripts -->
+	<script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/ui.js"></script>
+	<!-- /Custom UI Scripts -->
+
 	<meta name="viewport" content="width=device-width">
 
 </head>

@@ -23,7 +23,7 @@ Tags: tours
   justify-content: center; }
 .single-tour .splash-container {
   position: relative;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 80px);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -263,12 +263,7 @@ Tags: tours
           display: none; } }
 
 body {
-  padding-top: 60px; }
-
-.nav-target {
-  margin-top: -120px !important;
-  /* Size of fixed header */
-  padding-top: 120px !important; }
+  background-color: #fbf6eb !important; }
 
 .abs-center-x {
   position: absolute;
@@ -276,10 +271,19 @@ body {
   transform: translateX(-50%); }
 
 .navbar {
-  height: 60px;
-  background-color: #3f616c;
+  height: 80px;
+  background-color: rgba(63, 97, 108, 0.8);
   font-family: "Roboto Slab", serif;
+  transition: opacity 0.3s ease;
+  opacity: 1;
   /*Bootstrap SMALL breakpoint*/ }
+  .navbar.fade-away {
+    opacity: 0; }
+  .navbar .nav-item {
+    font-size: 1.2em;
+    margin-right: 10px; }
+    .navbar .nav-item a:hover {
+      color: #fbf6eb !important; }
   .navbar .dropdown-menu .dropdown-item {
     display: flex;
     flex-direction: column; }
@@ -287,8 +291,12 @@ body {
       font-size: 1.2em; }
     .navbar .dropdown-menu .dropdown-item .subtitle {
       font-family: "Roboto", sans-serif; }
-  .navbar .navbar-text.contact-info {
+  .navbar .navbar-text.contact-info a {
     color: #fbf6eb; }
+    .navbar .navbar-text.contact-info a:hover {
+      color: #fbf6eb; }
+    .navbar .navbar-text.contact-info a.email-address {
+      margin-right: 10px; }
   @media (max-width: 767px) {
     .navbar .nav-item {
       font-size: 1.5em;
@@ -511,10 +519,9 @@ body {
   justify-content: center;
   padding: 100px; }
   .calendar .calendar-inner {
-    width: 800px; }
+    width: 100%; }
     @media (max-width: 767px) {
       .calendar .calendar-inner {
-        width: 100%;
         padding: 20px; } }
     .calendar .calendar-inner .calendar-header {
       font-family: "Roboto Slab", serif;
@@ -525,6 +532,9 @@ body {
           width: 100%;
           margin-bottom: 0;
           text-align: center; } }
+
+#ember1190 {
+  padding-top: 80px; }
 
 .press {
   display: flex;
