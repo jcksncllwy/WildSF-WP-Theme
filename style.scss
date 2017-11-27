@@ -345,41 +345,62 @@ a{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+
 	.reviews-inner{
+		padding: 100px;
+		width: 100%;
+	}
+	.yelp-container,.ta-container{
 		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		width: 800px;
-		margin-bottom: 50px;
-		/*Bootstrap SMALL breakpoint*/
-		@media (max-width: 767px){
-			width: 100vw;
-			flex-direction: column;
-		}
+		flex-direction: column;
 	}
 	.yelp-container{
-		width: 375px;
-		@media (max-width: 767px){
-			width: 100vw;
-			padding-bottom: 50px;
+		margin-right: 100px;
+	}
+	.logo-rating-container{
+		height: 180px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 40px;
+	}
+	.review-container{
+		margin: 0 20px;
+
+		font-family: $secondary-font-family;
+		font-size: 2em;
+		font-weight: bold;
+		text-align: center;
+
+		.review{
+			margin-bottom: 20px;
 		}
 	}
-	.ta-container{
-		width: 375px;
-		margin-left: 50px;
-		margin-top: -24px; //fix weird spacing in widget
-
-		@media (max-width: 767px){
-			width: 100vw;
-			margin-left: 0;
-			margin-bottom: -50px;
+	
+	.read-more-button{
+		font-size: 0.5em !important;
+	}
+	
+	.yelp-container .review-container{
+		color: $font-red;
+		.read-more-button{
+			@include button($font-red);
 		}
-		#CDSWIDSSP{
-			width: 350px !important; //override inline widget style
-			@media (max-width: 767px){
-				width: 100vw !important;
-			}
+	}
+	.ta-container .review-container{
+		color: #00a680;
+		.read-more-button{
+			@include button(#00a680);
 		}
+	}
+	
+	.logo{
+		max-height: 120px;
+		margin-bottom: 20px;		
+	}
+	.rating{
+		width: 100%;
+		max-width: 260px;
 	}
 }
 
@@ -448,6 +469,10 @@ a{
 			img{
 				max-width: 100%;
 				max-height: 100%;
+			}
+			transition: all 0.3s ease;
+			:hover{
+				transform: scale(1.2);
 			}
 		}
 	}	

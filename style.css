@@ -505,36 +505,67 @@ body {
   flex-direction: row;
   justify-content: center; }
   .reviews .reviews-inner {
+    padding: 100px;
+    width: 100%; }
+  .reviews .yelp-container, .reviews .ta-container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 800px;
-    margin-bottom: 50px;
-    /*Bootstrap SMALL breakpoint*/ }
-    @media (max-width: 767px) {
-      .reviews .reviews-inner {
-        width: 100vw;
-        flex-direction: column; } }
+    flex-direction: column; }
   .reviews .yelp-container {
-    width: 375px; }
-    @media (max-width: 767px) {
-      .reviews .yelp-container {
-        width: 100vw;
-        padding-bottom: 50px; } }
-  .reviews .ta-container {
-    width: 375px;
-    margin-left: 50px;
-    margin-top: -24px; }
-    @media (max-width: 767px) {
-      .reviews .ta-container {
-        width: 100vw;
-        margin-left: 0;
-        margin-bottom: -50px; } }
-    .reviews .ta-container #CDSWIDSSP {
-      width: 350px !important; }
-      @media (max-width: 767px) {
-        .reviews .ta-container #CDSWIDSSP {
-          width: 100vw !important; } }
+    margin-right: 100px; }
+  .reviews .logo-rating-container {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px; }
+  .reviews .review-container {
+    margin: 0 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center; }
+    .reviews .review-container .review {
+      margin-bottom: 20px; }
+  .reviews .read-more-button {
+    font-size: 0.5em !important; }
+  .reviews .yelp-container .review-container {
+    color: #bf5246; }
+    .reviews .yelp-container .review-container .read-more-button {
+      padding: 10px 20px;
+      border: 5px solid #bf5246;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      font-weight: 700;
+      cursor: pointer;
+      color: #bf5246; }
+      .reviews .yelp-container .review-container .read-more-button:hover {
+        background-color: #bf5246;
+        color: #fbf6eb;
+        text-decoration: none; }
+  .reviews .ta-container .review-container {
+    color: #00a680; }
+    .reviews .ta-container .review-container .read-more-button {
+      padding: 10px 20px;
+      border: 5px solid #00a680;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      font-weight: 700;
+      cursor: pointer;
+      color: #00a680; }
+      .reviews .ta-container .review-container .read-more-button:hover {
+        background-color: #00a680;
+        color: #fbf6eb;
+        text-decoration: none; }
+  .reviews .logo {
+    max-height: 120px;
+    margin-bottom: 20px; }
+  .reviews .rating {
+    width: 100%;
+    max-width: 260px; }
 
 .calendar {
   display: flex;
@@ -583,7 +614,8 @@ body {
     .social .social-icons .social-icon {
       width: 100px;
       height: 100px;
-      margin-right: 50px; }
+      margin-right: 50px;
+      transition: all 0.3s ease; }
       @media (max-width: 767px) {
         .social .social-icons .social-icon {
           margin-right: 10px; } }
@@ -592,6 +624,8 @@ body {
       .social .social-icons .social-icon img {
         max-width: 100%;
         max-height: 100%; }
+      .social .social-icons .social-icon :hover {
+        transform: scale(1.2); }
 
 .footer {
   width: 100%;
