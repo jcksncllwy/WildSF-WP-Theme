@@ -409,11 +409,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    .tour .tour-info.left {
+      padding: 0 50px 0 100px; }
+    .tour .tour-info.right {
+      padding: 0 100px 0 50px; }
     .tour .tour-info .tour-info-inner {
       width: 500px;
       max-width: 100%;
       max-height: 100%;
-      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -450,33 +453,52 @@ body {
 
 .faq .faq-inner {
   /* Info will be placed with it's right-most boundary against the centerline of the screen */
-  width: 800px;
-  margin-left: calc((100vw/2) - 400px );
-  padding: 100px 0; }
+  width: 100%;
+  background-color: #ee6552;
+  color: #fbf6eb; }
   @media (max-width: 767px) {
     .faq .faq-inner {
       width: 100vw;
       margin-left: 0;
       padding: 100px 20px; } }
+.faq .faq-content {
+  padding: 100px !important; }
 .faq .header {
-  mix-blend-mode: darken;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+  font-size: 2.5em;
+  font-weight: bold; }
+.faq .faq-items {
   margin-bottom: 50px; }
 .faq .faq-item {
   margin-bottom: 20px; }
   .faq .faq-item .faq-item-question {
     font-family: "Roboto Slab", serif;
-    font-size: 24px;
-    font-weight: bold; }
-    .faq .faq-item .faq-item-question a {
-      color: #000014; }
-      .faq .faq-item .faq-item-question a :hover {
-        color: #000014;
-        text-decoration: none; }
+    font-weight: 300;
+    font-size: 2em; }
   .faq .faq-item .faq-item-answer {
     font-family: "Roboto", sans-serif;
-    font-size: 16px; }
-.faq .faq-read-more {
-  text-align: center; }
+    font-size: 1em; }
+    .faq .faq-item .faq-item-answer a {
+      color: #fbf6eb;
+      font-weight: 700; }
+      .faq .faq-item .faq-item-answer a:hover {
+        color: #fbf6eb; }
+.faq .read-more-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 5px solid #fbf6eb;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fbf6eb; }
+  .faq .read-more-button:hover {
+    background-color: #fbf6eb;
+    color: #bf5246;
+    text-decoration: none; }
 
 .reviews {
   display: flex;
@@ -532,9 +554,6 @@ body {
           width: 100%;
           margin-bottom: 0;
           text-align: center; } }
-
-#ember1190 {
-  padding-top: 80px; }
 
 .press {
   display: flex;

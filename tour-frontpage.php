@@ -40,7 +40,7 @@
 	}
 	?>
 
-	<div class="tour-info col-5 <?= $tour_info_display_class ?>">
+	<div class="tour-info col-5 <?= $left_or_right ?>">
 		<div class="tour-info-inner">
 			<div class="tour-header" id="tour-<?= the_ID() ?>-header">
 				<div class="tour-title"><?= get_field('frontpage_title') ?></div>

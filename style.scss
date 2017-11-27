@@ -237,12 +237,18 @@ a{
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		&.left{
+			padding: 0 50px 0 100px;
+		}
+		&.right{
+			padding: 0 100px 0 50px;
+		}
+		
 
 		.tour-info-inner{
 			width: 500px;
 			max-width: 100%;
 			max-height: 100%;
-			padding: 20px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -279,18 +285,31 @@ a{
 
 	.faq-inner{
 		/* Info will be placed with it's right-most boundary against the centerline of the screen */
-		width: 800px;
-		margin-left: calc((100vw/2) - 400px );
-		padding: 100px 0;
+		width: 100%;		
 		@media (max-width: 767px){
 			width: 100vw;
 			margin-left: 0;
 			padding: 100px 20px;
 		}
+
+		background-color: $primary-red;
+		color: $primary-white;
+	}
+
+
+	.faq-content{
+		padding: 100px !important;
 	}
 
 	.header{
-		mix-blend-mode: darken;
+		margin-bottom: 20px;
+		font-family: $primary-font-family;
+		font-size: 2.5em;
+		font-weight: bold;
+	}
+
+
+	.faq-items{
 		margin-bottom: 50px;
 	}
 
@@ -299,25 +318,26 @@ a{
 
 		.faq-item-question{
 			font-family: $primary-font-family;
-			font-size: 24px;
-			font-weight: bold;
-			a{
-				color: $font-black;
-				:hover{
-					color: $font-black;
-					text-decoration: none;
-				}
-			}
+			font-weight: 300;
+			font-size: 2em;
 
 		}
 		.faq-item-answer{
 			font-family: $secondary-font-family;
-			font-size: 16px;
+			font-size: 1em;
+			a{
+				color: $primary-white;
+				font-weight: 700;
+				&:hover{
+					color: $primary-white;
+				}
+			}
 		}
 	}
 
-	.faq-read-more{
-		text-align: center;
+	.read-more-button{
+		margin-top: 20px;
+		@include button($primary-white, $font-red)
 	}
 }
 
@@ -385,11 +405,6 @@ a{
 			}
 		}
 	}
-}
-
-//special fix for peek's embedded widget
-#ember1190{
-	padding-top: $nav-height; 
 }
 
 .press{

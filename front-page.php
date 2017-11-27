@@ -66,9 +66,7 @@
 
 	get_template_part('calendar', 'frontpage');
 
-	$faq_limit = 3;
-	$collapsed = false;
-	include(locate_template('faq-partial.php'));
+	get_template_part('faq','frontpage');
 
 	get_template_part('reviews', 'frontpage');
 
