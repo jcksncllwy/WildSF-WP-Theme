@@ -407,69 +407,6 @@ a{
 	}
 }
 
-.press{
-	display: flex;
-	justify-content: center;
-	padding: 50px 0;
-
-	.press-inner{
-		width: 800px;
-	}
-
-	.press-header{
-		font-family: $primary-font-family;
-		color: $font-blue-grey;
-		font-size: 24px;
-		margin: 50px 0;
-		text-align: center;
-	}
-
-	.press-item{
-		float: left;
-
-		width: 350px;
-		margin-bottom: 50px;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		&:nth-child(even){
-			float: right;
-		}
-
-		@media (max-width: 767px){
-			float: none;
-			margin: auto;
-			padding-bottom: 20px;
-			&:nth-child(even){
-				float: none;
-			}
-		}
-
-		.logo {
-			flex-shrink: 0;
-			height: 100px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			filter: saturate(0%) contrast(500%);
-		}
-
-		hr{
-			border-top: 2px solid rgba(0,0,0,0.15);
-			width: 25%;
-		}
-
-		.quote{
-			font-size: 18px;
-			color: $font-blue-grey;
-			font-family: $primary-font-family;
-			text-align: center;
-		}
-		
-	}
-}
-
 .social{
 	height: 500px;
 	display: flex;
