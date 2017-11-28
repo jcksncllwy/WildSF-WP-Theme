@@ -34,13 +34,13 @@
 	<?php
 	if($left_or_right=="right"){
 	?>
-	<div class="tour-image col">
+	<div class="tour-image col-md-7">
 	</div>
 	<?php
 	}
 	?>
 
-	<div class="tour-info col-5 <?= $left_or_right ?>">
+	<div class="tour-info col-md-5 <?= $left_or_right ?>">
 		<div class="tour-info-inner">
 			<div class="tour-header" id="tour-<?= the_ID() ?>-header">
 				<div class="tour-title"><?= get_field('frontpage_title') ?></div>
@@ -56,7 +56,7 @@
 	<?php
 	if($left_or_right=="left"){
 	?>
-	<div class="tour-image col">
+	<div class="tour-image col-md-7">
 	</div>
 	<?php
 	}
