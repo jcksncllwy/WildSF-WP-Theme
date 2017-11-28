@@ -2,13 +2,14 @@
 $private_tours_page = get_page_by_title("Private Tours");
 $private_tours_url = get_permalink( $private_tours_page );
 $frontpage = get_page_by_title('frontpage');
-$image_id = get_field('splash_logo', $frontpage->ID);
-$splash_logo_image_url = wp_get_attachment_image_url($image_id, 'full');
+$logo_image_url = wp_get_attachment_image_url(
+	get_field('navbar_logo', $frontpage->ID), 
+	'full');
 ?>
 
 <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
 	<a class="navbar-brand" href="#">
-		<img src="<?= $splash_logo_image_url ?>" height="30" alt="">
+		<img src="<?= $logo_image_url ?>">
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
