@@ -358,6 +358,9 @@ body {
   transform: translate(50vw, 35vh); }
   .splash-logo img {
     transform: translate(-50%, -50%); }
+    @media (max-width: 767px) {
+      .splash-logo img {
+        width: 80vw; } }
 
 .section {
   display: flex;
