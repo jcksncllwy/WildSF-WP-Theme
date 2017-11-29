@@ -555,6 +555,9 @@ body {
   font-size: 10em;
   display: flex;
   justify-content: space-around; }
+  @media (max-width: 767px) {
+    .faq .header {
+      font-size: 6em; } }
   .faq .header .color-blue {
     color: #6998a8; }
   .faq .header .color-yellow {
