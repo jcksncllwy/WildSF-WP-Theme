@@ -19,9 +19,9 @@
 </style>
 <div class="faq">
 	<div class="faq-inner row no-gutters">
-		<div class="col-7 faq-content">
+		<div class="col-md-7 faq-content">
 			<h1 class="header nav-target" id="faq-nav-target">
-				<span class="drop-cap">F</span>requently <span class="drop-cap">A</span>sked <span class="drop-cap">Q</span>uestions
+				<span class="drop-cap">F</span><span class="drop-cap">A</span><span class="drop-cap">Q</span>
 			</h1>
 			
 			<div class="faq-items">
@@ -57,7 +57,7 @@
 			}
 			?>
 		</div>
-		<div class="col bg-image">
+		<div class="col-md bg-image">
 			
 		</div>
 	</div>

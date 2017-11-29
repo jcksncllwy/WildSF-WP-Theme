@@ -12,17 +12,19 @@
 		);
 ?>
 <div class="section quote">
-	<div class="logo">
-		<img src="<?= $logo_url ?>" />
-	</div>
-	<hr />
+	<img class="open-quote quote-img" src="<?= $open_quote_url ?>" />
+	
 	<div class="quote-container">
-	<img class="open-quote" src="<?= $open_quote_url ?>" />
-	<div class="quote">
-		<?= $quote ?>
+		<div class="quote">
+			<img class="close-quote quote-img mobile" src="<?= $close_quote_url ?>" />
+			<?= $quote ?>
+		</div>
+		<div class="logo">
+			<img src="<?= $logo_url ?>" />
+		</div>
 	</div>
-	<img class="close-quote" src="<?= $close_quote_url ?>" />
-	</div>
+	
+	<img class="close-quote quote-img" src="<?= $close_quote_url ?>" />
 </div>
 <?php
 	}

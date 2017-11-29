@@ -144,10 +144,16 @@ $splash-height: 70vh;
 	
 	.splash-background{
 		width: 100%;
+		height: 100%;
 		transform: translateZ(0);
 		img{
 			width: 100%;
+			@media (max-width: 767px){
+				width: auto;
+				height: 100%;
+			}
 		}
+		
 	}
 }
 .splash-logo{
@@ -189,6 +195,10 @@ $splash-height: 70vh;
 	justify-content: center;
 	align-items: center;
 	padding: 75px;
+	@media (max-width: 767px){
+		padding: 20px;
+		text-align: center;
+	}
 
 	background-color: $primary-white;
 	font-family: $primary-font-family;
@@ -204,7 +214,7 @@ $splash-height: 70vh;
 
 	&.cta{
 		color: $font-red;
-		.explore-button{
+		.book-button{
 			margin-top: 50px;
 			@include button($font-red);
 		}
@@ -212,29 +222,70 @@ $splash-height: 70vh;
 
 	&.quote{
 		color: $primary-blue;
-		padding-bottom: 120px;
+		padding: 60px;
+		flex-direction: row;
+		justify-content: space-around;
+		position: relative;
+		@media (max-width: 767px){
+			padding: 40px 20px;
+		}
+
+		.quote-img{
+				mix-blend-mode: color-burn;
+				filter: opacity(25%);			
+				height: 5em;
+				&.mobile{
+					display:none;
+				}
+				@media (max-width: 767px){
+					display: none;
+					&.mobile{
+						display: block;
+						height: 3em;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%,-50%);
+					}
+					
+				}
+			}
+
 		.logo{
+			width: 70%;
+			display: flex;
+			justify-content: center;
 			padding: 20px 50px;
-			border-bottom: 2px solid transparentize($primary-blue, 0.5);
+			margin-top: 20px;
+			border-top: 2px solid transparentize($primary-blue, 0.5);
+			@media (max-width: 767px){
+				width: 80%;
+			}
 		}
 		.quote-container{
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			align-items: center;
+			justify-content: center;
+			position: relative;
+			@media (max-width: 767px){
+				flex-direction: column;
+			}
 
 			.quote{
-				font-family: $secondary-font-family;
+				font-family: $primary-font-family;
 				font-style: italic;
-				font-weight: 500;
+				font-weight: 300;
 				font-size: 2em;
 				text-align: center;
-				width: 50%;
+				width: 100%;
+				position: relative;
+				background-color: $primary-white;
+				@media (max-width: 767px){
+					z-index: 999;
+				}
 			}
-			img{
-				mix-blend-mode: color-burn;
-				filter: opacity(25%);				
-				height: 5em;
-			}
+			
 		}
 	}
 }
@@ -246,6 +297,12 @@ $splash-height: 70vh;
 	color: $primary-white;
 	font-family: $primary-font-family;
 	padding: 0;
+
+	@media (max-width: 767px){
+		min-height: 0;
+		position: relative;
+		height: fit-content;
+	}
 	&.row{
 		margin: 0;
 	}
@@ -256,14 +313,13 @@ $splash-height: 70vh;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		&.left{
-			padding: 0 50px 0 100px;
-		}
-		&.right{
-			padding: 0 100px 0 50px;
+		padding: 0 50px 0 100px;
+
+		@media (max-width: 767px){
+			height: auto;
+			padding: 40px 20px;	
 		}
 		
-
 		.tour-info-inner{
 			width: 500px;
 			max-width: 100%;
@@ -272,17 +328,28 @@ $splash-height: 70vh;
 			flex-direction: column;
 			justify-content: center;
 			align-items: flex-start;
+			@media (max-width: 767px){
+				width: auto;
+			}
 		}
 
 		.tour-title{
 			font-size: 3em;
 			font-weight: bold;
 			line-height: 1em;
+			@media (max-width: 767px){
+				font-size: 2em;
+				min-height: 0;
+			}
 		}
 		.tour-subtitle{
 			font-weight: 300;
 			font-size: 2em;
 			line-height: 1em;
+			@media (max-width: 767px){
+				font-size: 1.2em;
+				min-height: 0;
+			}
 		}
 		.tour-summary{
 			margin-top: 20px;
@@ -290,12 +357,23 @@ $splash-height: 70vh;
 			@media (max-width: 767px){
 				display: none;
 			}	
-		}
+		}		
 		.learn-more-button{
 			margin-top: 50px;
 			@include button($primary-white, $font-black)
 		}
-
+	}
+	.tour-image{
+		@media (max-width: 767px){
+			display: none;
+		}
+	}
+	.tour-image.mobile{
+		display: none;
+		@media (max-width: 767px){
+			display: block;
+			height: 400px;
+		}
 	}
 	
 }
@@ -318,13 +396,26 @@ $splash-height: 70vh;
 
 	.faq-content{
 		padding: 100px !important;
+		@media (max-width: 767px){
+			padding: 0 !important;
+		}
 	}
 
 	.header{
 		margin-bottom: 20px;
-		font-family: $primary-font-family;
-		font-size: 2.5em;
-		font-weight: bold;
+		font-family: "Monoton";
+		font-size: 10em;
+		display: flex;
+		justify-content: space-around;
+		.color-blue{
+			color: lighten($primary-blue,20%);
+		}
+		.color-yellow{
+			color: $primary-yellow;
+		}
+		.color-green{
+			color: $primary-green;
+		}
 	}
 
 
@@ -356,7 +447,13 @@ $splash-height: 70vh;
 
 	.read-more-button{
 		margin-top: 20px;
-		@include button($primary-white, $font-red)
+		@include button($primary-white, $font-red);
+	}
+
+	.bg-image{
+		@media (max-width: 767px){
+			display: none;
+		}
 	}
 }
 
@@ -368,6 +465,9 @@ $splash-height: 70vh;
 	.reviews-inner{
 		padding: 100px;
 		width: 100%;
+		@media (max-width: 767px){
+			padding: 20px 20px 40px;
+		}
 	}
 	.yelp-container,.ta-container{
 		display: flex;
@@ -375,6 +475,12 @@ $splash-height: 70vh;
 	}
 	.yelp-container{
 		margin-right: 100px;
+		@media (max-width: 767px){
+			margin-right: 0;
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+			border-bottom: 2px solid transparentize($primary-blue,0.2);
+		}
 	}
 	.logo-rating-container{
 		height: 180px;
@@ -385,6 +491,9 @@ $splash-height: 70vh;
 	}
 	.review-container{
 		margin: 0 20px;
+		@media (max-width: 767px){
+			margin: 0;
+		}
 
 		font-family: $secondary-font-family;
 		font-size: 2em;
@@ -427,11 +536,14 @@ $splash-height: 70vh;
 	display: flex;
 	justify-content: center;
 	padding: 100px;
+	@media (max-width: 767px){
+		padding: 40px 0;
+	}
 
 	.calendar-inner{
 		width: 100%;
 		@media (max-width: 767px){
-			padding: 20px;
+			padding: 0;
 		}
 
 		.calendar-header{

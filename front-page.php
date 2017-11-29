@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Roboto+Slab:100,300,400,700|Bitter|Crete+Round" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Roboto+Slab:100,300,400,700|Bitter|Crete+Round|Monoton" rel="stylesheet">
 	<?php get_template_part('dynamic-css') ?>
 	<link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
 

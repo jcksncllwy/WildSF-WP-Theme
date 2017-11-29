@@ -4,14 +4,8 @@
 	$left_or_right = get_field('left_or_right');
 ?>
 <style type="text/css" class="tour-frontpage-css">
-#tour-<?= the_ID() ?>.left .tour-image{
+#tour-<?= the_ID() ?> .tour-image{
 	background: linear-gradient(to right, <?= $tour_color ?> 0%,rgba(0,0,0,0) 15%,rgba(0,0,0,0) 100%), url(<?= $tour_background_image_url ?>);
-	background-position: center;
-	background-size:cover;
-	background-repeat:no-repeat;
-}
-#tour-<?= the_ID() ?>.right .tour-image{
-	background: linear-gradient(to left, <?= $tour_color ?> 0%,rgba(0,0,0,0) 15%,rgba(0,0,0,0) 100%), url(<?= $tour_background_image_url ?>);
 	background-position: center;
 	background-size:cover;
 	background-repeat:no-repeat;
@@ -29,18 +23,12 @@
 }
 </style>
 
-<div class="row tour nav-target <?= $left_or_right ?>" id="tour-<?= the_ID() ?>">
+<div class="row tour nav-target" id="tour-<?= the_ID() ?>">
 
-	<?php
-	if($left_or_right=="right"){
-	?>
-	<div class="tour-image col-md-7">
+	<div class="tour-image col-md-7 mobile">
 	</div>
-	<?php
-	}
-	?>
 
-	<div class="tour-info col-md-5 <?= $left_or_right ?>">
+	<div class="tour-info col-md-5">
 		<div class="tour-info-inner">
 			<div class="tour-header" id="tour-<?= the_ID() ?>-header">
 				<div class="tour-title"><?= get_field('frontpage_title') ?></div>
@@ -53,16 +41,8 @@
 		</div>
 	</div>
 	
-	<?php
-	if($left_or_right=="left"){
-	?>
 	<div class="tour-image col-md-7">
 	</div>
-	<?php
-	}
-	?>
-
-
 	
 </div>
 
