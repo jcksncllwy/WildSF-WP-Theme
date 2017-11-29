@@ -334,7 +334,6 @@ body {
   background-attachment: fixed; }
 
 .splash {
-  perspective: 1px;
   width: 100vw;
   height: 70vh;
   overflow-y: auto; }
