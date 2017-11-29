@@ -37,7 +37,7 @@
 			
 			<div class="tour-summary"><?= get_field('frontpage_summary') ?></div>
 
-			<a class="learn-more-button">Learn More</a>
+			<a href="<?= get_permalink() ?>" class="learn-more-button">Learn More</a>
 		</div>
 	</div>
 	

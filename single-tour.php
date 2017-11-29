@@ -168,7 +168,7 @@
 			<hr class="dotted-line" />
 			<div class="other-tours-container">
 				<div class="other-tours-inner">
-					<div class="other-tours-header">Checkout our other awesome tours!</div>
+					<div class="other-tours-header">Check out our other awesome tours!</div>
 					<?php
 					while( have_rows('other_tours',$this_tour_id) ): the_row();
 						$tour = get_sub_field('tour')
