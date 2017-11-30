@@ -9,7 +9,8 @@
 	<div class="splash-background">
 		<img src="<?= $splash_background_image_url ?>">
 	</div>
+	<div class="splash-logo">
+		<img src=" <?= $splash_logo_image_url ?> ">
+	</div>
 </div>
-<div class="splash-logo">
-	<img src=" <?= $splash_logo_image_url ?> ">
-</div>
+

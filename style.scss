@@ -137,8 +137,11 @@ a{
 $splash-height: 70vh;
 .splash{
 	width: 100vw;
-	height: $splash-height;
+	height: 70vh;
 	overflow-y: auto;
+	@media (max-width: 767px){
+		height: 500px;
+	}
 	
 	.splash-background{
 		width: 100%;
@@ -153,21 +156,22 @@ $splash-height: 70vh;
 		}
 		
 	}
+
+	.splash-logo{
+		width:0;
+		height:0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		img{
+			transform:translate(-50%, -100%);
+			@media (max-width: 767px){
+				width: 80vw;
+			}
+		}	
+	}
 }
-.splash-logo{
-	width:0;
-	height:0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transform: translate(50vw,$splash-height/2);
-	img{
-		transform:translate(-50%, -50%);
-		@media (max-width: 767px){
-			width: 80vw;
-		}
-	}	
-}
+
 
 
 
