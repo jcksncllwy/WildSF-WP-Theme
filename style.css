@@ -357,6 +357,7 @@ body {
     top: 50%;
     left: 50%; }
     .splash .splash-logo img {
+      -webkit-transform: translate(-50%, -100%);
       transform: translate(-50%, -100%); }
       @media (max-width: 767px) {
         .splash .splash-logo img {

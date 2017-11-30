@@ -164,7 +164,8 @@ $splash-height: 70vh;
 		top: 50%;
 		left: 50%;
 		img{
-			transform:translate(-50%, -100%);
+			-webkit-transform: translate(-50%, -100%);
+			transform: translate(-50%, -100%);
 			@media (max-width: 767px){
 				width: 80vw;
 			}
