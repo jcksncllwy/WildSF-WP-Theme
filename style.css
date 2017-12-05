@@ -265,6 +265,16 @@ Tags: tours
 body {
   background-color: #fbf6eb !important; }
 
+@media (max-width: 767px) {
+  .mobile-hidden {
+    display: none; } }
+
+.mobile-only {
+  display: none; }
+  @media (max-width: 767px) {
+    .mobile-only {
+      display: block; } }
+
 .abs-center-x {
   position: absolute;
   left: 50%;
@@ -335,33 +345,19 @@ body {
 
 .splash {
   width: 100vw;
-  height: 70vh;
-  overflow-y: auto; }
+  height: 70vh; }
   @media (max-width: 767px) {
     .splash {
       height: 500px; } }
-  .splash .splash-background {
-    width: 100%;
-    height: 100%;
-    transform: translateZ(0); }
-    .splash .splash-background img {
-      width: 100%; }
-      @media (max-width: 767px) {
-        .splash .splash-background img {
-          width: auto;
-          height: 100%; } }
   .splash .splash-logo {
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%; }
-    .splash .splash-logo img {
-      -webkit-transform: translate(-50%, -100%);
-      transform: translate(-50%, -100%); }
-      @media (max-width: 767px) {
-        .splash .splash-logo img {
-          width: 80vw; } }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; }
+    @media (max-width: 767px) {
+      .splash .splash-logo img {
+        width: 80vw; } }
 
 .section {
   display: flex;
@@ -398,6 +394,10 @@ body {
         background-color: #bf5246;
         color: #fbf6eb;
         text-decoration: none; }
+      @media (max-width: 767px) {
+        .section.cta .book-button {
+          width: 100%;
+          text-align: center; } }
   .section.quote {
     color: #3f616c;
     padding: 60px;
@@ -491,7 +491,8 @@ body {
       align-items: flex-start; }
       @media (max-width: 767px) {
         .tour .tour-info .tour-info-inner {
-          width: auto; } }
+          align-items: center;
+          width: 100%; } }
     .tour .tour-info .tour-title {
       font-size: 3em;
       font-weight: bold;
@@ -499,7 +500,8 @@ body {
       @media (max-width: 767px) {
         .tour .tour-info .tour-title {
           font-size: 2em;
-          min-height: 0; } }
+          min-height: 0;
+          text-align: center; } }
     .tour .tour-info .tour-subtitle {
       font-weight: 300;
       font-size: 2em;
@@ -507,7 +509,8 @@ body {
       @media (max-width: 767px) {
         .tour .tour-info .tour-subtitle {
           font-size: 1.2em;
-          min-height: 0; } }
+          min-height: 0;
+          text-align: center; } }
     .tour .tour-info .tour-summary {
       margin-top: 20px;
       font-family: "Roboto", sans-serif; }
@@ -529,6 +532,15 @@ body {
         background-color: #fbf6eb;
         color: #000014;
         text-decoration: none; }
+      @media (max-width: 767px) {
+        .tour .tour-info .learn-more-button {
+          width: 100%;
+          text-align: center; } }
+      @media (max-width: 767px) {
+        .tour .tour-info .learn-more-button {
+          margin-top: 25px;
+          width: 100%;
+          text-align: center; } }
   @media (max-width: 767px) {
     .tour .tour-image {
       display: none; } }
@@ -600,6 +612,10 @@ body {
     background-color: #fbf6eb;
     color: #bf5246;
     text-decoration: none; }
+  @media (max-width: 767px) {
+    .faq .read-more-button {
+      width: 100%;
+      text-align: center; } }
 @media (max-width: 767px) {
   .faq .bg-image {
     display: none; } }
@@ -660,6 +676,10 @@ body {
         background-color: #bf5246;
         color: #fbf6eb;
         text-decoration: none; }
+      @media (max-width: 767px) {
+        .reviews .yelp-container .review-container .read-more-button {
+          width: 100%;
+          text-align: center; } }
   .reviews .ta-container .review-container {
     color: #00a680; }
     .reviews .ta-container .review-container .read-more-button {
@@ -676,6 +696,10 @@ body {
         background-color: #00a680;
         color: #fbf6eb;
         text-decoration: none; }
+      @media (max-width: 767px) {
+        .reviews .ta-container .review-container .read-more-button {
+          width: 100%;
+          text-align: center; } }
   .reviews .logo {
     max-height: 120px;
     margin-bottom: 20px; }

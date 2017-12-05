@@ -14,8 +14,17 @@ body{
 	background-color: $primary-white !important;
 }
 
-.nav-target{
-	
+.mobile-hidden{
+	@media (max-width: 767px){
+		display: none;
+	}
+}
+
+.mobile-only{
+	display: none;
+	@media (max-width: 767px){
+		display: block;
+	}
 }
 
 a{
@@ -138,34 +147,17 @@ $splash-height: 70vh;
 .splash{
 	width: 100vw;
 	height: 70vh;
-	overflow-y: auto;
 	@media (max-width: 767px){
 		height: 500px;
 	}
 	
-	.splash-background{
+	.splash-logo{
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 		height: 100%;
-		transform: translateZ(0);
 		img{
-			width: 100%;
-			@media (max-width: 767px){
-				width: auto;
-				height: 100%;
-			}
-		}
-		
-	}
-
-	.splash-logo{
-		width:0;
-		height:0;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		img{
-			-webkit-transform: translate(-50%, -100%);
-			transform: translate(-50%, -100%);
 			@media (max-width: 767px){
 				width: 80vw;
 			}
@@ -192,6 +184,11 @@ $splash-height: 70vh;
 		background-color: $color;
 		color: $secondary_color;
 		text-decoration: none;
+	}
+
+	@media (max-width: 767px){
+		width: 100%;
+		text-align: center;
 	}
 }
 
@@ -327,6 +324,7 @@ $splash-height: 70vh;
 			height: auto;
 			padding: 40px 20px;	
 		}
+
 		
 		.tour-info-inner{
 			width: 500px;
@@ -337,7 +335,8 @@ $splash-height: 70vh;
 			justify-content: center;
 			align-items: flex-start;
 			@media (max-width: 767px){
-				width: auto;
+				align-items: center;
+				width: 100%;
 			}
 		}
 
@@ -348,6 +347,7 @@ $splash-height: 70vh;
 			@media (max-width: 767px){
 				font-size: 2em;
 				min-height: 0;
+				text-align: center;				
 			}
 		}
 		.tour-subtitle{
@@ -357,6 +357,7 @@ $splash-height: 70vh;
 			@media (max-width: 767px){
 				font-size: 1.2em;
 				min-height: 0;
+				text-align: center;
 			}
 		}
 		.tour-summary{
@@ -368,7 +369,12 @@ $splash-height: 70vh;
 		}		
 		.learn-more-button{
 			margin-top: 50px;
-			@include button($primary-white, $font-black)
+			@include button($primary-white, $font-black);
+			@media (max-width: 767px){
+				margin-top: 25px;
+				width: 100%;
+				text-align: center;
+			}
 		}
 	}
 	.tour-image{

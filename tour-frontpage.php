@@ -14,6 +14,9 @@
 	background-color: <?= $tour_color ?> ;
 }
 @media (max-width: 767px){
+	#tour-<?= the_ID() ?> .tour-image.mobile{
+		border-top: 10px solid <?= $tour_color ?>;
+	}
 	#tour-<?= the_ID() ?> .tour-image{
 		background: url(<?= $tour_background_image_url ?>);
 		background-position: center;
@@ -31,7 +34,8 @@
 	<div class="tour-info col-md-5">
 		<div class="tour-info-inner">
 			<div class="tour-header" id="tour-<?= the_ID() ?>-header">
-				<div class="tour-title"><?= get_field('frontpage_title') ?></div>
+				<div class="tour-title mobile-hidden"><?= get_field('frontpage_title') ?></div>
+				<div class="tour-title mobile-only"><?= get_field('frontpage_mobile_title') ?></div>
 				<div class="tour-subtitle"><?= get_field('subtitle') ?></div>
 			</div>
 			
