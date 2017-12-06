@@ -43,19 +43,35 @@ a{
 .navbar{
 	height: $nav-height;
 	background-color: transparentize($primary-blue,0.2);
+	padding: 0;
+	@media (max-width: 767px){
+		background-color: $primary-blue;
+		.navbar-collapse{
+			background-color: $primary-blue;
+			padding: 20px;
+		}
+	}
 	font-family: $primary-font-family;
 
 	transition: opacity 0.3s ease;
 	opacity: 1;
 	&.fade-away{
 		opacity: 0;
+		@media (max-width: 767px){
+			opacity: 1;
+		}
 	}
 	&:hover{
 		opacity: 1;
 	}
 
+	.navbar-toggler{
+		margin-right: 0.5rem;
+	}
+
 	.navbar-brand{
 		height: 100%;
+		padding: 1rem 0.5rem;
 		img{
 			height: 100%;
 			max-width: 100%;
@@ -85,6 +101,7 @@ a{
 	}
 
 	.navbar-text.contact-info{
+		margin-right: 20px;
 		a{
 			color: $primary-white;
 			&:hover{
@@ -94,6 +111,12 @@ a{
 			&.email-address{
 				margin-right: 10px;
 			}
+		}
+		@media (max-width: 767px){
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 
@@ -106,10 +129,10 @@ a{
 		.dropdown-menu{
 			.dropdown-item{
 				.title{
-					font-size: 1.5em;
+					font-size: 1.2em;
 				}
 				.subtitle{
-					font-size: 1.2em;
+					font-size: 1em;
 				}
 			}
 		}		

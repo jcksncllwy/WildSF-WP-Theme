@@ -2,9 +2,7 @@
 <html>
 <head>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Roboto+Slab:100,300,400,700|Bitter|Crete+Round|Monoton" rel="stylesheet">
-	<?php get_template_part('dynamic-css') ?>
-	<link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Roboto+Slab:100,300,400,700|Bitter|Crete+Round|Monoton" rel="stylesheet"	
 
 	<!-- BOOTSTRAP -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -34,6 +32,11 @@
 	<!-- Custom UI Scripts -->
 	<script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/ui.js"></script>
 	<!-- /Custom UI Scripts -->
+
+	<!-- Custom CSS -->
+	<?php get_template_part('dynamic-css') ?>
+	<link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
+	<!-- Custom CSS -->
 
 	<meta name="viewport" content="width=device-width">
 
