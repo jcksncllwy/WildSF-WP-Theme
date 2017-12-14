@@ -17,6 +17,29 @@ Tags: tours
 .single-tour strong {
   font-family: "Roboto Slab", serif;
   font-size: 1.1em; }
+.single-tour .book-button {
+  margin-top: 50px;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 5px solid #bf5246;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 700;
+  cursor: pointer;
+  color: #bf5246; }
+  .single-tour .book-button:hover {
+    background-color: #bf5246;
+    color: #fbf6eb;
+    text-decoration: none; }
+  @media (max-width: 767px) {
+    .single-tour .book-button {
+      width: 100%;
+      text-align: center; } }
+  @media (max-width: 767px) {
+    .single-tour .book-button {
+      width: 100%; } }
 .single-tour .cta {
   width: 100%;
   display: flex;
@@ -261,6 +284,30 @@ Tags: tours
       @media (max-width: 767px) {
         .single-tour .other-tours-container .tour-container .tour-info .tour-summary {
           display: none; } }
+      .single-tour .other-tours-container .tour-container .tour-info .learn-more-button {
+        margin-top: 50px;
+        padding: 10px 20px;
+        border: 5px solid #fbf6eb;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: 700;
+        cursor: pointer;
+        color: #fbf6eb; }
+        .single-tour .other-tours-container .tour-container .tour-info .learn-more-button:hover {
+          background-color: #fbf6eb;
+          color: #000014;
+          text-decoration: none; }
+        @media (max-width: 767px) {
+          .single-tour .other-tours-container .tour-container .tour-info .learn-more-button {
+            width: 100%;
+            text-align: center; } }
+        @media (max-width: 767px) {
+          .single-tour .other-tours-container .tour-container .tour-info .learn-more-button {
+            margin-top: 25px;
+            width: 100%;
+            text-align: center; } }
 
 body {
   background-color: #fbf6eb !important; }

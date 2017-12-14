@@ -7,10 +7,11 @@ Tags: tours
 */
 
 @import 'vars';
+@import '_mixins';
 @import 'single-tour';
 
 body{
-	
+
 	background-color: $primary-white !important;
 }
 
@@ -135,7 +136,7 @@ a{
 					font-size: 1em;
 				}
 			}
-		}		
+		}
 	}
 }
 
@@ -173,7 +174,7 @@ $splash-height: 70vh;
 	@media (max-width: 767px){
 		height: 500px;
 	}
-	
+
 	.splash-logo{
 		display: flex;
 		justify-content: center;
@@ -184,34 +185,7 @@ $splash-height: 70vh;
 			@media (max-width: 767px){
 				width: 80vw;
 			}
-		}	
-	}
-}
-
-
-
-
-@mixin button($color, $secondary_color: $primary_white){
-	padding: 10px 20px;
-	border: 5px solid $color;
-	border-radius: 5px;
-	font-family: $secondary-font-family;
-	text-transform: uppercase;
-	font-size: 0.8em;
-	font-weight: 700;
-	cursor: pointer;
-
-	color: $color;
-
-	&:hover{
-		background-color: $color;
-		color: $secondary_color;
-		text-decoration: none;
-	}
-
-	@media (max-width: 767px){
-		width: 100%;
-		text-align: center;
+		}
 	}
 }
 
@@ -228,7 +202,7 @@ $splash-height: 70vh;
 
 	background-color: $primary-white;
 	font-family: $primary-font-family;
-	
+
 	h1{
 		font-size: 2em;
 		font-weight: 700;
@@ -258,7 +232,7 @@ $splash-height: 70vh;
 
 		.quote-img{
 				mix-blend-mode: color-burn;
-				filter: opacity(25%);			
+				filter: opacity(25%);
 				height: 5em;
 				&.mobile{
 					display:none;
@@ -273,7 +247,7 @@ $splash-height: 70vh;
 						left: 50%;
 						transform: translate(-50%,-50%);
 					}
-					
+
 				}
 			}
 
@@ -313,7 +287,7 @@ $splash-height: 70vh;
 					z-index: 999;
 				}
 			}
-			
+
 		}
 	}
 }
@@ -345,10 +319,10 @@ $splash-height: 70vh;
 
 		@media (max-width: 767px){
 			height: auto;
-			padding: 40px 20px;	
+			padding: 40px 20px;
 		}
 
-		
+
 		.tour-info-inner{
 			width: 500px;
 			max-width: 100%;
@@ -370,7 +344,7 @@ $splash-height: 70vh;
 			@media (max-width: 767px){
 				font-size: 2em;
 				min-height: 0;
-				text-align: center;				
+				text-align: center;
 			}
 		}
 		.tour-subtitle{
@@ -388,8 +362,8 @@ $splash-height: 70vh;
 			font-family: $secondary-font-family;
 			@media (max-width: 767px){
 				display: none;
-			}	
-		}		
+			}
+		}
 		.learn-more-button{
 			margin-top: 50px;
 			@include button($primary-white, $font-black);
@@ -412,14 +386,14 @@ $splash-height: 70vh;
 			height: 400px;
 		}
 	}
-	
+
 }
 
 .faq{
 
 	.faq-inner{
 		/* Info will be placed with it's right-most boundary against the centerline of the screen */
-		width: 100%;		
+		width: 100%;
 		@media (max-width: 767px){
 			width: 100vw;
 			margin-left: 0;
@@ -544,11 +518,11 @@ $splash-height: 70vh;
 			margin-bottom: 20px;
 		}
 	}
-	
+
 	.read-more-button{
 		font-size: 0.5em !important;
 	}
-	
+
 	.yelp-container .review-container{
 		color: $font-red;
 		.read-more-button{
@@ -561,10 +535,10 @@ $splash-height: 70vh;
 			@include button(#00a680);
 		}
 	}
-	
+
 	.logo{
 		max-height: 120px;
-		margin-bottom: 20px;		
+		margin-bottom: 20px;
 	}
 	.rating{
 		width: 100%;
@@ -658,7 +632,7 @@ $splash-height: 70vh;
 				transform: scale(1.2);
 			}
 		}
-	}	
+	}
 }
 
 .footer{
@@ -690,12 +664,3 @@ $splash-height: 70vh;
 		}
 	}
 }
-
-
-
-
-
-
-
-
-

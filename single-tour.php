@@ -40,11 +40,11 @@
 	$splash_video_url = get_field('splash_video', $this_tour_id);
 
 	$scroll_helper_image_id = 150;
-	$scroll_helper_image_url = wp_get_attachment_image_src($scroll_helper_image_id, 'full')[0]; 
+	$scroll_helper_image_url = wp_get_attachment_image_src($scroll_helper_image_id, 'full')[0];
 
 	$frontpage = get_page_by_title('frontpage');
 	$cta_background_image_url = wp_get_attachment_image_url(
-		get_field('cta_background_image', $frontpage->ID), 
+		get_field('cta_background_image', $frontpage->ID),
 		'full'
 	);
 
@@ -55,7 +55,7 @@
 	?>
 	<div class="single-tour default-background-image">
 		<div class="single-tour-inner">
-			
+
 			<div class="splash-container">
 				<?php
 				if(!empty($splash_video_url)){
@@ -86,10 +86,10 @@
 					<?= get_field('description', $this_tour_id) ?>
 					<?= get_field('timing', $this_tour_id) ?>
 					<?= get_field('pricing', $this_tour_id) ?>
-					<?= get_template_part('cta', 'book'); ?>
+					<a class="book-button" href="https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/8MW">Book now</a>
 				</div>
 			</div>
-			<?php 
+			<?php
 			$explainer_video = get_field('explainer_video', $this_tour_id);
 			if(!empty($explainer_video)){
 			?>
@@ -97,7 +97,7 @@
 			<div class="explainer-video-container">
 				<iframe src="<?= get_field('explainer_video', $this_tour_id) ?>" frameborder="0" allowfullscreen=""></iframe>
 			</div>
-			<?php 
+			<?php
 			}
 			?>
 			<hr class="dotted-line" />
@@ -105,7 +105,7 @@
 				<div class="wysiwyg-inner">
 				<div class="wysiwyg-header">Highlights</div>
 				<div class="row">
-					<?php 
+					<?php
 					$highlights = get_field('highlights', $this_tour_id);
 					$extra_highlights = get_field('extra_highlights', $this_tour_id);
 					if(!empty($extra_highlights)){
@@ -122,11 +122,11 @@
 						<div class="col-md-12">
 							<?= $highlights ?>
 						</div>
-					<?php 
+					<?php
 					}
 					?>
 				</div>
-				
+
 				</div>
 			</div>
 			<hr class="dotted-line" />
@@ -177,27 +177,27 @@
 						<div class="tour-container">
             				<img class="tour-splash" src="<?= wp_get_attachment_image_url(get_field('frontpage_splash_image',$tour->ID),'full') ?>" />
             				<div class="tour-info">
-            					
-            					<div class="tour-header">
-									<div class="tour-title"><?= $tour->post_title ?></div>
-									<div class="tour-subtitle"><?= get_field('subtitle',$tour->ID) ?></div>
-								</div>
-								
-								<div class="tour-summary"><?= get_field('frontpage_summary',$tour->ID) ?></div>
-								
-								<?php
-								while( have_rows('frontpage_highlights',$tour->ID) ): the_row();
-								$highlight_text = get_sub_field('highlight');
-								?>
-									<div class='tour-sight'>
-										<span>★</span>
-										<?= $highlight_text ?>
-									</div>
-								<?php
-								endwhile;
-								$post = $tour;
-								get_template_part('cta','learn');
-								?>
+
+	          					<div class="tour-header">
+												<div class="tour-title"><?= $tour->post_title ?></div>
+												<div class="tour-subtitle"><?= get_field('subtitle',$tour->ID) ?></div>
+											</div>
+
+											<div class="tour-summary"><?= get_field('frontpage_summary',$tour->ID) ?></div>
+
+											<?php
+											while( have_rows('frontpage_highlights',$tour->ID) ): the_row();
+											$highlight_text = get_sub_field('highlight');
+											?>
+												<div class='tour-sight'>
+													<span>★</span>
+													<?= $highlight_text ?>
+												</div>
+											<?php
+											endwhile;
+											$post = $tour;
+											?>
+											<a href="<?= get_permalink() ?>" class="learn-more-button">Learn More</a>
             				</div>
         				</div>
         				</a>

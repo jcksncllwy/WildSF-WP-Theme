@@ -4,6 +4,15 @@
 		font-size: 1.1em;
 	}
 
+	.book-button{
+		margin-top: 50px;
+		display: inline-block;
+		@include button($font-red);
+		@media (max-width: 767px){
+			width: 100%;
+		}
+	}
+
 	.cta{
 		width: 100%;
 		display: flex;
@@ -215,7 +224,7 @@
 				}
 
 			}
-			
+
 		}
 
 	}
@@ -269,7 +278,7 @@
 			justify-content: center;
 			align-items: center;
 
-			
+
 			border-radius: 10px;
 			margin-bottom: 50px;
 
@@ -281,12 +290,12 @@
 					display: block;
 				}
 			}
-			
+
 			@media (max-width: 767px){
 				border-radius: 0;
 				margin-bottom: 20px;
 			}
-			
+
 			.tour-info{
 				position: absolute;
 				top: 0;
@@ -311,7 +320,7 @@
 				text-shadow: 1px 1px 2px black, -1px -1px 2px black;
 				color: $font-white;
 				.tour-header{
-					font-family: $primary-font-family;					
+					font-family: $primary-font-family;
 					font-weight: bold;
 					.tour-title{
 						font-size: 2em;
@@ -326,9 +335,19 @@
 						display: none;
 					}
 				}
+
+				.learn-more-button{
+					margin-top: 50px;
+					@include button($primary-white, $font-black);
+					@media (max-width: 767px){
+						margin-top: 25px;
+						width: 100%;
+						text-align: center;
+					}
+				}
 			}
 		}
 
 	}
-	
+
 }

@@ -1,0 +1,23 @@
+@mixin button($color, $secondary_color: $primary_white){
+	padding: 10px 20px;
+	border: 5px solid $color;
+	border-radius: 5px;
+	font-family: $secondary-font-family;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-weight: 700;
+	cursor: pointer;
+
+	color: $color;
+
+	&:hover{
+		background-color: $color;
+		color: $secondary_color;
+		text-decoration: none;
+	}
+
+	@media (max-width: 767px){
+		width: 100%;
+		text-align: center;
+	}
+}
