@@ -381,7 +381,8 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center; } }
+        align-items: center;
+        margin-right: 0; } }
   @media (max-width: 767px) {
     .navbar .nav-item {
       font-size: 1.5em;

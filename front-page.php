@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Roboto+Slab:100,300,400,700|Bitter|Crete+Round|Monoton" rel="stylesheet"	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900|Roboto+Slab:100,300,400,700|Bitter|Crete+Round|Monoton" rel="stylesheet"
 
 	<!-- BOOTSTRAP -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -12,7 +12,7 @@
 	<!-- /BOOTSTRAP -->
 
 	<!-- PEEK PRO -->
-	<script type="text/javascript">
+	<!--script type="text/javascript">
 	  (function(config) {
 	    window._peekConfig = config || {};
 	    var idPrefix = 'peek-book-button';
@@ -26,7 +26,20 @@
 	    el.href = basePath + "/widget_button.css?ts="+stamp;
 	    el.rel="stylesheet"; el.type="text/css"; head.appendChild(el);
 	  })({key: '15a8284c-0990-4986-a5b4-1754b0c0b014'});
+	</script-->
+	<script>
+	  (function(idPrefix) {
+	    id = idPrefix+'-js'; if (document.getElementById(id)) return;
+	    var head = document.getElementsByTagName('head')[0];
+	    el = document.createElement('script'); window.peekButton='Book Now'; el.id = id;
+	    var date = new Date; var stamp = date.getMonth()+"-"+date.getDate();
+	    el.src = "https://pirassets.s3.amazonaws.com/assets/widget_button.js?id=5461cec23f30e1993000038f&ts="+stamp;
+	    head.appendChild(el); id = idPrefix+'-css'; el = document.createElement('link'); el.id = id;
+	    el.href = "https://pirassets.s3.amazonaws.com/assets/widget_button.css?id=5461cec23f30e1993000038f&ts="+stamp;
+	    el.rel="stylesheet"; el.type="text/css"; head.appendChild(el);
+	  }('peek-booking-button'));
 	</script>
+
 	<!-- /PEEK PRO -->
 
 	<!-- Custom UI Scripts -->
@@ -42,7 +55,7 @@
 
 </head>
 <body>
-	<?php 
+	<?php
 	get_template_part('nav', 'frontpage');
 	get_template_part('splash');
 	get_template_part('section','cta');
@@ -50,7 +63,7 @@
 	$frontpage = get_page_by_title('frontpage');
 	while( have_rows('press_quotes', $frontpage)): the_row();
 		$logo = wp_get_attachment_image_url(
-			get_sub_field('logo'), 
+			get_sub_field('logo'),
 			'full'
 		);
 		$quote = get_sub_field('quote');
@@ -60,7 +73,7 @@
 	$args = array( 'post_type' => 'tour' );
 	$loop = new WP_Query( $args );
 	$i = 0;
-	while ( $loop->have_posts() ) : $loop->the_post(); 
+	while ( $loop->have_posts() ) : $loop->the_post();
 		include(locate_template('tour-frontpage.php'));
 		$press_quote = $press_quotes[$i];
 		include(locate_template('section-quote.php'));
@@ -76,9 +89,9 @@
 	get_template_part('social', 'frontpage');
 
 	get_template_part('footer');
-	
+
 	?>
-	
+
 
 </body>
 </html>

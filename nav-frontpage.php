@@ -3,7 +3,7 @@ $private_tours_page = get_page_by_title("Private Tours");
 $private_tours_url = get_permalink( $private_tours_page );
 $frontpage = get_page_by_title('frontpage');
 $logo_image_url = wp_get_attachment_image_url(
-	get_field('navbar_logo', $frontpage->ID), 
+	get_field('navbar_logo', $frontpage->ID),
 	'full');
 ?>
 
@@ -25,7 +25,7 @@ $logo_image_url = wp_get_attachment_image_url(
 					<?php
 					$args = array( 'post_type' => 'tour' );
 					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post(); 
+					while ( $loop->have_posts() ) : $loop->the_post();
 					?>
 					<div data-toggle="collapse" data-target=".navbar-collapse.show" >
 						<a class="dropdown-item" href="#tour-<?= the_ID() ?>">
@@ -33,7 +33,7 @@ $logo_image_url = wp_get_attachment_image_url(
 							<span class="subtitle"><?= get_field('subtitle') ?></span>
 						</a>
 					</div>
-					
+
 					<?php endwhile; ?>
 				</div>
 			</li>
@@ -47,7 +47,8 @@ $logo_image_url = wp_get_attachment_image_url(
 				<a class="nav-link" href="#faq-nav-target">FAQ</a>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
-				<a href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" class="nav-link" data-purchase-type="gift-card" data-button-text="Purchase Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Cards</a>
+				<!--a href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" class="nav-link" data-purchase-type="gift-card" data-button-text="Purchase Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Cards</a -->
+				<a class="peek-book-button-flat peek-book-btn-yellow peek-book-button-sm peek-book-icon-gift" href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" data-purchase-type="gift-card" data-button-text="Gift Card" data-partner-gid="5461cec23f30e1993000038f">Wild SF Walking Tours San Francisco</a>
 			</li>
 		</ul>
 		<span class="navbar-text contact-info">
