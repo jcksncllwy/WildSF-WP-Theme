@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$tour_background_image_url = wp_get_attachment_image_url(get_field('frontpage_splash_image'), 'full');
 	$tour_color = get_field('tour_color');
 	$left_or_right = get_field('left_or_right');
@@ -28,35 +28,26 @@
 
 <div class="row tour nav-target" id="tour-<?= the_ID() ?>">
 
-	<div class="tour-image col-md-7 mobile">
-	</div>
+	<a href="<?= get_permalink() ?>" class="tour-image col-md-7 mobile">
+	</a>
 
 	<div class="tour-info col-md-5">
 		<div class="tour-info-inner">
 			<div class="tour-header" id="tour-<?= the_ID() ?>-header">
-				<div class="tour-title mobile-hidden"><?= get_field('frontpage_title') ?></div>
-				<div class="tour-title mobile-only"><?= get_field('frontpage_mobile_title') ?></div>
-				<div class="tour-subtitle"><?= get_field('subtitle') ?></div>
+				<a href="<?= get_permalink() ?>">
+					<div class="tour-title mobile-hidden"><?= get_field('frontpage_title') ?></div>
+					<div class="tour-title mobile-only"><?= get_field('frontpage_mobile_title') ?></div>
+					<div class="tour-subtitle"><?= get_field('subtitle') ?></div>
+				</a>
 			</div>
-			
+
 			<div class="tour-summary"><?= get_field('frontpage_summary') ?></div>
 
 			<a href="<?= get_permalink() ?>" class="learn-more-button">Learn More</a>
 		</div>
 	</div>
-	
+
 	<div class="tour-image col-md-7">
 	</div>
-	
+
 </div>
-
-
-
-
-
-
-
-
-
-
-

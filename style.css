@@ -561,6 +561,10 @@ body {
         .tour .tour-info .tour-info-inner {
           align-items: center;
           width: 100%; } }
+    .tour .tour-info a {
+      color: #fbf6eb; }
+      .tour .tour-info a:hover {
+        color: #fbf6eb; }
     .tour .tour-info .tour-title {
       font-size: 3em;
       font-weight: bold;

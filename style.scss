@@ -337,6 +337,13 @@ $splash-height: 70vh;
 			}
 		}
 
+		a{
+			color: $primary-white;
+			&:hover{
+				color: $primary-white;
+			}
+		}
+
 		.tour-title{
 			font-size: 3em;
 			font-weight: bold;
