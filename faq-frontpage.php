@@ -23,11 +23,11 @@
 			<h1 class="header nav-target" id="faq-nav-target">
 				<span class="drop-cap">F</span><span class="drop-cap">A</span><span class="drop-cap">Q</span>
 			</h1>
-			
+
 			<div class="faq-items">
-				<?php	
+				<?php
 				$count = 0;
-				while ( have_rows('qa',$faq_page) ) : the_row(); 
+				while ( have_rows('qa',$faq_page) ) : the_row();
 					$q = get_sub_field('question');
 					$a = get_sub_field('answer');
 					$count = $count+1;
@@ -45,11 +45,11 @@
 				    </div>
 				  </div>
 				<?php
-				endwhile; 
+				endwhile;
 				?>
 			</div>
 
-			<?php 
+			<?php
 			if(!empty($faq_limit)){
 			?>
 			<a class="read-more-button" href="<?= $faq_url ?>">Read More</a>
@@ -58,7 +58,7 @@
 			?>
 		</div>
 		<div class="col-md bg-image">
-			
+
 		</div>
 	</div>
 </div>
