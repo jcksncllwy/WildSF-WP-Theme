@@ -52,3 +52,5 @@ New code needed to get the gift cards button to render correctly
 <!-- Custom CSS -->
 <link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
 <!-- Custom CSS -->
+
+<meta name="viewport" content="width=device-width">
