@@ -53,7 +53,7 @@
 	<?php
 		get_template_part('nav', 'normal');
 	?>
-	<div class="single-tour default-background-image">
+	<div class="single-tour">
 		<div class="single-tour-inner">
 
 			<div class="splash-container">

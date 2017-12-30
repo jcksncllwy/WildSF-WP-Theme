@@ -25,14 +25,14 @@
 		get_template_part('nav', 'normal');
 
 	?>
-	<div class="page-container default-background-image">
+	<div class="page-container">
 		<div class="page-inner">
 		<?php
 			if ( have_posts() ){
 				while ( have_posts() ) : the_post();
 					the_content();
 				endwhile;
-			} 
+			}
 		?>
 		</div>
 	</div>
