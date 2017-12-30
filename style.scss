@@ -40,9 +40,11 @@ a{
     transform: translateX(-50%);
 }
 
+
+
 .navbar{
 	height: $nav-height;
-	background-color: transparentize($primary-blue,0.2);
+	background-color: $nav-color;
 	padding: 0;
 	@media (max-width: 767px){
 		background-color: $primary-blue;
@@ -81,12 +83,11 @@ a{
 	.nav-item{
 		font-size: 1.2em;
 		margin-right: 10px;
-		a:hover{
-			color: $primary-white !important;
-		}
 	}
 
 	.dropdown-menu{
+		margin-top: 20px;
+		background-color: $nav-color;
 		.dropdown-item{
 			display: flex;
 			flex-direction: column;

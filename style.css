@@ -64,15 +64,16 @@ body {
   .navbar .nav-item {
     font-size: 1.2em;
     margin-right: 10px; }
-    .navbar .nav-item a:hover {
-      color: #fbf6eb !important; }
-  .navbar .dropdown-menu .dropdown-item {
-    display: flex;
-    flex-direction: column; }
-    .navbar .dropdown-menu .dropdown-item .title {
-      font-size: 1.2em; }
-    .navbar .dropdown-menu .dropdown-item .subtitle {
-      font-family: "Roboto", sans-serif; }
+  .navbar .dropdown-menu {
+    margin-top: 20px;
+    background-color: rgba(63, 97, 108, 0.8); }
+    .navbar .dropdown-menu .dropdown-item {
+      display: flex;
+      flex-direction: column; }
+      .navbar .dropdown-menu .dropdown-item .title {
+        font-size: 1.2em; }
+      .navbar .dropdown-menu .dropdown-item .subtitle {
+        font-family: "Roboto", sans-serif; }
   .navbar .navbar-text.contact-info {
     margin-right: 20px; }
     .navbar .navbar-text.contact-info a {

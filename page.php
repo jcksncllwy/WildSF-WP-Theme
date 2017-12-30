@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php
-		get_template_part('nav', 'normal');
+		get_template_part('navbar');
 
 	?>
 	<div class="page-container">

@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php
-	get_template_part('nav', 'frontpage');
+	get_template_part('navbar');
 	get_template_part('splash');
 	get_template_part('section','cta');
 

@@ -7,7 +7,7 @@
 </head>
 <body class="faq-page page-container">
 	<?php
-		get_template_part('nav', 'normal');
+		get_template_part('navbar');
 		$collapsed = true;
 		$faq_page = get_page_by_title('FAQ');
 		$faq_url = get_permalink( $faq_page );
