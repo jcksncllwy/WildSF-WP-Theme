@@ -6,13 +6,11 @@ Version: 0.0.1
 Tags: tours
 */
 
+//Global vars
 @import 'vars';
 @import '_mixins';
-@import 'single-tour';
-@import 'page-faq';
 
 body{
-
 	background-color: $primary-white !important;
 }
 
@@ -673,3 +671,7 @@ $splash-height: 70vh;
 		}
 	}
 }
+
+//Individual styles should override frontpage defaults
+@import 'single-tour';
+@import 'page-faq';

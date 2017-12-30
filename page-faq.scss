@@ -1,0 +1,15 @@
+body.faq-page{
+  background-color: $primary-red !important;
+  color: $primary-white;
+
+  .faq{
+    max-width: 800px;
+  }
+
+  .faq-item{
+    a{
+      color: $primary-white;
+    }
+  }
+
+}

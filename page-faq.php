@@ -5,39 +5,19 @@
 	<?= get_header('common') ?>
 
 </head>
-<body class="faq-page">
+<body class="faq-page page-container">
 	<?php
 		get_template_part('nav', 'normal');
 		$collapsed = true;
 		$faq_page = get_page_by_title('FAQ');
 		$faq_url = get_permalink( $faq_page );
-		$faq_header_image_url = wp_get_attachment_image_url(
-			get_field('header_image', $faq_page),
-			'full'
-		);
-		$faq_background_image_url = wp_get_attachment_image_url(
-			get_field('background_image', $faq_page),
-			'full'
-		);
 	?>
-	<style type="text/css" class="faq-css">
-	.faq{
-		background:
-			linear-gradient(to bottom, rgba(255,255,255,0) -25%,   rgba(255,255,255,1) 100%),
-			url(<?= $faq_background_image_url ?>),
-			linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 100%);
-		background-position: center top, center top, center top;
-		background-size: cover, cover, cover;
-		background-repeat: no-repeat, no-repeat, no-repeat;
-	}
-	</style>
 
 	<div class="faq">
 		<div class="faq-inner">
 			<div class="header">
-
+				<span class="drop-cap">F</span><span class="drop-cap">A</span><span class="drop-cap">Q</span>
 			</div>
-
 
 			<div id="faq-accordion" role="tablist" aria-multiselectable="true">
 				<?php
