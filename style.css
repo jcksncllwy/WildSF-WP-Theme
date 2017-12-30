@@ -70,10 +70,13 @@ body {
     .navbar .dropdown-menu .dropdown-item {
       display: flex;
       flex-direction: column; }
+      .navbar .dropdown-menu .dropdown-item:hover {
+        background-color: #fbf6eb; }
+        .navbar .dropdown-menu .dropdown-item:hover .title {
+          color: #3f616c; }
       .navbar .dropdown-menu .dropdown-item .title {
-        font-size: 1.2em; }
-      .navbar .dropdown-menu .dropdown-item .subtitle {
-        font-family: "Roboto", sans-serif; }
+        font-size: 1.2em;
+        color: #fbf6eb; }
   .navbar .navbar-text.contact-info {
     margin-right: 20px; }
     .navbar .navbar-text.contact-info a {

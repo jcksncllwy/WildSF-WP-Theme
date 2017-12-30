@@ -91,12 +91,17 @@ a{
 		.dropdown-item{
 			display: flex;
 			flex-direction: column;
+			&:hover{
+				background-color: $primary-white;
+				.title{
+					color: $primary-blue;
+				}
+
+			}
 
 			.title{
 				font-size: 1.2em;
-			}
-			.subtitle{
-				font-family: $secondary-font-family;
+				color: $primary-white;
 			}
 		}
 	}
