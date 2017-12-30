@@ -4,22 +4,29 @@
 
 	<?= get_header('common') ?>
 
+	<?php
+		global $post;
+		$this_tour_id = $post->ID;
+		$splash_video_url = get_field('splash_video', $this_tour_id);
+
+		$scroll_helper_image_id = 150;
+		$scroll_helper_image_url = wp_get_attachment_image_src($scroll_helper_image_id, 'full')[0];
+
+		$dotted_line_image_id = 172;
+	  $dotted_line_image_url = wp_get_attachment_image_src($dotted_line_image_id, 'full')[0];
+
+	?>
+	<style type="text/css" class="wp-dynamic-css">
+	  .dotted-line{
+	    background-image: url("<?= $dotted_line_image_url ?>");
+	    border: 0;
+	    height: 10px;
+	    background-size: contain;
+	  }
+	</style>
+
 </head>
-<?php
-	global $post;
-	$this_tour_id = $post->ID;
-	$splash_video_url = get_field('splash_video', $this_tour_id);
 
-	$scroll_helper_image_id = 150;
-	$scroll_helper_image_url = wp_get_attachment_image_src($scroll_helper_image_id, 'full')[0];
-
-	$frontpage = get_page_by_title('frontpage');
-	$cta_background_image_url = wp_get_attachment_image_url(
-		get_field('cta_background_image', $frontpage->ID),
-		'full'
-	);
-
-?>
 <body>
 	<?php
 		get_template_part('navbar');

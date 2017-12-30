@@ -117,6 +117,28 @@ body {
         padding: 20px; } }
     .page-container .page-inner img {
       max-width: 100%; }
+  .page-container .button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 5px solid #bf5246;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 700;
+    cursor: pointer;
+    color: #bf5246; }
+    .page-container .button:hover {
+      background-color: #bf5246;
+      color: #fbf6eb;
+      text-decoration: none; }
+    @media (max-width: 767px) {
+      .page-container .button {
+        width: 100%;
+        text-align: center; } }
+    @media (max-width: 767px) {
+      .page-container .button {
+        width: 100%; } }
 
 .faq-page .faq {
   background-attachment: fixed; }

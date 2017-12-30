@@ -2,19 +2,19 @@
 	$frontpage = get_page_by_title('frontpage');
 	$reviews = get_field('reviews', $frontpage);
 	$yelp_logo = wp_get_attachment_image_url(
-		$reviews['yelp_logo'], 
+		$reviews['yelp_logo'],
 		'full'
 	);
 	$yelp_stars = wp_get_attachment_image_url(
-		$reviews['yelp_stars'], 
+		$reviews['yelp_stars'],
 		'full'
 	);
 	$ta_logo = wp_get_attachment_image_url(
-		$reviews['tripadvisor_logo'], 
+		$reviews['tripadvisor_logo'],
 		'full'
 	);
 	$ta_stars = wp_get_attachment_image_url(
-		$reviews['tripadvisor_stars'], 
+		$reviews['tripadvisor_stars'],
 		'full'
 	);
 
@@ -31,7 +31,7 @@
 			</div>
 			<div class="review-container">
 				<div class="review">
-					"I had such a nice day with wild SF. If you ever want to find out something about the real San Francisco go there!"
+					"I had such a nice day with Wild SF. If you ever want to find out something about the real San Francisco go there!"
 				</div>
 				<a class="read-more-button" href="<?= $yelp_link ?>">Read More</a>
 			</div>
@@ -49,7 +49,7 @@
 				</div>
 				<a class="read-more-button" href="<?= $ta_link ?>">Read More</a>
 			</div>
-			
+
 		</div>
 	</div>
 </div>
