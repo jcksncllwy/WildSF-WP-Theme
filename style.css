@@ -908,4 +908,50 @@ body.faq-page {
   body.faq-page .faq-item a {
     color: #fbf6eb; }
 
+body.about-us .guides-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  body.about-us .guides-container .guides-inner {
+    margin: 50px;
+    width: 800px; }
+  body.about-us .guides-container .guides-header {
+    font-family: "Roboto Slab", serif;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px; }
+    @media (max-width: 767px) {
+      body.about-us .guides-container .guides-header {
+        text-align: center; } }
+  body.about-us .guides-container .guides-list .guide-container {
+    min-height: 200px;
+    margin-bottom: 30px; }
+    @media (max-width: 767px) {
+      body.about-us .guides-container .guides-list .guide-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; } }
+    body.about-us .guides-container .guides-list .guide-container .guide-headshot-container {
+      float: left;
+      width: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px;
+      margin-bottom: 5px;
+      shape-outside: circle(50%); }
+      body.about-us .guides-container .guides-list .guide-container .guide-headshot-container img {
+        max-width: 100%; }
+      @media (max-width: 767px) {
+        body.about-us .guides-container .guides-list .guide-container .guide-headshot-container {
+          float: none; } }
+    body.about-us .guides-container .guides-list .guide-container .guide-name {
+      font-family: "Roboto Slab", serif;
+      font-size: 1.5em;
+      font-weight: bold;
+      padding-top: 20px; }
+    @media (max-width: 767px) {
+      body.about-us .guides-container .guides-list .guide-container .guide-description {
+        font-size: 1.2em; } }
+
 /*# sourceMappingURL=style.css.map */

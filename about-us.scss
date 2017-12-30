@@ -1,0 +1,62 @@
+body.about-us{
+  .guides-container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.guides-inner{
+			margin: 50px;
+			width: 800px;
+		}
+		.guides-header{
+			font-family: $primary-font-family;
+			font-size: 2em;
+			font-weight: bold;
+			margin-bottom: 20px;
+			@media (max-width: 767px){
+				text-align: center;
+			}
+		}
+		.guides-list{
+			.guide-container{
+				min-height: 200px;
+				margin-bottom: 30px;
+				@media (max-width: 767px){
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+				.guide-headshot-container{
+					float: left;
+					width: 200px;
+					border-radius: 50%;
+				    overflow: hidden;
+				    margin-right: 20px;
+				    margin-bottom: 5px;
+				    shape-outside: circle(50%);
+					img{
+						max-width: 100%;
+					}
+					@media (max-width: 767px){
+						float: none;
+					}
+				}
+				.guide-name{
+					font-family: $primary-font-family;
+					font-size: 1.5em;
+					font-weight: bold;
+					padding-top: 20px;
+				}
+				.guide-description{
+					@media (max-width: 767px){
+						font-size: 1.2em;
+					}
+				}
+
+			}
+
+		}
+
+	}
+}
