@@ -1,20 +1,26 @@
-<?php
-	$frontpage = get_page_by_title('frontpage');
-?>
 <div class="footer">
-<?php	
-	while ( have_rows('footer_items', $frontpage) ) : the_row(); 
-		$text = get_sub_field('text');
-		$link = get_sub_field('link');
-?>
 
-<div class="footer-item">
-	<a href="<?= $link ?>">
-		<?= $text ?>
-	</a>
+
+	<div class="footer-item">
+		<a href="/">
+			Terms & Conditions
+		</a>
+	</div>
+	<div class="footer-item">
+		<a href="/private-tours">
+			Corporate
+		</a>
+	</div>
+	<div class="footer-item">
+		<a href="/about-us">
+			About Us
+		</a>
+	</div>
+	<div class="footer-item">
+		<a href="/reviews">
+			Press
+		</a>
+	</div>
+
+
 </div>
-
-<?php
-	endwhile;
-?>
-</div>	
