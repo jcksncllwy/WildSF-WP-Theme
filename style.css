@@ -14,6 +14,9 @@ Tags: tours
 /*
 ** Sizing and Layout Variables
 */
+#_pktp {
+  display: none; }
+
 body {
   background-color: #fbf6eb !important; }
 
@@ -953,5 +956,21 @@ body.about-us .guides-container {
     @media (max-width: 767px) {
       body.about-us .guides-container .guides-list .guide-container .guide-description {
         font-size: 1.2em; } }
+
+body.press .header {
+  font-size: 2.5em;
+  font-family: "Roboto Slab", serif;
+  margin-bottom: 50px; }
+body.press .press-items {
+  margin-bottom: 50px; }
+body.press .press-item {
+  margin-bottom: 20px; }
+  body.press .press-item .article-link {
+    font-size: 1.5em;
+    color: #3f616c;
+    font-family: "Roboto Slab", serif; }
+  body.press .press-item .author {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700; }
 
 /*# sourceMappingURL=style.css.map */

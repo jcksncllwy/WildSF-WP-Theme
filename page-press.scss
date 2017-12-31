@@ -1,0 +1,23 @@
+body.press{
+  .header{
+    font-size: 2.5em;
+    font-family: $primary-font-family;
+    margin-bottom: 50px;
+  }
+  .press-items{
+    margin-bottom: 50px;
+  }
+  .press-item{
+    margin-bottom: 20px;
+    .article-link{
+      font-size: 1.5em;
+      color: $primary-blue;
+      font-family: $primary-font-family;
+    }
+    .author{
+      font-family: $secondary-font-family;
+      font-weight: 700;
+    }
+  }
+
+}

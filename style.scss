@@ -10,6 +10,11 @@ Tags: tours
 @import 'vars';
 @import '_mixins';
 
+//Not sure what this thing is, probably from peek
+#_pktp{
+	display: none;
+}
+
 body{
 	background-color: $primary-white !important;
 }
@@ -689,3 +694,4 @@ $splash-height: 70vh;
 @import 'single-tour';
 @import 'page-faq';
 @import 'about-us';
+@import 'page-press';
