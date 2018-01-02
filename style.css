@@ -114,6 +114,10 @@ body {
   .page-container .page-inner {
     width: 800px;
     /*Bootstrap SMALL breakpoint*/ }
+    .page-container .page-inner h1 {
+      font-family: "Roboto Slab", serif;
+      font-size: 2em;
+      font-weight: 700; }
     @media (max-width: 767px) {
       .page-container .page-inner {
         width: 100%;
