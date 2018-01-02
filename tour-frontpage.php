@@ -27,6 +27,7 @@
 </style>
 
 <div class="row tour nav-target" id="tour-<?= the_ID() ?>">
+	<meta property="og:image" content="<?= $tour_background_image_url ?>">
 
 	<a href="<?= get_permalink() ?>" class="tour-image col-md-7 mobile">
 	</a>

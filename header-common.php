@@ -54,3 +54,6 @@ New code needed to get the gift cards button to render correctly
 <!-- Custom CSS -->
 
 <meta name="viewport" content="width=device-width">
+<meta charset="UTF-8">
+
+<?php wp_head(); ?>
