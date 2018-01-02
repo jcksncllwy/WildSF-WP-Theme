@@ -4,17 +4,6 @@
 
 	<?= get_header('common') ?>
 
-	<title>Alternative and Free SF Walking Tours | Wild SF Tours | Cool tours of San Francisco neighborhoods, ghosts and more</title>
-	<meta name="description" content="San Francisco walking tours led by hip, quirky tour guides. Get ready for the most historic, shameless, criminal and unforgettable.">
-	<meta name="robots" content="noodp">
-	<link rel="canonical" href="https://wildsftours.com/">
-	<meta property="og:locale" content="en_US">
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Wild SF Walking Tours: Alternative walking tours of San Francisco">
-	<meta property="og:description" content="San Francisco walking tours led by hip, quirky tour guides. Get ready for the most historic, shameless, criminal and unforgettable.">
-	<meta property="og:url" content="https://wildsftours.com/">
-	<meta property="og:site_name" content="Alternative and Free SF Walking Tours | Wild SF Tours">
-
 </head>
 <body>
 	<?php

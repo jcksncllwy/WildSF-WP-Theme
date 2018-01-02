@@ -118,6 +118,8 @@ body {
       font-family: "Roboto Slab", serif;
       font-size: 2em;
       font-weight: 700; }
+    .page-container .page-inner p {
+      font-family: "Roboto", sans-serif; }
     @media (max-width: 767px) {
       .page-container .page-inner {
         width: 100%;

@@ -165,6 +165,9 @@ a{
 			font-size: 2em;
 			font-weight: 700;
 		}
+		p{
+			font-family: $secondary-font-family;
+		}
 		width: 800px;
 		/*Bootstrap SMALL breakpoint*/
 		@media (max-width: 767px){
