@@ -16,6 +16,7 @@ Tags: tours
 }
 
 body{
+	position: absolute; top: 0; //not sure why this is needed
 	background-color: $primary-white !important;
 }
 

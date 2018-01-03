@@ -18,6 +18,8 @@ Tags: tours
   display: none; }
 
 body {
+  position: absolute;
+  top: 0;
   background-color: #fbf6eb !important; }
 
 @media (max-width: 767px) {

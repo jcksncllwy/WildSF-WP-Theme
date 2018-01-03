@@ -64,7 +64,7 @@
 					<?= get_field('description', $this_tour_id) ?>
 					<?= get_field('timing', $this_tour_id) ?>
 					<?= get_field('pricing', $this_tour_id) ?>
-					<a class="book-button" href="https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/8MW">Book now</a>
+					<a class="book-button" href="#calendar-nav-target">Book now</a>
 				</div>
 			</div>
 			<?php
