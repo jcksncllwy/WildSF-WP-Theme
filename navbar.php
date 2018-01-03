@@ -50,7 +50,7 @@ $logo_image_url = wp_get_attachment_image_url(
 				</div>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
-				<a class="nav-link" href="#calendar-nav-target">Calendar</a>
+				<a class="nav-link emphasis" href="#calendar-nav-target">Calendar</a>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<a class="nav-link" href="<?= $private_tours_url ?>">Private Tours</a>
@@ -60,7 +60,7 @@ $logo_image_url = wp_get_attachment_image_url(
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<!--a href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" class="nav-link" data-purchase-type="gift-card" data-button-text="Purchase Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Cards</a -->
-				<a class="peek-book-button-flat peek-book-btn-yellow peek-book-button-sm peek-book-icon-gift" href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" data-purchase-type="gift-card" data-button-text="Gift Card" data-partner-gid="5461cec23f30e1993000038f">Wild SF Walking Tours San Francisco</a>
+				<a class="nav-link peek-book-button-flat " href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" data-purchase-type="gift-card" data-button-text="Gift Card" data-partner-gid="5461cec23f30e1993000038f">Wild SF Walking Tours San Francisco</a>
 			</li>
 		</ul>
 		<span class="navbar-text contact-info">

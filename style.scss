@@ -89,6 +89,18 @@ a{
 	.nav-item{
 		font-size: 1.2em;
 		margin-right: 10px;
+
+		//override peek button styling. need peek button class for Peek JS to work
+		.peek-book-button-flat{
+			display: block;
+			letter-spacing: inherit;
+			font-family: $primary-font-family;
+		}
+
+		.emphasis{
+			color: transparentize($primary-white, 0.3);
+		}
+
 	}
 
 	.dropdown-menu{

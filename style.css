@@ -69,6 +69,12 @@ body {
   .navbar .nav-item {
     font-size: 1.2em;
     margin-right: 10px; }
+    .navbar .nav-item .peek-book-button-flat {
+      display: block;
+      letter-spacing: inherit;
+      font-family: "Roboto Slab", serif; }
+    .navbar .nav-item .emphasis {
+      color: rgba(251, 246, 235, 0.7); }
   .navbar .dropdown-menu {
     margin-top: 20px;
     background-color: rgba(63, 97, 108, 0.8); }
