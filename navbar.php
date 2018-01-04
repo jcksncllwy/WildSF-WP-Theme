@@ -6,7 +6,8 @@ $frontpage_url = get_permalink( $frontpage );
 $faq_page = get_page_by_title('FAQ');
 $faq_url = get_permalink( $faq_page );
 $faq_nav_link = is_front_page() ? "#faq-nav-target" : $faq_url;
-$calendar_nav_link = is_front_page() ? "#calendar-nav-target" : $frontpage_url . "#calendar-nav-target";
+$peek_calendar_popup_link = "https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/3beY";
+$calendar_nav_link = is_front_page() ? "#calendar-nav-target" : $peek_calendar_popup_link;
 $logo_image_url = wp_get_attachment_image_url(
 	get_field('navbar_logo', $frontpage->ID),
 	'full');
@@ -54,7 +55,7 @@ $logo_image_url = wp_get_attachment_image_url(
 				</div>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
-				<a class="nav-link emphasis" href="<?= $calendar_nav_link ?>">Calendar</a>
+				<a class="nav-link emphasis <?= is_front_page() ? "" : "peek-book-button-flat"?>" href="<?= $calendar_nav_link ?>">Calendar</a>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<a class="nav-link" href="<?= $private_tours_url ?>">Private Tours</a>
