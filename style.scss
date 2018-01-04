@@ -16,7 +16,6 @@ Tags: tours
 }
 
 body{
-	position: absolute; top: 0; //not sure why this is needed
 	background-color: $primary-white !important;
 }
 
@@ -439,7 +438,6 @@ $splash-height: 70vh;
 
 	.faq-inner{
 		/* Info will be placed with it's right-most boundary against the centerline of the screen */
-		width: 100%;
 		@media (max-width: 767px){
 			width: 100vw;
 			margin-left: 0;

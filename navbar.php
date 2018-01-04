@@ -3,6 +3,10 @@ $private_tours_page = get_page_by_title("Private Tours");
 $private_tours_url = get_permalink( $private_tours_page );
 $frontpage = get_page_by_title('frontpage');
 $frontpage_url = get_permalink( $frontpage );
+$faq_page = get_page_by_title('FAQ');
+$faq_url = get_permalink( $faq_page );
+$faq_nav_link = is_front_page() ? "#faq-nav-target" : $faq_url;
+$calendar_nav_link = is_front_page() ? "#calendar-nav-target" : $frontpage_url . "#calendar-nav-target";
 $logo_image_url = wp_get_attachment_image_url(
 	get_field('navbar_logo', $frontpage->ID),
 	'full');
@@ -50,13 +54,13 @@ $logo_image_url = wp_get_attachment_image_url(
 				</div>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
-				<a class="nav-link emphasis" href="#calendar-nav-target">Calendar</a>
+				<a class="nav-link emphasis" href="<?= $calendar_nav_link ?>">Calendar</a>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<a class="nav-link" href="<?= $private_tours_url ?>">Private Tours</a>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
-				<a class="nav-link" href="#faq-nav-target">FAQ</a>
+				<a class="nav-link" href="<?= $faq_nav_link ?>">FAQ</a>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<!--a href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" class="nav-link" data-purchase-type="gift-card" data-button-text="Purchase Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Cards</a -->

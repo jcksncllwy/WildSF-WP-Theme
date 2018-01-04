@@ -5,7 +5,7 @@
 	<?= get_header('common') ?>
 
 </head>
-<body class="faq-page page-container">
+<body class="faq-page">
 	<?php
 		get_template_part('navbar');
 		$collapsed = true;
@@ -13,8 +13,8 @@
 		$faq_url = get_permalink( $faq_page );
 	?>
 
-	<div class="faq">
-		<div class="faq-inner">
+	<div class="faq page-container">
+		<div class="page-inner faq-inner">
 			<div class="header">
 				<span class="drop-cap">F</span><span class="drop-cap">A</span><span class="drop-cap">Q</span>
 			</div>

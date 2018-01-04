@@ -18,8 +18,6 @@ Tags: tours
   display: none; }
 
 body {
-  position: absolute;
-  top: 0;
   background-color: #fbf6eb !important; }
 
 @media (max-width: 767px) {
@@ -374,7 +372,6 @@ body {
 
 .faq .faq-inner {
   /* Info will be placed with it's right-most boundary against the centerline of the screen */
-  width: 100%;
   background-color: #ee6552;
   color: #fbf6eb; }
   @media (max-width: 767px) {
@@ -920,8 +917,6 @@ body {
 body.faq-page {
   background-color: #ee6552 !important;
   color: #fbf6eb; }
-  body.faq-page .faq {
-    max-width: 800px; }
   body.faq-page .faq-item a {
     color: #fbf6eb; }
 
