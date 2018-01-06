@@ -254,7 +254,12 @@ $splash-height: 70vh;
 		color: $font-red;
 		.book-button{
 			margin-top: 50px;
+			display: inline-block;
 			@include button($font-red);
+			font-size: 1.2em;
+		}
+		.col{
+			text-align: center;
 		}
 	}
 

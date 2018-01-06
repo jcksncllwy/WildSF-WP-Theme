@@ -196,6 +196,7 @@ body {
     color: #bf5246; }
     .section.cta .book-button {
       margin-top: 50px;
+      display: inline-block;
       padding: 10px 20px;
       border: 5px solid #bf5246;
       border-radius: 5px;
@@ -204,7 +205,8 @@ body {
       font-size: 0.8em;
       font-weight: 700;
       cursor: pointer;
-      color: #bf5246; }
+      color: #bf5246;
+      font-size: 1.2em; }
       .section.cta .book-button:hover {
         background-color: #bf5246;
         color: #fbf6eb;
@@ -213,6 +215,8 @@ body {
         .section.cta .book-button {
           width: 100%;
           text-align: center; } }
+    .section.cta .col {
+      text-align: center; }
   .section.quote {
     color: #3f616c;
     padding: 60px;

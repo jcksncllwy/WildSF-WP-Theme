@@ -4,12 +4,34 @@
 	$big_cta = $cta_group['big_cta'];
 	$little_cta = $cta_group['little_cta'];
 	$button_text = $cta_group['button_text'];
+
+	$accolades_group = get_field('accolades', $frontpage->ID);
+	$TA_badge = wp_get_attachment_image_url(
+		$accolades_group['trip_advisor'],
+		'full'
+	);
+	$BOB_badge = wp_get_attachment_image_url(
+		$accolades_group['best_of_the_bay'],
+		'full'
+	);
+
 ?>
 <div class="section cta">
-	<hr />
-	<h1><?= $big_cta ?></h1>
-	<h2><?= $little_cta ?></h2>
 
-	<a class="book-button" href="https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/8MW"><?= $button_text ?></a>
-	<hr />
+
+	<div class="row">
+		<div class="col">
+			<img src="<?= $TA_badge ?>" />
+		</div>
+		<div class="col col-6">
+			<h1><?= $big_cta ?></h1>
+			<h2><?= $little_cta ?></h2>
+
+			<a class="book-button" href="https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/8MW"><?= $button_text ?></a>
+		</div>
+		<div class="col">
+			<img src="<?= $BOB_badge ?>" />
+		</div>
+	</div>
+
 </div>
