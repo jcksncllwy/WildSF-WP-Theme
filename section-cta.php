@@ -20,16 +20,16 @@
 
 
 	<div class="row">
-		<div class="col">
+		<div class="col-6 order-sm-1 order-1">
 			<img src="<?= $TA_badge ?>" />
 		</div>
-		<div class="col col-6">
+		<div class="col-12 col-sm-6 order-sm-2 order-3">
 			<h1><?= $big_cta ?></h1>
 			<h2><?= $little_cta ?></h2>
 
 			<a class="book-button" href="https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/8MW"><?= $button_text ?></a>
 		</div>
-		<div class="col">
+		<div class="col-6 order-sm-3 order-1">
 			<img src="<?= $BOB_badge ?>" />
 		</div>
 	</div>
