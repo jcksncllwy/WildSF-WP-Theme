@@ -56,4 +56,6 @@ New code needed to get the gift cards button to render correctly
 <meta name="viewport" content="width=device-width">
 <meta charset="UTF-8">
 
+<title><?= get_bloginfo('name') ?> | <?= is_front_page() ? 'Alternative and Free SF Walking Tours' : get_the_title() ?></title>
+
 <?php wp_head(); ?>
