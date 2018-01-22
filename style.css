@@ -667,6 +667,12 @@ body {
       .single-tour .splash-container video {
         width: initial;
         height: 100vh; } }
+  .single-tour .splash-container img {
+    width: 100vw; }
+    @media (max-width: 767px) {
+      .single-tour .splash-container img {
+        width: initial;
+        height: 100vh; } }
   .single-tour .splash-container .splash-title-container {
     position: absolute;
     top: 0;

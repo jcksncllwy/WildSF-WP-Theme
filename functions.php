@@ -57,7 +57,7 @@ function create_tourguide_post_type() {
 add_action( 'init', 'create_tourguide_post_type' );
 
 
-add_image_size( 'fullscreen', 1366, 768, true ); 
+add_image_size( 'fullscreen', 1366, 768, true );
 add_image_size( 'thumbnail-no-crop', 150, 105, false );
 
 ?>

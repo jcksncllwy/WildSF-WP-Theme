@@ -8,6 +8,7 @@
 		global $post;
 		$this_tour_id = $post->ID;
 		$splash_video_url = get_field('splash_video', $this_tour_id);
+		$splash_image_url = get_field('splash_image', $this_tour_id);
 
 		$scroll_helper_image_id = 150;
 		$scroll_helper_image_url = wp_get_attachment_image_src($scroll_helper_image_id, 'full')[0];
@@ -39,24 +40,28 @@
 				if(!empty($splash_video_url)){
 				?>
 				<video class="splash-video" autoplay loop muted>
-                    <source src="<?= $splash_video_url ?>" type="video/mp4">
-                </video>
-                <?php
-	        	}
-	        	?>
-                <div class="splash-title-container">
-                	<div class="title">
-                		<?= get_the_title($this_tour_id) ?>
-                	</div>
-                	<div class="subtitle">
-                		<?= get_field('subtitle', $this_tour_id) ?>
-                	</div>
-                </div>
-                <div class="scroll-helper-container">
-                	<div class="scroll-helper">
-                		<img src="<?= $scroll_helper_image_url ?>" />
-                	</div>
-                </div>
+            <source src="<?= $splash_video_url ?>" type="video/mp4">
+        </video>
+        <?php
+				} elseif(!empty($splash_image_url)) {
+				?>
+				<img src="<?= $splash_image_url ?>">
+				<?php
+				}
+	      ?>
+        <div class="splash-title-container">
+        	<div class="title">
+        		<?= get_the_title($this_tour_id) ?>
+        	</div>
+        	<div class="subtitle">
+        		<?= get_field('subtitle', $this_tour_id) ?>
+        	</div>
+        </div>
+        <div class="scroll-helper-container">
+        	<div class="scroll-helper">
+        		<img src="<?= $scroll_helper_image_url ?>" />
+        	</div>
+        </div>
 			</div>
 			<hr class="dotted-line" />
 			<div class="wysiwyg-container">
