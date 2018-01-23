@@ -253,7 +253,7 @@ $splash-height: 70vh;
 	&.cta{
 		color: $font-red;
 		.book-button{
-			margin-top: 50px;
+			margin-bottom: 50px;
 			display: inline-block;
 			@include button($font-red);
 			font-size: 1.2em;

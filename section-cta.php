@@ -22,14 +22,17 @@
 <div class="section cta">
 
 	<div class="row">
+		<div class="col">
+			<a class="book-button" href="<?= $button_href ?>"><?= $button_text ?></a>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col col-6 col-sm-3 order-sm-1 order-1">
 			<img src="<?= $TA_badge ?>" />
 		</div>
 		<div class="col col-12 col-sm-6 order-sm-2 order-3">
 			<h1><?= $big_cta ?></h1>
 			<h2><?= $little_cta ?></h2>
-
-			<a class="book-button" href="<?= $button_href ?>"><?= $button_text ?></a>
 		</div>
 		<div class="col col-6 col-sm-3 order-sm-3 order-1">
 			<img src="<?= $BOB_badge ?>" />
