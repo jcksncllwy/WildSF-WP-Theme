@@ -5,7 +5,7 @@
 	}
 
 	.book-button{
-		margin-top: 50px;
+		margin: 30px 0;
 		display: inline-block;
 		@include button($font-red);
 		@media (max-width: 767px){
@@ -106,8 +106,12 @@
 			margin-bottom: 20px;
 		}
 		.wysiwyg-inner{
-			width: 600px;
+			width: 800px;
 			margin: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			/*Bootstrap SMALL breakpoint*/
 			@media (max-width: 767px){
 				width: 100vw;
