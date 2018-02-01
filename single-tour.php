@@ -45,7 +45,7 @@
         <?php
 				} elseif(!empty($splash_image_url)) {
 				?>
-				<img src="<?= $splash_image_url ?>">
+				<img class="splash-image" src="<?= $splash_image_url ?>">
 				<?php
 				}
 	      ?>
