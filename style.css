@@ -731,13 +731,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     /*Bootstrap SMALL breakpoint*/
     font-family: "Roboto", sans-serif; }
     @media (max-width: 767px) {
       .single-tour .wysiwyg-container .wysiwyg-inner {
         width: 100vw;
         padding: 20px; } }
+    .single-tour .wysiwyg-container .wysiwyg-inner .book-button {
+      align-self: center; }
   @media (max-width: 767px) {
     .single-tour .wysiwyg-container {
       font-size: 1.2em; } }
