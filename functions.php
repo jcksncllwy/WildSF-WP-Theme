@@ -1,4 +1,11 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+
+Braintree_Configuration::environment('sandbox');
+Braintree_Configuration::merchantId('f2r4bd7nhxzy34wz');
+Braintree_Configuration::publicKey('jqb2fnh9jfxcq5qh');
+Braintree_Configuration::privateKey('5cc1b806b6398d33693e2b79decbd301');
+
 function create_tour_post_type() {
   register_post_type( 'tour',
     array(
@@ -59,5 +66,33 @@ add_action( 'init', 'create_tourguide_post_type' );
 
 add_image_size( 'fullscreen', 1366, 768, true );
 add_image_size( 'thumbnail-no-crop', 150, 105, false );
+
+
+/**
+ * This is our callback function that embeds our phrase in a WP_REST_Response
+ */
+function transact($request) {
+  $parameters = $request->get_params();
+  $nonce = $parameters['nonce'];
+
+  $result = Braintree_Transaction::sale([
+    'amount' => '10.00',
+    'paymentMethodNonce' => $nonce,
+    'options' => [
+      'submitForSettlement' => True
+    ]
+  ]);
+
+  return $result;
+}
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'braintree/v1', 'transact', array(
+        // By using this constant we ensure that when the WP_REST_Server changes our readable endpoints will work as intended.
+        'methods'  => 'POST',
+        // Here we register our callback. The callback is fired when this endpoint is matched by the WP_REST_Server class.
+        'callback' => 'transact',
+    ) );
+} );
 
 ?>
