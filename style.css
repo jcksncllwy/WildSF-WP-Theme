@@ -142,6 +142,7 @@ body {
     font-size: 0.8em;
     font-weight: 700;
     cursor: pointer;
+    background-color: #fbf6eb;
     color: #bf5246; }
     .page-container .button:hover {
       background-color: #bf5246;
@@ -205,6 +206,7 @@ body {
       font-size: 0.8em;
       font-weight: 700;
       cursor: pointer;
+      background-color: #fbf6eb;
       color: #bf5246;
       font-size: 1.2em; }
       .section.cta .book-button:hover {
@@ -350,6 +352,7 @@ body {
       font-size: 0.8em;
       font-weight: 700;
       cursor: pointer;
+      background-color: #000014;
       color: #fbf6eb; }
       .tour .tour-info .learn-more-button:hover {
         background-color: #fbf6eb;
@@ -429,6 +432,7 @@ body {
   font-size: 0.8em;
   font-weight: 700;
   cursor: pointer;
+  background-color: #bf5246;
   color: #fbf6eb; }
   .faq .read-more-button:hover {
     background-color: #fbf6eb;
@@ -493,6 +497,7 @@ body {
       font-size: 0.8em;
       font-weight: 700;
       cursor: pointer;
+      background-color: #fbf6eb;
       color: #bf5246; }
       .reviews .yelp-container .review-container .read-more-button:hover {
         background-color: #bf5246;
@@ -513,6 +518,7 @@ body {
       font-size: 0.8em;
       font-weight: 700;
       cursor: pointer;
+      background-color: #fbf6eb;
       color: #00a680; }
       .reviews .ta-container .review-container .read-more-button:hover {
         background-color: #00a680;
@@ -637,6 +643,7 @@ body {
   font-size: 0.8em;
   font-weight: 700;
   cursor: pointer;
+  background-color: #fbf6eb;
   color: #bf5246; }
   .single-tour .book-button:hover {
     background-color: #bf5246;
@@ -917,6 +924,7 @@ body {
         font-size: 0.8em;
         font-weight: 700;
         cursor: pointer;
+        background-color: #000014;
         color: #fbf6eb; }
         .single-tour .other-tours-container .tour-container .tour-info .learn-more-button:hover {
           background-color: #fbf6eb;
@@ -1000,64 +1008,113 @@ body.press .press-item {
     font-family: "Roboto", sans-serif;
     font-weight: 700; }
 
-.payments {
+.payments-page {
+  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center; }
-  .payments .payments-inner {
-    width: 800px;
-    margin-top: 130px;
-    margin-bottom: 80px; }
-  .payments .customer-info .input-group {
-    margin-bottom: 10px; }
-  .payments .payments-form .success-message {
-    display: none; }
-  .payments .payments-form.success .success-message {
-    display: block; }
-  .payments .payments-form.success .form-fields {
-    display: none; }
-  .payments .loader,
-  .payments .loader:before,
-  .payments .loader:after {
-    border-radius: 50%; }
-  .payments .loader {
-    color: #ffffff;
-    font-size: 11px;
-    text-indent: -99999em;
-    margin: 55px auto;
-    position: relative;
-    width: 10em;
-    height: 10em;
-    box-shadow: inset 0 0 0 1em;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0); }
-  .payments .loader:before,
-  .payments .loader:after {
-    position: absolute;
-    content: ''; }
-  .payments .loader:before {
-    width: 5.2em;
-    height: 10.2em;
-    background: rgba(0, 0, 0, 0);
-    border-radius: 10.2em 0 0 10.2em;
-    top: -0.1em;
-    left: -0.1em;
-    -webkit-transform-origin: 5.2em 5.1em;
-    transform-origin: 5.2em 5.1em;
-    -webkit-animation: load2 2s infinite ease 1.5s;
-    animation: load2 2s infinite ease 1.5s; }
-  .payments .loader:after {
-    width: 5.2em;
-    height: 10.2em;
-    background: rgba(0, 0, 0, 0);
-    border-radius: 0 10.2em 10.2em 0;
-    top: -0.1em;
-    left: 5.1em;
-    -webkit-transform-origin: 0px 5.1em;
-    transform-origin: 0px 5.1em;
-    -webkit-animation: load2 2s infinite ease;
-    animation: load2 2s infinite ease; }
+  flex-direction: column;
+  justify-content: space-between; }
+  .payments-page .payments {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .payments-page .payments .payments-inner {
+      width: 800px;
+      margin-top: 80px;
+      margin-bottom: 80px; }
+    .payments-page .payments .customer-info .input-group {
+      margin-bottom: 10px; }
+    .payments-page .payments .payments-form .name-fields {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 20px; }
+      .payments-page .payments .payments-form .name-fields .field:not(:first-child) {
+        margin-left: 10px; }
+    .payments-page .payments .payments-form .field {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1; }
+      .payments-page .payments .payments-form .field .field-label {
+        font-family: "Roboto", sans-serif;
+        white-space: nowrap;
+        padding: 5px 10px;
+        border: 2px solid #3f616c;
+        border-radius: 5px 0px 0px 5px;
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: 700;
+        background-color: #3f616c;
+        color: #fbf6eb; }
+        @media (max-width: 767px) {
+          .payments-page .payments .payments-form .field .field-label {
+            width: 100%;
+            text-align: center; } }
+      .payments-page .payments .payments-form .field .field-input {
+        flex-grow: 1;
+        padding: 5px 10px;
+        border: 2px solid #3f616c;
+        border-radius: 0px 5px 5px 0px;
+        border-left: none;
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: 700;
+        background-color: #fbf6eb;
+        color: #3f616c; }
+        @media (max-width: 767px) {
+          .payments-page .payments .payments-form .field .field-input {
+            width: 100%;
+            text-align: center; } }
+    .payments-page .payments .payments-form .payment-success {
+      display: none;
+      color: #bf5246; }
+    .payments-page .payments .payments-form.success .payment-success {
+      display: block; }
+    .payments-page .payments .payments-form.success .form-fields {
+      display: none; }
+    .payments-page .payments .loader,
+    .payments-page .payments .loader:before,
+    .payments-page .payments .loader:after {
+      border-radius: 50%; }
+    .payments-page .payments .loader {
+      color: #ffffff;
+      font-size: 11px;
+      text-indent: -99999em;
+      margin: 55px auto;
+      position: relative;
+      width: 10em;
+      height: 10em;
+      box-shadow: inset 0 0 0 1em;
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0); }
+    .payments-page .payments .loader:before,
+    .payments-page .payments .loader:after {
+      position: absolute;
+      content: ''; }
+    .payments-page .payments .loader:before {
+      width: 5.2em;
+      height: 10.2em;
+      background: rgba(0, 0, 0, 0);
+      border-radius: 10.2em 0 0 10.2em;
+      top: -0.1em;
+      left: -0.1em;
+      -webkit-transform-origin: 5.2em 5.1em;
+      transform-origin: 5.2em 5.1em;
+      -webkit-animation: load2 2s infinite ease 1.5s;
+      animation: load2 2s infinite ease 1.5s; }
+    .payments-page .payments .loader:after {
+      width: 5.2em;
+      height: 10.2em;
+      background: rgba(0, 0, 0, 0);
+      border-radius: 0 10.2em 10.2em 0;
+      top: -0.1em;
+      left: 5.1em;
+      -webkit-transform-origin: 0px 5.1em;
+      transform-origin: 0px 5.1em;
+      -webkit-animation: load2 2s infinite ease;
+      animation: load2 2s infinite ease; }
 @-webkit-keyframes load2 {
   0% {
     -webkit-transform: rotate(0deg);
