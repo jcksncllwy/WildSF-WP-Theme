@@ -1,10 +1,12 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-Braintree_Configuration::environment('sandbox');
-Braintree_Configuration::merchantId('f2r4bd7nhxzy34wz');
-Braintree_Configuration::publicKey('jqb2fnh9jfxcq5qh');
-Braintree_Configuration::privateKey('5cc1b806b6398d33693e2b79decbd301');
+$BraintreeGateway = new Braintree_Gateway([
+    'environment' => 'sandbox',
+    'merchantId' => 'f2r4bd7nhxzy34wz',
+    'publicKey' => 'jqb2fnh9jfxcq5qh',
+    'privateKey' => '5cc1b806b6398d33693e2b79decbd301'
+]);
 
 function create_tour_post_type() {
   register_post_type( 'tour',
@@ -72,14 +74,29 @@ add_image_size( 'thumbnail-no-crop', 150, 105, false );
  * This is our callback function that embeds our phrase in a WP_REST_Response
  */
 function transact($request) {
+  $BraintreeGateway = new Braintree_Gateway([
+      'environment' => 'sandbox',
+      'merchantId' => 'f2r4bd7nhxzy34wz',
+      'publicKey' => 'jqb2fnh9jfxcq5qh',
+      'privateKey' => '5cc1b806b6398d33693e2b79decbd301'
+  ]);
+
   $parameters = $request->get_params();
   $nonce = $parameters['nonce'];
+  $amount = $parameters['amount'];
+  $name = $parameters['name'];
 
-  $result = Braintree_Transaction::sale([
-    'amount' => '10.00',
+  $collection = $BraintreeGateway->customer()->search([
+    Braintree_CustomerSearch::cardholderName()->is($name),
+    Braintree_CustomerSearch::paymentMethodToken()->is($nonce)
+  ]);
+
+  $result = $BraintreeGateway->transaction()->sale([
+    'amount' => $amount,
     'paymentMethodNonce' => $nonce,
     'options' => [
-      'submitForSettlement' => True
+      'submitForSettlement' => True,
+      'storeInVaultOnSuccess' => True,
     ]
   ]);
 
