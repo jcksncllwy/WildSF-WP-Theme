@@ -142,7 +142,6 @@ body {
     font-size: 0.8em;
     font-weight: 700;
     cursor: pointer;
-    background-color: #fbf6eb;
     color: #bf5246; }
     .page-container .button:hover {
       background-color: #bf5246;
@@ -206,7 +205,6 @@ body {
       font-size: 0.8em;
       font-weight: 700;
       cursor: pointer;
-      background-color: #fbf6eb;
       color: #bf5246;
       font-size: 1.2em; }
       .section.cta .book-button:hover {
@@ -352,7 +350,6 @@ body {
       font-size: 0.8em;
       font-weight: 700;
       cursor: pointer;
-      background-color: #000014;
       color: #fbf6eb; }
       .tour .tour-info .learn-more-button:hover {
         background-color: #fbf6eb;
@@ -432,7 +429,6 @@ body {
   font-size: 0.8em;
   font-weight: 700;
   cursor: pointer;
-  background-color: #bf5246;
   color: #fbf6eb; }
   .faq .read-more-button:hover {
     background-color: #fbf6eb;
@@ -497,7 +493,6 @@ body {
       font-size: 0.8em;
       font-weight: 700;
       cursor: pointer;
-      background-color: #fbf6eb;
       color: #bf5246; }
       .reviews .yelp-container .review-container .read-more-button:hover {
         background-color: #bf5246;
@@ -518,7 +513,6 @@ body {
       font-size: 0.8em;
       font-weight: 700;
       cursor: pointer;
-      background-color: #fbf6eb;
       color: #00a680; }
       .reviews .ta-container .review-container .read-more-button:hover {
         background-color: #00a680;
@@ -643,7 +637,6 @@ body {
   font-size: 0.8em;
   font-weight: 700;
   cursor: pointer;
-  background-color: #fbf6eb;
   color: #bf5246; }
   .single-tour .book-button:hover {
     background-color: #bf5246;
@@ -924,7 +917,6 @@ body {
         font-size: 0.8em;
         font-weight: 700;
         cursor: pointer;
-        background-color: #000014;
         color: #fbf6eb; }
         .single-tour .other-tours-container .tour-container .tour-info .learn-more-button:hover {
           background-color: #fbf6eb;
