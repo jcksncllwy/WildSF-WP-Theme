@@ -77,8 +77,10 @@
 						var onVerifyPaymentClick = function(){
 							var button = $('#submit-button');
 							button.html("<div class='loader'></div>");
+							button.toggleClass("loading");
 							button.unbind('click', onVerifyPaymentClick);
 							instance.requestPaymentMethod(function (err, payload) {
+								button.toggleClass("loading");
 								if(err){
 									return alert('There was an error validating your payment method! Please re-enter your information and try again.');
 									console.log(err);
@@ -101,6 +103,7 @@
 						var onMakePaymentClick = function(event){
 							var button = $('#submit-button');
 							button.html("<div class='loader'></div>");
+							button.toggleClass("loading");
 							button.unbind('click', onMakePaymentClick);
 							$.ajax({
 								type: "POST",
@@ -117,6 +120,9 @@
 								fail: function(jqXHR, status, err){
 									alert('There was an error processing your payment!');
 									console.log(err);
+								},
+								always: function(){
+									button.toggleClass("loading");
 								}
 							})
 						}
