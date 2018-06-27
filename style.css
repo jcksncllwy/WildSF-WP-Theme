@@ -147,6 +147,11 @@ body {
       background-color: #bf5246;
       color: #fbf6eb;
       text-decoration: none; }
+    .page-container .button[disabled] {
+      background-color: #bf5246 !important;
+      color: #fbf6eb !important;
+      cursor: not-allowed;
+      opacity: 0.7; }
     @media (max-width: 767px) {
       .page-container .button {
         width: 100%;
@@ -211,6 +216,11 @@ body {
         background-color: #bf5246;
         color: #fbf6eb;
         text-decoration: none; }
+      .section.cta .book-button[disabled] {
+        background-color: #bf5246 !important;
+        color: #fbf6eb !important;
+        cursor: not-allowed;
+        opacity: 0.7; }
       @media (max-width: 767px) {
         .section.cta .book-button {
           width: 100%;
@@ -355,6 +365,11 @@ body {
         background-color: #fbf6eb;
         color: #000014;
         text-decoration: none; }
+      .tour .tour-info .learn-more-button[disabled] {
+        background-color: #fbf6eb !important;
+        color: #000014 !important;
+        cursor: not-allowed;
+        opacity: 0.7; }
       @media (max-width: 767px) {
         .tour .tour-info .learn-more-button {
           width: 100%;
@@ -434,6 +449,11 @@ body {
     background-color: #fbf6eb;
     color: #bf5246;
     text-decoration: none; }
+  .faq .read-more-button[disabled] {
+    background-color: #fbf6eb !important;
+    color: #bf5246 !important;
+    cursor: not-allowed;
+    opacity: 0.7; }
   @media (max-width: 767px) {
     .faq .read-more-button {
       width: 100%;
@@ -498,6 +518,11 @@ body {
         background-color: #bf5246;
         color: #fbf6eb;
         text-decoration: none; }
+      .reviews .yelp-container .review-container .read-more-button[disabled] {
+        background-color: #bf5246 !important;
+        color: #fbf6eb !important;
+        cursor: not-allowed;
+        opacity: 0.7; }
       @media (max-width: 767px) {
         .reviews .yelp-container .review-container .read-more-button {
           width: 100%;
@@ -518,6 +543,11 @@ body {
         background-color: #00a680;
         color: #fbf6eb;
         text-decoration: none; }
+      .reviews .ta-container .review-container .read-more-button[disabled] {
+        background-color: #00a680 !important;
+        color: #fbf6eb !important;
+        cursor: not-allowed;
+        opacity: 0.7; }
       @media (max-width: 767px) {
         .reviews .ta-container .review-container .read-more-button {
           width: 100%;
@@ -642,6 +672,11 @@ body {
     background-color: #bf5246;
     color: #fbf6eb;
     text-decoration: none; }
+  .single-tour .book-button[disabled] {
+    background-color: #bf5246 !important;
+    color: #fbf6eb !important;
+    cursor: not-allowed;
+    opacity: 0.7; }
   @media (max-width: 767px) {
     .single-tour .book-button {
       width: 100%;
@@ -922,6 +957,11 @@ body {
           background-color: #fbf6eb;
           color: #000014;
           text-decoration: none; }
+        .single-tour .other-tours-container .tour-container .tour-info .learn-more-button[disabled] {
+          background-color: #fbf6eb !important;
+          color: #000014 !important;
+          cursor: not-allowed;
+          opacity: 0.7; }
         @media (max-width: 767px) {
           .single-tour .other-tours-container .tour-container .tour-info .learn-more-button {
             width: 100%;
@@ -1013,13 +1053,17 @@ body.press .press-item {
       width: 800px;
       margin-top: 80px;
       margin-bottom: 80px; }
-    .payments-page .payments .customer-info .input-group {
-      margin-bottom: 10px; }
+    .payments-page .payments .customer-info {
+      margin-top: 20px; }
+      .payments-page .payments .customer-info.hidden {
+        display: none; }
+      .payments-page .payments .customer-info .input-group {
+        margin-bottom: 10px; }
     .payments-page .payments .payments-form .name-fields {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin-bottom: 20px; }
+      margin-bottom: 10px; }
       .payments-page .payments .payments-form .name-fields .field:not(:first-child) {
         margin-left: 10px; }
     .payments-page .payments .payments-form .field {
@@ -1030,13 +1074,13 @@ body.press .press-item {
         font-family: "Roboto", sans-serif;
         white-space: nowrap;
         padding: 5px 10px;
-        border: 2px solid #3f616c;
+        border: 2px solid #bf5246;
         border-radius: 5px 0px 0px 5px;
         font-family: "Roboto", sans-serif;
         text-transform: uppercase;
         font-size: 0.8em;
         font-weight: 700;
-        background-color: #3f616c;
+        background-color: #bf5246;
         color: #fbf6eb; }
         @media (max-width: 767px) {
           .payments-page .payments .payments-form .field .field-label {
@@ -1045,7 +1089,7 @@ body.press .press-item {
       .payments-page .payments .payments-form .field .field-input {
         flex-grow: 1;
         padding: 5px 10px;
-        border: 2px solid #3f616c;
+        border: 2px solid #bf5246;
         border-radius: 0px 5px 5px 0px;
         border-left: none;
         font-family: "Roboto", sans-serif;
@@ -1053,11 +1097,17 @@ body.press .press-item {
         font-size: 0.8em;
         font-weight: 700;
         background-color: #fbf6eb;
-        color: #3f616c; }
+        color: #bf5246; }
         @media (max-width: 767px) {
           .payments-page .payments .payments-form .field .field-input {
             width: 100%;
             text-align: center; } }
+    .payments-page .payments .payments-form #submit-button {
+      margin-top: 20px;
+      float: right;
+      background: transparent; }
+      .payments-page .payments .payments-form #submit-button:hover {
+        background: #bf5246; }
     .payments-page .payments .payments-form .payment-success {
       display: none;
       color: #bf5246; }

@@ -32,7 +32,10 @@
 				</div>
 
 				<div class="form-fields">
-					<div class="customer-info">
+
+			    <div id="dropin-container"></div>
+
+					<div class="customer-info hidden">
 						<div class="name-fields">
 							<div class="field">
 								<div class="field-label">First Name</div>
@@ -43,14 +46,13 @@
 								<input type="text" class="form-control field-input name" id="lastNameInput" />
 							</div>
 						</div>
-
-						<div class="field">
-		        	<span class="field-label">$</span>
-		        	<input
+						<div class="field payment-amount">
+							<span class="field-label">Payment Amount $</span>
+							<input
 								id="paymentAmount"
 								class="form-control field-input currency"
 								type="number"
-								value="200.00"
+								value="0.00"
 								min="0"
 								step="0.01"
 								data-number-to-fixed="2"
@@ -59,7 +61,8 @@
 						</div>
 					</div>
 
-			    <div id="dropin-container"></div>
+
+
 			    <button id="submit-button" class="button">Verify Payment Method</button>
 				</div>
 		    <script>
@@ -81,11 +84,17 @@
 									console.log(err);
 								}
 								console.log('Payment Method: ', payload);
-
-
-								button.html('Make Payment');
+								$('.customer-info').toggleClass('hidden');
+								var paymentInput = $('#paymentAmount');
+								paymentInput.change(function(){
+									var amountString = paymentInput.val();
+									var amount = Number.parseInt(amountString);
+									if(amount>0){
+										button.html('Send $'+amountString).prop('disabled', false);
+									}
+								});
+								button.html('Send Payment').prop('disabled', true);
 								button.bind('click',{paymentMethod:payload},onMakePaymentClick);
-
 							});
 						}
 
