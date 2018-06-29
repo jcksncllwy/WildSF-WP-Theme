@@ -115,8 +115,21 @@ function myErrorHandler($errno, $errstr, $errfile, $errline)
  * This is our callback function that embeds our phrase in a WP_REST_Response
  */
 function transact($request) {
-    set_error_handler("myErrorHandler");
-    $parameters = $request->get_params();
+    require __DIR__ . '/vendor/autoload.php';
+    require __DIR__ . '/SECRET_braintree_creds.php';
+
+    $is_production = true;
+    $sandboxCreds = [
+      'environment' => 'sandbox',
+      'merchantId' => 'f2r4bd7nhxzy34wz',
+      'publicKey' => 'jqb2fnh9jfxcq5qh',
+      'privateKey' => '5cc1b806b6398d33693e2b79decbd301'
+    ];
+
+    $gatewayCreds = $is_production ? $ProductionBraintreeGatewayCreds : $sandboxCreds;
+
+    $BraintreeGateway = new Braintree_Gateway($gatewayCreds);
+
     $nonce = $parameters['nonce'];
     $amount = $parameters['amount'];
     $name = $parameters['name'];
