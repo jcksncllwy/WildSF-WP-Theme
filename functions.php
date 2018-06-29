@@ -85,28 +85,27 @@ add_image_size( 'thumbnail-no-crop', 150, 105, false );
  * This is our callback function that embeds our phrase in a WP_REST_Response
  */
 function transact($request) {
-  $BraintreeGateway = new Braintree_Gateway($gatewayCreds);
+  try{
+    $BraintreeGateway = new Braintree_Gateway($gatewayCreds);
 
-  $parameters = $request->get_params();
-  $nonce = $parameters['nonce'];
-  $amount = $parameters['amount'];
-  $name = $parameters['name'];
+    $parameters = $request->get_params();
+    $nonce = $parameters['nonce'];
+    $amount = $parameters['amount'];
+    $name = $parameters['name'];
 
-  $collection = $BraintreeGateway->customer()->search([
-    Braintree_CustomerSearch::cardholderName()->is($name),
-    Braintree_CustomerSearch::paymentMethodToken()->is($nonce)
-  ]);
+    $result = $BraintreeGateway->transaction()->sale([
+      'amount' => $amount,
+      'paymentMethodNonce' => $nonce,
+      'options' => [
+        'submitForSettlement' => True,
+        'storeInVaultOnSuccess' => True,
+      ]
+    ]);
 
-  $result = $BraintreeGateway->transaction()->sale([
-    'amount' => $amount,
-    'paymentMethodNonce' => $nonce,
-    'options' => [
-      'submitForSettlement' => True,
-      'storeInVaultOnSuccess' => True,
-    ]
-  ]);
-
-  return $result;
+    return $result;
+  } catch(Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }
 }
 
 add_action( 'rest_api_init', function () {
