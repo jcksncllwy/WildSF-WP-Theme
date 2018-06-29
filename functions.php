@@ -1,12 +1,23 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-$BraintreeGateway = new Braintree_Gateway([
-    'environment' => 'sandbox',
-    'merchantId' => 'f2r4bd7nhxzy34wz',
-    'publicKey' => 'jqb2fnh9jfxcq5qh',
-    'privateKey' => '5cc1b806b6398d33693e2b79decbd301'
-]);
+$is_production = true;
+$sandboxCreds = [
+  'environment' => 'sandbox',
+  'merchantId' => 'f2r4bd7nhxzy34wz',
+  'publicKey' => 'jqb2fnh9jfxcq5qh',
+  'privateKey' => '5cc1b806b6398d33693e2b79decbd301'
+];
+$prodCreds = [
+  'environment' => 'production',
+  'merchantId' => $_ENV["BRAINTREE_MERCHANTID"],
+  'publicKey' => $_ENV["BRAINTREE_PUBLICKEY"],
+  'privateKey' => $_ENV["BRAINTREE_PRIVATEKEY"]
+];
+
+$gatewayCreds = $production ? $prodCreds : $sandboxCreds;
+
+$BraintreeGateway = new Braintree_Gateway($gatewayCreds);
 
 function create_tour_post_type() {
   register_post_type( 'tour',
@@ -74,12 +85,7 @@ add_image_size( 'thumbnail-no-crop', 150, 105, false );
  * This is our callback function that embeds our phrase in a WP_REST_Response
  */
 function transact($request) {
-  $BraintreeGateway = new Braintree_Gateway([
-      'environment' => 'sandbox',
-      'merchantId' => 'f2r4bd7nhxzy34wz',
-      'publicKey' => 'jqb2fnh9jfxcq5qh',
-      'privateKey' => '5cc1b806b6398d33693e2b79decbd301'
-  ]);
+  $BraintreeGateway = new Braintree_Gateway($gatewayCreds);
 
   $parameters = $request->get_params();
   $nonce = $parameters['nonce'];

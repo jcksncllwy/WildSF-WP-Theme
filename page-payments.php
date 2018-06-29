@@ -66,7 +66,12 @@
 			    <button id="submit-button" class="button">Verify Payment Method</button>
 				</div>
 		    <script>
+				console.log("WHAT THE FUCK");
 		    $(function(){
+
+					console.log('HELLO');
+
+					console.log('<?= $BraintreeGateway->clientToken()->generate() ?>');
 
 		      braintree.dropin.create({
 		        authorization: '<?= $BraintreeGateway->clientToken()->generate() ?>',
