@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/SECRET_braintree_creds.php';
 
 $is_production = true;
 $sandboxCreds = [
@@ -8,14 +9,8 @@ $sandboxCreds = [
   'publicKey' => 'jqb2fnh9jfxcq5qh',
   'privateKey' => '5cc1b806b6398d33693e2b79decbd301'
 ];
-$prodCreds = [
-  'environment' => 'production',
-  'merchantId' => getenv("BRAINTREE_MERCHANTID"),
-  'publicKey' => getenv("BRAINTREE_PUBLICKEY"),
-  'privateKey' => getenv("BRAINTREE_PRIVATEKEY")
-];
 
-$gatewayCreds = $is_production ? $prodCreds : $sandboxCreds;
+$gatewayCreds = $is_production ? $ProductionBraintreeGatewayCreds : $sandboxCreds;
 
 $BraintreeGateway = new Braintree_Gateway($gatewayCreds);
 
