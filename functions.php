@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/SECRET_braintree_creds.php';
+require __DIR__ . '/SECRET_braintree_creds.php';
 
 $is_production = true;
 $sandboxCreds = [
@@ -76,13 +76,46 @@ add_image_size( 'fullscreen', 1366, 768, true );
 add_image_size( 'thumbnail-no-crop', 150, 105, false );
 
 
+// error handler function
+function myErrorHandler($errno, $errstr, $errfile, $errline)
+{
+    if (!(error_reporting() & $errno)) {
+        // This error code is not included in error_reporting, so let it fall
+        // through to the standard PHP error handler
+        return false;
+    }
+
+    switch ($errno) {
+    case E_USER_ERROR:
+        echo "<b>My ERROR</b> [$errno] $errstr<br />\n";
+        echo "  Fatal error on line $errline in file $errfile";
+        echo ", PHP " . PHP_VERSION . " (" . PHP_OS . ")<br />\n";
+        echo "Aborting...<br />\n";
+        exit(1);
+        break;
+
+    case E_USER_WARNING:
+        echo "<b>My WARNING</b> [$errno] $errstr<br />\n";
+        break;
+
+    case E_USER_NOTICE:
+        echo "<b>My NOTICE</b> [$errno] $errstr<br />\n";
+        break;
+
+    default:
+        echo "Unknown error type: [$errno] $errstr<br />\n";
+        break;
+    }
+
+    /* Don't execute PHP internal error handler */
+    return true;
+}
+
 /**
  * This is our callback function that embeds our phrase in a WP_REST_Response
  */
 function transact($request) {
-  try{
-    $BraintreeGateway = new Braintree_Gateway($gatewayCreds);
-
+    set_error_handler("myErrorHandler");
     $parameters = $request->get_params();
     $nonce = $parameters['nonce'];
     $amount = $parameters['amount'];
@@ -98,9 +131,6 @@ function transact($request) {
     ]);
 
     return $result;
-  } catch(Exception $e) {
-    return ['Caught exception: ',  $e->getMessage(), "\n"];
-  }
 }
 
 add_action( 'rest_api_init', function () {
