@@ -15,7 +15,7 @@ $prodCreds = [
   'privateKey' => $_ENV["BRAINTREE_PRIVATEKEY"]
 ];
 
-$gatewayCreds = $production ? $prodCreds : $sandboxCreds;
+$gatewayCreds = $is_production ? $prodCreds : $sandboxCreds;
 
 $BraintreeGateway = new Braintree_Gateway($gatewayCreds);
 
@@ -104,7 +104,7 @@ function transact($request) {
 
     return $result;
   } catch(Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
+    return ['Caught exception: ',  $e->getMessage(), "\n"];
   }
 }
 
