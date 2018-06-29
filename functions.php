@@ -10,9 +10,9 @@ $sandboxCreds = [
 ];
 $prodCreds = [
   'environment' => 'production',
-  'merchantId' => $_ENV["BRAINTREE_MERCHANTID"],
-  'publicKey' => $_ENV["BRAINTREE_PUBLICKEY"],
-  'privateKey' => $_ENV["BRAINTREE_PRIVATEKEY"]
+  'merchantId' => getenv("BRAINTREE_MERCHANTID"),
+  'publicKey' => getenv("BRAINTREE_PUBLICKEY"),
+  'privateKey' => getenv("BRAINTREE_PRIVATEKEY")
 ];
 
 $gatewayCreds = $is_production ? $prodCreds : $sandboxCreds;

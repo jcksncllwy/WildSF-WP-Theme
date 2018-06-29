@@ -25,7 +25,7 @@
 	    ?>
 
 			<div class="payments-form">
-
+				<div>gatewayCreds: <?php print_r($gatewayCreds) ?></div>
 				<div class="payment-success">
 					<h1>Payment Successful</h1>
 					<h2>Can't wait for your tour!</h2>
