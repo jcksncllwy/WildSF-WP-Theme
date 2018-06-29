@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/SECRET_braintree_creds.php';
+require_once __DIR__ . '/SECRET_braintree_creds.php';
 
 $is_production = true;
 $sandboxCreds = [
