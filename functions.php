@@ -138,8 +138,7 @@ function transact($request) {
       'amount' => $amount,
       'paymentMethodNonce' => $nonce,
       'options' => [
-        'submitForSettlement' => True,
-        'storeInVaultOnSuccess' => True,
+        'submitForSettlement' => True
       ]
     ]);
 
