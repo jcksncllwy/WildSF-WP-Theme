@@ -38,12 +38,16 @@
 						<div class="name-fields">
 							<div class="field">
 								<div class="field-label">First Name</div>
-								<input type="text" class="form-control field-input name" id="firstNameInput" />
+								<input type="text" class="form-control field-input name" id="firstNameInput" autocomplete='given-name' />
 							</div>
 							<div class="field">
 								<div class="field-label">Last Name</div>
-								<input type="text" class="form-control field-input name" id="lastNameInput" />
+								<input type="text" class="form-control field-input name" id="lastNameInput" autocomplete='family-name' />
 							</div>
+						</div>
+						<div class="field">
+							<div class="field-label">What's it for?</div>
+							<input type="text" class="form-control field-input purpose" id="paymentPurpose" />
 						</div>
 						<div class="field payment-amount">
 							<span class="field-label">Payment Amount $</span>
@@ -111,7 +115,8 @@
 								data: {
 									nonce: event.data.paymentMethod.nonce,
 									amount: $('#paymentAmount').val(),
-									name: $('#firstNameInput').val() +" "+ $('#lastNameInput').val()
+									customer_name: $('#firstNameInput').val() +" "+ $('#lastNameInput').val(),
+									payment_purpose: $('#paymentPurpose').val()
 								},
 								success: function(data){
 									$('.payments-form').addClass('success');

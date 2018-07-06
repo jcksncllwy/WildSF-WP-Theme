@@ -1062,15 +1062,18 @@ body.press .press-item {
     .payments-page .payments .payments-form .name-fields {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      margin-bottom: 10px; }
+      justify-content: space-between; }
       .payments-page .payments .payments-form .name-fields .field:not(:first-child) {
         margin-left: 10px; }
     .payments-page .payments .payments-form .field {
       display: flex;
       flex-direction: row;
-      flex-grow: 1; }
+      flex-grow: 1;
+      margin-bottom: 10px; }
       .payments-page .payments .payments-form .field .field-label {
+        flex-shrink: 0;
+        width: 130px;
+        text-align: center;
         font-family: "Roboto", sans-serif;
         white-space: nowrap;
         padding: 5px 10px;
