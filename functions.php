@@ -1,6 +1,11 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+var $debug = true;
+
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/SECRET_braintree_creds.php';
+
 
 $is_production = true;
 $sandboxCreds = [
@@ -142,6 +147,12 @@ function transact($request) {
         'submitForSettlement' => True
       ]
     ]);
+
+    if($debug){
+      echo "<pre>";
+      print_r($result);
+      echo "</pre>";
+    }
 
     return $result;
 }
