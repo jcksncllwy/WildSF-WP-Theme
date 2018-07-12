@@ -220,8 +220,15 @@
 		.modal-lg {
 			max-width: 1170px;
 		}
-		.tour-modal-header {
-			padding: 4px;
+		.modal-dialog {
+			height: 90%;
+		}
+		.modal-content {
+		    height: 100%;
+		}
+		.modal-body {
+			height: calc(100% - 15px);
+			overflow-y: scroll;
 		}
 		.tour-modal-content {
 			border-radius: 0px;
@@ -750,7 +757,7 @@
 							<span class="sr-only">Next</span>
 						</a>
 					</div>
-					<hr class="dotted-line" style="margin-bottom:0px;">
+					<!-- <hr class="dotted-line" style="margin-bottom:0px;"> -->
 				</div>
 			</div>
 		</div>
