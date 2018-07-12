@@ -287,6 +287,9 @@
 		    text-align: center;
 		    opacity: 1;
 		}
+		#tourCarousel {
+			position: static;
+		}
 	</style>
 
 </head>
