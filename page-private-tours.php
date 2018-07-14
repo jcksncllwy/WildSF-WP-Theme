@@ -92,7 +92,8 @@
 			background-color: rgba(255,255,255,.15);
 		}
 		.wpcf7-submit,
-		.email-request-button {
+		.email-request-button,
+		.post-preview-button {
 			background-color: transparent;
 			display: inline-block;
 			padding: 2px 20px 1px;
@@ -100,14 +101,16 @@
 			border-radius: 6px;
 			font-family: "Roboto", sans-serif;
 			text-transform: uppercase;
-			font-size: 0.8em;
+			font-size: 1em;
 			font-weight: 700;
 			cursor: pointer;
 			color: #fbf6eb;
-			font-size: .5em;
+		}
+		.post-preview-button {
+			margin-top: 15px;
+			text-shadow: none;
 		}
 		.wpcf7-submit {
-			font-size: 1em;
 			margin: 30px 0 60px;
 			float: right;
 		}
@@ -166,14 +169,11 @@
 		.private-tour-overlay {
 			position: absolute;
 			top: 0; right: 0; bottom: 0; left: 0;
-			background: rgba(0,0,0,0.4);
+			background: rgba(0,0,0,0.1);
 			color: #fbf6eb;
 			overflow: hidden;
 			text-align: center;
 			width: 100%;
-			-moz-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
-			-webkit-transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
-			transition: top 0.3s, right 0.3s, bottom 0.3s, left 0.3s;
 			top: 100%;
 		}
 		.private-tour-overlay .overlay-inner {
@@ -182,6 +182,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 80%;
+			text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 		}
 		.private-tour-post {
 			position: relative;
@@ -192,21 +193,6 @@
 		}
 		.private-tour-post img {
 			max-width: 100%;
-		}
-		.post-preview-button {
-			background-color: transparent;
-			display: inline-block;
-			padding: 2px 20px 1px;
-			border: 3px solid #fbf6eb;
-			border-radius: 6px;
-			font-family: "Roboto", sans-serif;
-			text-transform: uppercase;
-			font-size: 0.8em;
-			font-weight: 700;
-			cursor: pointer;
-			color: #fbf6eb;
-			font-size: 1em;
-			margin-top: 15px;
 		}
 		.post-preview-button:hover {
 			background-color: #fbf6eb;
@@ -231,8 +217,18 @@
 			opacity: 1;
 			text-shadow: unset;
 		}
-		.tour-modal-header {
-			padding: 4px;
+		.modal-lg {
+			max-width: 1170px;
+		}
+		.modal-dialog {
+			height: 90%;
+		}
+		.modal-content {
+		    height: 100%;
+		}
+		.modal-body {
+			height: calc(100% - 15px);
+			overflow-y: scroll;
 		}
 		.tour-modal-content {
 			border-radius: 0px;
@@ -253,11 +249,6 @@
 			height: 100%;
 			padding: 35px 30px 30px !important;
 		}
-
-		.modal-lg {
-		    max-width: 90%;
-		}
-
 		.highlights, .perfect_for {
 			margin-bottom: 1rem;
 		}
@@ -273,10 +264,10 @@
 			text-align: center;
 			margin-bottom: 30px;
 		}
-		.clients-next, .tour-carousel-next {
+		.clients-next {
 		    right: -20px !important;
 		}
-		.clients-prev, .tour-carousel-prev {
+		.clients-prev {
 			left: -20px !important;
 		}
 		.carousel-control-next-icon {
@@ -285,10 +276,19 @@
 		.carousel-control-prev-icon {
 			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#f4e7c9' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 		}
+		.tour-carousel-next-icon {
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#bf5246' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+		}
+		.tour-carousel-prev-icon {
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#bf5246' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+		}
 		.carousel-control-next, .carousel-control-prev {
 			width: auto;
 		    text-align: center;
 		    opacity: 1;
+		}
+		#tourCarousel {
+			position: static;
 		}
 	</style>
 
@@ -379,7 +379,6 @@
 						<hr class="dotted-line">
 					</div>
 				</div>
-			</div>
 				<div id="quote-carousel" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner">
 						<?php if( have_rows('tour_quotes') ):
@@ -449,7 +448,7 @@
 						<hr class="dotted-line">
 					</div>
 				</div>
-				<div>
+				<div class="group-types">
 					<div class="private-tour-group row align-items-center">
 						<div class="group-image col-sm-7 col-md-6 col-lg-5">
 							<?php if( get_field('corporate_tours_image') ): ?>
@@ -531,18 +530,20 @@
 						*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
 						*/
 
-						$post_objects = get_field('specialty_experiences');
+						$post_objects = get_field('tours');
 
 						if( $post_objects ): ?>
 
 						    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-						        <?php setup_postdata($post); ?>
+						        <?php setup_postdata($post);?>
+									<?php $tour = get_field('tour-type');
+									if ( $tour == "Specialty Experience"):
+									?>
 								<div class="col-sm-6 col-lg-4">
-									<a class="specialty-thumb text-center">
+									<a class="tour-thumb text-center">
 										<div class="private-tour-post">
 											<?php
 											$post_image = get_field('preview_image');
-
 											if( !empty($post_image) ):
 											?>
 											<img src="<?php echo $post_image ?>" alt="<?php the_title(); ?>">
@@ -560,24 +561,17 @@
 										</div>
 									</a>
 								</div>
+								<?php endif; ?>
 						    <?php endforeach; ?>
 
 						    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 
 						<?php endif;
 						?>
-						<script type="text/javascript">
-							$('a.specialty-thumb').each(function(index){
-								$(this).click(function(){
-								   $('#specialtyModal').modal('show');
-								   $('#specialtyCarousel').carousel(index);
-								});
-							});
-						</script>
 					</div>
 					<div class="row neighborhood">
 						<div class="neighborhood-tours col-md-12">
-							The Neighborhoods
+							Neighborhood Tours
 						</div>
 						<?php
 						/*
@@ -586,18 +580,20 @@
 						*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
 						*/
 
-						$post_objects = get_field('neighborhood_tours');
+						$post_objects = get_field('tours');
 
 						if( $post_objects ): ?>
 
 						    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-						        <?php setup_postdata($post); ?>
+						        <?php setup_postdata($post);?>
+									<?php $tour = get_field('tour-type');
+									if ( $tour == "Neighborhood Tour"):
+									?>
 								<div class="col-sm-6 col-lg-4">
-									<a class="neighborhood-thumb text-center">
+									<a class="tour-thumb text-center">
 										<div class="private-tour-post">
 											<?php
 											$post_image = get_field('preview_image');
-
 											if( !empty($post_image) ):
 											?>
 											<img src="<?php echo $post_image ?>" alt="<?php the_title(); ?>">
@@ -615,6 +611,7 @@
 										</div>
 									</a>
 								</div>
+								<?php endif; ?>
 						    <?php endforeach; ?>
 
 						    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
@@ -622,10 +619,10 @@
 						<?php endif;
 						?>
 						<script type="text/javascript">
-							$('a.neighborhood-thumb').each(function(index){
+							$('a.tour-thumb').each(function(index){
 								$(this).click(function(){
-								   $('#neighborhoodModal').modal('show');
-								   $('#neighborhoodCarousel').carousel(index);
+								   $('#tourModal').modal('show');
+								   $('#tourCarousel').carousel(index);
 								});
 							});
 						</script>
@@ -661,9 +658,9 @@
 		?>
 		</div>
 	</div>
-	<!-- Modal for specialty experiences content -->
-	<div id="specialtyModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-lg">
+	<!-- Modal for tours -->
+	<div id="tourModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="tour-modal-dialog modal-dialog modal-dialog-centered modal-lg">
 			<div class="tour-modal-content modal-content">
 				<div class="tour-modal-header modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -672,7 +669,7 @@
 				</div>
 				<div class="tour-modal-body modal-body" style="padding: 0;">
 					<hr class="dotted-line" style="margin-top:0;">
-					<div id="specialtyCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+					<div id="tourCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 						<div class="carousel-inner">
 						<?php
 						/*
@@ -681,7 +678,7 @@
 						*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
 						*/
 
-						$post_objects = get_field('specialty_experiences');
+						$post_objects = get_field('tours');
 
 						if( $post_objects ): ?>
 
@@ -736,10 +733,10 @@
 										</ul>
 
 									<?php endif; ?>
-										<button class="specialty-tour-book modal-tour-button private-book-button" type="button" data-toggle="modal" href="private-tour-form" style="width:100%;text-align:center;">Request a Tour</button>
+										<button class="modal-tour-button private-book-button" type="button" data-toggle="modal" href="private-tour-form" style="width:100%;text-align:center;">Request a Tour</button>
 										<script type="text/javascript">
-											$('.specialty-tour-book').click(function(){
-											    $('#specialtyModal').modal('hide');
+											$('.private-book-button').click(function(){
+											    $('#tourModal').modal('hide');
 												setTimeout(function(){
 												    document.getElementById('private-tour-form').scrollIntoView();
 												}, 1000);
@@ -754,132 +751,22 @@
 							<?php endif;
 							?>
 						</div>
-						<a class="tour-carousel-prev carousel-control-prev" href="#specialtyCarousel" role="button" data-slide="prev">
+						<a class="tour-carousel-prev carousel-control-prev" href="#tourCarousel" role="button" data-slide="prev">
 							<span class="tour-carousel-prev-icon carousel-control-prev-icon" aria-hidden="true"></span>
 							<span class="sr-only">Previous</span>
 						</a>
-						<a class="tour-carousel-next carousel-control-next" href="#specialtyCarousel" role="button" data-slide="next">
+						<a class="tour-carousel-next carousel-control-next" href="#tourCarousel" role="button" data-slide="next">
 							<span class="tour-carousel-next-icon carousel-control-next-icon" aria-hidden="true"></span>
 							<span class="sr-only">Next</span>
 						</a>
 					</div>
-					<hr class="dotted-line" style="margin-bottom:0px;">
+					<!-- <hr class="dotted-line" style="margin-bottom:0px;"> -->
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- Modal for neighborhood tour content -->
-	<div id="neighborhoodModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-lg">
-			<div class="tour-modal-content modal-content">
-				<div class="tour-modal-header modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span> close
-					</button>
-				</div>
-				<div class="tour-modal-body modal-body" style="padding: 0;">
-					<hr class="dotted-line" style="margin-top:0;">
-					<div id="neighborhoodCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-						<div class="carousel-inner">
-						<?php
-						/*
-						*  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
-						*  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
-						*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
-						*/
-
-						$post_objects = get_field('neighborhood_tours');
-
-						if( $post_objects ): ?>
-
-						<?php
-							$first = true;
-							foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-						<?php setup_postdata($post); ?>
-							<div class="carousel-item <?php if ($first) {echo "active"; $first = false;}?>">
-								<div class="row no-gutters">
-								<?php if( have_rows('images') ): ?>
-
-								<?php while( have_rows('images') ): the_row();?>
-
-									<div class="col-md-4 tour-image-holder" style="background-image: url('<?php the_sub_field('image_1');?>'); background-size: cover;"></div>
-									<div class="col-md-2 tour-image-holder" style="background-image: url('<?php the_sub_field('image_2');?>'); background-size: cover;"></div>
-									<div class="col-md-4 tour-image-holder" style="background-image: url('<?php the_sub_field('image_3');?>'); background-size: cover;"></div>
-									<div class="col-md-2 tour-image-holder" style="background-image: url('<?php the_sub_field('image_4');?>'); background-size: cover;"></div>
-
-								<?php endwhile; ?>
-
-								<?php endif; ?>
-								</div>
-								<div class="tour-main row no-gutters justify-content-around">
-									<div class="col-md-6">
-										<h2><?php the_title(); ?></h2>
-										<p>
-											<?php the_content(); ?>
-										</p>
-									</div>
-									<div class="col-md-4 tour-panel-right">
-									<?php if( have_rows('perfect_for') ): ?>
-										<h5>Perfect For</h5>
-										<ul class="perfect-for">
-										<?php while( have_rows('perfect_for') ): the_row();?>
-
-											<li><?php the_sub_field('people_profile');?></li>
-
-										<?php endwhile; ?>
-
-										</ul>
-
-									<?php endif; ?>
-									<?php if( have_rows('highlights') ): ?>
-										<h5>Highlights</h5>
-										<ul class="highlights">
-										<?php while( have_rows('highlights') ): the_row();?>
-
-											<li><?php the_sub_field('highlight');?></li>
-
-										<?php endwhile; ?>
-
-										</ul>
-
-									<?php endif; ?>
-										<button class="neighborhood-tour-book modal-tour-button private-book-button" type="button" data-toggle="modal" href="private-tour-form" style="width:100%;text-align:center;">Request a Tour</button>
-										<script type="text/javascript">
-											$('.neighborhood-tour-book').click(function(){
-											    $('#neighborhoodModal').modal('hide');
-												setTimeout(function(){
-												    document.getElementById('private-tour-form').scrollIntoView();
-												}, 1000);
-											});
-										</script>
-									</div>
-								</div>
-							</div>
-							<?php endforeach; ?>
-
-							<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-							<?php endif;
-							?>
-						</div>
-						<a class="tour-carousel-prev carousel-control-prev" href="#neighborhoodCarousel" role="button" data-slide="prev">
-							<span class="tour-carousel-prev-icon carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="tour-carousel-next carousel-control-next" href="#neighborhoodCarousel" role="button" data-slide="next">
-							<span class="tour-carousel-next-icon carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
-					<hr class="dotted-line" style="margin-bottom:0px;">
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- </div>
-</div> -->
-<?php
-	get_template_part('footer');
-?>
-
+	<?php
+		get_template_part('footer');
+	?>
 </body>
 </html>
