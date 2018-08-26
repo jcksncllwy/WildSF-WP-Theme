@@ -106,12 +106,15 @@
 			cursor: pointer;
 			color: #fbf6eb;
 		}
+		.wpcf7-response-output {
+			margin-top: 80px;
+		}
 		.post-preview-button {
 			margin-top: 15px;
 			text-shadow: none;
 		}
 		.wpcf7-submit {
-			margin: 30px 0 60px;
+			margin-top: 30px;
 			float: right;
 		}
 		div.wpcf7-mail-sent-ok {
@@ -506,7 +509,7 @@
 							</div>
 						</div>
 						<div class="row justify-content-center">
-							<div class="col-sm-8">
+							<div class="col-sm-8" style="margin-bottom: 40px;">
 								<?= the_field('tour_request_form'); ?>
 							</div>
 						</div>
