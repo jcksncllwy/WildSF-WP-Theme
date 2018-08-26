@@ -107,7 +107,7 @@
 			color: #fbf6eb;
 		}
 		.wpcf7-response-output {
-			margin-top: 80px;
+			margin: 80px 0 0 !important;
 		}
 		.post-preview-button {
 			margin-top: 15px;
