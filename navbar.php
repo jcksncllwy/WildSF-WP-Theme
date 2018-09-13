@@ -69,7 +69,9 @@ $logo_image_url = wp_get_attachment_image_url(
 			</li>
 		</ul>
 		<span class="navbar-text contact-info">
-	      <a href="mailto:info@wildsftours.com" class="email-address">info@wildsftours.com</a> <a href="tel:+14155801849" class="phone-number">415-580-1849</a>
+		  <div href="<?= $private_tours_url ?>#private-tour-form" class="btn book-button">Book Now</div> 
+	      <a href="mailto:info@wildsftours.com" class="email-address">info@wildsftours.com</a>
+		  <a href="tel:+14155801849" class="phone-number">415-580-1849</a>
 	    </span>
 	</div>
 </nav>
