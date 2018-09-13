@@ -12,6 +12,18 @@ $logo_image_url = wp_get_attachment_image_url(
 	get_field('navbar_logo', $frontpage->ID),
 	'full');
 ?>
+<style media="screen">
+	.navbar .book-button {
+		margin-left: 10px;
+		display: inline-block;
+		border-radius: 5px;
+		font-family: "Roboto", sans-serif;
+		text-transform: uppercase;
+		font-weight: 700;
+		cursor: pointer;
+		background-color: #bf5246;
+	}
+</style>
 
 <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
 	<a class="navbar-brand" href="<?= is_front_page()?'#':$frontpage_url ?>">
