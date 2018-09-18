@@ -88,7 +88,9 @@ a{
 	.nav-item{
 		font-size: 1em;
 		margin-right: 10px;
-
+		.nav-link {
+			color: $primary-white;
+		}
 		//override peek button styling. need peek button class for Peek JS to work
 		.peek-book-button-flat{
 			display: block;

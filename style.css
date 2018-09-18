@@ -39,7 +39,7 @@ body {
 
 .navbar {
   height: 80px;
-  background-color: #fbf6eb;
+  background-color: rgba(63, 97, 108, 0.8);
   padding: 0;
   font-family: "Roboto Slab", serif;
   -webkit-transition: opacity 0.3s ease;
@@ -72,6 +72,8 @@ body {
   .navbar .nav-item {
     font-size: 1em;
     margin-right: 10px; }
+    .navbar .nav-item .nav-link {
+      color: #fbf6eb; }
     .navbar .nav-item .peek-book-button-flat {
       display: block;
       letter-spacing: inherit;
@@ -80,7 +82,7 @@ body {
       color: rgba(251, 246, 235, 0.7); }
   .navbar .dropdown-menu {
     margin-top: 20px;
-    background-color: #fbf6eb; }
+    background-color: rgba(63, 97, 108, 0.8); }
     .navbar .dropdown-menu .dropdown-item {
       display: -webkit-box;
       display: -ms-flexbox;

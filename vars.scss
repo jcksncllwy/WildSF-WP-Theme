@@ -25,4 +25,4 @@ $secondary-font-family: "Roboto", sans-serif;
 ** Sizing and Layout Variables
 */
 $nav-height: 80px;
-$nav-color: $primary-white;
+$nav-color: transparentize($primary-blue,0.2);
