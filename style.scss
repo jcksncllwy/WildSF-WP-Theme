@@ -175,7 +175,7 @@ a{
 		color: rgb(251, 246, 235);
 	}
 	/* HIDE gift card on intermediate screens to prevent crowding */
-	@media (min-width: 992px) and (max-width: 1040px) {
+	@media (min-width: 992px) and (max-width: 1084px) {
 		.nav-gift-card {
 			display: none;
 		}
