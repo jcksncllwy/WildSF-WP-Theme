@@ -140,7 +140,7 @@ body {
     cursor: pointer;
     background-color: #bf5246;
     color: #fbf6eb; }
-  @media (min-width: 992px) and (max-width: 1040px) {
+  @media (min-width: 992px) and (max-width: 1084px) {
     .navbar .nav-gift-card {
       display: none; } }
 
