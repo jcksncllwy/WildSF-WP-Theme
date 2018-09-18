@@ -55,7 +55,7 @@ $logo_image_url = wp_get_attachment_image_url(
 				</div>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
-				<a class="nav-link <?= is_front_page() ? "" : "peek-book-button-flat"?>" href="<?= $calendar_nav_link ?>">Calendar</a>
+				<a style="padding: .5rem 1rem;" class="nav-link <?= is_front_page() ? "" : "peek-book-button-flat"?>" href="<?= $calendar_nav_link ?>">Calendar</a>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<a class="nav-link" href="<?= $private_tours_url ?>">Private Tours</a>
@@ -68,7 +68,7 @@ $logo_image_url = wp_get_attachment_image_url(
 				<a class="nav-link peek-book-button-flat" style="padding: .5rem 1rem;" href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" data-purchase-type="gift-card" data-button-text="Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Card</a>
 			</li>
 			<li data-toggle="collapse" data-target="" class="nav-item">
-				<div href="<?= $calendar_nav_link ?>" class="btn book-button <?= is_front_page() ? "" : "peek-book-button-flat"?>">Book Now</div>
+				<a href="<?= $calendar_nav_link ?>" class="btn book-button <?= is_front_page() ? "" : "peek-book-button-flat"?>">Book Now</a>
 			</li>
 		</ul>
 		<span class="navbar-text contact-info">
