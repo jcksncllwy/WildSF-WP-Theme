@@ -12,20 +12,8 @@ $logo_image_url = wp_get_attachment_image_url(
 	get_field('navbar_logo', $frontpage->ID),
 	'full');
 ?>
-<style media="screen">
-	.navbar .book-button {
-		margin-left: 10px;
-		display: inline-block;
-		border-radius: 5px;
-		font-family: "Roboto", sans-serif;
-		text-transform: uppercase;
-		font-weight: 700;
-		cursor: pointer;
-		background-color: #bf5246;
-	}
-</style>
 
-<nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 	<a class="navbar-brand" href="<?= is_front_page()?'#':$frontpage_url ?>">
 		<img src="<?= $logo_image_url ?>">
 	</a>
@@ -75,13 +63,15 @@ $logo_image_url = wp_get_attachment_image_url(
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<a class="nav-link" href="<?= $faq_nav_link ?>">FAQ</a>
 			</li>
-			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
+			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item nav-gift-card">
 				<!--a href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" class="nav-link" data-purchase-type="gift-card" data-button-text="Purchase Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Cards</a -->
 				<a class="nav-link peek-book-button-flat" style="padding: .5rem 1rem;" href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" data-purchase-type="gift-card" data-button-text="Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Card</a>
 			</li>
+			<li data-toggle="collapse" data-target="" class="nav-item">
+				<div href="<?= $calendar_nav_link ?>#private-tour-form" class="btn book-button">Book Now</div>
+			</li>
 		</ul>
 		<span class="navbar-text contact-info">
-		  <div href="<?= $private_tours_url ?>#private-tour-form" class="btn book-button">Book Now</div>
 	      <a href="mailto:info@wildsftours.com" class="email-address">info@wildsftours.com</a>
 		  <a href="tel:+14155801849" class="phone-number">415-580-1849</a>
 	    </span>
