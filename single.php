@@ -12,6 +12,20 @@
 		background-color: white;
 		padding: 30px;
 	}
+	p {
+		margin-bottom: 1.5rem;
+	}
+	.h2 {
+		font-size: 1.5rem;
+		margin-top: .5rem;
+	}
+	.h3 {
+		font-size: 1.25rem;
+	}
+	a, a:hover {
+		color: #bf5246;
+	}
+
 	</style>
 </head>
 <body>
