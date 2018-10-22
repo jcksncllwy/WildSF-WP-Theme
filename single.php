@@ -10,7 +10,7 @@
 	}
 	.page-inner {
 		background-color: white;
-		padding: 0 30px;
+		padding: 30px;
 	}
 	</style>
 </head>
