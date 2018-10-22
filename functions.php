@@ -125,6 +125,7 @@ function transact($request) {
 
     return $result;
 }
+add_theme_support( 'post-thumbnails' );
 
 add_action( 'rest_api_init', function () {
     register_rest_route( 'braintree/v1', 'transact', array(

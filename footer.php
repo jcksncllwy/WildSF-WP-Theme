@@ -21,6 +21,11 @@
 			Press
 		</a>
 	</div>
+	<div class="footer-item">
+		<a href="/blog">
+			Blog
+		</a>
+	</div>
 
 
 </div>
