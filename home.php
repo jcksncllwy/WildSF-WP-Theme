@@ -20,7 +20,7 @@
 			padding: 0 30px;
 		}
 		.post-summary {
-			padding: 3rem 0;
+			padding: 2rem 0 0;
 		}
 		.dotted-line{
 			background-image: url("<?= $dotted_line_image_url ?>");
@@ -30,6 +30,12 @@
 		}
 		a, a:hover {
 			color: #bf5246;
+		}
+		h1>a, h1>a:hover {
+			color: #3f616c;
+		}
+		.post-excerpt {
+			margin-bottom: 1rem;
 		}
 	</style>
 </head>
@@ -46,8 +52,10 @@
 		?>
 			<div class="post-summary">
 				<h1><a href="<?php echo get_permalink(); ?>"><?= the_title(); ?></a></h1>
-				<?= the_excerpt() ?>
-				<a href="<?php echo get_permalink(); ?>"> Read More...</a>
+				<div class="post-excerpt">
+					<?= the_excerpt() ?>
+					<a href="<?php echo get_permalink(); ?>"> Read More...</a>
+				</div>
 				<hr class="dotted-line">
 			</div>
 		<?php
