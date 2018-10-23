@@ -37,6 +37,11 @@
 		.post-excerpt {
 			margin-bottom: 1rem;
 		}
+		.post-date {
+			text-transform: uppercase;
+			font-weight: bold;
+			color: #b8b8b7;
+		}
 	</style>
 </head>
 <body>
@@ -52,6 +57,7 @@
 		?>
 			<div class="post-summary">
 				<h1><a href="<?php echo get_permalink(); ?>"><?= the_title(); ?></a></h1>
+				<div class="post-date"><?=the_date(); ?></div>
 				<div class="post-excerpt">
 					<?= the_excerpt() ?>
 					<a href="<?php echo get_permalink(); ?>"> Read More...</a>

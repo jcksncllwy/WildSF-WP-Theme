@@ -6,11 +6,11 @@
 
 	<style>
 	.page-container {
-		padding-top: 48px;
+		padding-top: 48px !important;
 	}
 	.page-inner {
 		background-color: white;
-		padding: 30px;
+		padding: 3rem 30px;
 	}
 	p {
 		margin-bottom: 1.5rem;
@@ -25,7 +25,6 @@
 	a, a:hover {
 		color: #bf5246;
 	}
-
 	</style>
 </head>
 <body>
