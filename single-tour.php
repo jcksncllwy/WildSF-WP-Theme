@@ -86,7 +86,7 @@
 			<hr class="dotted-line" />
 			<div class="wysiwyg-container">
 				<div class="wysiwyg-inner">
-				<div class="wysiwyg-header">Highlights</div>
+				<div class="wysiwyg-header"><?= get_the_title($this_tour_id) ?> Highlights</div>
 				<div class="row">
 					<?php
 					$highlights = get_field('highlights', $this_tour_id);
