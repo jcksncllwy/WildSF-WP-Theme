@@ -251,7 +251,7 @@
 									}
 								});
 								button.html('Add Details').prop('disabled', true);
-								button.bind('click',{paymentMethod},onPaymentDetailsComplete);
+								button.bind('click',{paymentMethod:payload},onPaymentDetailsComplete);
 							});
 						}
 						//Step 2 complete
@@ -293,7 +293,7 @@
 							// bind make payment
 							button.toggleClass("loading");
 							button.html('Send $'+ totalCost).prop('disabled', false);
-							button.bind('click',{paymentMethod},onMakePaymentClick);
+							button.bind('click',{paymentMethod:payload},onMakePaymentClick);
 						}
 						// all steps complete
 						var onMakePaymentClick = function(event){
