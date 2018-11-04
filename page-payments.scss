@@ -52,6 +52,9 @@
           white-space: nowrap;
           @include fieldLabel($font-red);
         }
+        .field-label.sm {
+          width: 80px;
+        }
         .field-input{
           flex-grow: 1;
           @include fieldInput($font-red)
