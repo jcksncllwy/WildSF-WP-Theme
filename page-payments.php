@@ -268,7 +268,7 @@
 
 								var tipInput = $('#tipAmount');
 								var tipString = tipInput.val();
-								var tip = Numbar.parseInt(tipString);
+								var tip = Number.parseInt(tipString);
 								$('#tip-complete').html(tipInput);
 
 								var totalCost = cost + tip;
