@@ -1332,7 +1332,6 @@ body.press .press-item {
     font-weight: 700; }
 
 .payments-page {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1357,10 +1356,10 @@ body.press .press-item {
       width: 800px;
       margin-top: 80px;
       margin-bottom: 80px; }
+      .payments-page .payments .payments-inner hidden {
+        display: none; }
     .payments-page .payments .customer-info {
       margin-top: 20px; }
-      .payments-page .payments .customer-info.hidden {
-        display: none; }
       .payments-page .payments .customer-info .input-group {
         margin-bottom: 10px; }
     .payments-page .payments .payments-form .name-fields {
@@ -1408,6 +1407,8 @@ body.press .press-item {
           .payments-page .payments .payments-form .field .field-label {
             width: 100%;
             text-align: center; } }
+      .payments-page .payments .payments-form .field .field-label.sm {
+        width: 80px; }
       .payments-page .payments .payments-form .field .field-input {
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
