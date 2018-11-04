@@ -126,84 +126,92 @@
 					</div>
 
 				    <!-- Step 3 -->
-					<div class="tour-info hidden">
-						<h3>Tour Details <span id="step-3">(Step 3 of 3)</span></h3>
-						<div class="address-fields">
-							<h4>Mailing Address</h4>
-							<p class="helper-text">(for us to send you a Wild SF postcard)</p>
-							<div class="field">
-								<div class="field-label">Street Address</div>
-								<input 
-									type="text" 
-									class="form-control field-input street" 
-									id="streetAddress" />
-							</div>
-							<div class="address-l2">
-								<div class="field">
+					<div class="tour-info hidden row">
+						<div class="col-12">
+							<h3>Tour Details <span id="step-3">(Step 3 of 3)</span></h3>
+							<div class="address-fields row">
+								<div class="col-12">
+									<h4>Mailing Address</h4>
+									<p class="helper-text">(for us to send you a Wild SF postcard)</p>
+								</div>
+								<div class="field col-12">
+									<div class="field-label">Street Address</div>
+									<input 
+										type="text" 
+										class="form-control field-input street" 
+										id="streetAddress" />
+								</div>
+								<div class="field col-md-6">
 									<div class="field-label">City</div>
 									<input 
 										type="text" 
 										class="form-control field-input city" 
 										id="city"/>
 								</div>
-								<div class="address-l3">
-									<div class="field">
-										<div class="field-label sm">State</div>
-										<input 
-											type="text" 
-											class="form-control field-input state" 
-											id="state"/>
-									</div>
-									<div class="field">
-										<div class="field-label sm">Zip</div>
-										<input 
-											type="text" 
-											class="form-control field-input zip" 
-											id="zip"/>
-									</div>
+								<div class="field col-md-3">
+									<div class="field-label sm">State</div>
+									<input 
+										type="text" 
+										class="form-control field-input state" 
+										id="state"/>
+								</div>
+								<div class="field col-md-3">
+									<div class="field-label sm">Zip</div>
+									<input 
+										type="text" 
+										class="form-control field-input zip" 
+										id="zip"/>
 								</div>
 							</div>
-						</div>
-						<div class="food-field">
-							<h4>If tour is a food crawl:</h4>
-							<div class="field">
-								<div class="field-label">Food Preferences / Allergies</div>
-								<textarea class="form-control field-input city" id="foodPref">
-								</textarea>
+							<div class="food-field row">
+								<div class="col-12">
+									<h4>If tour is a food crawl:</h4>
+								</div>
+								<div class="field col-12">
+									<div class="field-label">Food Preferences / Allergies</div>
+									<textarea class="form-control field-input city" id="foodPref">
+									</textarea>
+								</div>
 							</div>
-						</div>
-						<div class="kids-age">
-							<h4>If kids will be attending:</h4>
-							<div class="field">
-								<div class="field-label">Ages / Grades</div>
-								<input 
-									type="text" 
-									class="form-control field-input kids" 
-									id="zip"/>
+							<div class="kids-age row">
+								<div class="col-12"><h4>If kids will be attending:</h4></div>
+								<div class="field col-12">
+									<div class="field-label">Ages / Grades</div>
+									<input 
+										type="text" 
+										class="form-control field-input kids" 
+										id="zip"/>
+								</div>
 							</div>
-						</div>
-						<div class="last-fields">
-							<div class="field english-comp">
-								<h4>How well does your group comprehend English?</h4>
-								<span class="field-label">select one</span>
-								<select class="form-control field-input select" id="englishComp">
-							      <option>Native English Speakers</option>
-							      <option>Fluently</option>
-							      <option>Understand Basics</option>
-							      <option>Not at all</option>
-							    </select>
+							<div class="english-comp row">
+								<div class="col-12">
+									<h4>How well does your group comprehend English?</h4>
+								</div>
+								<div class="field col-md-6">
+									<span class="field-label">select one</span>
+									<select class="form-control field-input select" id="englishComp">
+								      <option>Native English Speakers</option>
+								      <option>Fluently</option>
+								      <option>Understand Basics</option>
+								      <option>Not at all</option>
+								    </select>
+								</div>
 							</div>
-							<div class="field lead-source">
-								<h4>How did you hear about Wild SF Tours?</h4>
-								<span class="field-label">select one</span>
-								<select class="form-control field-input select" id="leadSource">
-							      <option>Previous tour with us</option>
-							      <option>Word-of-mouth</option>
-							      <option>Google</option>
-							      <option>Social media</option>
-							      <option>Flyer</option>
-							      <option>Other</option>
-							    </select>
+							<div class="lead-source row">
+								<div class="col-12">
+									<h4>How did you hear about Wild SF Tours?</h4>
+								</div>
+								<div class="field col-md-6">
+									<span class="field-label">select one</span>
+									<select class="form-control field-input select" id="leadSource">
+								      <option>Previous tour with us</option>
+								      <option>Word-of-mouth</option>
+								      <option>Google</option>
+								      <option>Social media</option>
+								      <option>Flyer</option>
+								      <option>Other</option>
+								    </select>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -264,12 +272,12 @@
 								var paymentInput = $('#paymentAmount');
 								var costString = paymentInput.val();
 								var cost = Number.parseInt(costString);
-								$('#amount-complete').html(paymentInput);
+								$('#amount-complete').html(paymentString);
 
 								var tipInput = $('#tipAmount');
 								var tipString = tipInput.val();
 								var tip = Number.parseInt(tipString);
-								$('#tip-complete').html(tipInput);
+								$('#tip-complete').html(tipString);
 
 								var totalCost = cost + tip;
 								$('#total-complete').html(totalCost);
