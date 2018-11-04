@@ -1358,6 +1358,16 @@ body.press .press-item {
       margin-bottom: 80px; }
       .payments-page .payments .payments-inner .hidden {
         display: none; }
+      .payments-page .payments .payments-inner .payment-success {
+        display: none; }
+        .payments-page .payments .payments-inner .payment-success h2, .payments-page .payments .payments-inner .payment-success .h2 {
+          color: #bf5246; }
+      .payments-page .payments .payments-inner.success .payment-success {
+        display: block; }
+      .payments-page .payments .payments-inner.success .payment-intro {
+        display: none; }
+      .payments-page .payments .payments-inner.success .form-fields {
+        display: none; }
     .payments-page .payments .customer-info {
       margin-top: 20px; }
       .payments-page .payments .customer-info .input-group {
@@ -1435,13 +1445,6 @@ body.press .press-item {
         background: #bf5246; }
       .payments-page .payments .payments-form #submit-button.loading {
         background: #bf5246; }
-    .payments-page .payments .payments-form .payment-success {
-      display: none;
-      color: #bf5246; }
-    .payments-page .payments .payments-form.success .payment-success {
-      display: block; }
-    .payments-page .payments .payments-form.success .form-fields {
-      display: none; }
     .payments-page .payments .loader,
     .payments-page .payments .loader:before,
     .payments-page .payments .loader:after {

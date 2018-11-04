@@ -44,7 +44,7 @@
 		    		<h1 class="payments-hero">Payments Portal</h1>
 		    		<p class="payments-message">Thank you for chosing Wild SF Tours. Please follow these steps to complete your payment.</p>
 		    	</div>
-		    	<div class="payment-success hidden">
+		    	<div class="payment-success">
 					<h1>Payment Successful</h1>
 					<h2>Thank you for your payment, we can't wait for your tour!</h2>
 					<p>A receipt for this payment will be sent to the email associated with your reservation.</p>
@@ -332,7 +332,7 @@
 									lead_source: $('#leadSource').val()
 								},
 								success: function(data){
-									$('.payments-form').addClass('success');
+									$('.payments-inner').addClass('success');
 									console.log(data);
 								},
 								fail: function(jqXHR, status, err){

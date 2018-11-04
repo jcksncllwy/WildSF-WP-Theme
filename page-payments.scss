@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+      
 
     .payments-inner{
       width: 800px;
@@ -15,6 +16,24 @@
       margin-bottom: 80px;
       .hidden{
         display: none;
+      }
+      .payment-success{
+        display:none;
+        h2, .h2 {
+          color: $font-red;
+        }
+      }
+
+      &.success {
+        .payment-success{
+          display:block;
+        }
+        .payment-intro {
+          display: none;
+        }
+        .form-fields{
+          display: none;
+        }
       }
     }
 
@@ -69,21 +88,6 @@
         }
         &.loading{
           background: $font-red;
-        }
-      }
-
-
-      .payment-success{
-        display:none;
-        color: $font-red;
-      }
-
-      &.success{
-        .payment-success{
-          display:block;
-        }
-        .form-fields{
-          display: none;
         }
       }
     }
