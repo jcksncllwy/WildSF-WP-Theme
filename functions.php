@@ -110,13 +110,33 @@ function transact($request) {
     $amount = $parameters['amount'];
     $customer_name = $parameters['customer_name'];
     $payment_purpose = $parameters['payment_purpose'];
+    $tip_amount = $parameters['tip_amount'];
+    $base_amount = $parameters['base_amount'];
+    $customer_street_address = $parameters['customer_street_address'];
+    $customer_city = $parameters['customer_city'];
+    $customer_state = $parameters['customer_state'];
+    $customer_zip = $parameters['customer_zip'];
+    $food_preferences = $parameters['food_preferences'];
+    $kids_ages = $parameters['kids_ages'];
+    $english_comp = $parameters['english_comp'];
+    $lead_source = $parameters['lead_source'];
 
     $result = $BraintreeGateway->transaction()->sale([
       'amount' => $amount,
       'paymentMethodNonce' => $nonce,
       'customFields' => [
         'customer_name' => $customer_name,
-        'payment_purpose' => $payment_purpose
+        'payment_purpose' => $payment_purpose,
+        'base_amount' => $base_amount,
+        'tip_amount' => $tip_amount,
+        'customer_street_address' => $customer_street_address,
+        'customer_city' => $customer_city,
+        'customer_state' => $customer_state,
+        'customer_zip' => $customer_zip,
+        'food_preferences' => $food_preferences,
+        'kids_ages' => $kids_ages,
+        'english_comp' => $english_comp,
+        'lead_source' => $lead_source
       ],
       'options' => [
         'submitForSettlement' => True

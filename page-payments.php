@@ -329,7 +329,7 @@
 									food_preferences: $('#foodPref').val(),
 									kids_ages: $('#kids').val(),
 									english_comp: $('#englishComp').val(),
-									lead_source: $('#leadSource').val(),
+									lead_source: $('#leadSource').val()
 								},
 								success: function(data){
 									$('.payments-form').addClass('success');
