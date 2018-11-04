@@ -272,7 +272,7 @@
 								var paymentInput = $('#paymentAmount');
 								var costString = paymentInput.val();
 								var cost = Number.parseInt(costString);
-								$('#amount-complete').html(paymentString);
+								$('#amount-complete').html(costString);
 
 								var tipInput = $('#tipAmount');
 								var tipString = tipInput.val();
@@ -302,7 +302,7 @@
 
 							var tipInput = $('#tipAmount');
 							var tipString = tipInput.val();
-							var tip = Numbar.parseInt(tipString);
+							var tip = Number.parseInt(tipString);
 
 							var totalCost = cost + tip;
 
