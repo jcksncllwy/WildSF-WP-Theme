@@ -293,7 +293,7 @@
 							// bind make payment
 							button.toggleClass("loading");
 							button.html('Send $'+ totalCost).prop('disabled', false);
-							button.bind('click',{paymentMethod:payload},onMakePaymentClick);
+							button.bind('click',{paymentMethod:event.data.paymentMethod},onMakePaymentClick);
 						}
 						// all steps complete
 						var onMakePaymentClick = function(event){
