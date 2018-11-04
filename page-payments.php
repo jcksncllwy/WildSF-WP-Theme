@@ -240,6 +240,7 @@
 									console.log(err);
 								}
 								console.log('Payment Method: ', payload);
+								$('#step-1').toggleClass('hidden');
 								$('.payment-info').toggleClass('hidden');
 								var paymentInput = $('#paymentAmount');
 								paymentInput.change(function(){
@@ -285,7 +286,12 @@
 							// show preview-2
 							$('.preview-2').toggleClass('hidden');
 
+							// show tour-info
+							$('#step-2').toggleClass('hidden');
+							$('.tour-info').toggleClass('hidden');
+
 							// bind make payment
+							button.toggleClass("loading");
 							button.html('Send $'+ totalCost).prop('disabled', false);
 							button.bind('click',onMakePaymentClick);
 						}
