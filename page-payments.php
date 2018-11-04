@@ -51,70 +51,78 @@
 				</div>
 		    	<hr class="dotted-line" />
 	    	</div>
-			<div class="payments-form">
-				<div class="form-fields">
+			<div class="payments-form row">
+				<div class="form-fields col-12">
 					<!-- Step 1 -->
-					<div class="payment-verify">
-						<h3>Payment Method <span id="step-1">(Step 1 of 3)</span></h3>
-					    <div id="dropin-container"></div>
-					    <hr class="dotted-line" />
+					<div class="payment-verify row">
+						<div class="col-12">
+							<h3>Payment Method <span id="step-1">(Step 1 of 3)</span></h3>
+						    <div id="dropin-container"></div>
+						    <hr class="dotted-line" />
+						</div>
 					</div>
 
 				    <!-- Step 2 -->
-					<div class="payment-info hidden">
-						<h3>Payment Information <span id="step-2">(Step 2 of 3)</span></h3>
-						<div class="form-2">
-							<div class="name-fields">
-								<div class="field">
-									<div class="field-label">First Name</div>
-									<input type="text" class="form-control field-input name" id="firstNameInput" autocomplete='given-name' />
+					<div class="payment-info hidden row">
+						<div class="col-12">
+							<h3>Payment Information <span id="step-2">(Step 2 of 3)</span></h3>
+							<div class="form-2">
+								<div class="row">
+									<div class="field col-md-6">
+										<div class="field-label">First Name</div>
+										<input type="text" class="form-control field-input name" id="firstNameInput" autocomplete='given-name' />
+									</div>
+									<div class="field col-md-6">
+										<div class="field-label">Last Name</div>
+										<input type="text" class="form-control field-input name" id="lastNameInput" autocomplete='family-name' />
+									</div>
 								</div>
-								<div class="field">
-									<div class="field-label">Last Name</div>
-									<input type="text" class="form-control field-input name" id="lastNameInput" autocomplete='family-name' />
+								<div class="row">
+									<div class="field col-12">
+										<div class="field-label">What's it for?</div>
+										<input type="text" class="form-control field-input purpose" id="paymentPurpose" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="field payment-amount col-md-6">
+										<span class="field-label">Tour Cost $</span>
+										<input
+											id="paymentAmount"
+											class="form-control field-input currency"
+											type="number"
+											value="0.00"
+											min="0"
+											step="1.00"
+											data-number-to-fixed="2"
+											data-number-stepfactor="100"
+										/>
+									</div>
+								</div>
+								<div class="row">
+									<div class="field payment-amount col-md-6">
+										<span class="field-label">Tip $</span>
+										<input
+											id="tipAmount"
+											class="form-control field-input currency"
+											type="number"
+											value="0.00"
+											min="0"
+											step="1.00"
+											data-number-to-fixed="2"
+											data-number-stepfactor="100"
+										/>
+									</div>
 								</div>
 							</div>
-							<div class="field">
-								<div class="field-label">What's it for?</div>
-								<input type="text" class="form-control field-input purpose" id="paymentPurpose" />
+							<div class="preview-2 hidden">
+								<p>Name: <span id="name-complete"></span></p>
+								<p>Payment Purpose: <span id="purpose-complete"></span></p>
+								<p>Payment Amount: <span id="amount-complete"></span></p>
+								<p>Tip: <span id="tip-complete"></span></p>
+								<p>Total: <span id="total-complete"></span></p>
 							</div>
-							<div class="pay-fields">
-								<div class="field payment-amount">
-									<span class="field-label">Tour Cost $</span>
-									<input
-										id="paymentAmount"
-										class="form-control field-input currency"
-										type="number"
-										value="0.00"
-										min="0"
-										step="1.00"
-										data-number-to-fixed="2"
-										data-number-stepfactor="100"
-									/>
-								</div>
-								<div class="field payment-amount">
-									<span class="field-label">Tip $</span>
-									<input
-										id="tipAmount"
-										class="form-control field-input currency"
-										type="number"
-										value="0.00"
-										min="0"
-										step="1.00"
-										data-number-to-fixed="2"
-										data-number-stepfactor="100"
-									/>
-								</div>
-							</div>
+							<hr class="dotted-line"/>
 						</div>
-						<div class="preview-2">
-							<p>Name: <span id="name-complete"></span></p>
-							<p>Payment Purpose: <span id="purpose-complete"></span></p>
-							<p>Payment Amount: <span id="amount-complete"></span></p>
-							<p>Tip: <span id="tip-complete"></span></p>
-							<p>Total: <span id="total-complete"></span></p>
-						</div>
-						<hr class="dotted-line"/>
 					</div>
 
 				    <!-- Step 3 -->
@@ -201,7 +209,7 @@
 					</div>
 			    <button id="submit-button" class="button">Verify Payment Method</button>
 			    <hr class="dotted-line"/>
-				</div>
+			</div>
 		    <script>
 
 		    $(function(){
