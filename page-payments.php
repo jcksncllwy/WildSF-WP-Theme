@@ -279,7 +279,7 @@
 
 							// bind make payment
 							button.html('Send $'+ totalCost).prop('disabled', false);
-							button.bind('click',onPaymentClick);
+							button.bind('click',onMakePaymentClick);
 						}
 						// all steps complete
 						var onMakePaymentClick = function(event){
