@@ -180,7 +180,7 @@
 									<input 
 										type="text" 
 										class="form-control field-input kids" 
-										id="zip"/>
+										id="kids"/>
 								</div>
 							</div>
 							<div class="english-comp row">
