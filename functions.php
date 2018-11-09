@@ -125,12 +125,12 @@ function transact($request) {
     $result = $BraintreeGateway->transaction()->sale([
       'amount' => $amount,
       'paymentMethodNonce' => $nonce,
-      'customer' => [
+      'customer' => {
         'first_name' => $first_name,
         'last_name' => $last_name,
         'company' => $group_name,
         'email' => $email
-      ],
+      },
       'shipping' => [
         'first_name' => $first_name,
         'last_name' => $last_name,
