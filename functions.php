@@ -126,19 +126,19 @@ function transact($request) {
       'amount' => $amount,
       'paymentMethodNonce' => $nonce,
       'customer' => [
-        'first_name' => $first_name,
-        'last_name' => $last_name,
+        'firstName' => $first_name,
+        'lastName' => $last_name,
         'company' => $group_name,
         'email' => $email
       ],
       'shipping' => [
-        'first_name' => $first_name,
-        'last_name' => $last_name,
-        'street_address' => $street_address,
+        'firstName' => $first_name,
+        'lastName' => $last_name,
+        'streetAddress' => $street_address,
         'locality' => $locality,
         'region' => $region,  
-        'postal_code' => $postal_code,
-        'country' => $country
+        'postalCode' => $postal_code,
+        'countryName' => $country
       ],
       'customFields' => [
         'base_amount' => $base_amount,
