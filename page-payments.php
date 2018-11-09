@@ -46,8 +46,8 @@
 		    	</div>
 		    	<div class="payment-success">
 					<h1>Payment Successful</h1>
-					<h2>Thank you for your payment, we can't wait for your tour!</h2>
-					<p>A receipt for this payment will be sent to the email associated with your reservation.</p>
+					<h2>Thank you for your payment!</h2>
+					<p>A receipt has been emailed.</p>
 				</div>
 		    	<hr class="dotted-line" />
 	    	</div>
@@ -78,14 +78,18 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="field col-12">
-										<div class="field-label">What's it for?</div>
-										<input type="text" class="form-control field-input purpose" id="paymentPurpose" />
+									<div class="field col-md-6">
+										<div class="field-label">Company/Group Name</div>
+										<input type="text" class="form-control field-input groupName" id="groupName" />
+									</div>
+									<div class="field col-md-6">
+										<div class="field-label">Email</div>
+										<input type="text" class="form-control field-input email" id="email" />
 									</div>
 								</div>
 								<div class="row">
 									<div class="field payment-amount col-md-6">
-										<span class="field-label">Tour Cost $</span>
+										<span class="field-label">Amount $</span>
 										<input
 											id="paymentAmount"
 											class="form-control field-input currency"
@@ -97,10 +101,8 @@
 											data-number-stepfactor="100"
 										/>
 									</div>
-								</div>
-								<div class="row">
 									<div class="field payment-amount col-md-6">
-										<span class="field-label">Tip $</span>
+										<span class="field-label">Tip to Guide $</span>
 										<input
 											id="tipAmount"
 											class="form-control field-input currency"
@@ -116,7 +118,9 @@
 							</div>
 							<div class="preview-2 hidden">
 								<p>Name: <span id="name-complete"></span></p>
-								<p>Payment Purpose: <span id="purpose-complete"></span></p>
+								<p>Company/Group Name: <span id="group-complete"></span></p>
+								<p>Email: <span id="email-complete"></span></p>
+
 								<p>Payment Amount: <span id="amount-complete"></span></p>
 								<p>Tip: <span id="tip-complete"></span></p>
 								<p>Total: <span id="total-complete"></span></p>
@@ -156,45 +160,28 @@
 										id="state"/>
 								</div>
 								<div class="field col-md-3">
-									<div class="field-label sm">Zip</div>
+									<div class="field-label sm">Postal Code</div>
 									<input 
 										type="text" 
 										class="form-control field-input zip" 
 										id="zip"/>
 								</div>
+								<div class="field col-md-3">
+									<div class="field-label sm">Country</div>
+									<input 
+										type="text" 
+										class="form-control field-input country" 
+										id="country"/>
+								</div>
 							</div>
 							<div class="food-field row">
 								<div class="col-12">
-									<h4>If tour is a food crawl:</h4>
+									<h4>For Food Tours:</h4>
 								</div>
 								<div class="field col-12">
-									<div class="field-label">Food Preferences / Allergies</div>
+									<div class="field-label">Dietary Restrictions/Allergies</div>
 									<textarea class="form-control field-input city" id="foodPref">
 									</textarea>
-								</div>
-							</div>
-							<div class="kids-age row">
-								<div class="col-12"><h4>If kids will be attending:</h4></div>
-								<div class="field col-12">
-									<div class="field-label">Ages / Grades</div>
-									<input 
-										type="text" 
-										class="form-control field-input kids" 
-										id="kids"/>
-								</div>
-							</div>
-							<div class="english-comp row">
-								<div class="col-12">
-									<h4>How well does your group comprehend English?</h4>
-								</div>
-								<div class="field col-md-6">
-									<span class="field-label">select one</span>
-									<select class="form-control field-input select" id="englishComp">
-								      <option>Native English Speakers</option>
-								      <option>Fluently</option>
-								      <option>Understand Basics</option>
-								      <option>Not at all</option>
-								    </select>
 								</div>
 							</div>
 							<div class="lead-source row">
@@ -267,8 +254,11 @@
 								var fullName = $('#firstNameInput').val() +" "+ $('#lastNameInput').val();
 								$('#name-complete').html(fullName);
 
-								var purpose = $('#paymentPurpose').val();
-								$('#purpose-complete').html(purpose);
+								var groupName = $('#groupName').val();
+								$('#group-complete').html(groupName);
+
+								var email = $('#email').val();
+								$('#email-complete').html(email);
 
 								var paymentInput = $('#paymentAmount');
 								var costString = paymentInput.val();
@@ -318,17 +308,18 @@
 								data: {
 									nonce: event.data.paymentMethod.nonce,
 									amount: totalCost,
-									customer_name: $('#firstNameInput').val() +" "+ $('#lastNameInput').val(),
-									payment_purpose: $('#paymentPurpose').val(),
+									first_name: $('#firstNameInput').val(),
+									last_name: $('#lastNameInput').val(),
+									group_name: $('#groupName').val(),
+									email: $('#email').val(),
 									tip_amount: tipString,
 									base_amount: costString,
-									customer_street_address: $('#streetAddress').val(),
-									customer_city: $('#city').val(),
-									customer_state: $('#state').val(),
-									customer_zip: $('#zip').val(),
+									street_address: $('#streetAddress').val(),
+									locality: $('#city').val(),
+									region: $('#state').val(),
+									postal_code: $('#zip').val(),
+									country: $('#country').val(),
 									food_preferences: $('#foodPref').val(),
-									kids_ages: $('#kids').val(),
-									english_comp: $('#englishComp').val(),
 									lead_source: $('#leadSource').val()
 								},
 								success: function(data){
