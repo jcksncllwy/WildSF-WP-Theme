@@ -125,13 +125,13 @@ function transact($request) {
     $result = $BraintreeGateway->transaction()->sale([
       'amount' => $amount,
       'paymentMethodNonce' => $nonce,
-      'customer' => {
+      'customer' => [
         'first_name' => $first_name,
         'last_name' => $last_name,
         'company' => $group_name,
-        'email' => $email,
-      },
-      'shipping' => {
+        'email' => $email
+      ],
+      'shipping' => [
         'first_name' => $first_name,
         'last_name' => $last_name,
         'street_address' => $street_address,
@@ -139,7 +139,7 @@ function transact($request) {
         'region' => $region,  
         'postal_code' => $postal_code,
         'country' => $country
-      },
+      ],
       'customFields' => [
         'base_amount' => $base_amount,
         'tip_amount' => $tip_amount,
