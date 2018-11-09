@@ -159,15 +159,15 @@
 										class="form-control field-input state" 
 										id="state"/>
 								</div>
-								<div class="field col-md-3">
-									<div class="field-label sm">Postal Code</div>
+								<div class="field col-md-4">
+									<div class="field-label">Postal Code</div>
 									<input 
 										type="text" 
 										class="form-control field-input zip" 
 										id="zip"/>
 								</div>
-								<div class="field col-md-3">
-									<div class="field-label sm">Country</div>
+								<div class="field col-md-4">
+									<div class="field-label">Country</div>
 									<input 
 										type="text" 
 										class="form-control field-input country" 
