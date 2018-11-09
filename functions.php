@@ -139,8 +139,7 @@ function transact($request) {
         'region' => $region,  
         'postal_code' => $postal_code,
         'country' => $country
-      }
-      ,
+      },
       'customFields' => [
         'base_amount' => $base_amount,
         'tip_amount' => $tip_amount,
