@@ -117,13 +117,18 @@
 								</div>
 							</div>
 							<div class="preview-2 hidden">
-								<p>Name: <span id="name-complete"></span></p>
-								<p>Company/Group Name: <span id="group-complete"></span></p>
-								<p>Email: <span id="email-complete"></span></p>
-
-								<p>Payment Amount: <span id="amount-complete"></span></p>
-								<p>Tip: <span id="tip-complete"></span></p>
-								<p>Total: <span id="total-complete"></span></p>
+								<div class="row">
+									<div class="col-md-6">
+										<p>Name: <span id="name-complete"></span></p>
+										<p>Co./Group Name: <span id="group-complete"></span></p>
+										<p>Email: <span id="email-complete"></span></p>
+									</div>
+									<div class="col-md-6">
+										<p>Payment Amount: <span id="amount-complete"></span></p>
+										<p>Tip: <span id="tip-complete"></span></p>
+										<p>Total: <span id="total-complete"></span></p>	
+									</div>
+								</div>
 							</div>
 							<hr class="dotted-line"/>
 						</div>
