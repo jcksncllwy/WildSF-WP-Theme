@@ -79,7 +79,7 @@
 								</div>
 								<div class="row">
 									<div class="field col-md-6">
-										<div class="field-label">Company/Group Name</div>
+										<div class="field-label">Co./Group Name</div>
 										<input type="text" class="form-control field-input groupName" id="groupName" />
 									</div>
 									<div class="field col-md-6">
@@ -119,14 +119,14 @@
 							<div class="preview-2 hidden">
 								<div class="row">
 									<div class="col-md-6">
-										<p>Name: <span id="name-complete"></span></p>
-										<p>Co./Group Name: <span id="group-complete"></span></p>
-										<p>Email: <span id="email-complete"></span></p>
+										<p><strong>Name: </strong><span id="name-complete"></span></p>
+										<p><strong>Co./Group Name: </strong><span id="group-complete"></span></p>
+										<p><strong>Email: </strong><span id="email-complete"></span></p>
 									</div>
 									<div class="col-md-6">
-										<p>Payment Amount: <span id="amount-complete"></span></p>
-										<p>Tip: <span id="tip-complete"></span></p>
-										<p>Total: <span id="total-complete"></span></p>	
+										<p><strong>Payment Amount: </strong>$<span id="amount-complete" class="text-right"></span></p>
+										<p><strong>Tip: </strong>$<span id="tip-complete" class="text-right"></span></p>
+										<p><strong>Total: </strong>$<span id="total-complete" class="text-right"></span></p>	
 									</div>
 								</div>
 							</div>
