@@ -768,6 +768,25 @@
 			</div>
 		</div>
 	</div>
+	<!-- Prevent Multi Submit on WPCF7 forms -->
+	<script type="text/javascript">
+	var disableSubmit = false;
+	jQuery('input.wpcf7-submit[type="submit"]').click(function() {
+	    jQuery(':input[type="submit"]').attr('value',"Sending...")
+	    if (disableSubmit == true) {
+	        return false;
+	    }
+	    disableSubmit = true;
+	    return true;
+	})
+	  
+	var wpcf7Elm = document.querySelector( '.wpcf7' );
+	wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
+	    jQuery(':input[type="submit"]').attr('value',"send")
+	    disableSubmit = false;
+	}, false );
+	</script>
+	
 	<?php
 		get_template_part('footer');
 	?>
