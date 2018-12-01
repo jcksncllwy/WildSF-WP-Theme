@@ -69,13 +69,9 @@
 			<?php
 					endwhile;
 				}
-				?>
-				<div class="pagination">
-					<?php the_posts_pagination(); ?>
-				</div>
-				<?php
 				wp_reset_query();
 			?>
+			<?php the_posts_pagination(); ?>
 		</div>
 	</div>
 
