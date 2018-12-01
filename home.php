@@ -51,24 +51,28 @@
 	?>
 	<div class="page-container">
 		<div class="page-inner">
-		<?php
+			<?php
+			query_posts( array ( 'blog' => 'blog' ) );
+
 			if ( have_posts() ){
 				while ( have_posts() ) : the_post();
-		?>
-			<div class="post-summary">
-				<h1><a href="<?php echo get_permalink(); ?>"><?= the_title(); ?></a></h1>
-				<div class="post-date"><?=the_date(); ?></div>
-				<div class="post-excerpt">
-					<?= the_excerpt() ?>
-					<a href="<?php echo get_permalink(); ?>"> Read More...</a>
+			?>
+				<div class="post-summary">
+					<h1><a href="<?php echo get_permalink(); ?>"><?= the_title(); ?></a></h1>
+					<div class="post-date"><?=the_date(); ?></div>
+					<div class="post-excerpt">
+						<?= the_excerpt() ?>
+						<a href="<?php echo get_permalink(); ?>"> Read More...</a>
+					</div>
+					<hr class="dotted-line">
 				</div>
-				<hr class="dotted-line">
-			</div>
-		<?php
-				endwhile;
-			}
-		?>
+			<?php
+					endwhile;
+				}
+				wp_reset_query();
+			?>
 		</div>
+		<?php the_posts_pagination(); ?>
 	</div>
 
 <?php
