@@ -71,8 +71,8 @@
 				}
 				wp_reset_query();
 			?>
+			<?php the_posts_pagination(); ?>
 		</div>
-		<?php the_posts_pagination(); ?>
 	</div>
 
 <?php
