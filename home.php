@@ -52,7 +52,7 @@
 			<?php if( have_posts() ): ?>
 			<?php while( have_posts() ): the_post(); ?>
 				<div class="post-summary" id="post-<?php get_the_ID(); ?>">
-					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( array(200,220) ); ?></a>
+					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium_large'); ?></a>
 					<h1><a href="<?php echo get_permalink(); ?>"><?= the_title(); ?></a></h1>
 					<div class="post-date"><?=the_date(); ?></div>
 					<div class="post-excerpt">
