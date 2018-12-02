@@ -45,19 +45,14 @@
 	</style>
 </head>
 <body>
-	<?php
-		get_template_part('navbar');
-
-	?>
+	<?php get_template_part('navbar');?>
 	<div class="page-container">
 		<div class="page-inner">
-			<?php
-			query_posts( array ( 'blog' => 'blog' ) );
-
-			if ( have_posts() ){
-				while ( have_posts() ) : the_post();
-			?>
-				<div class="post-summary">
+			<?php query_posts('post_type=post&cat=4&post_status=publish&posts_per_page=10&paged='. get_query_var('paged')); ?>
+			<?php if( have_posts() ): ?>
+			<?php while( have_posts() ): the_post(); ?>
+				<div class="post-summary" id="post-<?php get_the_ID(); ?>">
+					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( array(200,220) ); ?></a>
 					<h1><a href="<?php echo get_permalink(); ?>"><?= the_title(); ?></a></h1>
 					<div class="post-date"><?=the_date(); ?></div>
 					<div class="post-excerpt">
@@ -66,13 +61,16 @@
 					</div>
 					<hr class="dotted-line">
 				</div>
-			<?php
-					endwhile;
-				}
-				wp_reset_query();
-			?>
+			<?php endwhile; ?>
+				<div class="navigation">
+					<span class="newer"><?php previous_posts_link(__('« Newer','example')) ?></span> <span class="older"><?php next_posts_link(__('Older »','example')) ?></span>
+				</div><!-- /.navigation -->
+			<?php else: ?>
+				<div id="post-404" class="noposts">
+				    <p><?php _e('None found.','example'); ?></p>
+			    </div><!-- /#post-404 -->
+			<?php endif; wp_reset_query(); ?>
 		</div>
-		<?php the_posts_pagination(); ?>
 	</div>
 
 <?php
