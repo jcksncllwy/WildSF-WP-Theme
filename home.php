@@ -22,7 +22,7 @@
 		.post-summary {
 			padding: 1rem 0 0;
 		}
-		.post_title {
+		.post-title {
 			margin-top: 1rem;
 		}
 		.dotted-line{
