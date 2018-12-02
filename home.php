@@ -19,6 +19,9 @@
 			background-color: white;
 			padding: 0 30px;
 		}
+		.page-container .page-inner img {
+		    height: auto;
+		}
 		.post-summary {
 			padding: 1rem 0 0;
 		}
