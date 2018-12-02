@@ -12,9 +12,9 @@
 	?>
 
 	<style>
-		.page-container {
+		/* .page-container {
 			padding-top: 48px !important;
-		}
+		} */
 		.page-inner {
 			background-color: white;
 			padding: 0 30px;
