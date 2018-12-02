@@ -62,8 +62,13 @@
 					<hr class="dotted-line">
 				</div>
 			<?php endwhile; ?>
-				<div class="navigation">
-					<span class="newer"><?php previous_posts_link(__('« Newer','example')) ?></span> <span class="older"><?php next_posts_link(__('Older »','example')) ?></span>
+				<div class="navigation row">
+					<div class="col-6">
+						<span class="newer"><?php previous_posts_link(__('« Newer','example')) ?></span>
+					</div>
+					<div class="col-6 float-right text-right">
+						<span class="older"><?php next_posts_link(__('Older »','example')) ?></span>
+					</div>
 				</div><!-- /.navigation -->
 			<?php else: ?>
 				<div id="post-404" class="noposts">
