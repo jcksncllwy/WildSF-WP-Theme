@@ -20,7 +20,10 @@
 			padding: 0 30px;
 		}
 		.post-summary {
-			padding: 2rem 0 0;
+			padding: 1rem 0 0;
+		}
+		.post_title {
+			margin-top: 1rem;
 		}
 		.dotted-line{
 			background-image: url("<?= $dotted_line_image_url ?>");
@@ -42,6 +45,9 @@
 			font-weight: bold;
 			color: #b8b8b7;
 		}
+		.navigation {
+			padding: 1rem 0;
+		}
 	</style>
 </head>
 <body>
@@ -53,7 +59,7 @@
 			<?php while( have_posts() ): the_post(); ?>
 				<div class="post-summary" id="post-<?php get_the_ID(); ?>">
 					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium_large'); ?></a>
-					<h1><a href="<?php echo get_permalink(); ?>"><?= the_title(); ?></a></h1>
+					<h1 class="post-title"><a href="<?php echo get_permalink(); ?>"><?= the_title(); ?></a></h1>
 					<div class="post-date"><?=the_date(); ?></div>
 					<div class="post-excerpt">
 						<?= the_excerpt() ?>
