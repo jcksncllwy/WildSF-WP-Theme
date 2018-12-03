@@ -126,7 +126,7 @@
 									<div class="col-md-6">
 										<p><strong>Payment Amount: </strong>$<span id="amount-complete" class="text-right"></span></p>
 										<p><strong>Tip: </strong>$<span id="tip-complete" class="text-right"></span></p>
-										<p><strong>Total: </strong>$<span id="total-complete" class="text-right"></span></p>	
+										<p><strong>Total: </strong>$<span id="total-complete" class="text-right"></span></p>
 									</div>
 								</div>
 							</div>
@@ -145,37 +145,37 @@
 								</div>
 								<div class="field col-12">
 									<div class="field-label">Street Address</div>
-									<input 
-										type="text" 
-										class="form-control field-input street" 
+									<input
+										type="text"
+										class="form-control field-input street"
 										id="streetAddress" />
 								</div>
 								<div class="field col-md-6">
 									<div class="field-label">City</div>
-									<input 
-										type="text" 
-										class="form-control field-input city" 
+									<input
+										type="text"
+										class="form-control field-input city"
 										id="city"/>
 								</div>
 								<div class="field col-md-3">
 									<div class="field-label sm">State</div>
-									<input 
-										type="text" 
-										class="form-control field-input state" 
+									<input
+										type="text"
+										class="form-control field-input state"
 										id="state"/>
 								</div>
 								<div class="field col-md-4">
 									<div class="field-label">Postal Code</div>
-									<input 
-										type="text" 
-										class="form-control field-input zip" 
+									<input
+										type="text"
+										class="form-control field-input zip"
 										id="zip"/>
 								</div>
 								<div class="field col-md-4">
 									<div class="field-label">Country</div>
-									<input 
-										type="text" 
-										class="form-control field-input country" 
+									<input
+										type="text"
+										class="form-control field-input country"
 										id="country"/>
 								</div>
 							</div>
@@ -209,6 +209,9 @@
 						<hr class="dotted-line"/>
 					</div>
 			    <button id="submit-button" class="button">Verify Payment Method</button>
+			</div>
+			<div id="sheets-integration" style="display:none;">
+				<?php echo do_shortcode( '[contact-form-7 id="2265" title="Payment Received"]' ); ?>
 			</div>
 		    <script>
 
@@ -327,8 +330,8 @@
 									food_preferences: $('#foodPref').val(),
 									lead_source: $('#leadSource').val()
 								},
-								success: function(data){
-									$('.payments-inner').addClass('success');
+								success: function(data) {
+									logPaymentForm(data.transaction);
 									console.log(data);
 								},
 								fail: function(jqXHR, status, err){
@@ -345,6 +348,11 @@
 
 		      });
 		    })
+
+			function logPaymentForm(deet) {
+				console.log(deet);
+				$('.payments-inner').addClass('success');
+			}
 		    </script>
 			</div>
   	</div>
