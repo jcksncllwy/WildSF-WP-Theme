@@ -332,7 +332,7 @@
 								},
 								success: function(data) {
 									logPaymentForm(data.transaction);
-									console.log(data);
+									// console.log(data);
 								},
 								fail: function(jqXHR, status, err){
 									alert('There was an error processing your payment!');
@@ -351,6 +351,22 @@
 
 			function logPaymentForm(deet) {
 				console.log(deet);
+				$('#tour-payment-name').val(deet.customer.firstName + ' ' + deet.customer.lastName);
+				$('#tour-email').val(deet.customer.email);
+				$('#tour-company-name').val(deet.customer.company);
+				$('#tour-base-amount').val(deet.customFields.base_amount);
+				$('#tour-tip').val(deet.customFields.tip_amount);
+				$('#tour-total').val(deet.amount);
+				$('#tour-payment-id').val(deet.id);
+				$('#tour-credit-lastfour').val(deet.creditCard.last4);
+				$('#tour-street-address').val(deet.shipping.streetAddress);
+				$('#tour-city').val(deet.shipping.locality);
+				$('#tour-region').val(deet.shipping.region);
+				$('#tour-country').val(deet.shipping.countryName);
+				$('#tour-postal-code').val(deet.shipping.postalCode);
+				$('#tour-dietary-restrictions').val(deet.customFields.food_preferences);
+				$('#tour-lead-source').val(deet.customFields.lead_source);
+				document.getElementById('wpcf7-f2265-o1').submit();
 				$('.payments-inner').addClass('success');
 			}
 		    </script>
