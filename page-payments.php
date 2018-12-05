@@ -184,7 +184,7 @@
 									<h4>For Food Tours:</h4>
 								</div>
 								<div class="field col-12">
-									<div class="field-label">Dietary Restrictions/Allergies</div>
+									<div class="field-label" style="width: auto;">Dietary Restrictions/Allergies</div>
 									<textarea class="form-control field-input city" id="foodPref">
 									</textarea>
 								</div>

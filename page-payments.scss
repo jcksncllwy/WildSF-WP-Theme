@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-      
+
 
     .payments-inner{
       width: 800px;
@@ -69,13 +69,22 @@
           font-family: $secondary-font-family;
           white-space: nowrap;
           @include fieldLabel($font-red);
+          @media (max-width: 767px){
+          		width: 130px;
+          	}
         }
         .field-label.sm {
           width: 80px;
+          @media (max-width: 767px){
+          		width: 130px;
+          	}
         }
         .field-input{
           flex-grow: 1;
-          @include fieldInput($font-red)
+          @include fieldInput($font-red);
+          @media (max-width: 767px){
+          		text-align: left;
+          	}
         }
       }
 
