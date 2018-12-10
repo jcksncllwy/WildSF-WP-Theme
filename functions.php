@@ -56,7 +56,7 @@ function create_tourguide_post_type() {
       'labels' => array(
         'name' => __( 'Tourguides' ),
         'singular_name' => __( 'Tourguide' ),
-        'supports' => array( 'title', 'custom-fields' ),
+        'supports' => array( 'title', 'description', 'custom-fields' ),
         'add_new' => 'Add New',
         'add_new_item' => 'Add New Tourguide',
         'edit' => 'Edit',
