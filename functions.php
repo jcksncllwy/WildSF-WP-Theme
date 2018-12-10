@@ -56,7 +56,7 @@ function create_tourguide_post_type() {
       'labels' => array(
         'name' => __( 'Tourguides' ),
         'singular_name' => __( 'Tourguide' ),
-        'supports' => array( 'title', 'editor', 'custom-fields' ),
+        'supports' => array( 'title', 'custom-fields' ),
         'add_new' => 'Add New',
         'add_new_item' => 'Add New Tourguide',
         'edit' => 'Edit',
@@ -84,7 +84,7 @@ function create_privatetour_post_type() {
       'labels' => array(
         'name' => __( 'Private Tours' ),
         'singular_name' => __( 'Private Tour' ),
-        'supports' => array( 'title', 'custom-fields' ),
+        'supports' => array( 'title', 'editor', 'custom-fields' ),
         'add_new' => 'Add New',
         'add_new_item' => 'Add New Private Tour',
         'edit' => 'Edit',
