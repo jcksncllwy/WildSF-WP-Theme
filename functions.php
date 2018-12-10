@@ -101,7 +101,7 @@ function create_tour_post_type() {
       'has_archive' => true,
     )
   );
-  remove_post_type_support( 'tour', 'editor' );
+  remove_post_type_support( 'privatetour', 'editor' );
 }
 
 add_action( 'init', 'create_privatetour_post_type' );
