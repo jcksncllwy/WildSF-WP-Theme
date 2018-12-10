@@ -78,6 +78,34 @@ function create_tourguide_post_type() {
 
 add_action( 'init', 'create_tourguide_post_type' );
 
+function create_tour_post_type() {
+  register_post_type( 'private tour',
+    array(
+      'labels' => array(
+        'name' => __( 'Private Tours' ),
+        'singular_name' => __( 'Private Tour' ),
+        'supports' => array( 'title', 'custom-fields' ),
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Private Tour',
+        'edit' => 'Edit',
+        'edit_item' => 'Edit Private Tour',
+        'new_item' => 'New Private Tour',
+        'view' => 'View',
+        'view_item' => 'View Private Tour',
+        'search_items' => 'Search Private Tours',
+        'not_found' => 'No Private Tours found',
+        'not_found_in_trash' => 'No Tours found in Trash',
+        'parent' => 'Parent Tour'
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+  remove_post_type_support( 'tour', 'editor' );
+}
+
+add_action( 'init', 'create_privatetour_post_type' );
+
 
 add_image_size( 'fullscreen', 1366, 768, true );
 add_image_size( 'thumbnail-no-crop', 150, 105, false );
@@ -136,7 +164,7 @@ function transact($request) {
         'lastName' => $last_name,
         'streetAddress' => $street_address,
         'locality' => $locality,
-        'region' => $region,  
+        'region' => $region,
         'postalCode' => $postal_code,
         'countryName' => $country
       ],
