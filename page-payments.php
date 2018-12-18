@@ -341,13 +341,15 @@
 									lead_source: $('#leadSource').val()
 								},
 								success: function(data) {
+									var status = Number.parseInt(data.transaction.processorResponseCode);
+									console.log(status);
 									// transaction accepted
-									if (data.transaction.status < 2000) {
+									if (status < 2000) {
 										console.log(data.transaction);
 										logPaymentForm(data.transaction);
 									}
 									// transaction denied
-									else if (data.transaction.status < 3000) {
+									else if (status < 3000) {
 										console.log(data.transaction);
 										$('.payments-inner').addClass('payment-error');
 										$('#error-message').html('Transaction was declined. Please refresh the page to try with another form of payment.');
