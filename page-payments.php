@@ -49,6 +49,16 @@
 					<h2>Thank you for your payment!</h2>
 					<p>A receipt has been emailed.</p>
 				</div>
+				<div class="payment-mail-error">
+					<h1>We couldn't send your receipt</h1>
+					<h2>Thank you for your payment!</h2>
+					<p>We had trouble e-mailing your receipt. Please contact us at booking@wildsftours.com for a new receipt.</p>
+				</div>
+				<div class="payment-process-error">
+					<h1>Payment Error</h1>
+					<h2>We had trouble processing your payment</h2>
+					<p id="error-message"></p>
+				</div>
 		    	<hr class="dotted-line" />
 	    	</div>
 			<div class="payments-form row">
@@ -331,11 +341,23 @@
 									lead_source: $('#leadSource').val()
 								},
 								success: function(data) {
-									logPaymentForm(data.transaction);
-									// console.log(data);
+									// transaction accepted
+									if (data.transaction.status < 2000) {
+										logPaymentForm(data.transaction);
+									}
+									// transaction denied
+									else if (data.transaction.status < 3000) {
+										$('.payments-inner').addClass('payment-error');
+										$('#error-message').html('Transaction was declined. Please refresh the page to try with another form of payment.');
+									}
+									//else network failed
+									else {
+										$('.payments-inner').addClass('payment-error');
+										$('#error-message').html('There was a network error while processing your payment! Please refresh the page and try again.');
+									}
 								},
 								fail: function(jqXHR, status, err){
-									alert('There was an error processing your payment!');
+									alert('There was an error processing your payment! Please refresh the page and try again');
 									console.log(err);
 								},
 								always: function(){
@@ -366,9 +388,16 @@
 				$('#tour-postal-code').val(deet.shipping.postalCode);
 				$('#tour-dietary-restrictions').val(deet.customFields.food_preferences);
 				$('#tour-lead-source').val(deet.customFields.lead_source);
-				document.getElementById('wpcf7-f2265-o1').submit();
-				$('.payments-inner').addClass('success');
+				$('.wpcf7-submit').submit();
 			}
+
+			document.addEventListener('wpcf7mailsent', function(event){
+				$('.payments-inner').addClass('success');
+			})
+
+			document.addEventListener('wpcf7mailfailed', function(event){
+				$('.payments-inner').addClass('mail-error');
+			})
 		    </script>
 			</div>
   	</div>

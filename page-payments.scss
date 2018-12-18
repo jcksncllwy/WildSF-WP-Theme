@@ -17,7 +17,9 @@
       .hidden{
         display: none;
       }
-      .payment-success{
+      .payment-success,
+      .payment-mail-error,
+      .payment-process-error {
         display:none;
         h2, .h2 {
           color: $font-red;
@@ -34,6 +36,29 @@
         .form-fields{
           display: none;
         }
+      }
+
+      &.mail-error {
+          .payment-mail-error{
+            display:block;
+          }
+          .payments-intro {
+            display: none;
+          }
+          .form-fields{
+            display: none;
+          }
+      }
+      &.payment-error {
+          .payment-process-error {
+              display:block;
+            }
+            .payments-intro {
+              display: none;
+            }
+            .form-fields{
+              display: none;
+          }
       }
     }
 
