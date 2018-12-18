@@ -343,15 +343,18 @@
 								success: function(data) {
 									// transaction accepted
 									if (data.transaction.status < 2000) {
+										console.log(data.transaction);
 										logPaymentForm(data.transaction);
 									}
 									// transaction denied
 									else if (data.transaction.status < 3000) {
+										console.log(data.transaction);
 										$('.payments-inner').addClass('payment-error');
 										$('#error-message').html('Transaction was declined. Please refresh the page to try with another form of payment.');
 									}
 									//else network failed
 									else {
+										console.log(data.transaction);
 										$('.payments-inner').addClass('payment-error');
 										$('#error-message').html('There was a network error while processing your payment! Please refresh the page and try again.');
 									}
