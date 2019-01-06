@@ -305,8 +305,9 @@
 						}
 						// all steps complete
 						var onMakePaymentClick = function(event){
+							console.log(event);
 							var button = $('#submit-button');
-							// button.html("<div class='loader'></div>");
+							button.html("<div class='loader'></div>");
 							button.toggleClass("loading");
 							button.unbind('click', onMakePaymentClick);
 
@@ -319,12 +320,11 @@
 							var tip = Number.parseInt(tipString);
 
 							var totalCost = cost + tip;
-							//event.data.paymentMethod.nonce
 							$.ajax({
 								type: "POST",
 								url: '/wp-json/braintree/v1/transact',
 								data: {
-									nonce: 'fake-valid-nonce',
+									nonce: event.data.paymentMethod.nonce,
 									amount: totalCost,
 									first_name: $('#firstNameInput').val(),
 									last_name: $('#lastNameInput').val(),
