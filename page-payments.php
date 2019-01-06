@@ -244,7 +244,7 @@
 									return alert('There was an error validating your payment method! Please re-enter your information and try again.');
 									console.log(err);
 								}
-								console.log('Payment Method: ', payload);
+								// console.log('Payment Method: ', payload);
 								$('#step-1').toggleClass('hidden');
 								$('.payment-info').toggleClass('hidden');
 								var paymentInput = $('#paymentAmount');
@@ -305,7 +305,6 @@
 						}
 						// all steps complete
 						var onMakePaymentClick = function(event){
-							console.log(event);
 							var button = $('#submit-button');
 							button.html("<div class='loader'></div>");
 							button.toggleClass("loading");
@@ -391,16 +390,18 @@
 				$('#tour-dietary-restrictions').val(deet.customFields.food_preferences);
 				$('#tour-lead-source').val(deet.customFields.lead_source);
 				console.log('done');
-				// $('.wpcf7-submit').submit();
+				$('.wpcf7-form').submit();
 			}
 
 			document.addEventListener('wpcf7mailsent', function(event){
 				console.log('success');
+				button.toggleClass("loading");
 				$('.payments-inner').addClass('success');
 			})
 
 			document.addEventListener('wpcf7mailfailed', function(event){
 				console.log('mail error');
+				button.toggleClass("loading");
 				$('.payments-inner').addClass('mail-error');
 			})
 		    </script>
