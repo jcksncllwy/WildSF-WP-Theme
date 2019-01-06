@@ -10,8 +10,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <!-- /BOOTSTRAP -->
 
-<script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js" />
-<script type="text/javascript">
+<script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
+<script>
 webshims.setOptions('forms-ext', {
     replaceUI: 'auto',
     types: 'number'
@@ -23,7 +23,7 @@ webshims.polyfill('forms forms-ext');
 <!--
 Old code needed to get the calendar/schedule to render correctly
 -->
-<script type="text/javascript">
+<script>
   (function(config) {
     window._peekConfig = config || {};
     var idPrefix = 'peek-book-button';
@@ -58,7 +58,7 @@ New code needed to get the gift cards button to render correctly
 <!-- /PEEK PRO -->
 
 <!-- Custom UI Scripts -->
-<script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/ui.js"></script>
+<script src="<?php echo get_bloginfo('template_directory'); ?>/ui.js"></script>
 <!-- /Custom UI Scripts -->
 
 <!-- Custom CSS -->
