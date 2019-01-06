@@ -306,7 +306,7 @@
 						// all steps complete
 						var onMakePaymentClick = function(event){
 							var button = $('#submit-button');
-							button.html("<div class='loader'></div>");
+							// button.html("<div class='loader'></div>");
 							button.toggleClass("loading");
 							button.unbind('click', onMakePaymentClick);
 
@@ -319,12 +319,12 @@
 							var tip = Number.parseInt(tipString);
 
 							var totalCost = cost + tip;
-
+							//event.data.paymentMethod.nonce
 							$.ajax({
 								type: "POST",
 								url: '/wp-json/braintree/v1/transact',
 								data: {
-									nonce: event.data.paymentMethod.nonce,
+									nonce: 'fake-valid-nonce',
 									amount: totalCost,
 									first_name: $('#firstNameInput').val(),
 									last_name: $('#lastNameInput').val(),
@@ -342,15 +342,12 @@
 								},
 								success: function(data) {
 									var status = Number.parseInt(data.transaction.processorResponseCode);
-									console.log(status);
 									// transaction accepted
 									if (status < 2000) {
-										console.log(data.transaction);
 										logPaymentForm(data.transaction);
 									}
 									// transaction denied
 									else if (status < 3000) {
-										console.log(data.transaction);
 										$('.payments-inner').addClass('payment-error');
 										$('#error-message').html('Transaction was declined. Please refresh the page to try with another form of payment.');
 									}
@@ -393,14 +390,17 @@
 				$('#tour-postal-code').val(deet.shipping.postalCode);
 				$('#tour-dietary-restrictions').val(deet.customFields.food_preferences);
 				$('#tour-lead-source').val(deet.customFields.lead_source);
-				$('.wpcf7-submit').submit();
+				console.log('done');
+				// $('.wpcf7-submit').submit();
 			}
 
 			document.addEventListener('wpcf7mailsent', function(event){
+				console.log('success');
 				$('.payments-inner').addClass('success');
 			})
 
 			document.addEventListener('wpcf7mailfailed', function(event){
+				console.log('mail error');
 				$('.payments-inner').addClass('mail-error');
 			})
 		    </script>
