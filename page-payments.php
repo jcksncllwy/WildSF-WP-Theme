@@ -30,15 +30,6 @@
   <div class="payments page-container">
 
     <div class="payments-inner">
-	    <?php
-	    while (have_posts()) : the_post(); ?>
-	        <div class="entry-content-page">
-	            <?php the_content(); ?>
-	        </div>
-	    <?php
-	    endwhile;
-	    wp_reset_query();
-	    ?>
 	    	<div class="payments-top">
 	    		<div class="payments-intro">
 		    		<h1 class="payments-hero">Payments Portal</h1>
@@ -231,7 +222,7 @@
 		        authorization: '<?= $BraintreeGateway->clientToken()->generate() ?>',
 		        container: '#dropin-container'
 		      }, function (createErr, instance) {
-						var button = $('#submit-button');
+				var button = $('#submit-button');
 
 						var onVerifyPaymentClick = function(){
 							var button = $('#submit-button');
@@ -241,7 +232,7 @@
 							instance.requestPaymentMethod(function (err, payload) {
 								button.toggleClass("loading");
 								if(err){
-									return alert('There was an error validating your payment method! Please re-enter your information and try again.');
+									alert('There was an error validating your payment method! Please re-enter your information and try again.');
 									console.log(err);
 								}
 								// console.log('Payment Method: ', payload);
