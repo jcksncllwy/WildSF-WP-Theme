@@ -192,14 +192,4 @@ add_action( 'rest_api_init', function () {
     ) );
 } );
 
-
-// this prevents the page from refreshing when the contact form sends
-add_filter('wpcf7_form_action_url', 'remove_unit_tag');
-
-function remove_unit_tag($url){
-    $remove_unit_tag = explode('#',$url);
-    $new_url = $remove_unit_tag[0];
-    return $new_url;
-}
-
 ?>
