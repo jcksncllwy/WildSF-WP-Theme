@@ -23,7 +23,7 @@ webshims.polyfill('forms forms-ext');
 <!--
 Old code needed to get the calendar/schedule to render correctly
 -->
-<script>
+<!-- <script>
   (function(config) {
     window._peekConfig = config || {};
     var idPrefix = 'peek-book-button';
@@ -37,12 +37,12 @@ Old code needed to get the calendar/schedule to render correctly
     el.href = basePath + "/widget_button.css?ts="+stamp;
     el.rel="stylesheet"; el.type="text/css"; head.appendChild(el);
   })({key: '15a8284c-0990-4986-a5b4-1754b0c0b014'});
- </script>
+ </script> -->
 <!--
 New code needed to get the gift cards button to render correctly
 (and open in modal instead of new page)
  -->
-<script>
+<!-- <script>
   (function(idPrefix) {
     id = idPrefix+'-js'; if (document.getElementById(id)) return;
     var head = document.getElementsByTagName('head')[0];
@@ -53,7 +53,7 @@ New code needed to get the gift cards button to render correctly
     el.href = "https://pirassets.s3.amazonaws.com/assets/widget_button.css?id=5461cec23f30e1993000038f&ts="+stamp;
     el.rel="stylesheet"; el.type="text/css"; head.appendChild(el);
   }('peek-booking-button'));
-</script>
+</script> -->
 
 <!-- /PEEK PRO -->
 
