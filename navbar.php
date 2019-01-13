@@ -64,8 +64,9 @@ $logo_image_url = wp_get_attachment_image_url(
 				<a class="nav-link" href="<?= $faq_nav_link ?>">FAQ</a>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item nav-gift-card">
+				<a href="https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/K9Wd" class="nav-link" data-button-text="Gift Cards">Gift Cards</a>
 				<!--a href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" class="nav-link" data-purchase-type="gift-card" data-button-text="Purchase Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Cards</a -->
-				<a class="nav-link peek-book-button-flat" style="padding: .5rem 1rem;" href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" data-purchase-type="gift-card" data-button-text="Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Card</a>
+				<!-- <a class=" peek-book-button-flat" style="padding: .5rem 1rem;" href="http://www.peek.com/purchase/gift_card/5461cec23f30e1993000038f" data-purchase-type="gift-card" data-button-text="Gift Card" data-partner-gid="5461cec23f30e1993000038f">Gift Card</a> -->
 			</li>
 			<li data-toggle="collapse" data-target="" class="nav-item">
 				<a href="<?= $calendar_nav_link ?>" class="btn book-button" data-button-text="Book Now">Radical SF: The Castro + The Mission</a>
