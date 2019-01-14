@@ -109,6 +109,7 @@ add_action( 'init', 'create_privatetour_post_type' );
 
 add_image_size( 'fullscreen', 1366, 768, true );
 add_image_size( 'thumbnail-no-crop', 150, 105, false );
+add_theme_support( 'post-thumbnails' );
 
 /**
  * This is our callback function that embeds our phrase in a WP_REST_Response
@@ -181,7 +182,6 @@ function transact($request) {
 
     return $result;
 }
-add_theme_support( 'post-thumbnails' );
 
 add_action( 'rest_api_init', function () {
     register_rest_route( 'braintree/v1', 'transact', array(
