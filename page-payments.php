@@ -364,7 +364,7 @@
 		    })
 
 			function logPaymentForm(deet) {
-				console.log(deet);
+				// fill form
 				$('#tour-payment-name').val(deet.customer.firstName + ' ' + deet.customer.lastName);
 				$('#tour-email').val(deet.customer.email);
 				$('#tour-company-name').val(deet.customer.company);
@@ -382,8 +382,7 @@
 				$('#tour-lead-source').val(deet.customFields.lead_source);
 
 				var formData = $('.wpcf7-form').serialize();
-				console.log('formData');
-
+				//submit form through Google Sheets
 				$.ajax({
 					type: "POST",
 					url: '/wp-json/contact-form-7/v1/contact-forms/2265/feedback',
@@ -391,20 +390,15 @@
 					data: formData
 				}).done(function(data){
 					console.log(data);
-				});
+					var button = $('#submit-button');
+					button.toggleClass("loading");
+					if (data.status == 'mail_sent') {
+						$('.payments-inner').addClass('success');
+					} else {
+						$('.payments-inner').addClass('mail-error');
+					}
+				}).error(function(){$('.payments-inner').addClass('mail-error');});
 			}
-
-			document.addEventListener('wpcf7mailsent', function(event){
-				console.log('success');
-				button.toggleClass("loading");
-				$('.payments-inner').addClass('success');
-			})
-
-			document.addEventListener('wpcf7mailfailed', function(event){
-				console.log('mail error');
-				button.toggleClass("loading");
-				$('.payments-inner').addClass('mail-error');
-			})
 		    </script>
 			</div>
   	</div>
