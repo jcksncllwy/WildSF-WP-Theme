@@ -380,8 +380,18 @@
 				$('#tour-postal-code').val(deet.shipping.postalCode);
 				$('#tour-dietary-restrictions').val(deet.customFields.food_preferences);
 				$('#tour-lead-source').val(deet.customFields.lead_source);
-				console.log('done');
-				// $('.wpcf7-form').submit();
+
+				var formData = $('.wpcf7-form').serialize();
+				console.log('formData');
+
+				$.ajax({
+					type: "POST",
+					url: '/wp-json/contact-form-7/v1/contact-forms/2265/feedback',
+					dataType: 'json',
+					data: formData
+				}).done(function(data){
+					console.log(data);
+				});
 			}
 
 			document.addEventListener('wpcf7mailsent', function(event){
