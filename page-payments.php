@@ -381,7 +381,7 @@
 				$('#tour-dietary-restrictions').val(deet.customFields.food_preferences);
 				$('#tour-lead-source').val(deet.customFields.lead_source);
 				console.log('done');
-				$('.wpcf7-form').submit();
+				// $('.wpcf7-form').submit();
 			}
 
 			document.addEventListener('wpcf7mailsent', function(event){
