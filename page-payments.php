@@ -389,7 +389,7 @@
 					dataType: 'json',
 					data: formData
 				}).done(function(data){
-					console.log(data);
+					// console.log(data);
 					var button = $('#submit-button');
 					button.toggleClass("loading");
 					if (data.status == 'mail_sent') {
@@ -397,7 +397,7 @@
 					} else {
 						$('.payments-inner').addClass('mail-error');
 					}
-				}).error(function(){$('.payments-inner').addClass('mail-error');});
+				}).fail(function(){$('.payments-inner').addClass('mail-error');});
 			}
 		    </script>
 			</div>
