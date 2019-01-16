@@ -21,7 +21,15 @@
 		$press_quotes[] = ['logo'=>$logo, 'quote'=>$quote];
 	endwhile;
 
-	$args = array( 'post_type' => 'tour' );
+	$args = array( 'post_type' => 'tour',
+		'meta_query' => array(
+			array(
+				'key' => 'active_tour',
+				'compare' => '=',
+				'value' => '1'
+			)
+		)
+ 	);
 	$loop = new WP_Query( $args );
 	$i = 0;
 	while ( $loop->have_posts() ) : $loop->the_post();
