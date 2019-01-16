@@ -29,7 +29,15 @@ $logo_image_url = wp_get_attachment_image_url(
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<?php
-					$args = array( 'post_type' => 'tour' );
+					$args = array( 'post_type' => 'tour',
+						'meta_query' => array(
+							array(
+								'key' => 'active_tour',
+								'compare' => '=',
+								'value' => '1'
+							)
+						)
+				 	);
 					$loop = new WP_Query( $args );
 					while ( $loop->have_posts() ) : $loop->the_post();
 					?>
