@@ -10,7 +10,7 @@ $peek_calendar_popup_link = "https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754
 $calendar_nav_link = is_front_page() ? "#calendar-nav-target" : $peek_calendar_popup_link;
 $logo_image_url = wp_get_attachment_image_url(
 	get_field('navbar_logo', $frontpage->ID),
-	'full');
+	'thumbnail-no-crop');
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
