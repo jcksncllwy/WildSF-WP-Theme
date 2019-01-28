@@ -70,14 +70,9 @@
   h4, h5 {
 	margin-bottom: .5rem;
   }
-  .tour-thumb>a, .tour-thumb>a:hover {
-	color: #fbf6eb;
-	text-decoration: none;
-  }
 </style>
 
 <div class="col-md-6 tour-thumb">
-	<a class="text-center" href="<?= get_permalink() ?>">
 		<div class="private-tour-post">
 			<img src="<?= wp_get_attachment_image_url(get_field('frontpage_splash_image'), 'large') ?>" alt="<?= get_field('frontpage_title') ?>">
 			<div class="private-tour-overlay">
@@ -90,5 +85,4 @@
 				</div>
 			</div>
 		</div>
-	</a>
 </div>
