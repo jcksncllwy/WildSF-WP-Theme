@@ -1,10 +1,10 @@
-<style>
-/* .private-tour-post > .private-tour-overlay {
+<style type="text/css" class="wp-dynamic-css">
+  .private-tour-post > .private-tour-overlay {
 	top: 0;
 	text-align: center;
-}
+  }
 
-.private-tour-overlay {
+  .private-tour-overlay {
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
 	background: rgba(0,0,0,0.5);
@@ -13,16 +13,16 @@
 	text-align: center;
 	width: 100%;
 	top: 100%;
-}
-.private-tour-overlay .overlay-inner {
+  }
+  .private-tour-overlay .overlay-inner {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 80%;
 	text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
-}
-.private-tour-post {
+  }
+  .private-tour-post {
 	position: relative;
 	float: left;
 	overflow: hidden;
@@ -31,12 +31,12 @@
 	width: 100%;
 	height: 0px;
 	padding-bottom: 66.6666%;
-}
-.private-tour-post img {
+  }
+  .private-tour-post img {
 	min-width: 100%;
 	min-height: 100%;
-}
-.post-preview-button {
+  }
+  .post-preview-button {
 	background-color: transparent;
 	display: inline-block;
 	padding: 2px 20px 1px;
@@ -48,32 +48,32 @@
 	font-weight: 700;
 	cursor: pointer;
 	color: #fbf6eb;
-}
-.post-preview-button {
+  }
+  .post-preview-button {
 	margin-top: 15px;
 	text-shadow: none;
-}
-.post-preview-button:hover {
+  }
+  .post-preview-button:hover {
 	background-color: #fbf6eb;
 	color: rgba(0,0,0,0.5);
 	text-decoration: none;
-}
+  }
 
-h1,h2,h3,h4,h5 {
+  h1,h2,h3,h4,h5 {
 	font-family: "Roboto Slab", serif;
 	font-weight: bold;
 	margin-bottom: 1.5rem;
-}
-h1,h2,h3,h5 {
+  }
+  h1,h2,h3,h5 {
 	color: #3F616C;
-}
-h4, h5 {
+  }
+  h4, h5 {
 	margin-bottom: .5rem;
-}
-a, a:hover {
+  }
+  .tour-thumb>a, .tour-thumb>a:hover {
 	color: #fbf6eb;
 	text-decoration: none;
-} */
+  }
 </style>
 
 <div class="col-md-6 tour-thumb">
