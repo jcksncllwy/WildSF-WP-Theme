@@ -26,7 +26,11 @@
 			Blog
 		</a>
 	</div>
-
+	<div class="footer-item">
+		<a href="/tours">
+			All Tours
+		</a>
+	</div>
 
 </div>
 <?php wp_footer(); ?>
