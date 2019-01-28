@@ -40,8 +40,7 @@ function create_tour_post_type() {
         'not_found_in_trash' => 'No Tours found in Trash',
         'parent' => 'Parent Tour'
       ),
-      'public' => true,
-      'has_archive' => true,
+      'public' => true
     )
   );
   remove_post_type_support( 'tour', 'editor' );

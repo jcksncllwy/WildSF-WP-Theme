@@ -21,7 +21,27 @@
 	<div class="page-container">
 		<div class="page-tours-inner">
 			<div class="container">
-				<div class="row">
+				<?php
+					if ( have_posts() ){
+						while ( have_posts() ) : the_post();
+				?>
+							<div class="row">
+								<div class="col">
+				<?php
+									the_title( '<h1>', '</h1>' );
+				?>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+				<?php
+							the_content();
+						endwhile;
+					}
+				?>
+				</div>
+				</div>
+				<div class="row" style="margin-top: 1em;">
 					<?php
 						$args = array( 'post_type' => 'tour');
 						$loop = new WP_Query( $args );
