@@ -1,5 +1,5 @@
 <?php
-	$tour_background_image_url = wp_get_attachment_image_url(get_field('frontpage_splash_image'), 'full');
+	$tour_background_image_url = wp_get_attachment_image_url(get_field('frontpage_splash_image'), 'large');
 	$tour_color = get_field('tour_color');
 	$left_or_right = get_field('left_or_right');
 ?>
