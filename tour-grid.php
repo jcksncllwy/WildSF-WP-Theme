@@ -1,5 +1,5 @@
 <style>
-.private-tour-post > .private-tour-overlay {
+/* .private-tour-post > .private-tour-overlay {
 	top: 0;
 	text-align: center;
 }
@@ -73,17 +73,17 @@ h4, h5 {
 a, a:hover {
 	color: #fbf6eb;
 	text-decoration: none;
-}
+} */
 </style>
 
-<div class="col-md-6">
-	<a class="tour-thumb text-center" href="<?= get_permalink() ?>">
+<div class="col-md-6 tour-thumb">
+	<a class="text-center" href="<?= get_permalink() ?>">
 		<div class="private-tour-post">
 			<img src="<?= wp_get_attachment_image_url(get_field('frontpage_splash_image'), 'large') ?>" alt="<?= get_field('frontpage_title') ?>">
 			<div class="private-tour-overlay">
 				<div class="align-middle overlay-inner">
 					<h4><?= get_field('frontpage_title') ?></h4>
-					<div class="">
+					<div class="tour-subtitle">
 						<?= get_field('subtitle') ?>
 					</div>
 					<a class="btn post-preview-button" href="<?= get_permalink() ?>">More</a>
