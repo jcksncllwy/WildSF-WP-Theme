@@ -331,26 +331,23 @@
 									lead_source: $('#leadSource').val()
 								},
 								success: function(data) {
-									console.log(data.transaction);
-
-									var button = $('#submit-button');
-									button.toggleClass("loading");
-									// var status = Number.parseInt(data.transaction.processorResponseCode);
-									// // transaction accepted
-									// if (status < 2000) {
-									// 	logPaymentForm(data.transaction);
-									// }
-									// // transaction denied
-									// else if (status < 3000) {
-									// 	$('.payments-inner').addClass('payment-error');
-									// 	$('#error-message').html('Transaction was declined. Please refresh the page to try with another form of payment.');
-									// }
-									// //else network failed
-									// else {
-									// 	console.log(data.transaction);
-									// 	$('.payments-inner').addClass('payment-error');
-									// 	$('#error-message').html('There was a network error while processing your payment! Please refresh the page and try again.');
-									// }
+									console.log(data);
+									var status = Number.parseInt(data.transaction.processorResponseCode);
+									// transaction accepted
+									if (status < 2000) {
+										logPaymentForm(data.transaction);
+									}
+									// transaction denied
+									else if (status < 3000) {
+										$('.payments-inner').addClass('payment-error');
+										$('#error-message').html('Transaction was declined. Please refresh the page to try with another form of payment.');
+									}
+									//else network failed
+									else {
+										console.log(data.transaction);
+										$('.payments-inner').addClass('payment-error');
+										$('#error-message').html('There was a network error while processing your payment! Please refresh the page and try again.');
+									}
 								},
 								fail: function(jqXHR, status, err){
 									alert('There was an error processing your payment! Please refresh the page and try again');
