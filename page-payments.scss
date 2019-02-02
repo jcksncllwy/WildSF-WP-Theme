@@ -1,4 +1,5 @@
-@import './vars.scss';
+@import './vars';
+@import './_mixins';
 
 .payments-page{
 
@@ -74,46 +75,46 @@
 
     .payments-form{
 
-      // .name-fields{
-      //   display: flex;
-      //   flex-direction: row;
-      //   justify-content: space-between;
-      //   .field:not(:first-child){
-      //     margin-left: 10px;
-      //   }
-      // }
-      //
-      // .field{
-      //   display: flex;
-      //   flex-direction: row;
-      //   flex-grow: 1;
-      //   margin-bottom: 10px;
-      //
-      //   .field-label{
-      //     flex-shrink: 0;
-      //     width: 130px;
-      //     text-align: center;
-      //     font-family: $secondary-font-family;
-      //     white-space: nowrap;
-      //     @include fieldLabel($font-red);
-      //     @media (max-width: 767px){
-      //     		width: 130px;
-      //     	}
-      //   }
-      //   .field-label.sm {
-      //     width: 80px;
-      //     @media (max-width: 767px){
-      //     		width: 130px;
-      //     	}
-      //   }
-      //   .field-input{
-      //     flex-grow: 1;
-      //     @include fieldInput($font-red);
-      //     @media (max-width: 767px){
-      //     		text-align: left;
-      //     	}
-      //   }
-      // }
+      .name-fields{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .field:not(:first-child){
+          margin-left: 10px;
+        }
+      }
+
+      .field{
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        margin-bottom: 10px;
+
+        .field-label{
+          flex-shrink: 0;
+          width: 130px;
+          text-align: center;
+          font-family: $secondary-font-family;
+          white-space: nowrap;
+          @include fieldLabel($font-red);
+          @media (max-width: 767px){
+          		width: 130px;
+          	}
+        }
+        .field-label.sm {
+          width: 80px;
+          @media (max-width: 767px){
+          		width: 130px;
+          	}
+        }
+        .field-input{
+          flex-grow: 1;
+          @include fieldInput($font-red);
+          @media (max-width: 767px){
+          		text-align: left;
+          	}
+        }
+      }
 
       #submit-button{
         margin-top: 20px;

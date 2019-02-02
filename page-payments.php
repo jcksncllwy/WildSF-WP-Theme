@@ -186,8 +186,7 @@
 								</div>
 								<div class="field col-12">
 									<div class="field-label" style="width: auto;">Dietary Restrictions/Allergies</div>
-									<textarea class="form-control field-input city" id="foodPref">
-									</textarea>
+									<textarea class="form-control field-input city" id="foodPref"></textarea>
 								</div>
 							</div>
 							<div class="lead-source row">
