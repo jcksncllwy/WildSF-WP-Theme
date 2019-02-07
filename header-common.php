@@ -10,14 +10,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <!-- /BOOTSTRAP -->
 
-<script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
+<!-- <script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
 <script>
 webshims.setOptions('forms-ext', {
     replaceUI: 'auto',
     types: 'number'
 });
 webshims.polyfill('forms forms-ext');
-</script>
+</script> -->
 
 <!-- PEEK PRO -->
 <script type="text/javascript">
