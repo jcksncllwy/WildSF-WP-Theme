@@ -57,16 +57,14 @@
 					<!-- Step 1 -->
 					<div class="payment-verify row">
 						<div class="col-12">
-							<h3>Payment Method <span id="step-1">(Step 1 of 3)</span></h3>
+							<h3>Payment Method <span id="step-1">(Step 1 of 2)</span></h3>
 						    <div id="dropin-container"></div>
-						    <hr class="dotted-line" />
+						    <!-- <hr class="dotted-line" /> -->
 						</div>
 					</div>
-
-				    <!-- Step 2 -->
-					<div class="payment-info hidden row">
+					<div class="payment-info row">
 						<div class="col-12">
-							<h3>Payment Information <span id="step-2">(Step 2 of 3)</span></h3>
+							<h3>Payment Information</h3>
 							<div class="form-2">
 								<div class="row">
 									<div class="field col-md-6">
@@ -80,8 +78,8 @@
 								</div>
 								<div class="row">
 									<div class="field col-md-6">
-										<div class="field-label">Co./Group Name</div>
-										<input type="text" class="form-control field-input groupName" id="groupName" />
+										<div class="field-label">Tour ID</div>
+										<input disabled type="text" class="form-control field-input groupName" id="groupName" />
 									</div>
 									<div class="field col-md-6">
 										<div class="field-label">Email</div>
@@ -89,30 +87,24 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="field payment-amount col-md-6">
+									<div class="field col-md-6">
 										<span class="field-label">Amount $</span>
 										<input
 											id="paymentAmount"
 											class="form-control field-input currency"
 											type="number"
-											value="0.00"
-											min="0"
-											step="1.00"
-											data-number-to-fixed="2"
-											data-number-stepfactor="100"
 										/>
 									</div>
-									<div class="field payment-amount col-md-6">
+									<div class="field col-md-6">
 										<span class="field-label">Tip to Guide $</span>
 										<input
 											id="tipAmount"
 											class="form-control field-input currency"
 											type="number"
-											value="0.00"
 											min="0"
 											step="1.00"
 											data-number-to-fixed="2"
-											data-number-stepfactor="100"
+											data-number-stepfactor="1"
 										/>
 									</div>
 								</div>
@@ -121,7 +113,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<p><strong>Name: </strong><span id="name-complete"></span></p>
-										<p><strong>Co./Group Name: </strong><span id="group-complete"></span></p>
+										<p><strong>Tour ID: </strong><span id="group-complete"></span></p>
 										<p><strong>Email: </strong><span id="email-complete"></span></p>
 									</div>
 									<div class="col-md-6">
@@ -236,7 +228,6 @@
 								}
 								// console.log('Payment Method: ', payload);
 								$('#step-1').toggleClass('hidden');
-								$('.payment-info').toggleClass('hidden');
 								var paymentInput = $('#paymentAmount');
 								paymentInput.change(function(){
 									var amountString = paymentInput.val();
@@ -399,6 +390,30 @@
 					}
 				}).fail(function(){$('.payments-inner').addClass('mail-error');});
 			}
+
+
+			// function to get the payment amount and tour id from the URL //
+			function getUrlVars() {
+			    var vars = {};
+			    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			        vars[key] = value;
+			    });
+			    return vars;
+			}
+
+			function getUrlParam(parameter, defaultvalue){
+			    var urlparameter = defaultvalue;
+			    if(window.location.href.indexOf(parameter) > -1){
+			        urlparameter = getUrlVars()[parameter];
+			        }
+			    return urlparameter;
+			}
+
+			$(document).ready(function() {
+				$("#groupName").val(getUrlParam('tid','Empty'));
+				$("#paymentAmount").val(getUrlParam('amt','0000'));
+			});
+
 		    </script>
 			</div>
   	</div>
