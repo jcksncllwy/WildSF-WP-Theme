@@ -93,6 +93,8 @@
 											id="paymentAmount"
 											class="form-control field-input currency"
 											type="number"
+											min="0"
+											step="1.00"
 										/>
 									</div>
 									<div class="field col-md-6">
@@ -239,39 +241,40 @@
 										button.prop('disabled', false);
 									}
 								});
+								// fill preview-2
+								$('.form-2').toggleClass('hidden');
+									var fullName = $('#firstNameInput').val() +" "+ $('#lastNameInput').val();
+									$('#name-complete').html(fullName);
+
+									var groupName = $('#groupName').val();
+									$('#group-complete').html(groupName);
+
+									var email = $('#email').val();
+									$('#email-complete').html(email);
+
+									var paymentInput = $('#paymentAmount');
+									var costString = paymentInput.val();
+									var cost = Number.parseInt(costString);
+									$('#amount-complete').html(costString);
+
+									var tipInput = $('#tipAmount');
+									var tipString = tipInput.val();
+									var tip = Number.parseInt(tipString);
+									$('#tip-complete').html(tipString);
+
+									var totalCost = cost + tip;
+									$('#total-complete').html(totalCost);
+
+								// show preview-2
+								$('.preview-2').toggleClass('hidden');
+
+								// show tour-info
+								$('#step-2').toggleClass('hidden');
+								$('.tour-info').toggleClass('hidden');
+								
 								button.html('Send $'+ totalCost).prop('disabled', false);
 								button.bind('click',{paymentMethod:payload},onMakePaymentClick);
 							});
-							// fill preview-2
-							$('.form-2').toggleClass('hidden');
-								var fullName = $('#firstNameInput').val() +" "+ $('#lastNameInput').val();
-								$('#name-complete').html(fullName);
-
-								var groupName = $('#groupName').val();
-								$('#group-complete').html(groupName);
-
-								var email = $('#email').val();
-								$('#email-complete').html(email);
-
-								var paymentInput = $('#paymentAmount');
-								var costString = paymentInput.val();
-								var cost = Number.parseInt(costString);
-								$('#amount-complete').html(costString);
-
-								var tipInput = $('#tipAmount');
-								var tipString = tipInput.val();
-								var tip = Number.parseInt(tipString);
-								$('#tip-complete').html(tipString);
-
-								var totalCost = cost + tip;
-								$('#total-complete').html(totalCost);
-
-							// show preview-2
-							$('.preview-2').toggleClass('hidden');
-
-							// show tour-info
-							$('#step-2').toggleClass('hidden');
-							$('.tour-info').toggleClass('hidden');
 						}
 						// all steps complete
 						var onMakePaymentClick = function(event){
