@@ -282,11 +282,11 @@
 
 							var paymentInput = $('#paymentAmount');
 							var costString = paymentInput.val();
-							var cost = Number.parseInt(costString);
+							var cost = Number.parseFloat(costString);
 
 							var tipInput = $('#tipAmount');
 							var tipString = tipInput.val();
-							var tip = Number.parseInt(tipString);
+							var tip = Number.parseFloat(tipString);
 
 							var totalCost = cost + tip;
 							$.ajax({
