@@ -409,7 +409,6 @@
 
 			$(document).ready(function() {
 				$("#groupName").val(getUrlParam('tid','Empty'));
-				function() {
 					var amt = getUrlParam('amt','00.00');
 
 					while (amt) {
@@ -419,7 +418,6 @@
 						$("#paymentAmount").val(numAmt.toFixed(2));
 						$("#tipAmount").val(numTip.toFixed(2));
 					}
-				};
 			});
 
 		    </script>
