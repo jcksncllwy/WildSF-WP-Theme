@@ -94,7 +94,7 @@
 											class="form-control field-input currency"
 											type="number"
 											min="0"
-											step="1.00"
+											step="0.01"
 										/>
 									</div>
 									<div class="field col-md-6">
@@ -104,9 +104,7 @@
 											class="form-control field-input currency"
 											type="number"
 											min="0"
-											step="1.00"
-											data-number-to-fixed="2"
-											data-number-stepfactor="1"
+											step="0.01"
 										/>
 									</div>
 								</div>
@@ -255,6 +253,7 @@
 									var paymentInput = $('#paymentAmount');
 									var costString = paymentInput.val();
 									var cost = Number.parseInt(costString);
+
 									$('#amount-complete').html(costString);
 
 									var tipInput = $('#tipAmount');
@@ -271,7 +270,7 @@
 								// show tour-info
 								$('#step-2').toggleClass('hidden');
 								$('.tour-info').toggleClass('hidden');
-								
+
 								button.html('Send $'+ totalCost).prop('disabled', false);
 								button.bind('click',{paymentMethod:payload},onMakePaymentClick);
 							});
@@ -410,7 +409,17 @@
 
 			$(document).ready(function() {
 				$("#groupName").val(getUrlParam('tid','Empty'));
-				$("#paymentAmount").val(getUrlParam('amt','0000'));
+				function() {
+					var amt = getUrlParam('amt','00.00');
+
+					while (amt) {
+						var numAmt = Number.parseInt(amt);
+						var numTip = (numAmt * .15);
+
+						$("#paymentAmount").val(numAmt.toFixed(2));
+						$("#tipAmount").val(numTip.toFixed(2));
+					}
+				};
 			});
 
 		    </script>
