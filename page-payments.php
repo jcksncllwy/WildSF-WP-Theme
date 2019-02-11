@@ -206,7 +206,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-12">
+						<div id="validation-alert" class="alert alert-danger hidden" role="alert">
 							<span id="validation-error"></span>
 						</div>
 						<hr class="dotted-line"/>
@@ -312,6 +312,8 @@
 									// check for validation errors
 									if ( data.transaction === null || data.transaction === (void 0)) {
 										$('#validation-error').html(data.message);
+										$('#validation-alert').toggleClass('hidden');
+										button.toggleClass("loading");
 									}
 									// else successful
 									else {
