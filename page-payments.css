@@ -32,6 +32,8 @@
       width: 800px;
       margin-top: 80px;
       margin-bottom: 80px; }
+      .payments-page .payments .payments-inner h3, .payments-page .payments .payments-inner .h3 {
+        color: #3f616c; }
       .payments-page .payments .payments-inner .hidden {
         display: none; }
       .payments-page .payments .payments-inner .payment-success,

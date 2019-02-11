@@ -198,6 +198,9 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-12">
+							<span id="validation-error"></span>
+						</div>
 						<hr class="dotted-line"/>
 					</div>
 			    <button id="submit-button" class="button">Verify Payment Method</button>
@@ -308,7 +311,7 @@
 									amount: totalCost,
 									first_name: $('#firstNameInput').val(),
 									last_name: $('#lastNameInput').val(),
-									group_name: $('#groupName').val(),
+									group_name: $('#groupName').val(), // this is now the tourID
 									email: $('#email').val(),
 									tip_amount: tipString,
 									base_amount: costString,
@@ -322,21 +325,28 @@
 								},
 								success: function(data) {
 									console.log(data);
-									var status = Number.parseInt(data.transaction.processorResponseCode);
-									// transaction accepted
-									if (status < 2000) {
-										logPaymentForm(data.transaction);
+									// check for validation errors
+									if (( data.transaction === null || data.transaction === (void 0)) {
+										$('#validation-error').html(data.message);
 									}
-									// transaction denied
-									else if (status < 3000) {
-										$('.payments-inner').addClass('payment-error');
-										$('#error-message').html('Transaction was declined. Please refresh the page to try with another form of payment.');
-									}
-									//else network failed
+									// else successful
 									else {
-										console.log(data.transaction);
-										$('.payments-inner').addClass('payment-error');
-										$('#error-message').html('There was a network error while processing your payment! Please refresh the page and try again.');
+										var status = Number.parseInt(data.transaction.processorResponseCode);
+										// transaction accepted
+										if (status < 2000) {
+											logPaymentForm(data.transaction);
+										}
+										// transaction denied
+										else if (status < 3000) {
+											$('.payments-inner').addClass('payment-error');
+											$('#error-message').html('Transaction was declined. Please refresh the page to try with another form of payment.');
+										}
+										//else network failed
+										else {
+											console.log(data.transaction);
+											$('.payments-inner').addClass('payment-error');
+											$('#error-message').html('There was a network error while processing your payment! Please refresh the page and try again.');
+										}
 									}
 								},
 								fail: function(jqXHR, status, err){

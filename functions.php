@@ -156,7 +156,6 @@ function transact($request) {
       'customer' => [
         'firstName' => $first_name,
         'lastName' => $last_name,
-        'company' => $group_name,
         'email' => $email
       ],
       'shipping' => [
@@ -170,6 +169,7 @@ function transact($request) {
       ],
       'customFields' => [
         'base_amount' => $base_amount,
+        'group_name' => $group_name, // Replaced with Tour ID, API name didn't change
         'tip_amount' => $tip_amount,
         'food_preferences' => $food_preferences,
         'lead_source' => $lead_source
