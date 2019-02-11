@@ -410,14 +410,11 @@
 			$(document).ready(function() {
 				$("#groupName").val(getUrlParam('tid','Empty'));
 					var amt = getUrlParam('amt','00.00');
+					var numAmt = Number.parseInt(amt);
+					var numTip = (numAmt * .15);
 
-					while (amt) {
-						var numAmt = Number.parseInt(amt);
-						var numTip = (numAmt * .15);
-
-						$("#paymentAmount").val(numAmt.toFixed(2));
-						$("#tipAmount").val(numTip.toFixed(2));
-					}
+					$("#paymentAmount").val(numAmt.toFixed(2));
+					$("#tipAmount").val(numTip.toFixed(2));
 			});
 
 		    </script>
