@@ -315,6 +315,7 @@
 									if ( data.transaction === null || data.transaction === (void 0)) {
 										$('#validation-error').html(data.message);
 										$('#validation-alert').toggleClass('hidden');
+										button.bind('click',{paymentMethod:payload},onMakePaymentClick);
 										$('#submit-button').html('Send $'+ $('#total-complete').html()).prop('disabled', false).toggleClass('loading');
 									}
 									// else successful
