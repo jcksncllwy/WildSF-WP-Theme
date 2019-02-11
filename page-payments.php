@@ -408,13 +408,13 @@
 
 			$("#15tip").click(function(){
 				$(this).addClass('active').siblings().removeClass('active');
-				var numAmt = Number.parseInt($("#paymentAmount").val());
+				var numAmt = Number.parseFloat($("#paymentAmount").val());
 				var numTip = (numAmt * .15);
 				$("#tipAmount").val(numTip.toFixed(2));
 			});
 			$("#20tip").click(function(){
 				$(this).addClass('active').siblings().removeClass('active');
-				var numAmt = Number.parseInt($("#paymentAmount").val());
+				var numAmt = Number.parseFloat($("#paymentAmount").val());
 				var numTip = (numAmt * .20);
 				$("#tipAmount").val(numTip.toFixed(2));
 			});
