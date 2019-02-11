@@ -239,18 +239,9 @@
 										button.prop('disabled', false);
 									}
 								});
-								button.html('Add Details').prop('disabled', true);
-								button.bind('click',{paymentMethod:payload},onPaymentDetailsComplete);
+								button.html('Send $'+ totalCost).prop('disabled', false);
+								button.bind('click',{paymentMethod:payload},onMakePaymentClick);
 							});
-						}
-						//Step 2 complete
-						var onPaymentDetailsComplete = function(event) {
-							// unbind previous button click
-							var button = $('#submit-button');
-							button.html("<div class='loader'></div>");
-							button.toggleClass("loading");
-							button.unbind('click', onPaymentDetailsComplete);
-
 							// fill preview-2
 							$('.form-2').toggleClass('hidden');
 								var fullName = $('#firstNameInput').val() +" "+ $('#lastNameInput').val();
@@ -281,11 +272,6 @@
 							// show tour-info
 							$('#step-2').toggleClass('hidden');
 							$('.tour-info').toggleClass('hidden');
-
-							// bind make payment
-							button.toggleClass("loading");
-							button.html('Send $'+ totalCost).prop('disabled', false);
-							button.bind('click',{paymentMethod:event.data.paymentMethod},onMakePaymentClick);
 						}
 						// all steps complete
 						var onMakePaymentClick = function(event){
