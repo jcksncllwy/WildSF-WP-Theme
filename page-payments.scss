@@ -1,6 +1,10 @@
 @import './vars';
 @import './_mixins';
 
+h3, .h3 {
+  color: $primary-blue;
+}
+
 .payments-page{
 
   display: flex;
@@ -17,10 +21,6 @@
       width: 800px;
       margin-top: $nav-height;
       margin-bottom: 80px;
-
-      h3, .h3 {
-        color: $primary-blue;
-      }
 
       .hidden{
         display: none;
@@ -118,6 +118,24 @@
           @media (max-width: 767px){
           		text-align: left;
           	}
+        }
+        .input-group-append {
+            .btn-outline-secondary {
+                font-family: "Roboto", sans-serif;
+                white-space: nowrap;
+                padding: 5px 10px;
+                border: 2px solid $font-red;
+                font-family: "Roboto", sans-serif;
+                text-transform: uppercase;
+                font-size: 0.8em;
+                font-weight: 700;
+                color: $font-red;
+                &:hover,
+                &:not(:disabled):not(.disabled).active {
+                    background-color: $font-red;
+                    color: $primary_white;
+                }
+            }
         }
       }
 

@@ -57,37 +57,35 @@
 					<!-- Step 1 -->
 					<div class="payment-verify row">
 						<div class="col-12">
-							<h3>Payment Method <span id="step-1">(Step 1 of 2)</span></h3>
+							<h3>Payment Information <span id="step-1">(Step 1 of 2)</span></h3>
 						    <div id="dropin-container"></div>
-						    <!-- <hr class="dotted-line" /> -->
 						</div>
 					</div>
 					<div class="payment-info row">
 						<div class="col-12">
-							<h3>Payment Information</h3>
 							<div class="form-2">
 								<div class="row">
-									<div class="field col-md-6">
+									<div class="field col-md-6 input-group">
 										<div class="field-label">First Name</div>
 										<input type="text" class="form-control field-input name" id="firstNameInput" autocomplete='given-name' />
 									</div>
-									<div class="field col-md-6">
+									<div class="field col-md-6 input-group">
 										<div class="field-label">Last Name</div>
 										<input type="text" class="form-control field-input name" id="lastNameInput" autocomplete='family-name' />
 									</div>
 								</div>
 								<div class="row">
-									<div class="field col-md-6">
+									<div class="field col-md-6 input-group">
 										<div class="field-label">Tour ID</div>
 										<input disabled type="text" class="form-control field-input groupName" id="groupName" />
 									</div>
-									<div class="field col-md-6">
+									<div class="field col-md-6 input-group">
 										<div class="field-label">Email</div>
 										<input type="text" class="form-control field-input email" id="email" />
 									</div>
 								</div>
 								<div class="row">
-									<div class="field col-md-6">
+									<div class="field col-md-6 input-group">
 										<span class="field-label">Amount $</span>
 										<input
 											id="paymentAmount"
@@ -95,17 +93,24 @@
 											type="number"
 											min="0"
 											step="0.01"
+											min-value="00.00"
 										/>
 									</div>
-									<div class="field col-md-6">
+									<div class="field col-md-6 input-group">
 										<span class="field-label">Tip to Guide $</span>
 										<input
 											id="tipAmount"
-											class="form-control field-input currency"
 											type="number"
-											min="0"
+											class="form-control field-input"
+											aria-label="Tip to Guide"
 											step="0.01"
+											min-value="00.00"
 										/>
+										<div class="input-group-append btn-group">
+											<button id="15tip" class="btn btn-outline-secondary active">15%</button>
+											<button id="20tip" class="btn btn-outline-secondary">20%</button>
+											<button id="ctip" class="btn btn-outline-secondary">custom</button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -117,9 +122,10 @@
 										<p><strong>Email: </strong><span id="email-complete"></span></p>
 									</div>
 									<div class="col-md-6">
-										<p><strong>Payment Amount: </strong>$<span id="amount-complete" class="text-right"></span></p>
-										<p><strong>Tip: </strong>$<span id="tip-complete" class="text-right"></span></p>
-										<p><strong>Total: </strong>$<span id="total-complete" class="text-right"></span></p>
+										<p><strong>Payment Amount: </strong><span id="amount-complete" class="float-right"></span></p>
+										<p><strong>Tip: </strong><span id="tip-complete" class="float-right"></span></p>
+										<hr>
+										<p><strong>Total: </strong><span id="total-complete" class="float-right"></span></p>
 									</div>
 								</div>
 							</div>
@@ -130,41 +136,41 @@
 				    <!-- Step 3 -->
 					<div class="tour-info hidden row">
 						<div class="col-12">
-							<h3>Tour Details <span id="step-3">(Step 3 of 3)</span></h3>
+							<h3>Tour Details <span id="step-3">(Step 2 of 2)</span></h3>
 							<div class="address-fields row">
 								<div class="col-12">
 									<h4>Mailing Address</h4>
 									<p class="helper-text">(for us to send you a Wild SF postcard)</p>
 								</div>
-								<div class="field col-12">
+								<div class="field col-12 input-group">
 									<div class="field-label">Street Address</div>
 									<input
 										type="text"
 										class="form-control field-input street"
 										id="streetAddress" />
 								</div>
-								<div class="field col-md-6">
+								<div class="field col-md-6 input-group">
 									<div class="field-label">City</div>
 									<input
 										type="text"
 										class="form-control field-input city"
 										id="city"/>
 								</div>
-								<div class="field col-md-3">
+								<div class="field col-md-3 input-group">
 									<div class="field-label sm">State</div>
 									<input
 										type="text"
 										class="form-control field-input state"
 										id="state"/>
 								</div>
-								<div class="field col-md-4">
+								<div class="field col-md-4 input-group">
 									<div class="field-label">Postal Code</div>
 									<input
 										type="text"
 										class="form-control field-input zip"
 										id="zip"/>
 								</div>
-								<div class="field col-md-4">
+								<div class="field col-md-4 input-group">
 									<div class="field-label">Country</div>
 									<input
 										type="text"
@@ -176,8 +182,8 @@
 								<div class="col-12">
 									<h4>For Food Tours:</h4>
 								</div>
-								<div class="field col-12">
-									<div class="field-label" style="width: auto;">Dietary Restrictions/Allergies</div>
+								<div class="field col-12 input-group">
+									<div class="field-label" style="width: auto;">Dietary Restrictions / Allergies</div>
 									<textarea class="form-control field-input city" id="foodPref"></textarea>
 								</div>
 							</div>
@@ -185,9 +191,11 @@
 								<div class="col-12">
 									<h4>How did you hear about Wild SF Tours?</h4>
 								</div>
-								<div class="field col-md-6">
-									<span class="field-label">select one</span>
-									<select class="form-control field-input select" id="leadSource">
+								<div class="field col-md-6 input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text field-label" for="leadSource">select one</span>
+									</div>
+									<select class="form-control field-input custom-select" id="leadSource">
 								      <option>Previous tour with us</option>
 								      <option>Word-of-mouth</option>
 								      <option>Google</option>
@@ -203,7 +211,7 @@
 						</div>
 						<hr class="dotted-line"/>
 					</div>
-			    <button id="submit-button" class="button">Verify Payment Method</button>
+			    <button id="submit-button" class="button">Verify</button>
 			</div>
 			<div id="sheets-integration" style="display:none;">
 				<?php echo do_shortcode( '[contact-form-7 id="2265" title="Payment Received"]' ); ?>
@@ -229,17 +237,8 @@
 									alert('There was an error validating your payment method! Please re-enter your information and try again.');
 									console.log(err);
 								}
-								// console.log('Payment Method: ', payload);
-								$('#step-1').toggleClass('hidden');
-								var paymentInput = $('#paymentAmount');
-								paymentInput.change(function(){
-									var amountString = paymentInput.val();
-									var amount = Number.parseInt(amountString);
-									if(amount>0){
-										button.prop('disabled', false);
-									}
-								});
 								// fill preview-2
+								$('#step-1').toggleClass('hidden');
 								$('.form-2').toggleClass('hidden');
 									var fullName = $('#firstNameInput').val() +" "+ $('#lastNameInput').val();
 									$('#name-complete').html(fullName);
@@ -250,15 +249,12 @@
 									var email = $('#email').val();
 									$('#email-complete').html(email);
 
-									var paymentInput = $('#paymentAmount');
-									var costString = paymentInput.val();
-									var cost = Number.parseInt(costString);
-
+									var costString = $('#paymentAmount').val();
+									var cost = Number.parseFloat(costString);
 									$('#amount-complete').html(costString);
 
-									var tipInput = $('#tipAmount');
-									var tipString = tipInput.val();
-									var tip = Number.parseInt(tipString);
+									var tipString = $('#tipAmount').val();
+									var tip = Number.parseFloat(tipString);
 									$('#tip-complete').html(tipString);
 
 									var totalCost = cost + tip;
@@ -388,6 +384,39 @@
 					}
 				}).fail(function(){$('.payments-inner').addClass('mail-error');});
 			}
+
+			// watches the tip input & amount
+			$( "#paymentAmount" ).change(function() {
+				if ($("#15tip").hasClass('active')) {
+					var numAmt = Number.parseFloat($("#paymentAmount").val());
+					var numTip = (numAmt * .15);
+					$("#tipAmount").val(numTip.toFixed(2));
+				} else if ($("#20tip").hasClass('active')) {
+					var numAmt = Number.parseFloat($("#paymentAmount").val());
+					var numTip = (numAmt * .20);
+					$("#tipAmount").val(numTip.toFixed(2));
+				} el
+			});
+
+			$( "#tipAmount" ).change(function() {
+				$("#ctip").addClass('active').siblings().removeClass('active');
+			});
+
+			$("#15tip").click(function(){
+				$(this).addClass('active').siblings().removeClass('active');
+				var numAmt = Number.parseInt($("#paymentAmount").val());
+				var numTip = (numAmt * .15);
+				$("#tipAmount").val(numTip.toFixed(2));
+			});
+			$("#20tip").click(function(){
+				$(this).addClass('active').siblings().removeClass('active');
+				var numAmt = Number.parseInt($("#paymentAmount").val());
+				var numTip = (numAmt * .20);
+				$("#tipAmount").val(numTip.toFixed(2));
+			});
+			$("#ctip").click(function(){
+				$(this).addClass('active').siblings().removeClass('active');
+			});
 
 
 			// function to get the payment amount and tour id from the URL //

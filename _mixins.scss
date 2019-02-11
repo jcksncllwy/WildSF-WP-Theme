@@ -50,7 +50,6 @@
 @mixin fieldInput($color, $secondary_color: $primary_white){
 	padding: 5px 10px;
 	border: 2px solid $color;
-	border-radius: 0px 5px 5px 0px;
 	border-left: none;
 	font-family: $secondary-font-family;
 	text-transform: uppercase;
