@@ -326,7 +326,7 @@
 								success: function(data) {
 									console.log(data);
 									// check for validation errors
-									if (( data.transaction === null || data.transaction === (void 0)) {
+									if ( data.transaction === null || data.transaction === (void 0)) {
 										$('#validation-error').html(data.message);
 									}
 									// else successful
