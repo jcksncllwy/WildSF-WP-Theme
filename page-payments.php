@@ -278,7 +278,7 @@
 							var button = $('#submit-button');
 							button.html("<div class='loader'></div>");
 							button.toggleClass("loading");
-							button.unbind('click', onMakePaymentClick);
+							button.addClass("disabled");
 
 							var paymentInput = $('#paymentAmount');
 							var costString = paymentInput.val();
@@ -315,8 +315,7 @@
 									if ( data.transaction === null || data.transaction === (void 0)) {
 										$('#validation-error').html(data.message);
 										$('#validation-alert').toggleClass('hidden');
-										button.bind('click',{paymentMethod:payload},onMakePaymentClick);
-										$('#submit-button').html('Send $'+ $('#total-complete').html()).prop('disabled', false).toggleClass('loading');
+										$('#submit-button').html('Send $'+ $('#total-complete').html()).prop('disabled', false).toggleClass('loading').toggleClass('disabled');
 									}
 									// else successful
 									else {
