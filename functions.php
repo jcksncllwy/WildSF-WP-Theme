@@ -165,7 +165,7 @@ function transact($request) {
         'locality' => $locality,
         'region' => $region,
         'postalCode' => $postal_code,
-        'country_code_alpha3' => $country
+        'country_code_alpha3' => $country_code_alpha3
       ],
       'customFields' => [
         'base_amount' => $base_amount,

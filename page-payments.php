@@ -718,7 +718,7 @@
 					var numAmt = Number.parseFloat($("#paymentAmount").val());
 					var numTip = (numAmt * .20);
 					$("#tipAmount").val(numTip.toFixed(2));
-				} el
+				}
 			});
 
 			$( "#tipAmount" ).change(function() {
