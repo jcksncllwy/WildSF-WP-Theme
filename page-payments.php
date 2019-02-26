@@ -500,7 +500,11 @@
 							</div>
 						</div>
 					</div>
-			    <button id="submit-button" class="button">Verify Payment Method</button>
+					<div class="row">
+						<div class="col-12">
+							<button id="submit-button" class="button">Verify Payment Method</button>
+						</div>
+					</div>
 				<hr class="dotted-line"/>
 			</div>
 			<div id="sheets-integration" style="display:none;">
