@@ -606,7 +606,7 @@
 									locality: $('#city').val(),
 									region: $('#state').val(),
 									postal_code: $('#zip').val(),
-									country: $('#country').val(),
+									country_code_alpha3: $('#country').val(),
 									food_preferences: $('#foodPref').val(),
 									lead_source: $('#leadSource').val()
 								},

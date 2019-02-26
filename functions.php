@@ -146,7 +146,7 @@ function transact($request) {
     $locality = $parameters['locality'];
     $region = $parameters['region'];
     $postal_code = $parameters['postal_code'];
-    $country = $parameters['country'];
+    $country_code_alpha3 = $parameters['country_code_alpha3'];
     $food_preferences = $parameters['food_preferences'];
     $lead_source = $parameters['lead_source'];
 
@@ -165,7 +165,7 @@ function transact($request) {
         'locality' => $locality,
         'region' => $region,
         'postalCode' => $postal_code,
-        'countryName' => $country
+        'country_code_alpha3' => $country
       ],
       'customFields' => [
         'base_amount' => $base_amount,
