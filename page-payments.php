@@ -616,7 +616,7 @@
 									if ( data.transaction === null || data.transaction === (void 0)) {
 										$('#validation-error').html(data.message);
 										$('#validation-alert').toggleClass('hidden');
-										$('#submit-button').html('Submit payment of $'+ $('#total-complete').html()).prop('disabled', false).toggleClass('loading').toggleClass('disabled');
+										$('#submit-button').html('Submit payment of '+ $('#total-complete').html()).prop('disabled', false).toggleClass('loading').toggleClass('disabled');
 									}
 									// else successful
 									else {
