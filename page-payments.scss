@@ -5,6 +5,16 @@ h3, .h3 {
   color: $primary-blue;
 }
 
+h4, .h4 {
+    font-family: "Roboto Slab", serif;
+    margin-top: 20px;
+    font-size: 1.25rem;
+}
+
+a {
+    color: $font-red;
+}
+
 .payments-page{
 
   display: flex;
