@@ -509,7 +509,9 @@
 					</div>
 				<hr class="dotted-line"/>
 				<div class="row">
-					<p>For any questions or other information regarding payments, please email: <a href="mailto:booking@wildsftours.com">booking@wildsftours.com</a> or call: <a href="tel:+14155801849">(415)580-1849</a></p>
+					<div class="col-12">
+						<p>For any questions or other information regarding payments, please email: <a href="mailto:booking@wildsftours.com">booking@wildsftours.com</a> or call: <a href="tel:+14155801849">(415)580-1849</a></p>
+					</div>
 				</div>
 			</div>
 			<div id="sheets-integration" style="display:none;">
