@@ -672,22 +672,22 @@
 				$('#tour-lead-source').val(deet.customFields.lead_source);
 
 				//pre-fill mail success
-				$('#name-success').val(deet.customer.firstName + ' ' + deet.customer.lastName);
-				$('#group-success').val(deet.customer.company);
-				$('#tid-success').val(deet.id);
-				$('#email-success').val(deet.customer.email);
-				$('#amount-success').val(deet.customFields.base_amount);
-				$('#tip-success').val(deet.customFields.tip_amount);
-				$('#total-success').val(deet.amount);
+				$('#name-success').html(deet.customer.firstName + ' ' + deet.customer.lastName);
+				$('#group-success').html(deet.customer.company);
+				$('#tid-success').html(deet.id);
+				$('#email-success').html(deet.customer.email);
+				$('#amount-success').html(deet.customFields.base_amount);
+				$('#tip-success').html(deet.customFields.tip_amount);
+				$('#total-success').html(deet.amount);
 
 				//pre-fill mail error
-				$('#name-error').val(deet.customer.firstName + ' ' + deet.customer.lastName);
-				$('#group-error').val(deet.customer.company);
-				$('#tid-error').val(deet.id);
-				$('#email-error').val(deet.customer.email);
-				$('#amount-error').val(deet.customFields.base_amount);
-				$('#tip-error').val(deet.customFields.tip_amount);
-				$('#total-error').val(deet.amount);
+				$('#name-error').html(deet.customer.firstName + ' ' + deet.customer.lastName);
+				$('#group-error').html(deet.customer.company);
+				$('#tid-error').html(deet.id);
+				$('#email-error').html(deet.customer.email);
+				$('#amount-error').html(deet.customFields.base_amount);
+				$('#tip-error').html(deet.customFields.tip_amount);
+				$('#total-error').html(deet.amount);
 
 				var formData = $('.wpcf7-form').serialize();
 				//submit form through Google Sheets
