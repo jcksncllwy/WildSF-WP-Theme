@@ -46,6 +46,7 @@
 							<p><strong>Transaction ID: </strong><span id="tid-success"></span></p>
 							<p><strong>Email: </strong><span id="email-success"></span></p>
 						</div>
+						<br/>
 						<div class="col-md-6">
 							<p><strong>Payment Amount: </strong><span id="amount-success" class="float-right"></span></p>
 							<p><strong>Tip: </strong><span id="tip-success" class="float-right"></span></p>
@@ -65,6 +66,7 @@
 							<p><strong>Transaction ID: </strong><span id="tid-error"></span></p>
 							<p><strong>Email: </strong><span id="email-error"></span></p>
 						</div>
+						<br/>
 						<div class="col-md-6">
 							<p><strong>Payment Amount: </strong><span id="amount-error" class="float-right"></span></p>
 							<p><strong>Tip: </strong><span id="tip-error" class="float-right"></span></p>
@@ -506,6 +508,9 @@
 						</div>
 					</div>
 				<hr class="dotted-line"/>
+				<div class="row">
+					<p>For any questions or other information regarding payments, please email: <a href="mailto:booking@wildsftours.com">booking@wildsftours.com</a> or call: <a href="tel:+14155801849">(415)580-1849</a></p>
+				</div>
 			</div>
 			<div id="sheets-integration" style="display:none;">
 				<?php echo do_shortcode( '[contact-form-7 id="2265" title="Payment Received"]' ); ?>
