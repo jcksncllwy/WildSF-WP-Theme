@@ -22,9 +22,9 @@
 				// vars
 				$source = get_sub_field('source');
 				$link = get_sub_field('link');
-				if( $link ):
-					$link_url = $link['url'];
-					$link_title = $link['title'];
+				$link_url = $link['url'];
+				$link_title = $link['title'];
+
 			?>
 
 				<div class="press-item">
@@ -41,7 +41,7 @@
 		</div>
 
 	  <?php endif; ?>
-	  
+
       <div class="wp-admin-content">
     		<?php
     			if ( have_posts() ){
