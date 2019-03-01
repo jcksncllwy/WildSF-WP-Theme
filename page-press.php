@@ -30,14 +30,9 @@
 					?>
 
 						<div class="press-item">
-							<?php if( $link ):
-								$link_url = $link['url'];
-								$link_title = $link['title'];
-								?>
-								<a class="article-link" href="<?php echo $link_url; ?>" target="_blank">
-									<?php echo $link_title; ?>
-								</a>
-							<?php endif; ?>
+							<a class="article-link" href="<?php echo $link['url'] ?>" target="_blank">
+								<?php echo $link['title']; ?>
+							</a>
 							<div class="author"><?php echo $source; ?></div>
 						</div>
 
