@@ -15,20 +15,20 @@
       <div class="header">
         Press
       </div>
-	  <?php if( have_rows('repeater_field_name') ): ?>
+	  <?php if( have_rows('press-item') ): ?>
 		<div class="press-items">
-		  	<?php while( have_rows('repeater_field_name') ): the_row();
+		  	<?php while( have_rows('press-item') ): the_row();
 
 				// vars
 				$source = get_sub_field('source');
 				$link = get_sub_field('link');
-				$link_url = $link['url'];
-				$link_title = $link['title'];
-
 			?>
 
 				<div class="press-item">
-					<?php if( $link ): ?>
+					<?php if( $link ):
+						$link_url = $link['url'];
+						$link_title = $link['title'];
+						?>
 						<a class="article-link" href="<?php echo $link_url; ?>" target="_blank">
 							<?php echo $link_title; ?>
 						</a>
