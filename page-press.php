@@ -27,16 +27,10 @@
 						// vars
 						$source = get_sub_field('source');
 						$link = get_sub_field('link');
-						if( $link ):
-							$link_url = $link['url'];
-							$link_title = $link['title'];
-						endif; ?>
-
+						$name = get_sub_field('name');
+					?>
 						<div class="press-item">
-							<div class="article-link">
-								<?php echo $link ?>
-								<?php echo $link_url ?>
-							</div>
+							<a class="article-link" href="<?php echo $link ?>" target="_blank"><?php echo $name ?></a>
 							<div class="author"><?php echo $source; ?></div>
 						</div>
 
