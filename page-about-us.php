@@ -48,7 +48,7 @@
 
 			<div class="guides-container">
 				<div class="guides-inner">
-					<div class="guides-header">Your Guides</div>
+					<div class="guides-header">Our Team</div>
 					<div class="guides-list">
 						<?php
 						$args = array( 'post_type' => 'tourguide' );
