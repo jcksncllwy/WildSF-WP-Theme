@@ -12,46 +12,46 @@
 	<div class="page-container">
 		<div class="page-inner">
 
-      <div class="header">
-        Press
-      </div>
-	  <?php if( have_rows('press-item') ): ?>
-		<div class="press-items">
-		  	<?php while( have_rows('press-item') ): the_row();
+	      <div class="header">
+	        Press
+	      </div>
+		  <?php
+			  if ( have_posts() ){
+				  while ( have_posts() ) : the_post();
+					  the_content();
+		  ?>
+			  <?php if( have_rows('press-item') ): ?>
+				<div class="press-items">
+				  	<?php while( have_rows('press-item') ): the_row();
 
-				// vars
-				$source = get_sub_field('source');
-				$link = get_sub_field('link');
-			?>
+						// vars
+						$source = get_sub_field('source');
+						$link = get_sub_field('link');
+					?>
 
-				<div class="press-item">
-					<?php if( $link ):
-						$link_url = $link['url'];
-						$link_title = $link['title'];
-						?>
-						<a class="article-link" href="<?php echo $link_url; ?>" target="_blank">
-							<?php echo $link_title; ?>
-						</a>
-					<?php endif; ?>
-					<div class="author"><?php echo $source; ?></div>
+						<div class="press-item">
+							<?php if( $link ):
+								$link_url = $link['url'];
+								$link_title = $link['title'];
+								?>
+								<a class="article-link" href="<?php echo $link_url; ?>" target="_blank">
+									<?php echo $link_title; ?>
+								</a>
+							<?php endif; ?>
+							<div class="author"><?php echo $source; ?></div>
+						</div>
+
+					<?php endwhile; ?>
+
 				</div>
 
-			<?php endwhile; ?>
+			  <?php endif; ?>
 
-		</div>
 
-	  <?php endif; ?>
-
-      <div class="wp-admin-content">
-    		<?php
-    			if ( have_posts() ){
-    				while ( have_posts() ) : the_post();
-    					the_content();
-    				endwhile;
-    			}
-    		?>
-      </div>
-
+		  	<?php
+				  endwhile;
+			  }
+		  	?>
 		</div>
 	</div>
 
