@@ -30,9 +30,9 @@
 					?>
 
 						<div class="press-item">
-							<a class="article-link" href="<?php echo $link['url'] ?>" target="_blank">
-								<?php echo $link['title']; ?>
-							</a>
+							<div class="article-link">
+								<?php echo $link ?>
+							</div>
 							<div class="author"><?php echo $source; ?></div>
 						</div>
 
