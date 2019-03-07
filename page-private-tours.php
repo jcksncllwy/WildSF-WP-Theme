@@ -57,8 +57,8 @@
 		  margin-bottom: .75em;
 	  }
 	  select {
-		style:-webkit-appearance: none;
-		-webkit-border-radius: 0px; 
+		-webkit-appearance: none;
+		-webkit-border-radius: 0px;
 	  }
 		.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 		color: #fbf6eb;
