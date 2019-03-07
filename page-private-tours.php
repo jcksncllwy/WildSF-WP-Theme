@@ -56,7 +56,10 @@
 		  background: transparent;
 		  margin-bottom: .75em;
 	  }
-
+	  select {
+		style:-webkit-appearance: none;
+		-webkit-border-radius: 0px; 
+	  }
 		.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 		color: #fbf6eb;
 		}
@@ -779,14 +782,14 @@
 	    disableSubmit = true;
 	    return true;
 	})
-	  
+
 	var wpcf7Elm = document.querySelector( '.wpcf7' );
 	wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
 	    jQuery(':input[type="submit"]').attr('value',"send")
 	    disableSubmit = false;
 	}, false );
 	</script>
-	
+
 	<?php
 		get_template_part('footer');
 	?>
