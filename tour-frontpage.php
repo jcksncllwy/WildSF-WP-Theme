@@ -43,8 +43,10 @@
 			</div>
 
 			<div class="tour-summary"><?= get_field('frontpage_summary') ?></div>
-
-			<a href="<?= get_permalink() ?>" class="learn-more-button">Learn More</a>
+			<div class="tour-actions">
+				<a href="#calendar-nav-target" class="book-now cta-button" style="color: <?= $tour_color ?>">Book Now</a>
+				<a href="<?= get_permalink() ?>" class="learn-more cta-button">Learn More</a>
+			</div>
 		</div>
 	</div>
 

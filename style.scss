@@ -433,13 +433,20 @@ $splash-height: 70vh;
 				display: none;
 			}
 		}
-		.learn-more-button{
+		.tour-actions {
 			margin-top: 50px;
-			@include button($primary-white, $font-black);
 			@media (max-width: 767px){
 				margin-top: 25px;
 				width: 100%;
 				text-align: center;
+			}
+			.cta-button {
+				&.learn-more {
+					@include button($primary-white, $font-black);
+				}
+				&.book-now {
+					@include button-solid($primary-white, $font-black);
+				}
 			}
 		}
 	}
