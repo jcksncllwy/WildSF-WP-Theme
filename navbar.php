@@ -42,21 +42,9 @@ $logo_image_url = wp_get_attachment_image_url(
 					while ( $loop->have_posts() ) : $loop->the_post();
 					?>
 					<div data-toggle="collapse" data-target=".navbar-collapse.show" >
-						<?php
-						if(is_front_page()){
-						?>
-						<a class="dropdown-item" href="#tour-<?= the_ID() ?>">
-							<span class="title"><?= the_title() ?></span>
-						</a>
-						<?php
-						} else {
-						?>
 						<a class="dropdown-item" href="<?= get_permalink($post) ?>">
 							<span class="title"><?= the_title() ?></span>
 						</a>
-						<?php
-						}
-						?>
 					</div>
 
 					<?php endwhile; ?>
