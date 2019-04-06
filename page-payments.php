@@ -127,7 +127,7 @@
 										/>
 									</div>
 									<div class="field col-md-6 input-group">
-										<span class="field-label">Tip to Guide $</span>
+										<span class="field-label">Tip $</span>
 										<input
 											id="tipAmount"
 											type="number"
