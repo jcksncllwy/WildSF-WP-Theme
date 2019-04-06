@@ -664,7 +664,7 @@
 				// fill form
 				$('#tour-payment-name').val(deet.customer.firstName + ' ' + deet.customer.lastName);
 				$('#tour-email').val(deet.customer.email);
-				$('#tour-id').val(deet.customer.group_name);
+				$('#tour-id').val(deet.customFields.group_name);
 				$('#tour-base-amount').val(deet.customFields.base_amount);
 				$('#tour-tip').val(deet.customFields.tip_amount);
 				$('#tour-total').val(deet.amount);
@@ -680,7 +680,7 @@
 
 				//pre-fill mail success
 				$('#name-success').html(deet.customer.firstName + ' ' + deet.customer.lastName);
-				$('#group-success').html(deet.customer.group_name);
+				$('#group-success').html(deet.customFields.group_name);
 				$('#tid-success').html(deet.id);
 				$('#email-success').html(deet.customer.email);
 				$('#amount-success').html(deet.customFields.base_amount);
@@ -689,7 +689,7 @@
 
 				//pre-fill mail error
 				$('#name-error').html(deet.customer.firstName + ' ' + deet.customer.lastName);
-				$('#group-error').html(deet.customer.group_name);
+				$('#group-error').html(deet.customFields.group_name);
 				$('#tid-error').html(deet.id);
 				$('#email-error').html(deet.customer.email);
 				$('#amount-error').html(deet.customFields.base_amount);
