@@ -143,6 +143,11 @@
 										</div>
 									</div>
 								</div>
+								<div class="row">
+									<div class="col">
+										<p><em>*A 3% credit card processing fee will be added to your payment before finalizing</em></p>
+									</div>
+								</div>
 							</div>
 							<div class="preview-2 hidden" style="margin-top: 30px;">
 								<div class="row">
@@ -154,6 +159,7 @@
 									<div class="col-md-6">
 										<p><strong>Payment Amount: </strong><span id="amount-complete" class="float-right"></span></p>
 										<p><strong>Tip: </strong><span id="tip-complete" class="float-right"></span></p>
+										<p><strong>3% Processing Fee: </strong><span id="fee" class="float-right"></span></p>
 										<hr>
 										<p><strong>Total: </strong><span id="total-complete" class="float-right"></span></p>
 									</div>
@@ -165,6 +171,26 @@
 						<hr class="dotted-line"/>
 						<div class="col-12">
 							<h3>Tour Details <span id="step-3">(Step 2 of 2)</span></h3>
+							<div class="contact-info row">
+								<div class="col-12">
+									<h4>Point of Contact</h4>
+									<p class="helper-text">Who is the point of contact on the day of your tour?</p>
+								</div>
+								<div class="field col-6 input-group">
+									<div class="field-label">Name</div>
+									<input
+										type="text"
+										class="form-control field-input"
+										id="pocName" />
+								</div>
+								<div class="field col-6 input-group">
+									<div class="field-label">Cell</div>
+									<input
+										type="tel"
+										class="form-control field-input"
+										id="pocPhone" />
+								</div>
+							</div>
 							<div class="address-fields row">
 								<div class="col-12">
 									<h4>Mailing Address</h4>
@@ -465,6 +491,9 @@
 								<div class="field col-12 input-group">
 									<div class="field-label" style="width: auto;">Dietary Restrictions / Allergies</div>
 									<textarea class="form-control field-input city" id="foodPref"></textarea>
+									<small id="foodPrefHelpBlock" class="form-text text-muted">
+										Please note: it is your responsibility to communicate any dietary restrictions for your team. We can easily accommodate Vegetarians and Shellfish Allergy, but Vegan and Gluten-Free options (+$10/person) require much more creative thinking on our part, so please indicate whether a dietary restriction is a flexible preference or a strict constraint.
+									</small>
 								</div>
 							</div>
 							<div class="lead-source row">
@@ -558,7 +587,11 @@
 									var tip = Number.parseFloat(tipString);
 									$('#tip-complete').html('$' + tipString);
 
-									var totalCost = cost + tip;
+									var transactionFee = ((cost + tip) * .03);
+									var fee = transactionFee.toFixed(3);
+									$('#fee').html('$' + fee);
+
+									var totalCost = (cost + tip + transactionFee).toFixed(2);
 									$('#total-complete').html('$' + totalCost);
 
 								// show preview-2
@@ -596,7 +629,10 @@
 							var tipString = tipInput.val();
 							var tip = Number.parseFloat(tipString);
 
-							var totalCost = cost + tip;
+							var transactionFee = ((cost + tip) * .03);
+
+							var totalCost = (cost + tip + transactionFee).toFixed(2);
+
 							$.ajax({
 								type: "POST",
 								url: '/wp-json/braintree/v1/transact',
@@ -609,6 +645,9 @@
 									email: $('#email').val(),
 									tip_amount: tipString,
 									base_amount: costString,
+									processing: transactionFee,
+									poc_name: $('#pocName').val(),
+									poc_phone: $('#pocPhone').val(),
 									street_address: $('#streetAddress').val(),
 									locality: $('#city').val(),
 									region: $('#state').val(),
@@ -667,9 +706,12 @@
 				$('#tour-id').val(deet.customFields.group_name);
 				$('#tour-base-amount').val(deet.customFields.base_amount);
 				$('#tour-tip').val(deet.customFields.tip_amount);
+				$('#tour-fee').val(deet.customFields.processing);
 				$('#tour-total').val(deet.amount);
 				$('#tour-payment-id').val(deet.id);
 				$('#tour-credit-lastfour').val(deet.creditCard.last4);
+				$('#tour-poc-name').val(deet.customFields.poc_name);
+				$('#tour-poc-phone').val(deet.customFields.poc_phone);
 				$('#tour-street-address').val(deet.shipping.streetAddress);
 				$('#tour-city').val(deet.shipping.locality);
 				$('#tour-region').val(deet.shipping.region);
@@ -685,6 +727,7 @@
 				$('#email-success').html(deet.customer.email);
 				$('#amount-success').html(deet.customFields.base_amount);
 				$('#tip-success').html(deet.customFields.tip_amount);
+				$('#fee-success').html(deet.customFields.processing);
 				$('#total-success').html(deet.amount);
 
 				//pre-fill mail error
@@ -694,6 +737,7 @@
 				$('#email-error').html(deet.customer.email);
 				$('#amount-error').html(deet.customFields.base_amount);
 				$('#tip-error').html(deet.customFields.tip_amount);
+				$('#fee-error').html(deet.customFields.processing);
 				$('#total-error').html(deet.amount);
 
 				var formData = $('.wpcf7-form').serialize();

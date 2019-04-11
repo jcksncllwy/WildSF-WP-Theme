@@ -142,11 +142,14 @@ function transact($request) {
     $email = $parameters['email'];
     $tip_amount = $parameters['tip_amount'];
     $base_amount = $parameters['base_amount'];
+    $processing = $parameters['processing'];
     $street_address = $parameters['street_address'];
     $locality = $parameters['locality'];
     $region = $parameters['region'];
     $postal_code = $parameters['postal_code'];
     $country_code_alpha3 = $parameters['country_code_alpha3'];
+    $poc_name = $parameters['poc_name'];
+    $poc_phone = $parameters['poc_phone'];
     $food_preferences = $parameters['food_preferences'];
     $lead_source = $parameters['lead_source'];
 
@@ -171,6 +174,9 @@ function transact($request) {
         'base_amount' => $base_amount,
         'group_name' => $group_name, // Replaced with Tour ID, API name didn't change
         'tip_amount' => $tip_amount,
+        'poc_name' => $poc_name,
+        'poc_phone' => $poc_phone,
+        'processing' => $processing,
         'food_preferences' => $food_preferences,
         'lead_source' => $lead_source
       ],
