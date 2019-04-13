@@ -792,7 +792,7 @@
 	<script>
 	//fill tour ID from contact name//
 	$('#contact-name').blur(function(){
-		var rdm = Math.floor(Math.random() * 1000) + 1;
+		var rdm = Math.floor(Math.random() * 100000) + 1;
 		var last = $('#contact-name').val().match(/\w+$/)[0];
 		$('#tour-id').val(last+rdm);
 	});
