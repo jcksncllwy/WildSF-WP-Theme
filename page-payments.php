@@ -33,7 +33,7 @@
 	    	<div class="payments-top">
 	    		<div class="payments-intro">
 		    		<h1 class="payments-hero">Payments Portal</h1>
-		    		<p class="payments-message">Thank you for chosing Wild SF Tours. Please follow these steps to complete your payment.</p>
+		    		<p class="payments-message">Thank you for choosing Wild SF Tours. Please follow these steps to complete your payment.</p>
 		    	</div>
 		    	<div class="payment-success">
 					<h1>Payment Successful</h1>
