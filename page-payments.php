@@ -580,11 +580,11 @@
 									$('#email-complete').html(email);
 
 									var costString = $('#paymentAmount').val();
-									var cost = Number.parseFloat(costString);
+									var cost = parseFloat(costString);
 									$('#amount-complete').html('$' + costString);
 
 									var tipString = $('#tipAmount').val();
-									var tip = Number.parseFloat(tipString);
+									var tip = parseFloat(tipString);
 									$('#tip-complete').html('$' + tipString);
 
 									var transactionFee = ((cost + tip) * .03);
@@ -623,11 +623,11 @@
 
 							var paymentInput = $('#paymentAmount');
 							var costString = paymentInput.val();
-							var cost = Number.parseFloat(costString);
+							var cost = parseFloat(costString);
 
 							var tipInput = $('#tipAmount');
 							var tipString = tipInput.val();
-							var tip = Number.parseFloat(tipString);
+							var tip = parseFloat(tipString);
 
 							var transactionFee = ((cost + tip) * .03);
 
@@ -762,11 +762,11 @@
 			// watches the tip input & amount
 			$( "#paymentAmount" ).change(function() {
 				if ($("#15tip").hasClass('active')) {
-					var numAmt = Number.parseFloat($("#paymentAmount").val());
+					var numAmt = parseFloat($("#paymentAmount").val());
 					var numTip = (numAmt * .15);
 					$("#tipAmount").val(numTip.toFixed(2));
 				} else if ($("#20tip").hasClass('active')) {
-					var numAmt = Number.parseFloat($("#paymentAmount").val());
+					var numAmt = parseFloat($("#paymentAmount").val());
 					var numTip = (numAmt * .20);
 					$("#tipAmount").val(numTip.toFixed(2));
 				}
@@ -778,13 +778,13 @@
 
 			$("#15tip").click(function(){
 				$(this).addClass('active').siblings().removeClass('active');
-				var numAmt = Number.parseFloat($("#paymentAmount").val());
+				var numAmt = parseFloat($("#paymentAmount").val());
 				var numTip = (numAmt * .15);
 				$("#tipAmount").val(numTip.toFixed(2));
 			});
 			$("#20tip").click(function(){
 				$(this).addClass('active').siblings().removeClass('active');
-				var numAmt = Number.parseFloat($("#paymentAmount").val());
+				var numAmt = parseFloat($("#paymentAmount").val());
 				var numTip = (numAmt * .20);
 				$("#tipAmount").val(numTip.toFixed(2));
 			});
