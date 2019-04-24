@@ -39,9 +39,9 @@
 				<?php
 				if(!empty($splash_video_url)){
 				?>
-				<video class="splash-video" autoplay loop muted>
-            <source src="<?= $splash_video_url ?>" type="video/mp4">
-        </video>
+				<video class="splash-video" autoplay loop muted poster="<?= $splash_image_url ?>">
+            		<source src="<?= $splash_video_url ?>" type="video/mp4">
+        		</video>
         <?php
 				} elseif(!empty($splash_image_url)) {
 				?>
