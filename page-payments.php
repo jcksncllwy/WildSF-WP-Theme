@@ -666,7 +666,7 @@
 									}
 									// else successful
 									else {
-										var status = Number.parseInt(data.transaction.processorResponseCode);
+										var status = parseInt(data.transaction.processorResponseCode);
 										// transaction accepted
 										if (status < 2000) {
 											logPaymentForm(data.transaction);
@@ -813,7 +813,7 @@
 			$(document).ready(function() {
 				$("#groupName").val(getUrlParam('tid','none'));
 					var amt = getUrlParam('amt','00.00');
-					var numAmt = Number.parseInt(amt);
+					var numAmt = parseInt(amt);
 					var numTip = (numAmt * .15);
 
 					$("#paymentAmount").val(numAmt.toFixed(2));
