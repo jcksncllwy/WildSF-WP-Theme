@@ -122,7 +122,7 @@
             	</div>
             </div>
             <hr class="dotted-line" />
-            <div class="guides-container">
+            <div class="guides-container" id="guides">
             	<div class="guides-inner">
             		<div class="guides-header">Your Guides</div>
             		<div class="guides-list">
