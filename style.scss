@@ -276,6 +276,21 @@ $splash-height: 70vh;
 			display: inline-block;
 			@include button($font-red);
 			font-size: 1.2em;
+			&.home-book{
+				@media (max-width: 767px) {
+					margin-bottom: 25px;
+				}
+			}
+		}
+		.call-link{
+			margin-bottom: 50px;
+			font-size: 1.2em;
+			font-family: $secondary-font-family;
+			font-weight: 700;
+			display: none;
+			@media (max-width: 767px) {
+				display: block;
+			}
 		}
 		.col{
 			text-align: center;
