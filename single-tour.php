@@ -77,7 +77,7 @@
 					<?= get_field('timing', $this_tour_id) ?>
 					<?= get_field('pricing', $this_tour_id) ?>
 					<a class="book-button" href="#calendar-nav-target">
-						<?php if( get_field('language', $this_tour_id) == 'spanish' ){?>
+						<?php if( $lang == 'spanish' ){?>
 							<?= $es_cta_button ?>
 						<?php
 						} else {
@@ -144,7 +144,7 @@
 						?>
 					</div>
 					<div class="peek-container">
-						<?php if( get_field('language') == 'Spanish' ) {?>
+						<?php if( $lang == 'spanish' ) {?>
 							<a href="https://book.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/K1Ykr" data-embed="true">San Francisco Walking Tours</a>
 						<?php
 						} else {
