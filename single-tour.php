@@ -16,6 +16,8 @@
 		$dotted_line_image_id = 172;
 	  	$dotted_line_image_url = wp_get_attachment_image_src($dotted_line_image_id, 'full')[0];
 
+		$lang = get_field('language');
+
 		$en_cta_button = "Book Now";
 		$es_cta_button = "Reservar Ahora";
 
@@ -75,7 +77,7 @@
 					<?= get_field('timing', $this_tour_id) ?>
 					<?= get_field('pricing', $this_tour_id) ?>
 					<a class="book-button" href="#calendar-nav-target">
-						<?php if( get_field('language') == 'spanish' ){?>
+						<?php if( get_field('language', $this_tour_id) == 'spanish' ){?>
 							<?= $es_cta_button ?>
 						<?php
 						} else {
@@ -131,7 +133,7 @@
 			<div class="calendar-container">
 				<div class="calendar-inner">
 					<div class="calendar-header nav-target" id="calendar-nav-target">
-						<?php if( get_field('language') == 'spanish' ){?>
+						<?php if( $lang == 'spanish' ){?>
 							<?= $es_book_title ?>
 						<?php
 						} else {
