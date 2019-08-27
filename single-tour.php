@@ -142,7 +142,7 @@
 						?>
 					</div>
 					<div class="peek-container">
-						<?php if( get_field('language') == 'spanish' ) {?>
+						<?php if( get_field('language') == 'Spanish' ) {?>
 							<a href="https://book.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/K1Ykr" data-embed="true">San Francisco Walking Tours</a>
 						<?php
 						} else {
