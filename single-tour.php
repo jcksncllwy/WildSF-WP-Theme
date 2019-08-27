@@ -75,7 +75,7 @@
 					<?= get_field('timing', $this_tour_id) ?>
 					<?= get_field('pricing', $this_tour_id) ?>
 					<a class="book-button" href="#calendar-nav-target">
-						<?php if( get_field('language') == 'spanish' )?> {
+						<?php if( get_field('language') == 'spanish' ){?> 
 							<?= $es_cta_button ?>
 						<?php
 						} else {
