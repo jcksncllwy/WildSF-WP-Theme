@@ -14,8 +14,13 @@
 		$scroll_helper_image_url = wp_get_attachment_image_src($scroll_helper_image_id, 'full')[0];
 
 		$dotted_line_image_id = 172;
-	  $dotted_line_image_url = wp_get_attachment_image_src($dotted_line_image_id, 'full')[0];
+	  	$dotted_line_image_url = wp_get_attachment_image_src($dotted_line_image_id, 'full')[0];
 
+		$en_cta_button = "Book Now";
+		$es_cta_button = "Reservar Ahora";
+
+		$en_book_title = "Book A Tour";
+		$es_book_title = "Reservar Una Tour";
 	?>
 	<style type="text/css" class="wp-dynamic-css">
 	  .dotted-line{
@@ -69,7 +74,17 @@
 					<?= get_field('description', $this_tour_id) ?>
 					<?= get_field('timing', $this_tour_id) ?>
 					<?= get_field('pricing', $this_tour_id) ?>
-					<a class="book-button" href="#calendar-nav-target">Book now</a>
+					<a class="book-button" href="#calendar-nav-target">
+						<?php if( get_field('language') == 'spanish' )?> {
+							<?= $es_cta_button ?>
+						<?php
+						} else {
+						?>
+							<?= $en_cta_button ?>
+						<?php
+						}
+						?>
+					</a>
 				</div>
 			</div>
 			<?php
@@ -115,9 +130,27 @@
 			<hr class="dotted-line" />
 			<div class="calendar-container">
 				<div class="calendar-inner">
-					<div class="calendar-header nav-target" id="calendar-nav-target">Book A Tour</div>
+					<div class="calendar-header nav-target" id="calendar-nav-target">
+						<?php if( get_field('language') == 'spanish' )?> {
+							<?= $es_book_title ?>
+						<?php
+						} else {
+						?>
+							<?= $en_book_title ?>
+						<?php
+						}
+						?>
+					</div>
 					<div class="peek-container">
-	                <a href="https://book.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/3beY" data-embed="true">San Francisco Walking Tours</a>
+						<?php if( get_field('language') == 'spanish' )?> {
+							<a href="https://book.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/K1Ykr" data-embed="true">San Francisco Walking Tours</a>
+						<?php
+						} else {
+						?>
+							<a href="https://book.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/3beY" data-embed="true">San Francisco Walking Tours</a>
+						<?php
+						}
+						?>
 	            	</div>
             	</div>
             </div>
