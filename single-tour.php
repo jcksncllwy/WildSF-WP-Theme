@@ -22,7 +22,7 @@
 		$es_cta_button = "Reservar Ahora";
 
 		$en_book_title = "Book A Tour";
-		$es_book_title = "Reservar Una Tour";
+		$es_book_title = "Reservar Un Tour";
 	?>
 	<style type="text/css" class="wp-dynamic-css">
 	  .dotted-line{
