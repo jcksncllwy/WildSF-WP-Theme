@@ -459,6 +459,7 @@ $splash-height: 70vh;
 				&.es-learn-more {
 					margin-top: 7px;
 					width: 242px;
+					text-align: center;
 				}
 				&.learn-more, &.es-learn-more {
 					@include button($primary-white, $font-black);
