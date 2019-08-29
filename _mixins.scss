@@ -7,6 +7,7 @@
 	font-size: 0.8em;
 	font-weight: 700;
 	cursor: pointer;
+	display: inline-block;
 
 	color: $color;
 
@@ -26,6 +27,7 @@
 	@media (max-width: 767px){
 		width: 100%;
 		text-align: center;
+		margin-top: 7px;
 	}
 }
 
@@ -38,6 +40,7 @@
 	font-size: 0.8em;
 	font-weight: 700;
 	cursor: pointer;
+	display: inline-block;
 
 	background-color: $color;
 	color: $secondary_color;
@@ -58,6 +61,7 @@
 	@media (max-width: 767px){
 		width: 100%;
 		text-align: center;
+		margin-top: 7px;
 	}
 }
 

@@ -456,7 +456,10 @@ $splash-height: 70vh;
 				text-align: center;
 			}
 			.cta-button {
-				&.learn-more {
+				.es-learn-more {
+					margin-top: 7px;
+				}
+				&.learn-more, &.es-learn-more {
 					@include button($primary-white, $font-black);
 				}
 				&.book-now {

@@ -32,7 +32,7 @@
 	<a href="<?= get_permalink() ?>" class="tour-image col-md-7 mobile">
 	</a>
 
-	<div class="tour-info col-md-5">
+	<div class="tour-info col-md-6 col-lg-5">
 		<div class="tour-info-inner">
 			<div class="tour-header" id="tour-<?= the_ID() ?>-header">
 				<a href="<?= get_permalink() ?>">
@@ -46,11 +46,14 @@
 			<div class="tour-actions">
 				<a href="#calendar-nav-target" class="book-now cta-button" style="color: <?= $tour_color ?>">Book Now</a>
 				<a href="<?= get_permalink() ?>" class="learn-more cta-button">Learn More</a>
+				<?php if (get_field('spanish_tour_option')) { ?>
+					<a href="<?= get_field('spanish_tour_link') ?>" class="es-learn-more cta-button">En Español</a>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
 
-	<div class="tour-image col-md-7">
+	<div class="tour-image col-md-6 col-lg-7">
 	</div>
 
 </div>
