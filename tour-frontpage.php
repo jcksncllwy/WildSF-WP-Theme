@@ -47,7 +47,7 @@
 				<a href="#calendar-nav-target" class="book-now cta-button" style="color: <?= $tour_color ?>">Book Now</a>
 				<a href="<?= get_permalink() ?>" class="learn-more cta-button">Learn More</a>
 				<?php if (get_field('spanish_tour_option')) { ?>
-					<a href="<?= get_field('spanish_tour_link') ?>" class="es-learn-more cta-button">En Español</a>
+					<a href="<?= get_field('spanish_tour_link') ?>" class="es-learn-more cta-button" style="display:block">En Español</a>
 				<?php } ?>
 			</div>
 		</div>
