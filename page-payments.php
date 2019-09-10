@@ -539,6 +539,7 @@
 				<hr class="dotted-line"/>
 				<div class="row">
 					<div class="col-12">
+						<p>Please check out our <a href="https://wildsftours.com/policies-other-information/" target="_blank">booking policies</a> page.</p>
 						<p>For any questions or other information regarding payments, please email: <a href="mailto:booking@wildsftours.com">booking@wildsftours.com</a> or call: <a href="tel:+14155801849">(415)580-1849</a></p>
 					</div>
 				</div>
