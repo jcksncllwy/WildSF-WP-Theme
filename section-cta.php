@@ -20,13 +20,6 @@
 
 ?>
 <div class="section cta">
-
-	<div class="row">
-		<div class="col">
-			<a class="book-button home-book" href="<?= $button_href ?>"><?= $button_text ?></a>
-			<a href="tel:+14155801849" class="call-link">415-580-1849</a>
-		</div>
-	</div>
 	<div class="row">
 		<div class="col col-6 col-sm-3 order-sm-1 order-1">
 			<img src="<?= $TA_badge ?>" />
@@ -37,6 +30,12 @@
 		</div>
 		<div class="col col-6 col-sm-3 order-sm-3 order-1">
 			<img src="<?= $BOB_badge ?>" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<a class="home-book" href="<?= $button_href ?>"><?= $button_text ?></a>
+			<a href="tel:+14155801849" class="call-link">415-580-1849</a>
 		</div>
 	</div>
 

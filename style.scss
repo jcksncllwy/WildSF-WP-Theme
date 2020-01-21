@@ -45,8 +45,6 @@ a{
     transform: translateX(-50%);
 }
 
-
-
 .navbar{
 	height: $nav-height;
 	background-color: $nav-color;
@@ -236,11 +234,14 @@ $splash-height: 70vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		position: relative;
 		width: 100%;
 		height: 100%;
 		img{
+			position: absolute;
+			bottom: -10%;
 			@media (max-width: 767px){
-				width: 80vw;
+				max-width: 60vw;
 			}
 		}
 	}
@@ -271,17 +272,7 @@ $splash-height: 70vh;
 
 	&.cta{
 		color: $font-red;
-		.book-button{
-			margin-bottom: 50px;
-			display: inline-block;
-			@include button($font-red);
-			font-size: 1.2em;
-			&.home-book{
-				@media (max-width: 767px) {
-					margin-bottom: 25px;
-				}
-			}
-		}
+		padding-top: 100px;
 		.call-link{
 			margin-bottom: 50px;
 			font-size: 1.2em;
@@ -361,7 +352,7 @@ $splash-height: 70vh;
 				position: relative;
 				background-color: $primary-white;
 				@media (max-width: 767px){
-					z-index: 999;
+					z-index: 99;
 				}
 			}
 
@@ -483,6 +474,22 @@ $splash-height: 70vh;
 		}
 	}
 
+}
+
+.home-book {
+	@include button-solid($primary-red);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin: 0px;
+	border-radius: 0px;
+	z-index: 100;
+	font-size: 1.2em;
+	width: 100%;
+	box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 60px 30px;
+	&:hover {
+		color: white;
+	}
 }
 
 .faq{
@@ -732,7 +739,8 @@ $splash-height: 70vh;
 
 .footer{
 	width: 100%;
-
+	position: relative;
+	z-index: 101;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
