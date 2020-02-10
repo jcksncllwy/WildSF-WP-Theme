@@ -815,6 +815,9 @@
 				}	else if ($("#leadSource option:selected").text() == "Google") {
 					$("#whoReferrerWrapper").addClass("hidden-input");
 					$("#seoReferrerWrapper").removeClass("hidden-input");
+				} else {
+					$("#whoReferrerWrapper").addClass("hidden-input");
+					$("#seoReferrerWrapper").addClass("hidden-input");
 				}
 			});
 
