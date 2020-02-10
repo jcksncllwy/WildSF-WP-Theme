@@ -505,13 +505,26 @@
 										<span class="input-group-text field-label" for="leadSource">select one</span>
 									</div>
 									<select class="form-control field-input custom-select" id="leadSource">
-								      <option>Previous tour with us</option>
-								      <option>Word-of-mouth</option>
+								      <option>Previous Tour With Us</option>
+								      <option>Word Of Mouth/Colleague</option>
 								      <option>Google</option>
-								      <option>Social media</option>
-								      <option>Flyer</option>
+								      <option>Social Media</option>
 								      <option>Other</option>
 								    </select>
+								</div>
+								<div class="field col-md-9 input-group hidden-input">
+									<div class="field-label">Who was it?</div>
+									<input
+										type="text"
+										class="form-control field-input who-referrer"
+										id="whoReferrer"/>
+								</div>
+								<div class="field col-md-9 input-group hidden-input">
+									<div class="field-label" style="width: auto;">What did you search exactly?</div>
+									<input
+										type="text"
+										class="form-control field-input seo-referrer"
+										id="seoReferrer"/>
 								</div>
 							</div>
 							<div class="row" style="margin-top:20px;">
@@ -655,7 +668,8 @@
 									postal_code: $('#zip').val(),
 									country_code_alpha3: $('#country').val(),
 									food_preferences: $('#foodPref').val(),
-									lead_source: $('#leadSource').val()
+									lead_source: $('#leadSource').val(),
+
 								},
 								success: function(data) {
 									console.log(data);
@@ -793,6 +807,12 @@
 				$(this).addClass('active').siblings().removeClass('active');
 			});
 
+			//watch the leadSource input
+			$( "#leadSource" ).change(function() {
+				if ($("#leadSource option:selected").text() == "Word Of Mouth/Colleague") {
+					console.log('yeah!');
+				}
+			});
 
 			// function to get the payment amount and tour id from the URL //
 			function getUrlVars() {

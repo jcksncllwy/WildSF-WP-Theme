@@ -1611,6 +1611,7 @@ a {
   font-weight: 700;
   background-color: #fbf6eb;
   color: #bf5246;
+  text-transform: none;
 }
 @media (max-width: 767px) {
   .payments-page .payments .payments-form .field .field-input {
@@ -1696,4 +1697,8 @@ a {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.hidden-input {
+  display: none !important;
 }

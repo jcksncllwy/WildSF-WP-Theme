@@ -125,6 +125,7 @@ a {
         .field-input{
           flex-grow: 1;
           @include fieldInput($font-red);
+          text-transform: none;
           @media (max-width: 767px){
           		text-align: left;
           	}
@@ -230,4 +231,8 @@ a {
     }
 
   }
+}
+
+.hidden-input {
+  display: none !important;
 }
