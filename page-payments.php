@@ -735,6 +735,8 @@
 				$('#tour-postal-code').val(deet.shipping.postalCode);
 				$('#tour-dietary-restrictions').val(deet.customFields.food_preferences);
 				$('#tour-lead-source').val(deet.customFields.lead_source);
+				$('#tour-lead-referrer').val(deet.customFields.who_referrer);
+				$('#tour-lead-search-term').val(deet.customFields.what_searched);
 
 				//pre-fill mail success
 				$('#name-success').html(deet.customer.firstName + ' ' + deet.customer.lastName);
