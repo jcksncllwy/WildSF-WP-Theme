@@ -152,6 +152,8 @@ function transact($request) {
     $poc_phone = $parameters['poc_phone'];
     $food_preferences = $parameters['food_preferences'];
     $lead_source = $parameters['lead_source'];
+    $what_searched = $parameters['what_searched'];
+    $who_referrer = $parameters['who_referrer'];
 
     $result = $BraintreeGateway->transaction()->sale([
       'amount' => $amount,
@@ -178,7 +180,9 @@ function transact($request) {
         'poc_phone' => $poc_phone,
         'processing' => $processing,
         'food_preferences' => $food_preferences,
-        'lead_source' => $lead_source
+        'lead_source' => $lead_source,
+        'what_searched' => $what_searched,
+        'who_referrer' => $who_referrer
       ],
       'options' => [
         'submitForSettlement' => True

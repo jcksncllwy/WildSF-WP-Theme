@@ -669,7 +669,8 @@
 									country_code_alpha3: $('#country').val(),
 									food_preferences: $('#foodPref').val(),
 									lead_source: $('#leadSource').val(),
-
+									what_searched: $('#seoReferrer').val(),
+									who_referrer: $('#whoReferrer').val()
 								},
 								success: function(data) {
 									console.log(data);
