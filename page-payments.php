@@ -673,7 +673,7 @@
 									who_referrer: $('#whoReferrer').val()
 								},
 								success: function(data) {
-									console.log(data);
+									// console.log(data);
 									// check for validation errors
 									if ( data.transaction === null || data.transaction === (void 0)) {
 										$('#validation-error').html(data.message);
@@ -694,7 +694,7 @@
 										}
 										//else network failed
 										else {
-											console.log(data.transaction);
+											// console.log(data.transaction);
 											$('.payments-inner').addClass('payment-error');
 											$('#error-message').html('There was a network error while processing your payment! Please refresh the page and try again.');
 										}
