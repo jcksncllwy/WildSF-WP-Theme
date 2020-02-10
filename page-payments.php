@@ -810,8 +810,10 @@
 			//watch the leadSource input
 			$( "#leadSource" ).change(function() {
 				if ($("#leadSource option:selected").text() == "Word Of Mouth/Colleague") {
+					$("#seoReferrerWrapper").addClass("hidden-input");
 					$("#whoReferrerWrapper").removeClass("hidden-input");
 				}	else if ($("#leadSource option:selected").text() == "Google") {
+					$("#whoReferrerWrapper").addClass("hidden-input");
 					$("#seoReferrerWrapper").removeClass("hidden-input");
 				}
 			});
