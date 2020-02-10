@@ -512,14 +512,14 @@
 								      <option>Other</option>
 								    </select>
 								</div>
-								<div class="field col-md-9 input-group hidden-input">
+								<div id="whoReferrerWrapper" class="field col-md-9 input-group hidden-input">
 									<div class="field-label">Who was it?</div>
 									<input
 										type="text"
 										class="form-control field-input who-referrer"
 										id="whoReferrer"/>
 								</div>
-								<div class="field col-md-9 input-group hidden-input">
+								<div id="seoReferrerWrapper" class="field col-md-9 input-group hidden-input">
 									<div class="field-label" style="width: auto;">What did you search exactly?</div>
 									<input
 										type="text"
@@ -810,7 +810,9 @@
 			//watch the leadSource input
 			$( "#leadSource" ).change(function() {
 				if ($("#leadSource option:selected").text() == "Word Of Mouth/Colleague") {
-					console.log('yeah!');
+					$("#whoReferrerWrapper").removeClass("hidden-input");
+				}	else if ($("#leadSource option:selected").text() == "Google") {
+					$("#seoReferrerWrapper").removeClass("hidden-input");
 				}
 			});
 
