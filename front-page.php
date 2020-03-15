@@ -41,6 +41,11 @@
 
 	get_template_part('calendar', 'frontpage');
 
+	$featured_guide = get_field('featured_guide', $frontpage);
+	if( $featured_guide ) {
+	  get_template_part('guide', 'frontpage');
+	}
+
 	get_template_part('faq','frontpage');
 
 	get_template_part('reviews', 'frontpage');

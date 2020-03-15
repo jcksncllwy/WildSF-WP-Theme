@@ -39,6 +39,15 @@ a{
 	}
 }
 
+.button {
+	display: inline-block;
+	@include button($font-red);
+	background-color: transparent;
+	@media (max-width: 767px){
+		width: 100%;
+	}
+}
+
 .abs-center-x {
     position: absolute;
     left: 50%;
@@ -648,15 +657,19 @@ $splash-height: 70vh;
 	}
 }
 
-.calendar{
+.guide-content {
+	width:100%;
+}
+
+.calendar, .guide-content {
 	display: flex;
 	justify-content: center;
-	padding: 100px;
+	padding: 50px 100px;
 	@media (max-width: 767px){
 		padding: 40px 0;
 	}
 
-	.calendar-inner{
+	.calendar-inner, .guide-inner{
 		width: 100%;
 		@media (max-width: 767px){
 			padding: 0;

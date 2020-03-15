@@ -37,6 +37,44 @@ body {
   }
 }
 
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 3px solid #bf5246;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  color: #bf5246;
+  background-color: transparent;
+}
+.button:hover {
+  background-color: #bf5246;
+  color: #fbf6eb;
+  text-decoration: none;
+}
+.button[disabled] {
+  background-color: #bf5246 !important;
+  color: #fbf6eb !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+@media (max-width: 767px) {
+  .button {
+    width: 100%;
+    text-align: center;
+    margin-top: 7px;
+  }
+}
+@media (max-width: 767px) {
+  .button {
+    width: 100%;
+  }
+}
+
 .abs-center-x {
   position: absolute;
   left: 50%;
@@ -834,31 +872,35 @@ body {
   max-width: 260px;
 }
 
-.calendar {
+.guide-content {
+  width: 100%;
+}
+
+.calendar, .guide-content {
   display: flex;
   justify-content: center;
-  padding: 100px;
+  padding: 50px 100px;
 }
 @media (max-width: 767px) {
-  .calendar {
+  .calendar, .guide-content {
     padding: 40px 0;
   }
 }
-.calendar .calendar-inner {
+.calendar .calendar-inner, .calendar .guide-inner, .guide-content .calendar-inner, .guide-content .guide-inner {
   width: 100%;
 }
 @media (max-width: 767px) {
-  .calendar .calendar-inner {
+  .calendar .calendar-inner, .calendar .guide-inner, .guide-content .calendar-inner, .guide-content .guide-inner {
     padding: 0;
   }
 }
-.calendar .calendar-inner .calendar-header {
+.calendar .calendar-inner .calendar-header, .calendar .guide-inner .calendar-header, .guide-content .calendar-inner .calendar-header, .guide-content .guide-inner .calendar-header {
   font-family: "Roboto Slab", serif;
   font-size: 24px;
   margin-bottom: -40px;
 }
 @media (max-width: 767px) {
-  .calendar .calendar-inner .calendar-header {
+  .calendar .calendar-inner .calendar-header, .calendar .guide-inner .calendar-header, .guide-content .calendar-inner .calendar-header, .guide-content .guide-inner .calendar-header {
     width: 100%;
     margin-bottom: 0;
     text-align: center;
