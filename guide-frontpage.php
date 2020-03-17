@@ -112,22 +112,22 @@ input[type=email] {
           </div>
         </div>
         <div class="col-lg-6 col-md-8 guide-cta">
-          <div class="guide-cta-title">
+          <h1 class="guide-cta-title">
             <?php
               $CTAtitle = get_field( "frontpage_cta_title", $featured_guideID );
                   if( $CTAtitle ) {
                   echo $CTAtitle;
               }
             ?>
-          </div>
-          <div class="guide-cta-subtitle">
+          </h1>
+          <h2 class="guide-cta-subtitle">
             <?php
               $CTAsubtitle = get_field( "frontpage_cta_subtitle", $featured_guideID );
                   if( $CTAsubtitle ) {
                   echo $CTAsubtitle;
               }
             ?>
-          </div>
+          </h2>
           <?php echo do_shortcode("[sibwp_form id=2]"); ?>
         </div>
       </div>
