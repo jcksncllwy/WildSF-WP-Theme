@@ -54,6 +54,7 @@
 
 	get_template_part('footer');
 
+	get_template_part('section','promo-modal');
 	?>
 
 
