@@ -57,12 +57,12 @@
 				}
 	      ?>
         <div class="splash-title-container">
-        	<div class="title">
+        	<h1 class="title">
         		<?= get_the_title($this_tour_id) ?>
-        	</div>
-        	<div class="subtitle">
+        	</h1>
+        	<h2 class="subtitle">
         		<?= get_field('subtitle', $this_tour_id) ?>
-        	</div>
+        	</h2>
         </div>
         <div class="scroll-helper-container">
         	<div class="scroll-helper">

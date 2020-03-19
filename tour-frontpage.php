@@ -36,9 +36,9 @@
 		<div class="tour-info-inner">
 			<div class="tour-header" id="tour-<?= the_ID() ?>-header">
 				<a href="<?= get_permalink() ?>">
-					<h1 class="tour-title mobile-hidden"><?= get_field('frontpage_title') ?></h1>
-					<h1 class="tour-title mobile-only"><?= get_field('frontpage_mobile_title') ?></h1>
-					<h2 class="tour-subtitle"><?= get_field('subtitle') ?></h2>
+					<h2 class="tour-title mobile-hidden"><?= get_field('frontpage_title') ?></h2>
+					<h2 class="tour-title mobile-only"><?= get_field('frontpage_mobile_title') ?></h2>
+					<h3 class="tour-subtitle"><?= get_field('subtitle') ?></h3>
 				</a>
 			</div>
 

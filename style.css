@@ -491,6 +491,7 @@ body {
   font-weight: 300;
   font-size: 2em;
   line-height: 1em;
+  color: white;
 }
 @media (max-width: 767px) {
   .tour .tour-info .tour-subtitle {
@@ -1516,20 +1517,6 @@ body.press .press-item .author {
 /*
 ** Sizing and Layout Variables
 */
-h3, .h3 {
-  color: #3f616c;
-}
-
-h4, .h4 {
-  font-family: "Roboto Slab", serif;
-  margin-top: 20px;
-  font-size: 1.25rem;
-}
-
-a {
-  color: #bf5246;
-}
-
 .payments-page {
   display: flex;
   flex-direction: column;
@@ -1544,6 +1531,17 @@ a {
   width: 800px;
   margin-top: 80px;
   margin-bottom: 80px;
+}
+.payments-page .payments .payments-inner h3, .payments-page .payments .payments-inner .h3 {
+  color: #3f616c;
+}
+.payments-page .payments .payments-inner h4, .payments-page .payments .payments-inner .h4 {
+  font-family: "Roboto Slab", serif;
+  margin-top: 20px;
+  font-size: 1.25rem;
+}
+.payments-page .payments .payments-inner a {
+  color: #bf5246;
 }
 .payments-page .payments .payments-inner .hidden {
   display: none;
