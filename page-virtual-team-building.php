@@ -304,8 +304,8 @@
 		get_template_part('navbar');
 
 	?>
-	<div class="private-tours-container">
-		<div class="private-tours-inner">
+	<div class="virtual-team-building-container">
+		<div class="virtual-team-building-inner">
 		<?php
 			if ( have_posts() ){
 				while ( have_posts() ) : the_post();
@@ -328,7 +328,7 @@
 							<div>
 								<h1><?= the_title(); ?></h1>
 								<p><?= the_field('hero_text'); ?></p>
-								<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
+								<a class="private-book-button" href="#vtb-form"><?= the_field('cta_button_text'); ?></a>
 							</div>
 							<div class="row" style="margin-top: 50px;">
 								<div class="past-clients-header col-md-12">Past Clients:</div>
@@ -341,8 +341,6 @@
 											 	// loop through the rows of data
 											    while ( have_rows('past_clients') ) : the_row();
 												?>
-
-
 												<div class="carousel-item active">
 													<img class="d-block w-100" src="<?php the_sub_field('slide1') ?>" alt="First slide">
 												</div>
@@ -355,13 +353,9 @@
 												<div class="carousel-item">
 													<img class="d-block w-100" src="<?php the_sub_field('slide4') ?>" alt="Fourth slide">
 												</div>
-
 							    				<?php endwhile;
-
 												else :
-
 							    				// no rows found
-
 												endif;
 
 											?>
@@ -454,56 +448,43 @@
 						<hr class="dotted-line">
 					</div>
 				</div>
-				<div class="group-types">
-					<div class="private-tour-group row align-items-center">
-						<div class="group-image col-sm-7 col-md-6 col-lg-5">
-							<?php if( get_field('corporate_tours_image') ): ?>
+				<div class="page-sections">
+					<?php if( have_rows('sections') ):
+						// check if the quote field has rows of data
 
-								<img class="tour-type"src="<?php the_field('corporate_tours_image'); ?>" />
+						// loop through the rows of data
+							while ( have_rows('sections') ) : the_row();
+							$section_title = get_sub_field('title');
+							$content = get_sub_field('section_content');
+							$imageURL = get_sub_field('section_image');
+						?>
+						<div class="page-section row align-items-center">
+							<div class="section-image col-sm-7 col-md-6 col-lg-5">
+									<img class="tour-type"src="<?php echo $imageURL ?>" />
+							</div>
+							<div class="group-cta col-sm-5 offset-md-1">
+								<h2><?php echo $section_title ?></h2>
+								<div><?= $content ?></div>
+								<a class="private-book-button" href="#vtb-form"><?= the_field('cta_button_text'); ?></a>
+							</div>
+						</div>
 
-							<?php endif; ?>
-						</div>
-						<div class="group-cta col-sm-5 offset-md-1">
-							<h3>Corporate Tours</h3>
-							<p><?= the_field('corporate_tours'); ?></p>
-							<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
-						</div>
-					</div>
-					<div class="private-tour-group row align-items-center">
-						<div class="group-image order-sm-2 col-sm-7 col-md-6 col-lg-5 offset-lg-1">
-							<?php if( get_field('school_tours_image') ): ?>
+							<?php endwhile;
 
-								<img class="tour-type" src="<?php the_field('school_tours_image'); ?>" />
+						else :
 
-							<?php endif; ?>
-						</div>
-						<div class="group-cta order-sm-1 col-sm-5 offset-md-1">
-							<h3>School Tours</h3>
-							<p><?= the_field('school_tours'); ?></p>
-							<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
-						</div>
-					</div>
-					<div class="private-tour-group row align-items-center">
-						<div class="group-image col-sm-7 col-md-6 col-lg-5">
-							<?php if( get_field('party_tours_image') ): ?>
+							// no rows found
 
-								<img class="tour-type" src="<?php the_field('party_tours_image'); ?>" />
+						endif;
 
-							<?php endif; ?>
-						</div>
-						<div class="group-cta col-sm-5 offset-md-1">
-							<h3>Parties & Families</h3>
-							<p><?= the_field('party_tours'); ?></p>
-							<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
-						</div>
-					</div>
+					?>
 				</div>
 				<div class="row no-gutters">
 					<div class="col-10 offset-2">
 						<hr class="dotted-line">
 					</div>
 				</div>
-				<div id="private-tour-form" class="request-form row justify-content-md-center">
+				<div id="vtb-form" class="request-form row justify-content-md-center">
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-lg-8">
@@ -521,117 +502,6 @@
 				<div class="row no-gutters">
 					<div class="col-10">
 						<hr class="dotted-line">
-					</div>
-				</div>
-				<div class="container">
-					<h3 style="margin: 40px auto 60px; text-align: center;">Private Experiences</h3>
-					<div class="row specialty">
-						<div class="specialty-experiences col-md-12">
-							Specialty Tours
-						</div>
-						<?php
-						/*
-						*  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
-						*  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
-						*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
-						*/
-
-						$post_objects = get_field('tours');
-
-						if( $post_objects ): ?>
-
-						    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-						        <?php setup_postdata($post);?>
-									<?php $tour = get_field('tour-type');
-									if ( $tour == "Specialty Experience"):
-									?>
-								<div class="col-sm-6 col-lg-4">
-									<a class="tour-thumb text-center">
-										<div class="private-tour-post">
-											<?php
-											$post_image = get_field('preview_image');
-											if( !empty($post_image) ):
-											?>
-											<img src="<?php echo $post_image ?>" alt="<?php the_title(); ?>">
-
-											<?php endif; ?>
-											<div class="private-tour-overlay">
-												<div class="align-middle overlay-inner">
-													<h4><?php the_title(); ?></h4>
-													<div class="">
-														<?php the_field('summary'); ?>
-													</div>
-													<div class="btn post-preview-button">More</div>
-												</div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<?php endif; ?>
-						    <?php endforeach; ?>
-
-						    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-
-						<?php endif;
-						?>
-					</div>
-					<div class="row neighborhood">
-						<div class="neighborhood-tours col-md-12">
-							Neighborhood Tours
-						</div>
-						<?php
-						/*
-						*  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
-						*  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
-						*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
-						*/
-
-						$post_objects = get_field('tours');
-
-						if( $post_objects ): ?>
-
-						    <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-						        <?php setup_postdata($post);?>
-									<?php $tour = get_field('tour-type');
-									if ( $tour == "Neighborhood Tour"):
-									?>
-								<div class="col-sm-6 col-lg-4">
-									<a class="tour-thumb text-center">
-										<div class="private-tour-post">
-											<?php
-											$post_image = get_field('preview_image');
-											if( !empty($post_image) ):
-											?>
-											<img src="<?php echo $post_image ?>" alt="<?php the_title(); ?>">
-
-											<?php endif; ?>
-											<div class="private-tour-overlay">
-												<div class="align-middle overlay-inner">
-													<h4><?php the_title(); ?></h4>
-													<div class="">
-														<?php the_field('summary'); ?>
-													</div>
-													<div class="btn post-preview-button">More</div>
-												</div>
-											</div>
-										</div>
-									</a>
-								</div>
-								<?php endif; ?>
-						    <?php endforeach; ?>
-
-						    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-
-						<?php endif;
-						?>
-						<script type="text/javascript">
-							$('a.tour-thumb').each(function(index){
-								$(this).click(function(){
-								   $('#tourModal').modal('show');
-								   $('#tourCarousel').carousel(index);
-								});
-							});
-						</script>
 					</div>
 				</div>
 				<div class="container-fluid cta-email">
@@ -662,113 +532,6 @@
 				endwhile;
 			}
 		?>
-		</div>
-	</div>
-	<!-- Modal for tours -->
-	<div id="tourModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="tour-modal-dialog modal-dialog modal-dialog-centered modal-lg">
-			<div class="tour-modal-content modal-content">
-				<div class="tour-modal-header modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span> close
-					</button>
-				</div>
-				<div class="tour-modal-body modal-body" style="padding: 0;">
-					<hr class="dotted-line" style="margin-top:0;">
-					<div id="tourCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-						<div class="carousel-inner">
-						<?php
-						/*
-						*  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
-						*  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
-						*  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
-						*/
-
-						$post_objects = get_field('tours');
-
-						if( $post_objects ): ?>
-
-						<?php
-							$first = true;
-							foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-						<?php setup_postdata($post); ?>
-							<div class="carousel-item <?php if ($first) {echo "active"; $first = false;}?>">
-								<div class="row no-gutters">
-								<?php if( have_rows('images') ): ?>
-
-								<?php while( have_rows('images') ): the_row();?>
-
-									<div class="col-md-4 tour-image-holder" style="background-image: url('<?php the_sub_field('image_1');?>'); background-size: cover;"></div>
-									<div class="col-md-2 tour-image-holder" style="background-image: url('<?php the_sub_field('image_2');?>'); background-size: cover;"></div>
-									<div class="col-md-4 tour-image-holder" style="background-image: url('<?php the_sub_field('image_3');?>'); background-size: cover;"></div>
-									<div class="col-md-2 tour-image-holder" style="background-image: url('<?php the_sub_field('image_4');?>'); background-size: cover;"></div>
-
-								<?php endwhile; ?>
-
-								<?php endif; ?>
-								</div>
-								<div class="tour-main row no-gutters justify-content-around">
-									<div class="col-md-6">
-										<h2><?php the_title(); ?></h2>
-										<p>
-											<?php the_content(); ?>
-										</p>
-									</div>
-									<div class="col-md-4 tour-panel-right">
-									<?php if( have_rows('perfect_for') ): ?>
-										<h5>Perfect For</h5>
-										<ul class="perfect-for">
-										<?php while( have_rows('perfect_for') ): the_row();?>
-
-											<li><?php the_sub_field('people_profile');?></li>
-
-										<?php endwhile; ?>
-
-										</ul>
-
-									<?php endif; ?>
-									<?php if( have_rows('highlights') ): ?>
-										<h5>Highlights</h5>
-										<ul class="highlights">
-										<?php while( have_rows('highlights') ): the_row();?>
-
-											<li><?php the_sub_field('highlight');?></li>
-
-										<?php endwhile; ?>
-
-										</ul>
-
-									<?php endif; ?>
-										<button class="modal-tour-button private-book-button" type="button" data-toggle="modal" href="private-tour-form" style="width:100%;text-align:center;">Request a Tour</button>
-										<script type="text/javascript">
-											$('.private-book-button').click(function(){
-											    $('#tourModal').modal('hide');
-												setTimeout(function(){
-												    document.getElementById('private-tour-form').scrollIntoView();
-												}, 1000);
-											});
-										</script>
-									</div>
-								</div>
-							</div>
-							<?php endforeach; ?>
-
-							<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-							<?php endif;
-							?>
-						</div>
-						<a class="tour-carousel-prev carousel-control-prev" href="#tourCarousel" role="button" data-slide="prev">
-							<span class="tour-carousel-prev-icon carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="tour-carousel-next carousel-control-next" href="#tourCarousel" role="button" data-slide="next">
-							<span class="tour-carousel-next-icon carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
-					<!-- <hr class="dotted-line" style="margin-bottom:0px;"> -->
-				</div>
-			</div>
 		</div>
 	</div>
 	<!-- Prevent Multi Submit on WPCF7 forms -->
