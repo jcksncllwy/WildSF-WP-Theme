@@ -340,22 +340,19 @@
 
 											 	// loop through the rows of data
 											    while ( have_rows('past_clients') ) : the_row();
+													$imageURL = get_sub_field('slide_image');
+													$active = get_sub_field('show_first');
 												?>
-												<div class="carousel-item active">
-													<img class="d-block w-100" src="<?php the_sub_field('slide1') ?>" alt="First slide">
+												<div class="carousel-item <?php if ($active) echo "active";?>">
+													<img class="d-block w-100" src="<?php echo $imageURL ?>" alt="slide-<?php echo $imageURL ?>">
 												</div>
-												<div class="carousel-item">
-													<img class="d-block w-100" src="<?php the_sub_field('slide2') ?>" alt="Second slide">
-												</div>
-												<div class="carousel-item">
-													<img class="d-block w-100" src="<?php the_sub_field('slide3') ?>" alt="Third slide">
-												</div>
-												<div class="carousel-item">
-													<img class="d-block w-100" src="<?php the_sub_field('slide4') ?>" alt="Fourth slide">
-												</div>
+
 							    				<?php endwhile;
+
 												else :
+
 							    				// no rows found
+
 												endif;
 
 											?>
