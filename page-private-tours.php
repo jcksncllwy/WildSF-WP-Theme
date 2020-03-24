@@ -213,7 +213,7 @@
 		h1,h2,h3,h5 {
 			color: #3F616C;
 		}
-		h4, h5 {
+		h3, h5 {
 			margin-bottom: .5rem;
 		}
 		.close {
@@ -464,7 +464,7 @@
 							<?php endif; ?>
 						</div>
 						<div class="group-cta col-sm-5 offset-md-1">
-							<h3>Corporate Tours</h3>
+							<h2>Corporate Team Building</h2>
 							<p><?= the_field('corporate_tours'); ?></p>
 							<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
 						</div>
@@ -478,7 +478,7 @@
 							<?php endif; ?>
 						</div>
 						<div class="group-cta order-sm-1 col-sm-5 offset-md-1">
-							<h3>School Tours</h3>
+							<h2>School Tours</h2>
 							<p><?= the_field('school_tours'); ?></p>
 							<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
 						</div>
@@ -492,7 +492,7 @@
 							<?php endif; ?>
 						</div>
 						<div class="group-cta col-sm-5 offset-md-1">
-							<h3>Parties & Families</h3>
+							<h2>Parties & Families</h2>
 							<p><?= the_field('party_tours'); ?></p>
 							<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
 						</div>
@@ -709,7 +709,7 @@
 								</div>
 								<div class="tour-main row no-gutters justify-content-around">
 									<div class="col-md-6">
-										<h2><?php the_title(); ?></h2>
+										<h1><?php the_title(); ?></h1>
 										<p>
 											<?php the_content(); ?>
 										</p>
