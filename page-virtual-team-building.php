@@ -457,22 +457,22 @@
 						?>
 							<div class="page-section row align-items-center">
 								<?php if ( get_row_index() % 2 == 0 ) : ?>
-									<div class="section-image col-sm-7 col-md-6 col-lg-5">
-											<img class="tour-type"src="<?php echo $imageURL ?>" />
+									<div class="section-image order-sm-2 col-sm-7 col-md-6 col-lg-5 offset-lg-1">
+										<img class="tour-type"src="<?php echo $imageURL ?>" />
 									</div>
-									<div class="group-cta col-sm-5 offset-md-1">
+									<div class="group-cta order-sm-1 col-sm-5 offset-md-1">
 										<h2><?php echo $section_title ?></h2>
 										<div><?= $content ?></div>
 										<a class="private-book-button" href="#vtb-form"><?= the_field('cta_button_text'); ?></a>
 									</div>
 								<?php else : ?>
-									<div class="group-cta col-sm-5 offset-md-1">
+									<div class="section-image col-sm-7 col-md-6 col-lg-5">
+											<img class="tour-type"src="<?php echo $imageURL ?>" />
+									</div>
+									<div class="section-cta col-sm-5 offset-md-1">
 										<h2><?php echo $section_title ?></h2>
 										<div><?= $content ?></div>
 										<a class="private-book-button" href="#vtb-form"><?= the_field('cta_button_text'); ?></a>
-									</div>
-									<div class="section-image col-sm-7 col-md-6 col-lg-5">
-											<img class="tour-type"src="<?php echo $imageURL ?>" />
 									</div>
 								<?php endif; ?>
 							</div>
