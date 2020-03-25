@@ -1,4 +1,6 @@
 <?php
+$vtb_page = get_page_by_title('Virtual Team Building');
+$vtb_url = get_permalink( $vtb_page );
 $private_tours_page = get_page_by_title("Private Tours");
 $private_tours_url = get_permalink( $private_tours_page );
 $frontpage = get_page_by_title('frontpage');
@@ -50,20 +52,26 @@ $logo_image_url = wp_get_attachment_image_url(
 					<?php endwhile; ?>
 				</div>
 			</li>
-			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
+			<!-- <li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<a href="<?= $calendar_nav_link ?>" class="nav-link" data-button-text="Calendar">Book Now</a>
+			</li> -->
+			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
+				<a class="nav-link" href="<?= $vtb_url = get_permalink( $vtb_page ); ?>">Virtual Team Building</a>
 			</li>
 			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<a class="nav-link" href="<?= $private_tours_url ?>">Private Tours</a>
 			</li>
-			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
+			<!-- <li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
 				<a class="nav-link" href="<?= $faq_nav_link ?>">FAQ</a>
-			</li>
-			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item nav-gift-card">
+			</li> -->
+			<!-- <li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item nav-gift-card">
 				<a href="https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/K9Wd" class="nav-link" data-button-text="Gift Card">Gift Card</a>
+			</li> -->
+			<li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item">
+				<a class="nav-link" href="/about-us">About Us</a>
 			</li>
 			<li data-toggle="collapse" data-target="" class="nav-item">
-				<a href="<?= $calendar_nav_link ?>" class="btn book-button" data-button-text="Book Now">Book Now</a>
+				<a href="<?= $private_tours_url ?>" class="btn book-button" data-button-text="Book Now">Book Now</a>
 			</li>
 		</ul>
 		<span class="navbar-text contact-info">
