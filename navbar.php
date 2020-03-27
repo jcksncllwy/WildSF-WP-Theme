@@ -1,5 +1,5 @@
 <?php
-$vtb_page = get_page_by_title('Virtual Team Building');
+$vtb_page = get_page_by_title('Virtual Team Building Activities for Remote Teams');
 $vtb_url = get_permalink( $vtb_page );
 $private_tours_page = get_page_by_title("Private Tours");
 $private_tours_url = get_permalink( $private_tours_page );

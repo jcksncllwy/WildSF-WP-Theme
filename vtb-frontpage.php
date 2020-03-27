@@ -1,6 +1,6 @@
 <?php
 	$frontpage = get_page_by_title('frontpage');
-	$featured_vtb = get_page_by_title('Virtual Team Building');
+	$featured_vtb = get_page_by_title('Virtual Team Building Activities for Remote Teams');
 	$tour_background_image_url = get_field( 'frontpage_splash_image', $featured_vtb);
 	$tour_color = get_field('tour_color', $featured_vtb);
 ?>
