@@ -559,6 +559,14 @@
 	    disableSubmit = false;
 	}, false );
 	</script>
+
+	<script>
+	document.addEventListener( 'wpcf7mailsent', function( event ) {
+		location = '/thank-you-from-wild-sf';
+	}, false );
+	</script>
+
+
 	<script>
 	//fill tour ID from contact name//
 	$('#contact-name').blur(function(){
