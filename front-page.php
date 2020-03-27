@@ -10,8 +10,6 @@
 	get_template_part('navbar');
 	get_template_part('splash');
 	get_template_part('section','cta');
-
-	//feature the virtual team building TODO:remove after quarantines
 	get_template_part('vtb', 'frontpage');
 
 	$frontpage = get_page_by_title('frontpage');
@@ -57,7 +55,6 @@
 
 	get_template_part('footer');
 
-	get_template_part('section','promo-modal');
 	?>
 
 
