@@ -312,17 +312,12 @@
 		?>
 				<div class="container-fluid">
 					<div class="row align-items-center">
-						<?php
-
-						$image = get_field('hero_image');
-
-						if( !empty($image) ): ?>
-
+						<?php $image = get_field('hero_image');
+							if( !empty($image) ): ?>
 							<div
 								class="order-sm-2 col-sm-6 offset-sm-1"
 								style="background-size: cover; background-image: url('<?php echo $image; ?>'); background-repeat: no-repeat;background-position: center; height: 95vh;">
 							</div>
-
 						<?php endif; ?>
 						<div class="order-sm-1 col-sm-4 offset-sm-1" style="margin-top:4em;">
 							<div>
@@ -332,7 +327,7 @@
 							</div>
 							<div class="row" style="margin-top: 50px;">
 								<div class="past-clients-header col-md-12">Past Clients:</div>
-								<div class="col-md-12">
+								<div class="mx-auto col-9 col-md-12">
 									<div id="pastClients" class="carousel slide" data-ride="carousel">
 										<div class="carousel-inner">
 											<?php if( have_rows('past_clients') ):
@@ -370,168 +365,162 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-8">
-						<hr class="dotted-line">
+					<div class="row no-gutters">
+						<div class="col-8">
+							<hr class="dotted-line">
+						</div>
 					</div>
-				</div>
-				<div id="quote-carousel" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner">
-						<?php if( have_rows('tour_quotes') ):
+					<div id="quote-carousel" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<?php if( have_rows('tour_quotes') ):
+								// check if the quote field has rows of data
+
+							 	// loop through the rows of data
+							    while ( have_rows('tour_quotes') ) : the_row();
+									$name = get_sub_field('name');
+									$source = get_sub_field('source');
+									$link = get_sub_field('link');
+									$quote = get_sub_field('quote');
+									$active = get_sub_field('show_first');
+									$open_quote_url = wp_get_attachment_image_url(
+										get_field('open_quote'),
+										'full'
+									);
+									$close_quote_url = wp_get_attachment_image_url(
+										get_field('close_quote'),
+										'full'
+									);
+									$space = " ";
+								?>
+								<div class="carousel-item <?php if ($active) echo "active";?>">
+									<div class="section quote">
+										<img class="open-quote quote-img" src="<?= $open_quote_url ?>" />
+
+										<div class="quote-container">
+											<div class="quote">
+												<img class="close-quote quote-img mobile" src="<?= $close_quote_url ?>" />
+												<?= $quote ?>
+											</div>
+											<div class="logo">
+												<?= $source?>
+											</div>
+										</div>
+
+										<img class="close-quote quote-img" src="<?= $close_quote_url ?>" />
+									</div>
+								</div>
+
+			    				<?php endwhile;
+
+								else :
+
+			    				// no rows found
+
+								endif;
+
+							?>
+						</div>
+						<a class="carousel-control-prev" href="#quote-carousel" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#quote-carousel" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+					<div class="row no-gutters">
+						<div class="col-10">
+							<hr class="dotted-line">
+						</div>
+					</div>
+					<div class="row no-gutters">
+						<div class="col-6 offset-6">
+							<hr class="dotted-line">
+						</div>
+					</div>
+					<div class="page-sections">
+						<?php if( have_rows('sections') ):
 							// check if the quote field has rows of data
 
-						 	// loop through the rows of data
-						    while ( have_rows('tour_quotes') ) : the_row();
-								$name = get_sub_field('name');
-								$source = get_sub_field('source');
-								$link = get_sub_field('link');
-								$quote = get_sub_field('quote');
-								$active = get_sub_field('show_first');
-								$open_quote_url = wp_get_attachment_image_url(
-									get_field('open_quote'),
-									'full'
-								);
-								$close_quote_url = wp_get_attachment_image_url(
-									get_field('close_quote'),
-									'full'
-								);
-								$space = " ";
+							// loop through the rows of data
+								while ( have_rows('sections') ) : the_row();
+								$section_title = get_sub_field('title');
+								$content = get_sub_field('section_content');
+								$imageURL = get_sub_field('section_image');
 							?>
-							<div class="carousel-item <?php if ($active) echo "active";?>">
-								<div class="section quote">
-									<img class="open-quote quote-img" src="<?= $open_quote_url ?>" />
-
-									<div class="quote-container">
-										<div class="quote">
-											<img class="close-quote quote-img mobile" src="<?= $close_quote_url ?>" />
-											<?= $quote ?>
+								<div class="page-section row align-items-center">
+									<?php if ( get_row_index() % 2 == 0 ) : ?>
+										<div class="section-image order-sm-2 col-sm-7 col-md-6 col-lg-5 offset-lg-1">
+											<img class="tour-type"src="<?php echo $imageURL ?>" />
 										</div>
-										<div class="logo">
-											<?= $source?>
+										<div class="group-cta order-sm-1 col-sm-5 offset-md-1">
+											<h2><?php echo $section_title ?></h2>
+											<div><?= $content ?></div>
+											<a class="private-book-button" href="#vtb-form"><?= the_field('cta_button_text'); ?></a>
 										</div>
-									</div>
-
-									<img class="close-quote quote-img" src="<?= $close_quote_url ?>" />
+									<?php else : ?>
+										<div class="section-image col-sm-7 col-md-6 col-lg-5">
+												<img class="tour-type"src="<?php echo $imageURL ?>" />
+										</div>
+										<div class="section-cta col-sm-5 offset-md-1">
+											<h2><?php echo $section_title ?></h2>
+											<div><?= $content ?></div>
+											<a class="private-book-button" href="#vtb-form"><?= the_field('cta_button_text'); ?></a>
+										</div>
+									<?php endif; ?>
 								</div>
-							</div>
-
-		    				<?php endwhile;
+							<?php endwhile;
 
 							else :
 
-		    				// no rows found
+								// no rows found
 
 							endif;
 
 						?>
 					</div>
-					<a class="carousel-control-prev" href="#quote-carousel" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#quote-carousel" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-10">
-						<hr class="dotted-line">
-					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-6 offset-6">
-						<hr class="dotted-line">
-					</div>
-				</div>
-				<div class="page-sections">
-					<?php if( have_rows('sections') ):
-						// check if the quote field has rows of data
-
-						// loop through the rows of data
-							while ( have_rows('sections') ) : the_row();
-							$section_title = get_sub_field('title');
-							$content = get_sub_field('section_content');
-							$imageURL = get_sub_field('section_image');
-						?>
-							<div class="page-section row align-items-center">
-								<?php if ( get_row_index() % 2 == 0 ) : ?>
-									<div class="section-image order-sm-2 col-sm-7 col-md-6 col-lg-5 offset-lg-1">
-										<img class="tour-type"src="<?php echo $imageURL ?>" />
-									</div>
-									<div class="group-cta order-sm-1 col-sm-5 offset-md-1">
-										<h2><?php echo $section_title ?></h2>
-										<div><?= $content ?></div>
-										<a class="private-book-button" href="#vtb-form"><?= the_field('cta_button_text'); ?></a>
-									</div>
-								<?php else : ?>
-									<div class="section-image col-sm-7 col-md-6 col-lg-5">
-											<img class="tour-type"src="<?php echo $imageURL ?>" />
-									</div>
-									<div class="section-cta col-sm-5 offset-md-1">
-										<h2><?php echo $section_title ?></h2>
-										<div><?= $content ?></div>
-										<a class="private-book-button" href="#vtb-form"><?= the_field('cta_button_text'); ?></a>
-									</div>
-								<?php endif; ?>
-							</div>
-						<?php endwhile;
-
-						else :
-
-							// no rows found
-
-						endif;
-
-					?>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-10 offset-2">
-						<hr class="dotted-line">
-					</div>
-				</div>
-				<div id="vtb-form" class="request-form row justify-content-md-center">
-					<div class="container">
-						<div class="row justify-content-center">
-							<div class="col-lg-8">
-								<div class="header form"><?= the_field('cta_button_text'); ?></div>
-								<p class="lead" style="text-align: center">Tell us who you are, and we’ll plan your perfect experience!</p>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col-sm-8" style="margin-bottom: 40px;">
-								<?= the_field('tour_request_form'); ?>
-							</div>
+					<div class="row no-gutters">
+						<div class="col-10 offset-2">
+							<hr class="dotted-line">
 						</div>
 					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-10">
-						<hr class="dotted-line">
-					</div>
-				</div>
-				<div class="container-fluid cta-email">
-					<div class="row">
+					<div id="vtb-form" class="request-form row justify-content-md-center">
 						<div class="container">
 							<div class="row justify-content-center">
-								<div class="col-sm-8 text-center">
-									<?php
-
-									// vars
-									$cta = get_field('end_of_page_cta');
-
-									if( $cta ): ?>
-										<h3 style="color: #fbf6eb;"><?php echo $cta['main_text']; ?></h3>
-										<div class="lead" style="padding-bottom: 38px;">
-											<?php echo $cta['body']; ?>
-										</div>
-										<div>
-											<?php echo $cta['contact_form_shortcode']; ?>
-										</div>
-									<?php endif; ?>
+								<div class="col-lg-8">
+									<div class="header form"><?= the_field('cta_button_text'); ?></div>
+									<p class="lead" style="text-align: center">Tell us who you are, and we’ll plan your perfect experience!</p>
 								</div>
 							</div>
+							<div class="row justify-content-center">
+								<div class="col-sm-8" style="margin-bottom: 40px;">
+									<?= the_field('tour_request_form'); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row no-gutters">
+						<div class="col-10">
+							<hr class="dotted-line">
+						</div>
+					</div>
+					<div class="row cta-email justify-content-center">
+						<div class="col-sm-8 text-center">
+							<?php
+
+							// vars
+							$cta = get_field('end_of_page_cta');
+
+							if( $cta ): ?>
+								<h3 style="color: #fbf6eb;"><?php echo $cta['main_text']; ?></h3>
+								<div class="lead" style="padding-bottom: 38px;">
+									<?php echo $cta['body']; ?>
+								</div>
+								<div>
+									<?php echo $cta['contact_form_shortcode']; ?>
+								</div>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>

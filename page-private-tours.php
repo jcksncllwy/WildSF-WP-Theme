@@ -332,7 +332,7 @@
 							</div>
 							<div class="row" style="margin-top: 50px;">
 								<div class="past-clients-header col-md-12">Past Clients:</div>
-								<div class="col-md-12">
+								<div class="mx-auto col-9 col-md-12">
 									<div id="pastClients" class="carousel slide" data-ride="carousel">
 										<div class="carousel-inner">
 											<?php if( have_rows('past_clients') ):
@@ -379,148 +379,148 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-8">
-						<hr class="dotted-line">
+					<div class="row no-gutters">
+						<div class="col-8">
+							<hr class="dotted-line">
+						</div>
 					</div>
-				</div>
-				<div id="quote-carousel" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner">
-						<?php if( have_rows('tour_quotes') ):
-							// check if the quote field has rows of data
+					<div id="quote-carousel" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+							<?php if( have_rows('tour_quotes') ):
+								// check if the quote field has rows of data
 
-						 	// loop through the rows of data
-						    while ( have_rows('tour_quotes') ) : the_row();
-								$name = get_sub_field('name');
-								$source = get_sub_field('source');
-								$link = get_sub_field('link');
-								$quote = get_sub_field('quote');
-								$active = get_sub_field('show_first');
-								$open_quote_url = wp_get_attachment_image_url(
-									get_field('open_quote'),
-									'full'
-								);
-								$close_quote_url = wp_get_attachment_image_url(
-									get_field('close_quote'),
-									'full'
-								);
-								$space = " ";
-							?>
-							<div class="carousel-item <?php if ($active) echo "active";?>">
-								<div class="section quote">
-									<img class="open-quote quote-img" src="<?= $open_quote_url ?>" />
+							 	// loop through the rows of data
+							    while ( have_rows('tour_quotes') ) : the_row();
+									$name = get_sub_field('name');
+									$source = get_sub_field('source');
+									$link = get_sub_field('link');
+									$quote = get_sub_field('quote');
+									$active = get_sub_field('show_first');
+									$open_quote_url = wp_get_attachment_image_url(
+										get_field('open_quote'),
+										'full'
+									);
+									$close_quote_url = wp_get_attachment_image_url(
+										get_field('close_quote'),
+										'full'
+									);
+									$space = " ";
+								?>
+								<div class="carousel-item <?php if ($active) echo "active";?>">
+									<div class="section quote">
+										<img class="open-quote quote-img" src="<?= $open_quote_url ?>" />
 
-									<div class="quote-container">
-										<div class="quote">
-											<img class="close-quote quote-img mobile" src="<?= $close_quote_url ?>" />
-											<?= $quote ?>
+										<div class="quote-container">
+											<div class="quote">
+												<img class="close-quote quote-img mobile" src="<?= $close_quote_url ?>" />
+												<?= $quote ?>
+											</div>
+											<div class="logo">
+												<?= $source?>
+											</div>
 										</div>
-										<div class="logo">
-											<?= $source?>
-										</div>
+
+										<img class="close-quote quote-img" src="<?= $close_quote_url ?>" />
 									</div>
+								</div>
 
-									<img class="close-quote quote-img" src="<?= $close_quote_url ?>" />
+			    				<?php endwhile;
+
+								else :
+
+			    				// no rows found
+
+								endif;
+
+							?>
+						</div>
+						<a class="carousel-control-prev" href="#quote-carousel" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#quote-carousel" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+					<div class="row no-gutters">
+						<div class="col-10">
+							<hr class="dotted-line">
+						</div>
+					</div>
+					<div class="row no-gutters">
+						<div class="col-6 offset-6">
+							<hr class="dotted-line">
+						</div>
+					</div>
+					<div class="group-types">
+						<div class="private-tour-group row align-items-center">
+							<div class="group-image col-sm-7 col-md-6 col-lg-5">
+								<?php if( get_field('corporate_tours_image') ): ?>
+
+									<img class="tour-type"src="<?php the_field('corporate_tours_image'); ?>" />
+
+								<?php endif; ?>
+							</div>
+							<div class="group-cta col-sm-5 offset-md-1">
+								<h2>Corporate Team Building</h2>
+								<p><?= the_field('corporate_tours'); ?></p>
+								<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
+							</div>
+						</div>
+						<div class="private-tour-group row align-items-center">
+							<div class="group-image order-sm-2 col-sm-7 col-md-6 col-lg-5 offset-lg-1">
+								<?php if( get_field('school_tours_image') ): ?>
+
+									<img class="tour-type" src="<?php the_field('school_tours_image'); ?>" />
+
+								<?php endif; ?>
+							</div>
+							<div class="group-cta order-sm-1 col-sm-5 offset-md-1">
+								<h2>School Tours</h2>
+								<p><?= the_field('school_tours'); ?></p>
+								<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
+							</div>
+						</div>
+						<div class="private-tour-group row align-items-center">
+							<div class="group-image col-sm-7 col-md-6 col-lg-5">
+								<?php if( get_field('party_tours_image') ): ?>
+
+									<img class="tour-type" src="<?php the_field('party_tours_image'); ?>" />
+
+								<?php endif; ?>
+							</div>
+							<div class="group-cta col-sm-5 offset-md-1">
+								<h2>Parties & Families</h2>
+								<p><?= the_field('party_tours'); ?></p>
+								<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
+							</div>
+						</div>
+					</div>
+					<div class="row no-gutters">
+						<div class="col-10 offset-2">
+							<hr class="dotted-line">
+						</div>
+					</div>
+					<div id="private-tour-form" class="request-form row justify-content-md-center">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-8">
+									<div class="header form"><?= the_field('cta_button_text'); ?></div>
+									<p class="lead" style="text-align: center">Tell us who you are, and we’ll plan your perfect experience!</p>
 								</div>
 							</div>
-
-		    				<?php endwhile;
-
-							else :
-
-		    				// no rows found
-
-							endif;
-
-						?>
-					</div>
-					<a class="carousel-control-prev" href="#quote-carousel" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#quote-carousel" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-10">
-						<hr class="dotted-line">
-					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-6 offset-6">
-						<hr class="dotted-line">
-					</div>
-				</div>
-				<div class="group-types">
-					<div class="private-tour-group row align-items-center">
-						<div class="group-image col-sm-7 col-md-6 col-lg-5">
-							<?php if( get_field('corporate_tours_image') ): ?>
-
-								<img class="tour-type"src="<?php the_field('corporate_tours_image'); ?>" />
-
-							<?php endif; ?>
-						</div>
-						<div class="group-cta col-sm-5 offset-md-1">
-							<h2>Corporate Team Building</h2>
-							<p><?= the_field('corporate_tours'); ?></p>
-							<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
-						</div>
-					</div>
-					<div class="private-tour-group row align-items-center">
-						<div class="group-image order-sm-2 col-sm-7 col-md-6 col-lg-5 offset-lg-1">
-							<?php if( get_field('school_tours_image') ): ?>
-
-								<img class="tour-type" src="<?php the_field('school_tours_image'); ?>" />
-
-							<?php endif; ?>
-						</div>
-						<div class="group-cta order-sm-1 col-sm-5 offset-md-1">
-							<h2>School Tours</h2>
-							<p><?= the_field('school_tours'); ?></p>
-							<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
-						</div>
-					</div>
-					<div class="private-tour-group row align-items-center">
-						<div class="group-image col-sm-7 col-md-6 col-lg-5">
-							<?php if( get_field('party_tours_image') ): ?>
-
-								<img class="tour-type" src="<?php the_field('party_tours_image'); ?>" />
-
-							<?php endif; ?>
-						</div>
-						<div class="group-cta col-sm-5 offset-md-1">
-							<h2>Parties & Families</h2>
-							<p><?= the_field('party_tours'); ?></p>
-							<a class="private-book-button" href="#private-tour-form"><?= the_field('cta_button_text'); ?></a>
-						</div>
-					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-10 offset-2">
-						<hr class="dotted-line">
-					</div>
-				</div>
-				<div id="private-tour-form" class="request-form row justify-content-md-center">
-					<div class="container">
-						<div class="row justify-content-center">
-							<div class="col-lg-8">
-								<div class="header form"><?= the_field('cta_button_text'); ?></div>
-								<p class="lead" style="text-align: center">Tell us who you are, and we’ll plan your perfect experience!</p>
-							</div>
-						</div>
-						<div class="row justify-content-center">
-							<div class="col-sm-8" style="margin-bottom: 40px;">
-								<?= the_field('tour_request_form'); ?>
+							<div class="row justify-content-center">
+								<div class="col-sm-8" style="margin-bottom: 40px;">
+									<?= the_field('tour_request_form'); ?>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-10">
-						<hr class="dotted-line">
+					<div class="row no-gutters">
+						<div class="col-10">
+							<hr class="dotted-line">
+						</div>
 					</div>
 				</div>
 				<div class="container">
@@ -635,26 +635,22 @@
 					</div>
 				</div>
 				<div class="container-fluid cta-email">
-					<div class="row">
-						<div class="container">
-							<div class="row justify-content-center">
-								<div class="col-sm-8 text-center">
-									<?php
+					<div class="row justify-content-center">
+						<div class="col-sm-8 text-center">
+							<?php
 
-									// vars
-									$cta = get_field('end_of_page_cta');
+							// vars
+							$cta = get_field('end_of_page_cta');
 
-									if( $cta ): ?>
-										<h3 style="color: #fbf6eb;"><?php echo $cta['main_text']; ?></h3>
-										<div class="lead" style="padding-bottom: 38px;">
-											<?php echo $cta['body']; ?>
-										</div>
-										<div>
-											<?php echo $cta['contact_form_shortcode']; ?>
-										</div>
-									<?php endif; ?>
+							if( $cta ): ?>
+								<h3 style="color: #fbf6eb;"><?php echo $cta['main_text']; ?></h3>
+								<div class="lead" style="padding-bottom: 38px;">
+									<?php echo $cta['body']; ?>
 								</div>
-							</div>
+								<div>
+									<?php echo $cta['contact_form_shortcode']; ?>
+								</div>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>

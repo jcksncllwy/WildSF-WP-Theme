@@ -37,6 +37,7 @@
 	.carousel-control-next-icon {
 	  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%238c8984' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 	}
+
 </style>
 <div class="section cta">
 	<div class="row">
@@ -48,7 +49,7 @@
 			<h2><?= $little_cta ?></h2>
 			<div class="row">
 				<h4 class="past-clients-header col-md-12">Our Clients</h4>
-				<div class="col-md-12">
+				<div class="mx-auto col-9 col-md-12">
 					<div id="pastClients" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
 							<?php if( have_rows('past_clients', $frontpage->ID) ) :
