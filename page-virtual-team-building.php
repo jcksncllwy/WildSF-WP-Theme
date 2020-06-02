@@ -328,7 +328,7 @@
 						</div>
 					</div>
 					<div class="row" style="margin-top: 50px;">
-						<div class="mx-auto" style="max-width: 600px;">
+						<div class="mx-auto text-center" style="max-width: 600px;">
 							<p><?= the_field('intro_section'); ?></p>
 						</div>
 					</div>
