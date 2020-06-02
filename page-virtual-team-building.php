@@ -338,7 +338,7 @@
 					</div>
 					<div class="row" style="margin-top: 50px;">
 						<div class="mx-auto col-8">
-							<div class="past-clients-header col-md-12 text-center">Past Clients</div>
+							<div class="past-clients-header col-md-12 text-center">Our Clients</div>
 							<div id="pastClients" class="carousel slide" data-ride="carousel">
 								<div class="carousel-inner">
 									<?php if( have_rows('past_clients') ):
