@@ -327,8 +327,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="mx-auto col-9">
+					<div class="row" style="margin-top: 50px;">
+						<div class="mx-auto" style="max-width: 600px;">
 							<p><?= the_field('intro_section'); ?></p>
 						</div>
 					</div>
