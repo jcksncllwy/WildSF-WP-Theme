@@ -136,7 +136,7 @@
 		.cta-email {
 			background-color: #4F4E4C;
 			color: #fbf6eb;
-			padding: 100px 0;
+			padding: 100px 15px;
 		}
 		.private-book-button {
 			background-color: transparent;
