@@ -327,9 +327,14 @@
 							</div>
 						</div>
 					</div>
-					<div class="row" style="margin-top: 50px;">
+					<div class="row">
 						<div class="mx-auto col-9">
-							<div class="past-clients-header col-md-12">Past Clients:</div>
+							<p><?= the_field('intro_section'); ?></p>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 50px;">
+						<div class="mx-auto col-8">
+							<div class="past-clients-header col-md-12 text-center">Past Clients</div>
 							<div id="pastClients" class="carousel slide" data-ride="carousel">
 								<div class="carousel-inner">
 									<?php if( have_rows('past_clients') ):
