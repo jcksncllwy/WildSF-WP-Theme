@@ -167,6 +167,10 @@
 				text-align: center;
 			}
 		}
+		.page-section {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
 		.private-tour-post > .private-tour-overlay {
 			top: 0;
 			text-align: center;
