@@ -65,7 +65,8 @@ a{
 			padding: 20px;
 		}
 	}
-	font-family: $primary-font-family;
+	font-family: $secondary-font-family;
+	letter-spacing: .25px;
 
 	transition: opacity 0.3s ease;
 	opacity: 1;
@@ -97,6 +98,7 @@ a{
 		margin-right: 10px;
 		.nav-link {
 			color: $primary-white;
+			text-transform: uppercase;
 		}
 		//override peek button styling. need peek button class for Peek JS to work
 		.peek-book-button-flat{

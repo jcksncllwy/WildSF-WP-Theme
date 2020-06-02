@@ -85,7 +85,8 @@ body {
   height: 80px;
   background-color: rgba(63, 97, 108, 0.8);
   padding: 0;
-  font-family: "Roboto Slab", serif;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.25px;
   transition: opacity 0.3s ease;
   opacity: 1;
   /*Bootstrap MD breakpoint*/
@@ -128,6 +129,7 @@ body {
 }
 .navbar .nav-item .nav-link {
   color: #fbf6eb;
+  text-transform: uppercase;
 }
 .navbar .nav-item .peek-book-button-flat {
   display: block;

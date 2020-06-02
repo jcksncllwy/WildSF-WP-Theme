@@ -32,6 +32,8 @@
 	}
 	.past-clients-header {
 		margin-top: 32px;
+		text-transform: uppercase;
+		color: #929398;
 	}
 
 	.carousel-control-next-icon {
