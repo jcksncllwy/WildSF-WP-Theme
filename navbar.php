@@ -10,6 +10,7 @@ $faq_url = get_permalink( $faq_page );
 $faq_nav_link = is_front_page() ? "#faq-nav-target" : $faq_url;
 $peek_calendar_popup_link = "https://www.peek.com/s/15a8284c-0990-4986-a5b4-1754b0c0b014/3beY";
 $calendar_nav_link = is_front_page() ? "#calendar-nav-target" : $peek_calendar_popup_link;
+$book_nav_link = is_page('Virtual Team Building Activities for Remote Teams') ? "#vtb-form" : $private_tours_url;
 $logo_image_url = wp_get_attachment_image_url(
 	get_field('navbar_logo', $frontpage->ID),
 	'thumbnail-no-crop');
@@ -71,7 +72,7 @@ $logo_image_url = wp_get_attachment_image_url(
 				<a class="nav-link" href="/about-us">About Us</a>
 			</li>
 			<li data-toggle="collapse" data-target="" class="nav-item">
-				<a href="<?= $private_tours_url ?>" class="btn book-button" data-button-text="Book Now">Book Now</a>
+				<a href="<?= $book_nav_link ?>" class="btn book-button" data-button-text="Book Now">Book Now</a>
 			</li>
 		</ul>
 		<span class="navbar-text contact-info">
