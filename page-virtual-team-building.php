@@ -325,47 +325,47 @@
 								<p><?= the_field('hero_text'); ?></p>
 								<a class="private-book-button" href="#vtb-form"><?= the_field('cta_button_text'); ?></a>
 							</div>
-							<div class="row" style="margin-top: 50px;">
-								<div class="past-clients-header col-md-12">Past Clients:</div>
-								<div class="mx-auto col-9 col-md-12">
-									<div id="pastClients" class="carousel slide" data-ride="carousel">
-										<div class="carousel-inner">
-											<?php if( have_rows('past_clients') ):
-												// check if the quote field has rows of data
+						</div>
+					</div>
+					<div class="row" style="margin-top: 50px;">
+						<div class="mx-auto col-9">
+							<div class="past-clients-header col-md-12">Past Clients:</div>
+							<div id="pastClients" class="carousel slide" data-ride="carousel">
+								<div class="carousel-inner">
+									<?php if( have_rows('past_clients') ):
+										// check if the quote field has rows of data
 
-											 	// loop through the rows of data
-											    while ( have_rows('past_clients') ) : the_row();
-													$imageURL = get_sub_field('slide_image');
-													$active = get_sub_field('show_first');
-												?>
-												<div class="carousel-item <?php if ($active) echo "active";?>">
-													<img class="d-block w-100" src="<?php echo $imageURL ?>" alt="slide-<?php echo $imageURL ?>">
-												</div>
-
-							    				<?php endwhile;
-
-												else :
-
-							    				// no rows found
-
-												endif;
-
-											?>
+										// loop through the rows of data
+											while ( have_rows('past_clients') ) : the_row();
+											$imageURL = get_sub_field('slide_image');
+											$active = get_sub_field('show_first');
+										?>
+										<div class="carousel-item <?php if ($active) echo "active";?>">
+											<img class="d-block w-100" src="<?php echo $imageURL ?>" alt="slide-<?php echo $imageURL ?>">
 										</div>
-										<a class="clients-prev carousel-control-prev" href="#pastClients" role="button" data-slide="prev">
-											<span class="clients-prev-icon carousel-control-prev-icon" aria-hidden="true"></span>
-											<span class="sr-only">Previous</span>
-										</a>
-										<a class="clients-next carousel-control-next" href="#pastClients" role="button" data-slide="next">
-											<span class="clients-next-icon carousel-control-next-icon" aria-hidden="true"></span>
-											<span class="sr-only">Next</span>
-										</a>
-									</div>
+
+											<?php endwhile;
+
+										else :
+
+											// no rows found
+
+										endif;
+
+									?>
 								</div>
+								<a class="clients-prev carousel-control-prev" href="#pastClients" role="button" data-slide="prev">
+									<span class="clients-prev-icon carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="clients-next carousel-control-next" href="#pastClients" role="button" data-slide="next">
+									<span class="clients-next-icon carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
 							</div>
 						</div>
 					</div>
-					<div class="row no-gutters">
+					<div class="row">
 						<div class="col-8">
 							<hr class="dotted-line">
 						</div>
@@ -429,12 +429,12 @@
 							<span class="sr-only">Next</span>
 						</a>
 					</div>
-					<div class="row no-gutters">
+					<div class="row">
 						<div class="col-10">
 							<hr class="dotted-line">
 						</div>
 					</div>
-					<div class="row no-gutters">
+					<div class="row">
 						<div class="col-6 offset-6">
 							<hr class="dotted-line">
 						</div>
@@ -480,7 +480,7 @@
 
 						?>
 					</div>
-					<div class="row no-gutters">
+					<div class="row">
 						<div class="col-10 offset-2">
 							<hr class="dotted-line">
 						</div>
