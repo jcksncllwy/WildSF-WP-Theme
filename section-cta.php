@@ -95,7 +95,7 @@
 	<div class="row">
 		<div class="col">
 			<a class="home-book" href="<?= $button_href ?>"><?= $button_text ?></a>
-			<a href="tel:+14155801849" class="call-link">415-580-1849</a>
+			<a href="tel:+14153906635">(415)390-6635‬</a>
 		</div>
 	</div>
 
