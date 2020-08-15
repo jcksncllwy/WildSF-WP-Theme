@@ -36,9 +36,12 @@
 		    		<p class="payments-message">Thank you for choosing Wild SF Tours. Please follow these steps to complete your payment.</p>
 		    	</div>
 		    	<div class="payment-success">
-					<h1>Payment Successful</h1>
-					<h2>Thank you for your payment!</h2>
-					<p>A receipt has been emailed.</p>
+					<h1>Thank you for your payment!</h1>
+					<p>A receipt will be sent to the email below.</p>
+					<div class="alert alert-info" role="alert">
+						<p>Great, now schedule your free post-event debrief call (for 1-3 days after event), where we’ll share valuable feedback from your team’s post-event surveys.</p>
+						<a href="https://calendly.com/kabloom/20-min-chat" target="_blank" class="btn btn-info" style="color: white">Schedule Event Debrief</a>
+					</div>
 					<div class="row">
 						<div class="col-12">
 							<p><strong>Name: </strong><span id="name-success"></span></p>
@@ -484,7 +487,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="food-field row">
+							<div class="food-field row hidden">
 								<div class="col-12">
 									<h4>For Food Tours:</h4>
 								</div>
