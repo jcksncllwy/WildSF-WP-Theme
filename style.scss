@@ -15,8 +15,8 @@ Tags: tours
 	display: none;
 }
 
-body{
-	background-color: $primary-white !important;
+body {
+	background-color: white !important;
 }
 
 .mobile-hidden{
@@ -269,7 +269,6 @@ $splash-height: 70vh;
 		text-align: center;
 	}
 
-	background-color: $primary-white;
 	font-family: $primary-font-family;
 
 	h1{
@@ -300,75 +299,38 @@ $splash-height: 70vh;
 	}
 
 	&.quote{
-		color: $primary-blue;
-		padding: 60px;
-		flex-direction: row;
-		justify-content: space-around;
-		position: relative;
-		@media (max-width: 767px){
-			padding: 40px 20px;
+		color: $font-color;
+		font-family: $primary-font-family;
+		font-style: italic;
+		font-weight: 300;
+		font-size: 1.5em;
+		text-align: center;
+		.quote-text {
+			margin: 1em auto;
 		}
-
-		.quote-img{
-				mix-blend-mode: color-burn;
-				filter: opacity(25%);
-				height: 5em;
-				&.mobile{
-					display:none;
-				}
-				@media (max-width: 767px){
-					display: none;
-					&.mobile{
-						display: block;
-						height: 3em;
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%,-50%);
-					}
-
-				}
-			}
-
 		.logo{
-			width: 70%;
+			width: 90%;
 			display: flex;
 			justify-content: center;
-			padding: 20px 50px;
-			margin-top: 20px;
-			border-top: 2px solid transparentize($primary-blue, 0.5);
-			@media (max-width: 767px){
-				width: 80%;
+			margin: auto;
+			border-top: 1px solid transparentize($primary-blue, 0.5);
+			img {
+				max-width: 140px;
+				max-height: 40px;
+				margin: 1.5em auto;
 			}
-		}
-		.quote-container{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			position: relative;
-			width: 100%;
-
-			@media (max-width: 767px){
-				flex-direction: column;
-			}
-
-			.quote{
-				font-family: $primary-font-family;
-				font-style: italic;
-				font-weight: 300;
-				font-size: 2em;
-				text-align: center;
-				width: 100%;
-				position: relative;
-				background-color: $primary-white;
-				@media (max-width: 767px){
-					z-index: 99;
-				}
-			}
-
 		}
 	}
+}
+
+.guide {
+  background-color: $primary-beige;
+  .dot-top {
+    margin-top: -22px;
+  }
+	.dot-bottom {
+    margin-bottom: -20px;
+  }
 }
 
 .tour{
