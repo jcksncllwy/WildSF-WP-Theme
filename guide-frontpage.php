@@ -101,7 +101,7 @@ input[type=email] {
 
 <div class="guide">
 	<div class="guide-inner row no-gutters">
-    <div class="col-10 offset-2">
+    <div class="dot-top col-10 offset-2">
       <hr class="dotted-line">
     </div>
     <div class="guide-content">
@@ -132,7 +132,7 @@ input[type=email] {
         </div>
       </div>
     </div>
-    <div class="col-10">
+    <div class="dot-bottom col-10">
       <hr class="dotted-line">
     </div>
 	</div>
