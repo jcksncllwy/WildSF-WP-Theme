@@ -354,33 +354,23 @@
 									$link = get_sub_field('link');
 									$quote = get_sub_field('quote');
 									$active = get_sub_field('show_first');
-									$open_quote_url = wp_get_attachment_image_url(
-										get_field('open_quote'),
-										'full'
-									);
-									$close_quote_url = wp_get_attachment_image_url(
-										get_field('close_quote'),
-										'full'
-									);
 									$space = " ";
 								?>
 								<div class="carousel-item <?php if ($active) echo "active";?>">
 									<div class="section quote">
-										<img class="open-quote quote-img" src="<?= $open_quote_url ?>" />
-
 										<div class="quote-container">
-											<div class="quote">
-												<img class="close-quote quote-img mobile" src="<?= $close_quote_url ?>" />
-												<?= $quote ?>
+											<div class="quote-text">
+												"<?= $quote ?>"
 											</div>
 											<div class="logo">
-												<?= $source?>
+												<div class="source">
+													<?= $source?>
+												</div>
 											</div>
 										</div>
-
-										<img class="close-quote quote-img" src="<?= $close_quote_url ?>" />
 									</div>
 								</div>
+							</div>
 
 			    				<?php endwhile;
 

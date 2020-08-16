@@ -367,6 +367,8 @@ body {
 .section.quote .logo img {
   max-width: 140px;
   max-height: 40px;
+}
+.section.quote .logo img, .section.quote .logo .source {
   margin: 1.5em auto;
 }
 
