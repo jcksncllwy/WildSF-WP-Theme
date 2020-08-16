@@ -23,17 +23,21 @@
 	    height: 10px;
 	    background-size: contain;
 	  }
-	  .request-form {
-		background-color: #ee6552;
-		color: #fbf6eb;
-	  }
 	  .header.form {
 		margin: 40px 0 27px;
 		font-family: "Monoton";
 		font-size: 4em;
 		text-transform: uppercase;
 		text-align: center;
+		color: #EE6552;
 	  }
+		.wpcf7-form {
+			max-width: 400px;
+			margin: auto;
+		}
+		[data-class="wpcf7cf_group"] {
+			width: 100%;
+		}
 	  .tour-request {
 		  margin-top: 62px;
 		  margin-bottom: 100px;
@@ -41,60 +45,6 @@
 	  .wpcf7 {
 		  margin-bottom: 1.5em;
 	  }
-	  .wpcf7 > label {
-		  display: none;
-	  }
-	  .wpcf7-form {
-		  text-align: center;
-	  }
-	  .form-control,
-	  .sib-email-area {
-		  border: none;
-		  border-radius: 0;
-		  border-bottom: 1px solid #fbf6eb;
-		  color: #fbf6eb;
-		  background: transparent;
-		  margin-bottom: .75em;
-	  }
-	  select {
-		-webkit-appearance: none;
-		-webkit-border-radius: 0px;
-	  }
-		.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		color: #fbf6eb;
-		}
-		.form-control::-moz-placeholder { /* Firefox 19+ */
-		color: #fbf6eb;
-		}
-		.form-control:-ms-input-placeholder { /* IE 10+ */
-		color: #fbf6eb;
-		}
-		.form-control:-moz-placeholder { /* Firefox 18- */
-		color: #fbf6eb;
-		}
-
-		.sib-email-area::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		color: #fbf6eb;
-		}
-		.sib-email-area::-moz-placeholder { /* Firefox 19+ */
-		color: #fbf6eb;
-		}
-		.sib-email-area:-ms-input-placeholder { /* IE 10+ */
-		color: #fbf6eb;
-		}
-		.sib-email-area:-moz-placeholder { /* Firefox 18- */
-		color: #fbf6eb;
-		}
-
-		.form-control:focus,
-		.sib-email-area:focus {
-		    color: #fbf6eb;
-		    outline: 0;
-  			border-bottom: 2px solid #fbf6eb;
-			box-shadow: none;
-			background-color: rgba(255,255,255,.15);
-		}
-		.wpcf7-submit,
 		.email-request-button,
 		.post-preview-button {
 			background-color: transparent;
@@ -109,24 +59,12 @@
 			cursor: pointer;
 			color: #fbf6eb;
 		}
-		.wpcf7-response-output {
-			margin: 80px 0 0 !important;
-		}
 		.post-preview-button {
 			margin-top: 15px;
 			text-shadow: none;
 		}
-		.wpcf7-submit {
-			margin-top: 30px;
-			float: right;
-		}
 		div.wpcf7-mail-sent-ok {
 			border: 2px solid #fbf6eb;
-		}
-		.wpcf7-submit:hover {
-			background-color: #fbf6eb;
-			color: #bf5246;
-			text-decoration: none;
 		}
 		.email-request-button:hover {
 			background-color: #fbf6eb;
@@ -299,6 +237,31 @@
 		}
 		#tourCarousel {
 			position: static;
+		}
+		label {
+			font-weight: bold;
+			margin-bottom: 0px;
+			line-height: 150%;
+		}
+		.form-control {
+			border-radius: 0px;
+			box-shadow: 4px 4px 0px #3F616C;
+		}
+		.form-control:focus {
+			border-color: #008094;
+			box-shadow: 4px 4px 0px #008094;
+		}
+		.book-button {
+			border-radius: 5px;
+			font-family: "Roboto", sans-serif;
+			text-transform: uppercase;
+			font-weight: 700;
+			cursor: pointer;
+			background-color: #EF644F;
+			color: rgb(251, 246, 235);
+			height: 40px;
+	    width: 100%;
+	    border: 0px;
 		}
 	</style>
 

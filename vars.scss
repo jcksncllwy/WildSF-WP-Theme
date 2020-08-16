@@ -2,15 +2,17 @@
 /*
 ** Color Variables
 */
+$font-color: #1D2D33;
 $primary-blue: rgb(63, 97, 108);
 $primary-red: rgb(238, 101, 82);
 $primary-yellow: rgb(241, 199, 107);
-$primary-white: rgb(251, 246, 235);
+$primary-beige: #FBF6EB;
+$primary-white: #fff;
 $primary-green: rgb(179, 194, 137);
 
 $light-blue: lighten($primary-blue, 30%);
 $dark-blue: darken($primary-blue, 15%);
-$font-white: rgb(250,250,255);
+$font-white: #fff;
 $font-black: rgb(0,0,20);
 $font-blue-grey: rgb(50,50,70);
 $font-red: rgb(191,82,70);
@@ -18,7 +20,7 @@ $font-red: rgb(191,82,70);
 /*
 ** Font Variables
 */
-$primary-font-family: "Roboto Slab", serif;
+$primary-font-family: "Roboto", helvetica, arial, sans-serif;
 $secondary-font-family: "Roboto", sans-serif;
 
 /*
