@@ -214,8 +214,12 @@ a{
 			width: 100%;
 			padding: 20px;
 		}
-		img{
-			max-width: 100%;
+		img, iframe {
+			max-width: 100% !important;
+			height: auto !important;
+		}
+		.wp-caption {
+			max-width: 100% !important;
 		}
 	}
 	.button{
