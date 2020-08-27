@@ -148,7 +148,8 @@
 								</div>
 								<div class="row">
 									<div class="col">
-										<p><em>*A 3% credit card processing fee will be added to your payment before finalizing</em></p>
+										<p><em>*A 3% credit card processing fee will be added to your payment before finalizing.</em></p>
+										<p><em>*Minimum tip is 10% – if tip amount is left blank, 10% will be charged in a separate transaction.</em></p>
 									</div>
 								</div>
 							</div>
