@@ -234,15 +234,11 @@ body {
     padding: 20px;
   }
 }
+.page-container .page-inner img, .page-container .page-inner iframe, .page-container .page-inner .wp-caption {
+  max-width: 100% !important;
+}
 .page-container .page-inner img {
-  max-width: 100% !important;
   height: auto !important;
-}
-.page-container .page-inner iframe {
-  max-width: 100% !important;
-}
-.page-container .page-inner .wp-caption {
-  max-width: 100% !important;
 }
 .page-container .button {
   display: inline-block;
@@ -1143,8 +1139,7 @@ body {
     height: 300px;
   }
 }
-.single-tour .explainer-video-container 
-{
+.single-tour .explainer-video-container iframe {
   width: 800px;
   height: 449.4382022472px;
 }

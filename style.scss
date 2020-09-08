@@ -214,16 +214,10 @@ a{
 			width: 100%;
 			padding: 20px;
 		}
-		img {
-			max-width: 100%;
-			height: auto !important;
+		img, iframe, .wp-caption {
+			max-width: 100% !important;;
 		}
-		iframe {
-			max-width: 100%;
-		}
-		.wp-caption {
-			max-width: 100% !important;
-		}
+		img {height: auto !important;}
 	}
 	.button{
 		display: inline-block;
