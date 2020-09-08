@@ -263,9 +263,12 @@
 	    width: 100%;
 	    border: 0px;
 		}
-		img, iframe {
+		img {
 			max-width: 100%;
 			height: auto !important;
+		}
+		iframe {
+			max-width: 100%;
 		}
 		.wp-caption {
 			max-width: 100% !important;
