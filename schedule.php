@@ -11,7 +11,7 @@ Template Post Type: page
 	<?= get_header('common') ?>
 	<?php
 		$dotted_line_image_id = 172;
-	  	$dotted_line_image_url = wp_get_attachment_image_src($dotted_line_image_id, 'full')[0
+	  	$dotted_line_image_url = wp_get_attachment_image_src($dotted_line_image_id, 'full')[0];
 	?>
 	<style type="text/css" class="wp-dynamic-css">
 	  .dotted-line{
