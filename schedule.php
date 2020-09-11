@@ -16,17 +16,19 @@ Template Post Type: page
 		get_template_part('navbar');
 
 	?>
-	<div class="container">
-		<?php
-			if ( have_posts() ){
-				while ( have_posts() ) : the_post();
-		?>
-					<h1><?= the_title(); ?></h1>
-					<?= the_content(); ?>
-		<?php
-				endwhile;
-			}
-		?>
+	<div class="page-container schedule-page">
+		<div class="container">
+			<?php
+				if ( have_posts() ){
+					while ( have_posts() ) : the_post();
+			?>
+						<h1><?= the_title(); ?></h1>
+						<?= the_content(); ?>
+			<?php
+					endwhile;
+				}
+			?>
+		</div>
 	</div>
 
 <?php
