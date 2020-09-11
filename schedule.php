@@ -47,12 +47,49 @@ Template Post Type: page
 				</div>
 			</div>
 			<div class="schedule">
-				<hr class="dotted-line"/>
-				<div class="schedule-head">
-					Schedule of Events
+
+				<div class="row">
+					<hr class="dotted-line"/>
+					<div class="schedule-head">
+						Schedule of Events
+					</div>
+					<hr class="dotted-line"/>
 				</div>
-				<hr class="dotted-line"/>
+				<div class="row">
+						<?php
+						// Check rows exists.
+						if( have_rows('session') ):
+						?>
+						<div class="col sessions">
+							<?php
+						  // Loop through rows.
+						  while( have_rows('session') ) : the_row();
+
+						      // Load sub field values.
+						      $time = get_sub_field('time');
+									$name = get_sub_field('name');
+						      // Do something...
+							?>
+							<div class="row session-row">
+								<?= $time ?> <?= $name ?>
+							</div>
+							<?php
+						  // End session rows.
+						  endwhile;
+							?>
+						</div>
+
+
+						<?php
+						// No value.
+						else :
+						  // Do something...
+						endif;
+
+						?>
+				</div>
 			</div>
+
 			<?php
 					endwhile;
 				}
