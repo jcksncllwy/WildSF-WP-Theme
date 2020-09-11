@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 /*
-Template Name: Scheduule
+Template Name: Schedule
 Template Post Type: page
 */
 ?>
