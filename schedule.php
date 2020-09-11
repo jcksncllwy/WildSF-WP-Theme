@@ -16,8 +16,7 @@ Template Post Type: page
 		get_template_part('navbar');
 
 	?>
-	<div class="page-container">
-		<div class="page-inner">
+	<div class="container">
 		<?php
 			if ( have_posts() ){
 				while ( have_posts() ) : the_post();
@@ -28,7 +27,6 @@ Template Post Type: page
 				endwhile;
 			}
 		?>
-		</div>
 	</div>
 
 <?php
