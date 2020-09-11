@@ -30,20 +30,28 @@ Template Post Type: page
 	?>
 	<div class="page-container schedule-page">
 		<div class="container">
-			<div class="top-content row">
-				<?php
-					if ( have_posts() ){
-						while ( have_posts() ) : the_post();
-				?>
-				<h1><?= the_title(); ?></h1>
-				<?= the_content(); ?>
+			<div class="top-content">
+				<div class="row">
+					<?php
+						if ( have_posts() ){
+							while ( have_posts() ) : the_post();
+					?>
+					<div class="col-12">
+						<h1><?= the_title(); ?></h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-10 mr-auto">
+						<?= the_content(); ?>
+					</div>
+				</div>
 			</div>
 			<div class="schedule">
-				<hr class="dotted-line" />
+				<hr class="dotted-line"/>
 				<div class="schedule-head">
 					Schedule of Events
 				</div>
-				<hr class="dotted-line" />
+				<hr class="dotted-line"/>
 			</div>
 			<?php
 					endwhile;
