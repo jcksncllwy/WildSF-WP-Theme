@@ -1707,3 +1707,11 @@ body.press .press-item .author {
 .hidden-input {
   display: none !important;
 }
+
+.schedule-page .sessions {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.schedule-page .sessions .session-row {
+  border-bottom: 1px solid #ccc;
+}

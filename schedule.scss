@@ -1,3 +1,9 @@
 .schedule-page {
-  
+  .sessions {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    .session-row {
+      border-bottom: 1px solid #ccc;
+    }
+  }
 }
