@@ -82,7 +82,9 @@ Template Post Type: page
 								</div>
 								<div class="col-sm-10">
 									<h2><?= $name ?></h2>
-									<?=if( !empty($link) ): ?>
+									<?php
+										if( !empty($link) ):
+									?>
 										<a href="<?= $link ?>" class="btn" target="_blank">join</a>
 									<?php endif; ?>
 								</div>
