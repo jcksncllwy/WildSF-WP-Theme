@@ -47,14 +47,9 @@ Template Post Type: page
 				</div>
 			</div>
 			<div class="schedule">
-
-				<div class="row">
 					<hr class="dotted-line"/>
-					<div class="schedule-head">
-						Schedule of Events
-					</div>
+					<h3 class="schedule-subtitle">Schedule of Events</h3>
 					<hr class="dotted-line"/>
-				</div>
 				<div class="row">
 						<?php
 						// Check rows exists.
@@ -68,6 +63,17 @@ Template Post Type: page
 						      // Load sub field values.
 						      $time = get_sub_field('time');
 									$name = get_sub_field('name');
+									$link = get_sub_field('link');
+									$description = get_sub_field('description');
+									// Loop over sub repeater rows.
+					        if( have_rows('options') ):
+					            while( have_rows('options') ) : the_row();
+					                // Get sub value.
+					                $option_name = get_sub_field('option_name');
+													$option_description = get_sub_field('option_description');
+													$option_link = get_sub_field('option_link');
+					            endwhile;
+					        endif;
 						      // Do something...
 							?>
 							<div class="row session-row">
@@ -76,6 +82,9 @@ Template Post Type: page
 								</div>
 								<div class="col-sm-10">
 									<h2><?= $name ?></h2>
+									<?=if( !empty($link) ): ?>
+										<a href="<?= $link ?>" class="btn" target="_blank">join</a>
+									<?php endif; ?>
 								</div>
 							</div>
 							<?php
