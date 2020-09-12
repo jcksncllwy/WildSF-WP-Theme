@@ -71,7 +71,12 @@ Template Post Type: page
 						      // Do something...
 							?>
 							<div class="row session-row">
-								<?= $time ?> <?= $name ?>
+								<div class="col-sm-2">
+									<?= $time ?>
+								</div>
+								<div class="col-sm-10">
+									<?= $name ?>
+								</div>
 							</div>
 							<?php
 						  // End session rows.
