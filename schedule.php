@@ -75,7 +75,7 @@ Template Post Type: page
 									<?= $time ?>
 								</div>
 								<div class="col-sm-10">
-									<?= $name ?>
+									<h2><?= $name ?></h2>
 								</div>
 							</div>
 							<?php
