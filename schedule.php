@@ -82,7 +82,7 @@ Template Post Type: page
 								<div class="col-sm-10">
 									<h2><?= $name ?></h2>
 									<?php
-										if( !empty(get_sub_field('link');) ):
+										if( !empty(get_sub_field('link')) ):
 										$link = get_sub_field('link');
 									?>
 										<a href="<?= $link ?>" class="btn" target="_blank">join</a>
