@@ -64,16 +64,6 @@ Template Post Type: page
 						      $time = get_sub_field('time');
 									$name = get_sub_field('name');
 									$description = get_sub_field('description');
-									// Loop over sub repeater rows.
-					        if( have_rows('options') ):
-					            while( have_rows('options') ) : the_row();
-					                // Get sub value.
-					                $option_name = get_sub_field('option_name');
-													$option_description = get_sub_field('option_description');
-													$option_link = get_sub_field('option_link');
-					            endwhile;
-					        endif;
-						      // Do something...
 							?>
 							<div class="row session-row">
 								<div class="col-sm-2">
@@ -81,12 +71,36 @@ Template Post Type: page
 								</div>
 								<div class="col-sm-10">
 									<h2><?= $name ?></h2>
+
 									<?php
+									// Add main session link if there is one
 										if( !empty(get_sub_field('link')) ):
 										$link = get_sub_field('link');
 									?>
-										<a href="<?= $link ?>" class="btn" target="_blank">join</a>
-									<?php endif; ?>
+										<a href="<?= $link ?>" class="btn btn-primary pull-right" target="_blank">join</a>
+									<?php endif;
+
+									// Loop over session options if any
+					        if( have_rows('options') ):
+					            while( have_rows('options') ) : the_row();
+					                // Get sub value.
+					                $option_name = get_sub_field('option_name');
+													$option_description = get_sub_field('option_description');
+													$option_link = get_sub_field('option_link');
+													?>
+										  <div class="row">
+												<div class="col-10">
+													<b><?= $option_name ?> - </b><?= $option_description ?>
+												</div>
+												<div class="col-2">
+													<a href="<?= $option_link ?>" class="btn btn-primary pull-right" target="_blank">join</a>
+												</div>
+											</div>
+											<?php
+											// done with session options
+					            endwhile;
+					        endif;
+						      ?>
 								</div>
 							</div>
 							<?php
