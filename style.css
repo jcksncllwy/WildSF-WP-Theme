@@ -1737,8 +1737,8 @@ body.press .press-item .author {
 .schedule-page .sessions .session-row:last-of-type, .schedule-page .sessions .session-option:last-of-type {
   border-bottom: none;
 }
-.schedule-page .sessions .session-option:last-of-type {
-  padding-bottom: 0px;
+.schedule-page .sessions .session-option:first-of-type {
+  padding-top: 8px;
 }
 .schedule-page .sessions .btn-sess {
   background-color: #ee6552;

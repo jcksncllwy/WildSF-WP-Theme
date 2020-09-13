@@ -24,8 +24,8 @@
         border-bottom: none;
       }
     }
-    .session-option:last-of-type {
-      padding-bottom: 0px;
+    .session-option:first-of-type {
+      padding-top: 8px;
     }
     .btn-sess {
       background-color: $primary-red;
