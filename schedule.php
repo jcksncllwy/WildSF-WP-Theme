@@ -55,7 +55,7 @@ Template Post Type: page
 						// Check rows exists.
 						if( have_rows('session') ):
 						?>
-						<div class="col sessions">
+						<div class="col-10 sessions">
 							<?php
 						  // Loop through rows.
 						  while( have_rows('session') ) : the_row();
@@ -77,7 +77,7 @@ Template Post Type: page
 										if( !empty(get_sub_field('link')) ):
 										$link = get_sub_field('link');
 									?>
-										<a href="<?= $link ?>" class="btn btn-primary pull-right" target="_blank">join</a>
+										<a href="<?= $link ?>" class="btn btn-primary float-right" target="_blank">join</a>
 									<?php endif;
 
 									// Loop over session options if any
@@ -88,12 +88,10 @@ Template Post Type: page
 													$option_description = get_sub_field('option_description');
 													$option_link = get_sub_field('option_link');
 													?>
-										  <div class="row">
-												<div class="col-10">
+										  <div class="row session-row">
+												<div class="col">
 													<b><?= $option_name ?> - </b><?= $option_description ?>
-												</div>
-												<div class="col-2">
-													<a href="<?= $option_link ?>" class="btn btn-primary pull-right" target="_blank">join</a>
+													<a href="<?= $option_link ?>" class="btn btn-primary float-right" target="_blank">join</a>
 												</div>
 											</div>
 											<?php
