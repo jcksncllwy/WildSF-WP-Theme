@@ -51,7 +51,6 @@ Template Post Type: page
 					<div class="col-md-10 col-lg-7 text-center">
 						<hr class="dotted-line"/>
 						<h3 class="schedule-subtitle">Schedule of Events</h3>
-						<hr class="dotted-line"/>
 					</div>
 				</div>
 				<div class="row justify-content-center">
@@ -130,6 +129,11 @@ Template Post Type: page
 						endif;
 
 						?>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-md-10 col-lg-7">
+						<hr class="dotted-line dotted-end"/>
+					</div>
 				</div>
 			</div>
 

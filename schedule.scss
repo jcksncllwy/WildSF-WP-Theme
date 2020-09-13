@@ -1,7 +1,12 @@
 .schedule-page {
+  padding-bottom: 100px;
+  .dotted-end {
+    margin: 2em 0;
+  }
   .schedule-subtitle {
     font-family: $accent-font-family;
     color: $font-red;
+    margin: 24px auto; 
   }
   .sessions {
     border: 1px solid #ccc;

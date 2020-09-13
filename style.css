@@ -1708,9 +1708,16 @@ body.press .press-item .author {
   display: none !important;
 }
 
+.schedule-page {
+  padding-bottom: 100px;
+}
+.schedule-page .dotted-end {
+  margin: 2em 0;
+}
 .schedule-page .schedule-subtitle {
   font-family: "Monoton", helvetica, arial, sans-serif;
   color: #bf5246;
+  margin: 24px auto;
 }
 .schedule-page .sessions {
   border: 1px solid #ccc;
