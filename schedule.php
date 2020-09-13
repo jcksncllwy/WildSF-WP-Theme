@@ -36,19 +36,19 @@ Template Post Type: page
 						if ( have_posts() ){
 							while ( have_posts() ) : the_post();
 					?>
-					<div class="col-12">
+					<div class="col-12 text-center">
 						<h1><?= the_title(); ?></h1>
 					</div>
 				</div>
 				<div class="row justify-content-center">
-					<div class="col-md-10 col-lg-6">
+					<div class="col-md-10 col-lg-6 text-center">
 						<?= the_content(); ?>
 					</div>
 				</div>
 			</div>
 			<div class="schedule">
 				<div class="row justify-content-center">
-					<div class="col-md-10 col-lg-7">
+					<div class="col-md-10 col-lg-7 text-center">
 						<hr class="dotted-line"/>
 						<h3 class="schedule-subtitle">Schedule of Events</h3>
 						<hr class="dotted-line"/>

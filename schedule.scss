@@ -1,4 +1,8 @@
 .schedule-page {
+  .schedule-subtitle {
+    font-family: $accent-font-family;
+    color: $font-red;
+  }
   .sessions {
     border: 1px solid #ccc;
     border-radius: 10px;

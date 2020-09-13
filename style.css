@@ -1708,6 +1708,10 @@ body.press .press-item .author {
   display: none !important;
 }
 
+.schedule-page .schedule-subtitle {
+  font-family: "Monoton", helvetica, arial, sans-serif;
+  color: #bf5246;
+}
 .schedule-page .sessions {
   border: 1px solid #ccc;
   border-radius: 10px;
