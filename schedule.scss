@@ -13,8 +13,12 @@
     }
     .btn-sess {
       background-color: $primary-red;
+      color: $font-white;
+      padding: 4px 16px;
+      text-transform: uppercase;
+      font-weight: bold;
       &:hover {
-        background-color: lighten($primary-red,15%);
+        background-color: darken($primary-red,15%);
       }
     }
   }

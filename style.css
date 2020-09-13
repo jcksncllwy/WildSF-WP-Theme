@@ -1723,7 +1723,11 @@ body.press .press-item .author {
 }
 .schedule-page .sessions .btn-sess {
   background-color: #ee6552;
+  color: #fff;
+  padding: 4px 16px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .schedule-page .sessions .btn-sess:hover {
-  background-color: #f5a398;
+  background-color: #de2e16;
 }
