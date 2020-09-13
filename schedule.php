@@ -75,7 +75,7 @@ Template Post Type: page
 								</div>
 								<div class="col-sm-10">
 									<div class="row">
-										<div class="col">
+										<div class="col-md-auto">
 											<h4><?= $name ?></h4>
 											<p><?= $description ?></p>
 										</div>
@@ -100,8 +100,12 @@ Template Post Type: page
 													$option_link = get_sub_field('option_link');
 													?>
 										  <div class="row session-option">
+												<div class="col-md-auto">
+													<p>
+														<b><?= $option_name ?> - </b><?= $option_description ?>
+													</p>
+												</div>
 												<div class="col">
-													<b><?= $option_name ?> - </b><?= $option_description ?>
 													<a href="<?= $option_link ?>" class="btn btn-sm btn-sess float-right" target="_blank">join</a>
 												</div>
 											</div>
