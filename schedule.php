@@ -74,16 +74,23 @@ Template Post Type: page
 									<?= $time ?>
 								</div>
 								<div class="col-sm-10">
-									<h4><?= $name ?></h4>
-									<p><?= $description ?></p>
-									<?php
-									// Add main session link if there is one
-										if( !empty(get_sub_field('link')) ):
-										$link = get_sub_field('link');
-									?>
-										<a href="<?= $link ?>" class="btn btn-sm btn-sess float-right" target="_blank">join</a>
-									<?php endif;
+									<div class="row">
+										<div class="col">
+											<h4><?= $name ?></h4>
+											<p><?= $description ?></p>
+										</div>
+										<?php
+										// Add main session link if there is one
+											if( !empty(get_sub_field('link')) ):
+											$link = get_sub_field('link');
+										?>
+										<div class="col">
+											<a href="<?= $link ?>" class="btn btn-sm btn-sess float-right" target="_blank">join</a>
+										</div>
+										<?php endif;?>
+									</div>
 
+									<?php
 									// Loop over session options if any
 					        if( have_rows('options') ):
 					            while( have_rows('options') ) : the_row();
