@@ -50,7 +50,7 @@ Template Post Type: page
 				<div class="row justify-content-center">
 					<div class="col-md-10 col-lg-7 text-center">
 						<hr class="dotted-line"/>
-						<h3 class="schedule-subtitle">Schedule of Events</h3>
+						<h2 class="schedule-subtitle">Schedule of Events</h2>
 					</div>
 				</div>
 				<div class="row justify-content-center">
