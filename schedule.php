@@ -40,22 +40,26 @@ Template Post Type: page
 						<h1><?= the_title(); ?></h1>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-10 mr-auto">
+				<div class="row justify-content-center">
+					<div class="col-md-10 col-lg-6">
 						<?= the_content(); ?>
 					</div>
 				</div>
 			</div>
 			<div class="schedule">
-					<hr class="dotted-line"/>
-					<h3 class="schedule-subtitle">Schedule of Events</h3>
-					<hr class="dotted-line"/>
-				<div class="row">
+				<div class="row justify-content-center">
+					<div class="col-md-10 col-lg-7">
+						<hr class="dotted-line"/>
+						<h3 class="schedule-subtitle">Schedule of Events</h3>
+						<hr class="dotted-line"/>
+					</div>
+				</div>
+				<div class="row justify-content-center">
 						<?php
 						// Check rows exists.
 						if( have_rows('session') ):
 						?>
-						<div class="col-10 sessions">
+						<div class="col col-lg-8 sessions">
 							<?php
 						  // Loop through rows.
 						  while( have_rows('session') ) : the_row();
