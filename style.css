@@ -1710,13 +1710,18 @@ body.press .press-item .author {
 }
 
 .schedule-page {
+  color: #1D2D33;
   padding-bottom: 100px;
+}
+.schedule-page .title {
+  margin-bottom: 40px;
 }
 .schedule-page .dotted-end {
   margin: 2em 0;
 }
 .schedule-page .schedule-subtitle {
   font-family: "Monoton", helvetica, arial, sans-serif;
+  font-weight: normal;
   color: #bf5246;
   margin: 24px auto;
 }

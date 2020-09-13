@@ -37,7 +37,7 @@ Template Post Type: page
 							while ( have_posts() ) : the_post();
 					?>
 					<div class="col-12 text-center">
-						<h1><?= the_title(); ?></h1>
+						<h1 class="title"><?= the_title(); ?></h1>
 					</div>
 				</div>
 				<div class="row justify-content-center">
@@ -76,7 +76,7 @@ Template Post Type: page
 									<div class="row">
 										<div class="col-md-auto">
 											<h4><?= $name ?></h4>
-											<p><?= $description ?></p>
+											<p class="font-italic"><?= $description ?></p>
 										</div>
 										<?php
 										// Add main session link if there is one
