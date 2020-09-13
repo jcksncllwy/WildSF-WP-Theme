@@ -1721,3 +1721,9 @@ body.press .press-item .author {
   border-bottom: none;
   padding-bottom: 0px;
 }
+.schedule-page .sessions .btn-sess {
+  background-color: #ee6552;
+}
+.schedule-page .sessions .btn-sess:hover {
+  background-color: #f5a398;
+}

@@ -11,5 +11,11 @@
       border-bottom: none;
       padding-bottom: 0px;
     }
+    .btn-sess {
+      background-color: $primary-red;
+      &:hover {
+        background-color: lighten($primary-red,15%);
+      }
+    }
   }
 }

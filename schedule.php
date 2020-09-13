@@ -81,7 +81,7 @@ Template Post Type: page
 										if( !empty(get_sub_field('link')) ):
 										$link = get_sub_field('link');
 									?>
-										<a href="<?= $link ?>" class="btn btn-primary float-right" target="_blank">join</a>
+										<a href="<?= $link ?>" class="btn btn-sm btn-sess float-right" target="_blank">join</a>
 									<?php endif;
 
 									// Loop over session options if any
@@ -95,7 +95,7 @@ Template Post Type: page
 										  <div class="row session-option">
 												<div class="col">
 													<b><?= $option_name ?> - </b><?= $option_description ?>
-													<a href="<?= $option_link ?>" class="btn btn-primary float-right" target="_blank">join</a>
+													<a href="<?= $option_link ?>" class="btn btn-sm btn-sess float-right" target="_blank">join</a>
 												</div>
 											</div>
 											<?php
