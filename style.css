@@ -1729,8 +1729,10 @@ body.press .press-item .author {
   padding-bottom: 24px;
   border-bottom: 1px solid #ccc;
 }
-.schedule-page .sessions .session-option:last-of-type {
+.schedule-page .sessions .session-row:last-of-type, .schedule-page .sessions .session-option:last-of-type {
   border-bottom: none;
+}
+.schedule-page .sessions .session-option:last-of-type {
   padding-bottom: 0px;
 }
 .schedule-page .sessions .btn-sess {

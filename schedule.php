@@ -68,7 +68,7 @@ Template Post Type: page
 									$name = get_sub_field('name');
 									$description = get_sub_field('description');
 							?>
-							<div class="row session-row align-items-center">
+							<div class="row session-row">
 								<div class="col-sm-2">
 									<b><?= $time ?></b>
 								</div>
