@@ -74,7 +74,7 @@ Template Post Type: page
 									<?= $time ?>
 								</div>
 								<div class="col-sm-10">
-									<h2><?= $name ?></h2>
+									<h4><?= $name ?></h4>
 									<p><?= $description ?></p>
 									<?php
 									// Add main session link if there is one
@@ -92,7 +92,7 @@ Template Post Type: page
 													$option_description = get_sub_field('option_description');
 													$option_link = get_sub_field('option_link');
 													?>
-										  <div class="row session-row">
+										  <div class="row session-option">
 												<div class="col">
 													<b><?= $option_name ?> - </b><?= $option_description ?>
 													<a href="<?= $option_link ?>" class="btn btn-primary float-right" target="_blank">join</a>
