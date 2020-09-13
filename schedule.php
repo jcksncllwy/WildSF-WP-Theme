@@ -75,7 +75,7 @@ Template Post Type: page
 								</div>
 								<div class="col-sm-10">
 									<h2><?= $name ?></h2>
-
+									<p><?= $description ?></p>
 									<?php
 									// Add main session link if there is one
 										if( !empty(get_sub_field('link')) ):
