@@ -198,12 +198,14 @@ a{
 	padding-top: $nav-height + 20px;
 	h1,h2,h3,strong{
 		font-family: $primary-font-family;
+		font-size: 2.5em;
+		font-weight: 900;
 	}
 	.page-inner{
 		h1{
 			font-family: $primary-font-family;
 			font-size: 2em;
-			font-weight: 700;
+			font-weight: 900;
 		}
 		p{
 			font-family: $secondary-font-family;

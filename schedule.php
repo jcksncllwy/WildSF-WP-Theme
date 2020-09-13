@@ -68,9 +68,9 @@ Template Post Type: page
 									$name = get_sub_field('name');
 									$description = get_sub_field('description');
 							?>
-							<div class="row session-row">
+							<div class="row session-row align-items-center">
 								<div class="col-sm-2">
-									<?= $time ?>
+									<b><?= $time ?></b>
 								</div>
 								<div class="col-sm-10">
 									<div class="row">
@@ -98,11 +98,9 @@ Template Post Type: page
 													$option_description = get_sub_field('option_description');
 													$option_link = get_sub_field('option_link');
 													?>
-										  <div class="row session-option">
+										  <div class="row session-option align-items-center">
 												<div class="col-md-auto">
-													<p>
 														<b><?= $option_name ?> - </b><?= $option_description ?>
-													</p>
 												</div>
 												<div class="col">
 													<a href="<?= $option_link ?>" class="btn btn-sm btn-sess float-right" target="_blank">join</a>
