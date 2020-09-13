@@ -213,9 +213,8 @@ body {
   font-family: "Roboto", sans-serif;
   padding-top: 100px;
 }
-.page-container h1, .page-container h2, .page-container h3, .page-container strong {
+.page-container h1, .page-container h2, .page-container h3, .page-container h4, .page-container strong {
   font-family: "Roboto", helvetica, arial, sans-serif;
-  font-size: 2.5em;
   font-weight: 900;
 }
 .page-container .page-inner {

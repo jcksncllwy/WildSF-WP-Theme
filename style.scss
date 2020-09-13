@@ -196,9 +196,8 @@ a{
 	justify-content: center;
 	font-family: $secondary-font-family;
 	padding-top: $nav-height + 20px;
-	h1,h2,h3,strong{
+	h1,h2,h3,h4,strong{
 		font-family: $primary-font-family;
-		font-size: 2.5em;
 		font-weight: 900;
 	}
 	.page-inner{
