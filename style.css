@@ -1753,6 +1753,6 @@ body.press .press-item .author {
 
 @media (max-width: 575.98px) {
   .session-option {
-    border-bottom: none;
+    border-bottom: none !important;
   }
 }
